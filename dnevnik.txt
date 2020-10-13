@@ -1,0 +1,8 @@
+1. Sastanak, 4.10.2020.
+	Tema: upoznavanje, razgovor o tehnologijama za projekt,
+	preference oko uloga, pitanja oko zadatka
+
+2. Sastanak, 13.10.2020.
+	Tema: Git i GitLab, definiranje zahtjeva, generalna ideja modela,
+	planovi za idući tjedan: baza i upoznavanje sa Springom i Reactom
+	
