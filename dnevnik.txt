@@ -5,4 +5,9 @@
 2. Sastanak, 13.10.2020.
 	Tema: Git i GitLab, definiranje zahtjeva, generalna ideja modela,
 	planovi za idući tjedan: baza i upoznavanje sa Springom i Reactom
+
+3. Sastanak, 20.10.2020.
+	Tema: dovršavanje zahtjeva, UC dijagrami, podjela poslova oko raspisa UC
+	dijagrama i pisanja poglavlja 2. i 3. dokumentacije, finalni pregled verzije 0.1 
+	baze
 	
