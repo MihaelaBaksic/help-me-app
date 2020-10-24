@@ -15,4 +15,9 @@ target/
 .metadata
 .class
 
+#IntelliJ files
+**/*.iml
+**/.idea
+**/.gradle
+
 
