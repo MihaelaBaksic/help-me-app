@@ -3,6 +3,10 @@ package hr.fer.progi.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import com.sun.istack.NotNull;
 
 import lombok.Data;
 
@@ -15,13 +19,20 @@ public class Rating {
 	@GeneratedValue
 	private Long id;
 	
+	@NotNull
 	private int rating;
 	
+	@NotNull
 	private String comment;
 	
-//	private User reviewer;
-//	
-//	private User rated;
-//	
-//	private Request request;
+	@NotNull
+	@ManyToOne
+	private User reviewer;
+	
+	@ManyToOne
+	@NotNull
+	private User rated;
+	
+	@OneToOne
+	private Request request;
 }
