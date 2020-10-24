@@ -1,2 +1,6 @@
-package hr.fer.progi.mappers;public class RequestDTO {
+package hr.fer.progi.mappers;
+
+public class RequestDTO {
+
+
 }
