@@ -13,13 +13,17 @@ import javax.persistence.OneToMany;
 
 import com.sun.istack.NotNull;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Request {
 
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -50,4 +54,10 @@ public class Request {
 	
 	@NotNull
 	private RequestStatus status;
+
+	public Request(Time duration, String comment, Address address){
+		this.duration = duration;
+		this.comment = comment;
+		this.address = address;
+	}
 }
