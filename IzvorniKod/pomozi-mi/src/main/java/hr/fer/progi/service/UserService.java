@@ -23,6 +23,7 @@ public interface UserService {
      * Finds {@link User} in the system by its property username.
      * @param username by which to search {@link User}
      * @return found {@link User}
+     * @throws IllegalArgumentException if username is null
      */
     User findByUsername(String username);
 

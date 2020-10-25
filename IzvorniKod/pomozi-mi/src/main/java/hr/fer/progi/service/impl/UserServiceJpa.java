@@ -2,6 +2,7 @@ package hr.fer.progi.service.impl;
 
 import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
