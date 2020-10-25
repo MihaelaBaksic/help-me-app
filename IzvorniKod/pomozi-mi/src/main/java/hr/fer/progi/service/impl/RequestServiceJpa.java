@@ -4,10 +4,12 @@ import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
+@Service
 public class RequestServiceJpa implements RequestService {
 
     @Autowired

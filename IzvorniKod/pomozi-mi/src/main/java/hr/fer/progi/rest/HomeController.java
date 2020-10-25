@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HomeController {
 
-
+    // ovisi o autentikaciji, bit ce napisano nakon autentikacije i autorizacija
 
 }
