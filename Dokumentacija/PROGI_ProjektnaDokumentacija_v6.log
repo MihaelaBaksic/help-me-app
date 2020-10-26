@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  26 OCT 2020 01:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  26 OCT 2020 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,13 +1244,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+[10] [11] [12] [13] [14] [15] [16] [17]
+Overfull \hbox (6.21745pt too wide) in paragraph at lines 687--688
+[]\OT1/jkp/m/n/12 Javnom ko-ris-niku is-pi-suje se po-ruka o po-gre[]sci lo-zin
+ke ili ko-risni[]ckog
+ []
+
+[18]
+Overfull \hbox (1.82549pt too wide) in paragraph at lines 742--743
+[]\OT1/jkp/m/n/12 Prilikom blo-ki-ra-nja zah-tjeva svim po-ten-ci-jal-nim izvr[
+]siteljima se dos-
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
 [20]
-Overfull \hbox (16.91959pt too wide) in paragraph at lines 713--714
+Overfull \hbox (16.91959pt too wide) in paragraph at lines 772--773
 []\OT1/jkp/m/n/12 Aplikacija treba biti iz-ve-dena kao web apli-ka-cija prilago
 []dena mo-bil-nom ure[]daju. 
  []
@@ -1447,8 +1459,8 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 26A8BCB67D725A514DBBD4F4C06AD182;1813.
  ) 
 Here is how much of TeX's memory you used:
- 12075 strings out of 479916
- 172052 string characters out of 5886648
+ 12079 strings out of 479916
+ 172084 string characters out of 5886648
  552763 words of memory out of 5000000
  28102 multiletter control sequences out of 15000+600000
  590401 words of font info for 153 fonts, out of 8000000 for 9000
@@ -1464,11 +1476,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (39 pages, 161610 bytes).
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (39 pages, 163421 bytes).
 
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 534 compressed objects within 6 object streams
- 211 named destinations out of 1000 (max. 500000)
+ 594 PDF objects out of 1000 (max. 8388607)
+ 538 compressed objects within 6 object streams
+ 215 named destinations out of 1000 (max. 500000)
  222 words of extra memory for PDF output out of 10000 (max. 10000000)
 

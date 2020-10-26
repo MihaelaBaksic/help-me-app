@@ -375,6 +375,32 @@
 				
 			\end{packed_item}
 		
+			\noindent \underbar{\textbf{UC4.4 - Pregled javljanja na zahtjeve}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik: }Korisnik
+				\item  \textbf{Cilj:} Pregled i pristup zahtjevima na koje se korisnik javio kao potencijalni izvršitelj 
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik odabire opciju prikaza zahtjeva na koje se javio
+					\item Prikazuju se zahtjevi gdje je korisnik u listi potencijalnih izvršitelja
+
+				\end{packed_enum}
+				
+				\item[1.b] Zahtjev za koji se korisnik javio je blokiran
+				\item[] \begin{packed_enum}
+					
+					\item Blokirani zahtjevi se ne mogu izvršavati i ne prikazuju se među korisnikovim javljanjima na zahtjev
+					
+				\end{packed_enum}
+					
+				
+			\end{packed_item}
+		
 	
 			\noindent \underbar{\textbf{UC5 - Pregled statistike}}
 			\begin{packed_item}
@@ -617,83 +643,116 @@
 					\item Inicira se ocjenjivanje korisnika
 
 				\end{packed_enum}
+			
+				\item[1.a] Zahtjev je istekao prije nego što je korisnik potvrdio izvršenje
+				\item[] \begin{packed_enum}
+					
+					\item Zahtjevi za koje je korisnik odabran kao izvršitelj prikazuju se unatoč istjecanju i mogu se odabrati za izvršavanje
+					
+				\end{packed_enum}
+				\item[1.b] Zahtjev za koji je korisnik odabran kao izvršitelj je blokiran
+				\item[] \begin{packed_enum}
+					
+					\item Blokirani zahtjevi se ne mogu izvršavati i ne prikazuju se među korisnikovim zahtjevima za izvršavanje
+					
+				\end{packed_enum}
+					
 				
 			\end{packed_item}
 		
 		
-			\noindent \underbar{\textbf{UC4.1 - Upravljanje korisničkim podacima}}
+			\noindent \underbar{\textbf{UC13 - Prijava u sustav}}
 			\begin{packed_item}
 				
-				\item \textbf{Glavni sudionik: }Korisnik
+				\item \textbf{Glavni sudionik: }Javni korisnik
 				\item  \textbf{Cilj:} Aktualizacija i izmjena 
-				\item  \textbf{Sudionici:} $<$sudionici$>$
-				\item  \textbf{Preduvjet:} $<$preduvjet$>$
+				\item  \textbf{Sudionici:} -
+				\item  \textbf{Preduvjet:} Javni korisnik ima izrađen korisnični račun u sustavu
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
 					
-					\item $<$opis korak jedan$>$
-					\item $<$opis korak dva$>$
-					\item $<$opis korak tri$>$
-					\item $<$opis korak četiri$>$
-					\item $<$opis korak pet$>$
+					\item Javni korisnik odabire opciju prijave
+					\item Javni korisnik upisuje korisničko ime i lozinku
+					\item Korisnik potvrđuje unos
 				\end{packed_enum}
 				
 				\item  \textbf{Opis mogućih odstupanja:}
 				
 				\item[] \begin{packed_item}
 					
-					\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
+					\item[2.a] Unos pogrešnog korisničkog imena i/ili lozinke
 					\item[] \begin{packed_enum}
 						
-						\item $<$opis rješenja mogućeg scenarija korak 1$>$
-						\item $<$opis rješenja mogućeg scenarija korak 2$>$
+						\item Javnom korisniku ispisuje se poruka o pogrešci lozinke ili korisničkog imena
 						
 					\end{packed_enum}
-					\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-					\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
+					
 					
 				\end{packed_item}
 			\end{packed_item}
 		
 		
-			\noindent \underbar{\textbf{UC4.1 - Upravljanje korisničkim podacima}}
+			\noindent \underbar{\textbf{UC14 - Odjava}}
 			\begin{packed_item}
 				
 				\item \textbf{Glavni sudionik: }Korisnik
-				\item  \textbf{Cilj:} Aktualizacija i izmjena 
-				\item  \textbf{Sudionici:} $<$sudionici$>$
-				\item  \textbf{Preduvjet:} $<$preduvjet$>$
+				\item  \textbf{Cilj:} Odjava iz sustava 
+				\item  \textbf{Sudionici:} -
+				\item  \textbf{Preduvjet:} Korisnik je prijavljen u sustav
 				\item  \textbf{Opis osnovnog tijeka:}
 				
 				\item[] \begin{packed_enum}
 					
-					\item $<$opis korak jedan$>$
-					\item $<$opis korak dva$>$
-					\item $<$opis korak tri$>$
-					\item $<$opis korak četiri$>$
-					\item $<$opis korak pet$>$
+					\item Korisnik odabire opciju odjave
+					\item Korisnik se preusmjerava na stranicu za prijavu
+				\end{packed_enum}
+				
+			\end{packed_item}
+		
+			
+		
+			\noindent \underbar{\textbf{UC15 - Upravljanje vlastitim zahjevima}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik: }Korisnik
+				\item  \textbf{Cilj:} Mogućnost izmjene, brisanja ili blokiranja vlastitih zahtjeva
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik odabire vlastiti zahtjev kojim želi upravljati
+					\item Korisnik odabire izmjenu, brisanje ili blokiranje zahtjeva
+					\item Ukoliko je odabrana izmjena, unose se novi podaci 
+					\item Korisnik potvrđuje odabir
+
 				\end{packed_enum}
 				
 				\item  \textbf{Opis mogućih odstupanja:}
 				
 				\item[] \begin{packed_item}
 					
-					\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
+					
+					\item[2.a] Na zahtjev se netko već javio, postoje potencijalni izvršitelji
 					\item[] \begin{packed_enum}
 						
-						\item $<$opis rješenja mogućeg scenarija korak 1$>$
-						\item $<$opis rješenja mogućeg scenarija korak 2$>$
+						\item Zahtjevi na koje se netko već javio mogu se samo blokirati
+						\item Prilikom blokiranja zahtjeva svim potencijalnim izvršiteljima se dostavlja obavijest o blokiranju zahtjeva
 						
 					\end{packed_enum}
-					\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-					\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-					
+					\item[3.a] Uneseni novi komentar je prazan
+					\item[] \begin{packed_enum}
+						
+						\item Ispisuje se poruka korisniku o minimalnoj mogućoj duljini unesenog komentara
+						
+					\end{packed_enum}
+										
 				\end{packed_item}
 			\end{packed_item}
 		
-			
-			
+					
 					
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
