@@ -26,5 +26,11 @@ public class RequestServiceJpa implements RequestService {
         return requestRepository.save(request);
     }
 
+    @Override
+    public Request getRequestById(Long id){
+        Assert.notNull(id, "Request id must be given");
+        return requestRepository.getOne(id);
+    }
+
 
 }

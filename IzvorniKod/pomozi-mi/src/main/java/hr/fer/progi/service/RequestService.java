@@ -19,4 +19,6 @@ public interface RequestService {
      */
     Request addRequest(Request request);
 
+    Request getRequestById(Long id);
+
 }

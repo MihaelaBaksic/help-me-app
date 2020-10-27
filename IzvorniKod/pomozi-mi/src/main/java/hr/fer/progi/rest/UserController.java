@@ -4,7 +4,11 @@ package hr.fer.progi.rest;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.UserService;
+import hr.fer.progi.wrappers.UserModelAssembler;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -16,34 +20,40 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private final UserModelAssembler assembler;
+
+    public UserController(UserModelAssembler assembler) {
+        this.assembler = assembler;
+    }
+
     @GetMapping("")
     @Secured("ROLE_USER")
-    public UserDTO getCurrentUser(@AuthenticationPrincipal User user){
-        UserDTO userDTO = new UserDTO();
-
-        //TODO handle as an exception
-        if(user != null) userDTO.setUsername(user.getUsername());
-        return userDTO;
+    public EntityModel<User> getCurrentUser(@AuthenticationPrincipal User user){
+            return assembler.toModel(user);
     }
 
     @GetMapping("/settings")
     @Secured("ROLE_USER")
-    public User getUserSettings(@AuthenticationPrincipal User user){
-        return user;
+    public EntityModel<User> getUserSettings(@AuthenticationPrincipal User user){
+        return assembler.toModel(user);
     }
 
     @PostMapping("/settings")
     @Secured("ROLE_USER")
-    public String updateUser(@AuthenticationPrincipal User user){
-        //TODO update user in database
-        //test this
-        return "redirect:/user";
+    public ResponseEntity<?> updateUser(@RequestBody User updatedUser, @AuthenticationPrincipal User user){
+        /*TODO update user in database
+        EntityModel<User> entityModel = assembler.toModel(userService.updateUser());
+        return ResponseEntity
+                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
+                .body(entityModel);*/
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/{username}")
     @Secured("ROLE_USER")
-    public User getUser(@PathVariable("username") String username){
-        return userService.findByUsername(username);
+    public EntityModel<User> getUser(@PathVariable("username") String username){
+        return assembler.toModel(userService.findByUsername(username));
     }
 
 }
