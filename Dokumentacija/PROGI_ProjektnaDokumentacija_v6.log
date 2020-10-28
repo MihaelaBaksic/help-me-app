@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  28 OCT 2020 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  28 OCT 2020 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1074,87 +1074,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 16.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
+[]\OT1/jkp/m/n/12 28.10.2020.|  
+ []
+
+
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 24.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 25.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 26.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 07.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 08.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 09.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 10.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 14.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 19.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 20.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.09.2013.|  
  []
 
@@ -1476,7 +1481,7 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (40 pages, 164003 bytes).
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (40 pages, 164068 bytes).
 
 PDF statistics:
  607 PDF objects out of 1000 (max. 8388607)
