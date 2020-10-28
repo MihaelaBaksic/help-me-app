@@ -93,40 +93,10 @@
 						\end{packed_item}
 					\end{packed_item}
 				
-				\noindent \underbar{\textbf{UC1.1 - Javljanje na zahtjev}}
-				\begin{packed_item}
-					
-					\item \textbf{Glavni sudionik: }Korisnik
-					\item  \textbf{Cilj:} Inicijalizirati komunikaciju s korisnikom autorom
-					\item  \textbf{Sudionici:} Korisnik autor zahtjeva, Baza podataka
-					\item  \textbf{Preduvjet:} Oglas je aktivan
-					\item  \textbf{Opis osnovnog tijeka:}
-					
-					\item[] \begin{packed_enum}
-						
-						\item Korisnik odabire zahtjev
-						\item Korisnik se uvodi u bazu podataka kao potencijalni izvršitelj za odabrani zahtjev
-						\item Korisniku autoru dolazi obavijest o novom potencijalnom izvršitelju
-					\end{packed_enum}
-					
-					\item  \textbf{Opis mogućih odstupanja:}
-					
-					\item[] \begin{packed_item}
-						
-						\item[1.a] Korisnik autor može biti blokiran
-						\item[] \begin{packed_enum}
-							
-							\item Zahtjevi blokiranih korisnika ne prikazuju se na glavnoj stranici zahtjeva
-							\item Zahtjevi blokiranih korisnika vidljivi na njegovom profilu ne mogu biti odabrani za izvršavanje
-							
-						\end{packed_enum}
-						
-						
-					\end{packed_item}
-				\end{packed_item}
 				
 				
-				\noindent \underbar{\textbf{UC1.2 - Filtriranje zahtjeva}}
+				
+				\noindent \underbar{\textbf{UC1.1 - Filtriranje zahtjeva}}
 				\begin{packed_item}
 					
 					\item \textbf{Glavni sudionik: }Korisnik
@@ -159,7 +129,7 @@
 					\end{packed_item}
 				\end{packed_item}
 			
-			\noindent \underbar{\textbf{UC1.3 - Promjena lokacije izvršenja}}
+			\noindent \underbar{\textbf{UC1.2 - Promjena lokacije izvršenja}}
 			\begin{packed_item}
 				
 				\item \textbf{Glavni sudionik: }Korisnik
@@ -354,6 +324,32 @@
 				\end{packed_item}
 			\end{packed_item}
 		
+			\noindent \underbar{\textbf{UC4.2 - Pregled vlastitih zahtjeva}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik: }Korisnik
+				\item  \textbf{Cilj:} Pregledati listu zahtjeva kojima smo autor i listu zahtjeva koje smo izvršili
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisniku se na profilu prikazuju njegovi zahtjevi
+					\item Korisnik može odabrati pojedini zahtjev za pregled
+					
+				\end{packed_enum}
+				
+				\item[1.b] Pojedini zahtjevi su blokirani
+				\item[] \begin{packed_enum}
+					
+					\item Blokirani zahtjevi se prikazuju, ali s naznakom da su blokirani
+					
+				\end{packed_enum}
+				
+				
+			\end{packed_item}
+		
 		
 			\noindent \underbar{\textbf{UC4.3 - Brisanje korisničkog računa}}
 			\begin{packed_item}
@@ -375,31 +371,7 @@
 				
 			\end{packed_item}
 		
-			\noindent \underbar{\textbf{UC4.4 - Pregled javljanja na zahtjeve}}
-			\begin{packed_item}
-				
-				\item \textbf{Glavni sudionik: }Korisnik
-				\item  \textbf{Cilj:} Pregled i pristup zahtjevima na koje se korisnik javio kao potencijalni izvršitelj 
-				\item  \textbf{Sudionici:} Baza podataka
-				\item  \textbf{Preduvjet:} -
-				\item  \textbf{Opis osnovnog tijeka:}
-				
-				\item[] \begin{packed_enum}
-					
-					\item Korisnik odabire opciju prikaza zahtjeva na koje se javio
-					\item Prikazuju se zahtjevi gdje je korisnik u listi potencijalnih izvršitelja
-
-				\end{packed_enum}
-				
-				\item[1.b] Zahtjev za koji se korisnik javio je blokiran
-				\item[] \begin{packed_enum}
-					
-					\item Blokirani zahtjevi se ne mogu izvršavati i ne prikazuju se među korisnikovim javljanjima na zahtjev
-					
-				\end{packed_enum}
-					
-				
-			\end{packed_item}
+			
 		
 	
 			\noindent \underbar{\textbf{UC5 - Pregled statistike}}
@@ -710,9 +682,39 @@
 				
 			\end{packed_item}
 		
+			\noindent \underbar{\textbf{UC15 - Pregled pojedinog zahtjeva}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik: }Korisnik
+				\item  \textbf{Cilj:} Pregledati podatke o zahtjevu
+				\item  \textbf{Sudionici:} Baza podataka
+				\item  \textbf{Preduvjet:} -Zahtjev koji pregledavamo postoji
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik odabire zahtjev za pregled
+					\item Prikazuju se podaci o zahtjevu
+					
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
+					
+					
+					\item[2.a] Zahtjev je blokiran
+					\item[] \begin{packed_enum}
+						
+						\item Blokirane zahtjeve može se pregledati, ali ne i stupati u interakciju s njima
+						
+					\end{packed_enum}
+					
+				\end{packed_item}
+			\end{packed_item}
 			
 		
-			\noindent \underbar{\textbf{UC15 - Upravljanje vlastitim zahjevima}}
+			\noindent \underbar{\textbf{UC15.1 - Upravljanje vlastitim zahjevima}}
 			\begin{packed_item}
 				
 				\item \textbf{Glavni sudionik: }Korisnik
@@ -749,6 +751,39 @@
 						
 					\end{packed_enum}
 										
+				\end{packed_item}
+			\end{packed_item}
+		
+			\noindent \underbar{\textbf{UC15.2 - Javljanje na zahtjev}}
+			\begin{packed_item}
+				
+				\item \textbf{Glavni sudionik: }Korisnik
+				\item  \textbf{Cilj:} Inicijalizirati komunikaciju s korisnikom autorom
+				\item  \textbf{Sudionici:} Korisnik autor zahtjeva, Baza podataka
+				\item  \textbf{Preduvjet:} Oglas je aktivan
+				\item  \textbf{Opis osnovnog tijeka:}
+				
+				\item[] \begin{packed_enum}
+					
+					\item Korisnik odabire zahtjev za pregled
+					\item Korisnik odabire opciju javljanja na zahtjev
+					\item Korisnik se uvodi u bazu podataka kao potencijalni izvršitelj za odabrani zahtjev
+					\item Korisniku autoru dolazi obavijest o novom potencijalnom izvršitelju
+				\end{packed_enum}
+				
+				\item  \textbf{Opis mogućih odstupanja:}
+				
+				\item[] \begin{packed_item}
+					
+					\item[1.a] Korisnik autor može biti blokiran
+					\item[] \begin{packed_enum}
+						
+						\item Zahtjevi blokiranih korisnika ne prikazuju se na glavnoj stranici zahtjeva
+						\item Zahtjevi blokiranih korisnika vidljivi na njegovom profilu ne mogu biti odabrani za izvršavanje
+						
+					\end{packed_enum}
+					
+					
 				\end{packed_item}
 			\end{packed_item}
 		
