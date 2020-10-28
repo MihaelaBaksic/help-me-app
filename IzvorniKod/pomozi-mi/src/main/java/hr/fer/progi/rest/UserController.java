@@ -8,6 +8,7 @@ import hr.fer.progi.wrappers.UserModelAssembler;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -42,12 +43,12 @@ public class UserController {
     @PostMapping("/settings")
     @Secured("ROLE_USER")
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser, @AuthenticationPrincipal User user){
-        /*TODO update user in database
-        EntityModel<User> entityModel = assembler.toModel(userService.updateUser());
+        // TODO update user in database
+        EntityModel<User> entityModel = assembler.toModel(userService.updateUser(updatedUser)); // updateUser(which args) ???
         return ResponseEntity
                 .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
-                .body(entityModel);*/
-        return ResponseEntity.noContent().build();
+                .body(entityModel);
+        // return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/{username}")

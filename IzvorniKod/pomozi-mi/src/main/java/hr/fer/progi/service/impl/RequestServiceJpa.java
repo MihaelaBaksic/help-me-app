@@ -1,7 +1,9 @@
 package hr.fer.progi.service.impl;
 
 import hr.fer.progi.dao.RequestRepository;
+import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.Request;
+import hr.fer.progi.domain.User;
 import hr.fer.progi.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class RequestServiceJpa implements RequestService {
 
     @Autowired
     private RequestRepository requestRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<Request> listAll() {
@@ -32,5 +37,10 @@ public class RequestServiceJpa implements RequestService {
         return requestRepository.getOne(id);
     }
 
+    @Override
+    public List<Request> findUserRequests(User user) {
+        Assert.notNull(user, "User must be given");
+        return userRepository.findAllUserRequests(user.getUsername());
+    }
 
 }

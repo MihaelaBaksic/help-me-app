@@ -1,6 +1,7 @@
 package hr.fer.progi.service.impl;
 
 import hr.fer.progi.dao.UserRepository;
+import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.UserService;
@@ -23,15 +24,22 @@ public class UserServiceJpa implements UserService {
 
     @Override
     public User registerUser(User user) {
-        // TODO Assert what can and can't be null
         Assert.notNull(user, "User object must be given");
-        // TODO email is unique, so I can check if database already has User with given email?
-        String email = user.getEmail();
-        Assert.hasText(email, "Email must be given");
+        String username = user.getEmail();
+        Assert.hasText(username, "Username must be given");
 
-        if (userRepository.countByEmail(user.getEmail()) > 0)
-            // TODO change type of this exception
-            throw new IllegalArgumentException("User with Email: " + user.getEmail() + " already exists");
+        if (userRepository.countByUsername(user.getUsername()) > 0)
+            throw new IllegalArgumentException("User with Username: " + user.getUsername() + " already exists");
+
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User updateUser(User user) {
+        // TODO check this method
+        Assert.notNull(user, "User object must be given");
+        String username = user.getUsername();
+        Assert.hasText(username, "Username must be given");
 
         return userRepository.save(user);
     }
@@ -41,4 +49,6 @@ public class UserServiceJpa implements UserService {
         Assert.notNull(username, "Username must be given");
         return userRepository.findByUsername(username);
     }
+
+
 }
