@@ -7,10 +7,20 @@ import java.util.List;
 
 public interface RatingService {
 
-    //returns all ratings where user is rated
+    /**
+     * Returns all ratings where user is rated
+     *
+     * @param username
+     * @return
+     */
     List<Rating> userRatings(String username);
 
-    //returns all ratings where user has rated
+    /**
+     * Returns all ratings where user has rated
+     *
+     * @param username
+     * @return
+     */
     List<Rating> authoredRatings(String username);
 
     Rating addRating(Rating rating);
