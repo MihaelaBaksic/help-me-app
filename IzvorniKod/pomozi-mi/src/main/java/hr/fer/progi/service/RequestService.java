@@ -1,6 +1,7 @@
 package hr.fer.progi.service;
 
 import hr.fer.progi.domain.Request;
+import hr.fer.progi.domain.User;
 
 import java.util.List;
 
@@ -20,5 +21,13 @@ public interface RequestService {
     Request addRequest(Request request);
 
     Request getRequestById(Long id);
+
+    /**
+     * Finds all {@link Request} from given {@link User}.
+     * @param user which {@link Request} we should find
+     * @return all {@link Request} that given {@link User} has
+     */
+    List<Request> findUserRequests(User user);
+
 
 }
