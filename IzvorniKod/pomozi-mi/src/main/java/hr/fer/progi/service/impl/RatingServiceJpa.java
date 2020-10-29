@@ -17,7 +17,6 @@ public class RatingServiceJpa implements RatingService {
     @Autowired
     private RatingRepository ratingRepository;
 
-    //TODO implement these methods
     @Override
     public List<Rating> userRatings(String username) {
         return ratingRepository.findAllWhereUserIsRated(username);
