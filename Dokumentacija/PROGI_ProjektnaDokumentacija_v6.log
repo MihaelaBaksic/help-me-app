@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  28 OCT 2020 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  30 OCT 2020 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,7 +1055,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...{Indeks slika i dijagrama}{35}{chapter*.5}
+l.29 ...{Indeks slika i dijagrama}{33}{chapter*.5}
                                                   % [1
 
 ])
@@ -1249,30 +1249,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17]
-Overfull \hbox (6.21745pt too wide) in paragraph at lines 659--660
+[10]
+Overfull \hbox (6.21745pt too wide) in paragraph at lines 121--122
 []\OT1/jkp/m/n/12 Javnom ko-ris-niku is-pi-suje se po-ruka o po-gre[]sci lo-zin
 ke ili ko-risni[]ckog
  []
 
-[18]
-Overfull \hbox (1.82549pt too wide) in paragraph at lines 744--745
-[]\OT1/jkp/m/n/12 Prilikom blo-ki-ra-nja zah-tjeva svim po-ten-ci-jal-nim izvr[
-]siteljima se dos-
+
+Overfull \hbox (2.35329pt too wide) in paragraph at lines 172--173
+[]\OT1/jkp/m/n/12 Korisnik u pri-kazu zah-tjevu bira op-ciju za pri-kaz po-ten-
+ci-jal-nih izvr[]sitelja 
  []
 
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 799--800
+[11] [12] [13] [14] [15] [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
 
  []
 
-[21]
-Overfull \hbox (16.91959pt too wide) in paragraph at lines 807--808
+[19]
+Overfull \hbox (16.91959pt too wide) in paragraph at lines 672--673
 []\OT1/jkp/m/n/12 Aplikacija treba biti iz-ve-dena kao web apli-ka-cija prilago
 []dena mo-bil-nom ure[]daju. 
  []
 
-) [22]
+) [20]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
@@ -1304,12 +1304,12 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 korisnickoIme|  
  []
 
-[23
+[21
 
 
 
 
-] [24]
+] [22]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -1329,22 +1329,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[25]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[26]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[27]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-) [28]
+) [26]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1364,7 +1364,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[29
+[27
 
 
 
@@ -1379,12 +1379,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[30] [31]
+[28] [29]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[32])
+[30])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1399,7 +1399,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[33
+[31
 
 
 
@@ -1419,7 +1419,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [34
+) [32
 
 
 
@@ -1428,7 +1428,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [35
+ [33
 
 
 
@@ -1440,7 +1440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[36
+[34
 
 
 ]
@@ -1448,12 +1448,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[37] [38]
+[35] [36]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [39] 
+) [37] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1464,8 +1464,8 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 26A8BCB67D725A514DBBD4F4C06AD182;1813.
  ) 
 Here is how much of TeX's memory you used:
- 12084 strings out of 479916
- 172123 string characters out of 5886648
+ 12061 strings out of 479916
+ 171941 string characters out of 5886648
  552763 words of memory out of 5000000
  28102 multiletter control sequences out of 15000+600000
  590401 words of font info for 153 fonts, out of 8000000 for 9000
@@ -1481,11 +1481,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (40 pages, 164068 bytes).
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (38 pages, 161136 bytes).
 
 PDF statistics:
- 607 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 220 named destinations out of 1000 (max. 500000)
+ 569 PDF objects out of 1000 (max. 8388607)
+ 514 compressed objects within 6 object streams
+ 197 named destinations out of 1000 (max. 500000)
  222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
