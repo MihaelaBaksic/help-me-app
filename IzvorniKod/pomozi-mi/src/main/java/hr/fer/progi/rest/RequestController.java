@@ -3,6 +3,7 @@ package hr.fer.progi.rest;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.CreateRequestDTO;
+import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.service.RequestService;
 import hr.fer.progi.wrappers.RequestModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,12 @@ public class RequestController {
 
     @GetMapping("")
     @Secured("ROLE_USER")
-    public CollectionModel<EntityModel<Request>> getRequests() {
+    public CollectionModel<EntityModel<RequestDTO>> getRequests() {
         return assembler.toCollectionModel(requestService.listAll());
     }
 
     @GetMapping("/{id}") //TODO handle exception if no request is found
-    public EntityModel<Request> getRequest(@PathVariable("id") Long id){
+    public EntityModel<RequestDTO> getRequest(@PathVariable("id") Long id){
         return assembler.toModel(requestService.getRequestById(id));
     }
 

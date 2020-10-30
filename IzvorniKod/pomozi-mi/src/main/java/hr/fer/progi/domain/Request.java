@@ -40,7 +40,7 @@ public class Request {
 	
 	@ManyToOne
 	@NotNull
-	private User requestAutor;
+	private User requestAuthor;
 	
 	@ManyToOne
 	private User requestHandler;

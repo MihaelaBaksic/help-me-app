@@ -30,13 +30,13 @@ public class UserController {
 
     @GetMapping("")
     @Secured("ROLE_USER")
-    public EntityModel<User> getCurrentUser(@AuthenticationPrincipal User user){
+    public EntityModel<UserDTO> getCurrentUser(@AuthenticationPrincipal User user){
             return assembler.toModel(user);
     }
 
     @GetMapping("/settings")
     @Secured("ROLE_USER")
-    public EntityModel<User> getUserSettings(@AuthenticationPrincipal User user){
+    public EntityModel<UserDTO> getUserSettings(@AuthenticationPrincipal User user){
         return assembler.toModel(user);
     }
 
@@ -44,7 +44,7 @@ public class UserController {
     @Secured("ROLE_USER")
     public ResponseEntity<?> updateUser(@RequestBody User updatedUser, @AuthenticationPrincipal User user){
         // TODO update user in database
-        EntityModel<User> entityModel = assembler.toModel(userService.updateUser(updatedUser)); // updateUser(which args) ???
+        EntityModel<UserDTO> entityModel = assembler.toModel(userService.updateUser(updatedUser)); // updateUser(which args) ???
         return ResponseEntity
                 .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
                 .body(entityModel);
@@ -53,7 +53,7 @@ public class UserController {
 
     @GetMapping("/{username}")
     @Secured("ROLE_USER")
-    public EntityModel<User> getUser(@PathVariable("username") String username){
+    public EntityModel<UserDTO> getUser(@PathVariable("username") String username){
         return assembler.toModel(userService.findByUsername(username));
     }
 
