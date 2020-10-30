@@ -68,5 +68,10 @@ public class UserServiceJpa implements UserService {
         return user; //fix this
         //TODO throw new FailedLoginException (and create it)
     }
+
+    @Override
+    public boolean deleteUser(String username) {
+        return userRepository.deleteUserByUsername(username);
+    }
 }
 

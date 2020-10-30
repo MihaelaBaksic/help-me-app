@@ -33,6 +33,10 @@ public interface UserService {
     User findByUsername(String username);
 
 
+    // TODO loginUser accepts Login and not LoginDTO
     User loginUser(LoginDTO loginDTO);
+
+    // TODO check which is better to write: that services use User or just username ?
+    boolean deleteUser(String username);
 
 }

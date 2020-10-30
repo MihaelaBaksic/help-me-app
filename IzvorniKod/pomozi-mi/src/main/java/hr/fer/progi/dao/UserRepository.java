@@ -15,9 +15,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 
     // TODO check this query. Does it need to have custom query, or can JPA automatically query it?
-    @Query("SELECT r FROM Request r WHERE r.requestAutor.username = :username")
+    @Query("SELECT r FROM Request r WHERE r.requestAuthor.username = :username")
     List<Request> findAllUserRequests(
             @Param("username") String username);
 
     int countByUsername(String username);
+
+    boolean deleteUserByUsername(String username);
 }

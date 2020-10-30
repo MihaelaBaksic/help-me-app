@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 
+import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -65,25 +66,10 @@ public class User {
 	@NotNull
 	private UserStatus status;
 	
-	private Time blockedUntil;
+	private Time blockTime;
 
-	public User(@Size(min = 2, max = 30) String name, @Size(min = 2, max = 30) String surname,
-			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email, Date dateOfBirth,
-			String phoneNumber, boolean profilePicture, Address address, boolean administrator, UserStatus status,
-			Time blockedUntil) {
-		super();
-		this.name = name;
-		this.surname = surname;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.dateOfBirth = dateOfBirth;
-		this.phoneNumber = phoneNumber;
-		this.profilePicture = profilePicture;
-		this.address = address;
-		this.administrator = administrator;
-		this.status = status;
-		this.blockedUntil = blockedUntil;
+	public UserDTO mapToUserDTO() {
+		return new UserDTO(username, name, surname, email, administrator);
 	}
-	
+
 }
