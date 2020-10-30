@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  16 OCT 2020 09:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  28 OCT 2020 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,7 +1055,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...{Indeks slika i dijagrama}{25}{chapter*.5}
+l.29 ...{Indeks slika i dijagrama}{35}{chapter*.5}
                                                   % [1
 
 ])
@@ -1074,87 +1074,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 16.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
+[]\OT1/jkp/m/n/12 28.10.2020.|  
+ []
+
+
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 24.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 25.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 26.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 07.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 08.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 09.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 10.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 14.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 19.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 20.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 36--36
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
 []\OT1/jkp/m/n/12 28.09.2013.|  
  []
 
@@ -1244,17 +1249,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[10] [11] [12] [13] [14] [15] [16] [17]
+Overfull \hbox (6.21745pt too wide) in paragraph at lines 659--660
+[]\OT1/jkp/m/n/12 Javnom ko-ris-niku is-pi-suje se po-ruka o po-gre[]sci lo-zin
+ke ili ko-risni[]ckog
+ []
+
+[18]
+Overfull \hbox (1.82549pt too wide) in paragraph at lines 744--745
+[]\OT1/jkp/m/n/12 Prilikom blo-ki-ra-nja zah-tjeva svim po-ten-ci-jal-nim izvr[
+]siteljima se dos-
+ []
+
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 799--800
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
-
+[21]
+Overfull \hbox (16.91959pt too wide) in paragraph at lines 807--808
+[]\OT1/jkp/m/n/12 Aplikacija treba biti iz-ve-dena kao web apli-ka-cija prilago
+[]dena mo-bil-nom ure[]daju. 
  []
 
-) [12]
+) [22]
 \openout2 = `Arhitektura.aux'.
 
  (./Arhitektura.tex
@@ -1286,12 +1304,12 @@ Overfull \hbox (1.82492pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 korisnickoIme|  
  []
 
-[13
+[23
 
 
 
 
-] [14]
+] [24]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -1311,22 +1329,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[15]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[16]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[17]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-) [18]
+) [28]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -1346,7 +1364,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[19
+[29
 
 
 
@@ -1361,12 +1379,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[20] [21]
+[30] [31]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[22])
+[32])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1381,7 +1399,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[23
+[33
 
 
 
@@ -1401,7 +1419,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [24
+) [34
 
 
 
@@ -1410,7 +1428,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [25
+ [35
 
 
 
@@ -1422,7 +1440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[26
+[36
 
 
 ]
@@ -1430,12 +1448,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[27] [28]
+[37] [38]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [29] 
+) [39] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1446,9 +1464,9 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 26A8BCB67D725A514DBBD4F4C06AD182;1813.
  ) 
 Here is how much of TeX's memory you used:
- 11962 strings out of 479916
- 171227 string characters out of 5886648
- 552757 words of memory out of 5000000
+ 12084 strings out of 479916
+ 172123 string characters out of 5886648
+ 552763 words of memory out of 5000000
  28102 multiletter control sequences out of 15000+600000
  590401 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1463,11 +1481,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (30 pages, 145572 bytes).
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (40 pages, 164068 bytes).
 
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 368 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 500000)
+ 607 PDF objects out of 1000 (max. 8388607)
+ 550 compressed objects within 6 object streams
+ 220 named destinations out of 1000 (max. 500000)
  222 words of extra memory for PDF output out of 10000 (max. 10000000)
 
