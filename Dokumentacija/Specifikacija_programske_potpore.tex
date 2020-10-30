@@ -2,20 +2,15 @@
 		
 	\section{Funkcionalni zahtjevi}
 			
-			\textbf{\textit{dio 1. revizije}}\\
-			
-			\textit{Navesti \textbf{dionike} koji imaju \textbf{interes u ovom sustavu} ili  \textbf{su nositelji odgovornosti}. To su prije svega korisnici, ali i administratori sustava, naručitelji, razvojni tim.}\\
-				
-			\textit{Navesti \textbf{aktore} koji izravno \textbf{koriste} ili \textbf{komuniciraju sa sustavom}. Oni mogu imati inicijatorsku ulogu, tj. započinju određene procese u sustavu ili samo sudioničku ulogu, tj. obavljaju određeni posao. Za svakog aktora navesti funkcionalne zahtjeve koji se na njega odnose.}\\
 			
 			
 			\noindent \textbf{Dionici:}
 			
 			\begin{packed_enum}
 				
-				\item Dionik 1
-				\item Dionik 2				
-				\item ...
+				\item Korisnik web aplikacije
+				\item Administrator
+				\item Razvojni tim
 				
 			\end{packed_enum}
 			
@@ -23,29 +18,59 @@
 			
 			
 			\begin{packed_enum}
-				\item  \underbar{Aktor 1 (inicijator) može:}
+				\item  \underbar{Neregistrirani korisnik može:}
 				
 				\begin{packed_enum}
 					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
-					\begin{packed_enum}
-						
-						\item  podfunkcionalnost 1 
-						\item  podfunkcionalnost 2
-				
-					\end{packed_enum}
-					\item  funkcionalnost 3
+					\item napraviti korisnički račun
+					\item prijaviti se u sustav
+					
 					
 				\end{packed_enum}
-			
-				\item  \underbar{Aktor 2 (sudionik) može:}
+				
+				\item  \underbar{Registrirani korisnik može}
 				
 				\begin{packed_enum}
 					
-					\item funkcionalnost 1
-					\item funkcionalnost 2
+					\item zadati (objaviti) novi zahtjev
+					\begin{packed_enum}
+						\item odabrati lokaciju zahtjeva
+						
+					\end{packed_enum}
+					\item pregledati vlastiti profil
+					\begin{packed_enum}
+						\item pregledati javljanja na tuđe zahtjeve
+						\item upravljati korisničkim računom
+						\item obrisati vlastiti korisnički račun
+					\end{packed_enum}
+					\item pregledati vlastite zahtjeve
+					\begin{packed_enum}
+						\item upravljati vlastitim zahtjevima
+						\item pregledati potencijalne izvršitelje
+						\begin{packed_enum}
+							\item prihvatiti izvršitelja
+							\item odbiti izvršitelja	
+						\end{packed_enum}
+					\end{packed_enum}
+					\item pregledavati listu aktivnih zahtjeva
+					\begin{packed_enum}
+						\item filtrirati zahtjeve
+						\item promijeniti lokaciju izvršavanja
+						\item javiti se na zahtjev	
+					\end{packed_enum}
+					\item pregledati profil drugog korisnika
+					\item  ocijeniti drugog korisnika
+					\item izvršiti zahtjev
+					\item pregledati statistiku
+					\item odjaviti se iz sustava
 					
+				\end{packed_enum}
+				\item  \underbar{Administrator}
+				\begin{packed_enum}
+					\item izvršavati sve mogućnosti kao registrirani korisnik
+					\item dodati novog administratora	
+					\item administrirati zahtjeve
+					\item administrirati korisnika
 				\end{packed_enum}
 			\end{packed_enum}
 			
