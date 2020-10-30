@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
+	
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -65,5 +65,25 @@ public class User {
 	@NotNull
 	private UserStatus status;
 	
-	private Time blockTime;
+	private Time blockedUntil;
+
+	public User(@Size(min = 2, max = 30) String name, @Size(min = 2, max = 30) String surname,
+			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email, Date dateOfBirth,
+			String phoneNumber, boolean profilePicture, Address address, boolean administrator, UserStatus status,
+			Time blockedUntil) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.dateOfBirth = dateOfBirth;
+		this.phoneNumber = phoneNumber;
+		this.profilePicture = profilePicture;
+		this.address = address;
+		this.administrator = administrator;
+		this.status = status;
+		this.blockedUntil = blockedUntil;
+	}
+	
 }

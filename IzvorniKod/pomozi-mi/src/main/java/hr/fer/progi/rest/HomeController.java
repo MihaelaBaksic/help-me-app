@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
-
+import hr.fer.progi.mappers.*;
 @RestController
 @RequestMapping("/")
 public class HomeController {
@@ -27,8 +27,8 @@ public class HomeController {
     private UserService userService;
 
     @PostMapping("/register")
-    ResponseEntity<User> register(User user){
-        return ResponseEntity.ok(userService.registerUser(user));
+    ResponseEntity<User> register(RegistrationDTO regDTO){
+        return ResponseEntity.ok(userService.registerUser(regDTO.mapToUser()));
     }
 
     /*@PostMapping("/login")
