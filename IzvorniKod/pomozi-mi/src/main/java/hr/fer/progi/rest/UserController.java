@@ -57,4 +57,12 @@ public class UserController {
         return assembler.toModel(userService.findByUsername(username).mapToUserDTO());
     }
 
+    @DeleteMapping("/{username}")
+    @Secured("ROLE_USER")
+    public ResponseEntity<String> deleteUser(@RequestBody String username) {
+        return userService.deleteUser(username) ?
+                ResponseEntity.ok("User deleted successfully") : ResponseEntity.badRequest().body("User can't be deleted");
+    }
+
+
 }

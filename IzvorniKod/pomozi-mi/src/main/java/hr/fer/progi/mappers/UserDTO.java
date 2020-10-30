@@ -2,9 +2,9 @@ package hr.fer.progi.mappers;
 
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 
 public class UserDTO {
 
