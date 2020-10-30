@@ -9,10 +9,11 @@ import org.springframework.stereotype.Component;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @Component
-public class UserModelAssembler implements RepresentationModelAssembler<User, EntityModel<UserDTO>> {
+public class UserModelAssembler implements RepresentationModelAssembler<UserDTO, EntityModel<UserDTO>> {
     @Override
-    public EntityModel<UserDTO> toModel(User user) {
-        return EntityModel.of(new UserDTO(user.getUsername(), user.getName(), user.getSurname(), user.getEmail(), user.isAdministrator()),
-                linkTo(methodOn(UserController.class).getUser(user.getUsername())).withSelfRel());
+    public EntityModel<UserDTO> toModel(UserDTO userDTO) {
+        return EntityModel.of(new UserDTO(userDTO.getUsername(), userDTO.getName(), userDTO.getSurname(), userDTO.getEmail(), userDTO.isAdministrator()),
+                linkTo(methodOn(UserController.class).getUser(userDTO.getUsername())).withSelfRel());
     }
+
 }

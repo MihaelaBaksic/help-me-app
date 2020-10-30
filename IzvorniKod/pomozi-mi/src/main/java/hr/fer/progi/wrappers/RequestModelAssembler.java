@@ -18,22 +18,23 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Component
-public class RequestModelAssembler implements RepresentationModelAssembler<Request, EntityModel<RequestDTO>> {
+public class RequestModelAssembler implements RepresentationModelAssembler<RequestDTO, EntityModel<RequestDTO>> {
 
     @Override
-    public EntityModel<RequestDTO> toModel(Request request) {
-        if (request.getDuration() == null)
-            request.setDuration(new Time(7*24));
+    public EntityModel<RequestDTO> toModel(RequestDTO requestDTO) {
+        if (requestDTO.getDuration() == null)
+            requestDTO.setDuration(new Time(7*24));
 
-        return EntityModel.of(new RequestDTO(request.getId(), request.getDuration(), request.getComment(), request.getAddress(), request.getRequestAuthor()),
-                linkTo(methodOn(RequestController.class).getRequest(request.getId())).withSelfRel());
+        return EntityModel.of(new RequestDTO(requestDTO.getId(), requestDTO.getDuration(), requestDTO.getComment(), requestDTO.getAddress(), requestDTO.getRequestAuthor()),
+                linkTo(methodOn(RequestController.class).getRequest(requestDTO.getId())).withSelfRel());
     }
 
-    public CollectionModel<EntityModel<RequestDTO>> toCollectionModel(List<Request> requests) {
-        List<EntityModel<RequestDTO>> entityModels  = requests.stream() //
-                .map(this::toModel) //
+    public CollectionModel<EntityModel<RequestDTO>> toCollectionModel(List<RequestDTO> requestsDTO) {
+        List<EntityModel<RequestDTO>> entityModels  = requestsDTO.stream()
+                .map(this::toModel)
                 .collect(Collectors.toList());
 
-        return CollectionModel.of(entityModels, linkTo(methodOn(RequestController.class).getRequests()).withSelfRel());
+        return CollectionModel.of(entityModels,
+                linkTo(methodOn(RequestController.class).getRequests()).withSelfRel());
     }
 }

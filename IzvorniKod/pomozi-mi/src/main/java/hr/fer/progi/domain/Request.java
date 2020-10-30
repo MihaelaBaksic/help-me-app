@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 
 import com.sun.istack.NotNull;
 
+import hr.fer.progi.mappers.RequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -60,4 +61,8 @@ public class Request {
 		this.comment = comment;
 		this.address = address;
 	}
+
+    public RequestDTO mapToRequestDTO() {
+		return new RequestDTO(id, duration, comment, address, requestAuthor);
+    }
 }

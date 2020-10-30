@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 
+import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -66,4 +67,9 @@ public class User {
 	private UserStatus status;
 	
 	private Time blockTime;
+
+	public UserDTO mapToUserDTO() {
+		return new UserDTO(username, name, surname, email, administrator);
+	}
+
 }
