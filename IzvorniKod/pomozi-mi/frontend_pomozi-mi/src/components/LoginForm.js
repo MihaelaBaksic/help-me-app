@@ -1,11 +1,10 @@
 import React from "react";
 import logo from "./resources/zec.png";
-import {Link} from "react-router-dom"
+//import { Link } from "react-router-dom";
 
 function LoginForm(props) {
-
-	function onRegister(){
-		props.history.push('/register')
+	function onRegister() {
+		props.history.push("/register");
 	}
 
 	return (
@@ -39,7 +38,11 @@ function LoginForm(props) {
 					<button type="submit" className="btn btn-primary btn-lg">
 						Login
 					</button>
-					<button type="submit" className="btn btn-secondary btn-lg" onClick = {() => onRegister()}>
+					<button
+						type="button"
+						className="btn btn-secondary btn-lg"
+						onClick={() => onRegister()}
+					>
 						Register
 					</button>
 				</div>
