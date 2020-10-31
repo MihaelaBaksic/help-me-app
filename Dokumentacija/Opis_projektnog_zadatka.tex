@@ -4,7 +4,20 @@
 Cilj ovog projekta je razvoj programske potpore za stvaranje web aplikacije \textit{"Pomozi mi"} koja svojim korisnicima omogućuje potraživanje nečije pomoći, ali i pružanje svoje pomoći. 
 Primjerice, tako bi korisnik mogao otići po mlijeko za bolesnu susjedu koja je to zatražila, a ujedno prijatelja iz IT sektora zamoliti da mu pomogne namjestiti postavke pisača. 
 
-Zbog prirode aplikacije, samo će korisnici s napravljenim računom moći pregledati zahtjeve za pomoć i objaviti svoje. Da bi korisnik napravio svoj račun, bit će potrebni:
+Pretragom tržišta trenutno dostupnih aplikacija, nismo pronašli aplikaciju koja nudi slična rješenja. Većina pronađenih aplikacija nudi vrlo specifičan način pomoći, a aplikacije su isključivo za Android i iOS mobilne uređaje \textit{(Be my eyes, Kindly, uCiC, Mayo)}. Najsličnija aplikacija našem rješenju je \textit{Mayo (u razvoju, slika 2.1)}, ali i tu postoje vidljive velike razlike kao što su: registracija u spomenutu aplikaciju nije potrebna (anonimnost), dostupnost samo za mobilne uređaje.\\
+
+
+\begin{figure}[H]
+	\includegraphics[scale=0.2]{slike/mayo-hero.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+	\centering
+	\caption{Primjer konkurentne aplikacije}
+\end{figure}
+
+Zbog prirode naše aplikacije, samo će korisnici s napravljenim računom moći pregledati zahtjeve za pomoć i objaviti svoje.
+
+\pagebreak
+ Da bi korisnik napravio svoj račun, bit će potrebni:
+
 \begin{packed_item}
 	\item Korisničko ime
 	\item E-mail adresa
@@ -12,129 +25,46 @@ Zbog prirode aplikacije, samo će korisnici s napravljenim računom moći pregle
 	\item Ime
 	\item Prezime
 	\item Preferirana lokacija
-	\item Kontakt broj
+	\item Kontakt broj mobitela
 	\item Datum rođenja
 \end{packed_item}
 
-Kada korisnik stvori svoj račun, omogućena mu je mogućnost prijave u aplikaciju unosom svojeg korisničkog imena/e-mail adrese i zaporke.
+Kada korisnik stvori svoj račun, omogućena mu je mogućnost prijave u aplikaciju unosom svojeg korisničkog imena i zaporke.
 
-Prijavljenom korisniku sada se prikazuju zahtjevi za pomoć na početnom zaslonu, a pomoću intuitivnog korisničkog sučelja može postaviti svoj zahtjev za koji potražuje pomoć. 
-\begin{packed_item}
-	\item \textsf{potencijalna korist ovog projekta}
-	\item \textit{postojeća slična rješenja (istražiti i ukratko opisati razlike u odnosu na zadani zadatak). Dodajte slike koja predočavaju slična rješenja.}
-	\item \textit{skup korisnika koji bi mogao biti zainteresiran za ostvareno rješenje.}
-	\item \textit{mogućnost prilagodbe rješenja }
-	\item \textit{opseg projektnog zadatka}
-	\item \textit{moguće nadogradnje projektnog zadatka}
-\end{packed_item}
+Prijavljenom korisniku sada se prikazuju zahtjevi za pomoć na početnom zaslonu, a pomoću intuitivnog korisničkog sučelja može postaviti svoj zahtjev za koji potražuje pomoć.
 
-\textit{Za pomoć pogledati reference navedene u poglavlju „Popis literature“, a po potrebi konzultirati sadržaj na internetu koji nudi dobre smjernice u tom pogledu.}
+Opišimo sada kako će tipični korisnik navigirati našom aplikacijom.
+Kada korisnik želi pomoći, odabire zahtjev s liste svih aktivnih zahtjeva
+koji se nalaze unutar jednog kilometra od lokacije uređaja, pri čemu se lista može
+proširiti na veće geografsko područje. Korisnik koji će provesti odabrani zahtjev
+se smatra \textbf{izvršiteljem zahtjeva}. Valja napomenuti kako je svaka lista sortirana po određenom redoslijedu i omogućeno je
+filtriranje zahtjeva prema kategorijama.\\
+Kada traži pomoć, govorimo o ulozi \textbf{autora zahtjeva}. Prilikom zadavanja, autor unosi opis i kontakt podatke poput broja mobitela, adrese (opcionalno) i datum i/ili vrijeme do kada se zahtjev treba izvršiti (opcionalno).//
+Budući da se više mogućih izvršitelja može javiti na jedan zahtjev, odabir onog konačnog vrši se metodom trostrukog rukovanja. To ćemo najbolje razjasniti primjerom: 
+
+	\begin{packed_item}
+	\item \textit {Teta Marica želi da joj netko donese 3kg krumpira (autor zahtjeva).}
+	
+	\item \textit {Ante i Marko vide da teta Marica treba pomoć i jave se na zahtjev (mogući izvršitelji).}
+	\item \textit {Marica vidi da su se obojica javila, ali recimo da je Ante bolje ocijenjen i njega odabere (Ante je izvršitelj).}
+	\end{packed_item}
+	Kada je izvršitelj odabran, razmjenjuju se kontakt informacije i kreće proces izvršenja koji ostavljamo gore navedenim.
+	
+	Postavlja se pitanje kako je teta Marica znala da je Ante "bolji" izvršitelj? Zahvaljujući sustavu međusobnog ocjenjivanja korisnika! Po izvršenju zahtjeva autor označava da je zahtjev izvršen nakon čega se korisnici međusobno ocjenjuju ocjenama od 1-5 te opcionalno upisuju komentare. Kako novi korisnici ne bi ostali zakinuti za povjerenje budućih autora zahtjeva, ocjenjivanje bilo kojeg korisnika aplikacije moguće je u bilo kojem trenutku (ne samo nakon izvršenja zadatka) i ocjene se vide u detaljima profila, kao i komentari. Također, moguće je vidjeti i
+	"lance povjerenja": da je korisnik kojeg ste vi visoko ocijenili ocijenio korisnika
+	čiji profil gledate.
+	
+	Kako bi se čovjek mogao prisjetiti svoje i tuđe humanosti, svaki korisnik može vidjeti listu zahtjeva koje je zadao i izvršio. Sustav
+	omogućuje i dodatne izvještaje/preglede, posebno one koji omogućuju
+	kandidiranje za najboljeg pomagača godine.
+	
+	Da bismo zajednicu učinili sigurnijom, uveli smo ulogu \textbf{administratora}. Administratori se brinu oko sadržaja koji se objavljuje; imaju ovlasti
+	brisanja zahtjeva koji se smatra opasnim, nemogućim, lažnim ili neetičkim te
+	privremenog i trajnog blokiranja svih korisnika aplikacije. Administratori se
+	dodjeljuju prema geografskim lokacijama. 
+	
+	Na kraju ovog opisa treba spomenuti nekoliko posebnosti. Ukoliko korisnik tijekom registracije ne želi unijeti svoju lokaciju, bit će mu vidljivi samo aktivni zahtjevi koji su označeni kao virtualni. Sjetimo se čovjeka koji je tražio pomoć oko namještanja postavki pisača, taj zahtjev je razumno označiti kao virtualni.
+	Također, kako naša spomenuta teta Marica ne bi morala uvijek unositi adresu kada stvara novi zahtjev, adresa zahtjeva može se povući iz adrese s kojom je registrirana i tako Marici uštedjeti nekoliko sekundi svakim zahtjevom.
 \eject
 
-\section{Primjeri u \LaTeX u}
-
-\textit{Ovo potpoglavlje izbrisati.}\\
-
-U nastavku se nalaze različiti primjeri kako koristiti osnovne funkcionalnosti \LaTeX a koje su potrebne za izradu dokumentacije. Za dodatnu pomoć obratiti se asistentu na projektu ili potražiti upute na sljedećim web sjedištima:
-\begin{itemize}
-	\item Upute za izradu diplomskog rada u \LaTeX u - \url{https://www.fer.unizg.hr/_download/repository/LaTeX-upute.pdf}
-	\item \LaTeX\ projekt - \url{https://www.latex-project.org/help/}
-	\item StackExchange za Tex - \url{https://tex.stackexchange.com/}\\
-	
-\end{itemize} 	
-
-
-
-\noindent \underbar{podcrtani tekst}, \textbf{podebljani tekst}, 	\textit{nagnuti tekst}\\
-\noindent \normalsize primjer \large primjer \Large primjer \LARGE {primjer} \huge {primjer} \Huge primjer \normalsize
-
-\begin{packed_item}
-	
-	\item  primjer
-	\item  primjer
-	\item  primjer
-	\item[] \begin{packed_enum}
-		\item primjer
-		\item[] \begin{packed_enum}
-			\item[1.a] primjer
-			\item[b] primjer
-		\end{packed_enum}
-		\item primjer
-	\end{packed_enum}
-	
-\end{packed_item}
-
-\noindent primjer url-a: \url{https://www.fer.unizg.hr/predmet/proinz/projekt}
-
-\noindent posebni znakovi: \# \$ \% \& \{ \} \_ 
-$|$ $<$ $>$ 
-\^{} 
-\~{} 
-$\backslash$ 
-
-\begin{longtabu} to \textwidth {|X[8, l]|X[8, l]|X[16, l]|} %definicija širine tablice, širine stupaca i poravnanje
-	
-	%definicija naslova tablice
-	\hline \multicolumn{3}{|c|}{\textbf{naslov unutar tablice}}	 \\[3pt] \hline
-	\endfirsthead
-	
-	%definicija naslova tablice prilikom prijeloma
-	\hline \multicolumn{3}{|c|}{\textbf{naslov unutar tablice}}	 \\[3pt] \hline
-	\endhead
-	
-	\hline 
-	\endlastfoot
-	
-	\rowcolor{LightGreen}IDKorisnik & INT	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-	korisnickoIme	& VARCHAR &   	\\ \hline 
-	email & VARCHAR &   \\ \hline 
-	ime & VARCHAR	&  		\\ \hline 
-	\cellcolor{LightBlue} primjer	& VARCHAR &   	\\ \hline 
-	
-\end{longtabu}
-
-
-\begin{table}[H]
-	
-	\begin{longtabu} to \textwidth {|X[8, l]|X[8, l]|X[16, l]|} 
-		
-		\hline 
-		\endfirsthead
-		
-		\hline 
-		\endhead
-		
-		\hline 
-		\endlastfoot
-		
-		\rowcolor{LightGreen}IDKorisnik & INT	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-		korisnickoIme	& VARCHAR &   	\\ \hline 
-		email & VARCHAR &   \\ \hline 
-		ime & VARCHAR	&  		\\ \hline 
-		\cellcolor{LightBlue} primjer	& VARCHAR &   	\\ \hline 
-		
-		
-	\end{longtabu}
-	
-	\caption{\label{tab:referencatablica} Naslov ispod tablice.}
-\end{table}
-
-
-%unos slike
-\begin{figure}[H]
-	\includegraphics[scale=0.4]{slike/aktivnost.PNG} %veličina slike u odnosu na originalnu datoteku i pozicija slike
-	\centering
-	\caption{Primjer slike s potpisom}
-	\label{fig:promjene}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=.9\linewidth]{slike/aktivnost.PNG} %veličina u odnosu na širinu linije
-	\caption{Primjer slike s potpisom 2}
-	\label{fig:promjene2} %label mora biti drugaciji za svaku sliku
-\end{figure}
-
-Referenciranje slike \ref{fig:promjene2} u tekstu.
-
-\eject
 
