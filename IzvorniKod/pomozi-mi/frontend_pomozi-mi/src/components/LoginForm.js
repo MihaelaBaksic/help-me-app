@@ -1,7 +1,13 @@
 import React from "react";
 import logo from "./resources/zec.png";
+import {Link} from "react-router-dom"
 
-function LoginForm() {
+function LoginForm(props) {
+
+	function onRegister(){
+		props.history.push('/register')
+	}
+
 	return (
 		<div>
 			<div className="formHeader">
@@ -25,15 +31,15 @@ function LoginForm() {
 					></input>
 				</div>
 
-				<div class="form-group form-check">
-					<input type="checkbox" class="form-check-input" />
-					<label class="form-check-label">Zapamti me?</label>
+				<div className="form-group form-check">
+					<input type="checkbox" className="form-check-input" />
+					<label className="form-check-label">Zapamti me?</label>
 				</div>
 				<div className="loginRegisterGumbi">
-					<button type="submit" class="btn btn-primary btn-lg">
+					<button type="submit" className="btn btn-primary btn-lg">
 						Login
 					</button>
-					<button type="submit" class="btn btn-secondary btn-lg">
+					<button type="submit" className="btn btn-secondary btn-lg" onClick = {() => onRegister()}>
 						Register
 					</button>
 				</div>
