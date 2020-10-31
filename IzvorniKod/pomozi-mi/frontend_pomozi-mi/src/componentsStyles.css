@@ -65,4 +65,6 @@ body {
 
 .searchButton {
 	padding: 0;
+	min-width: 3em;
+	max-width: 3em;
 }
