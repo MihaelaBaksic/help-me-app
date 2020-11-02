@@ -7,18 +7,47 @@ function LoginForm(props) {
 		props.history.push("/register");
 	}
 
+	const [loginForm, setLoginForm] = React.useState({
+		username: "",
+		password: "",
+	});
+
+	function onChange(event) {
+		const { name, value } = event.target;
+		setLoginForm((oldLoginForm) => ({ ...oldLoginForm, [name]: value }));
+	}
+
+	function onSubmit(e) {
+		e.preventDefault();
+		const loginData = {
+			username: loginForm.username,
+			password: loginForm.password,
+		};
+		const options = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(loginData),
+		};
+
+		return fetch("/login", options);
+	}
+
 	return (
 		<div>
 			<div className="formHeader">
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
 				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>
 			</div>
-			<form>
+			<form onSubmit={onSubmit}>
 				<div className="form-group">
 					<input
 						name="username"
 						className="form-control"
 						placeholder="Unesite username"
+						onChange={onChange}
+						value={loginForm.username}
 					></input>
 				</div>
 				<div className="form-group">
@@ -27,6 +56,8 @@ function LoginForm(props) {
 						type="password"
 						className="form-control"
 						placeholder="Unesite lozinku"
+						onChange={onChange}
+						value={loginForm.password}
 					></input>
 				</div>
 
@@ -34,7 +65,7 @@ function LoginForm(props) {
 					<input type="checkbox" className="form-check-input" />
 					<label className="form-check-label">Zapamti me?</label>
 				</div>
-				<div className="loginRegisterGumbi">
+				<div className="loginOrRegisterBtns">
 					<button type="submit" className="btn btn-primary btn-lg">
 						Login
 					</button>

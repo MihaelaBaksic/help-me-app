@@ -23,7 +23,7 @@ body {
 	height: 100%;
 }
 
-.loginRegisterGumbi {
+.loginOrRegisterBtns {
 	display: flex;
 	justify-content: space-between;
 }
