@@ -4,12 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.sun.istack.NotNull;
 
@@ -26,7 +21,7 @@ public class Request {
 
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@NotNull
@@ -39,17 +34,17 @@ public class Request {
 	@Column(length = 512)
 	private String comment;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@NotNull
 	private User requestAuthor;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private User requestHandler;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private Set<User> potentialHandler;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@NotNull
 	private Address address;
 	

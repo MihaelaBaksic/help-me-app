@@ -25,7 +25,7 @@ public class CreateRequestDTO {
         newRequest.setRequestStartTime( new Date(System.currentTimeMillis()));
         newRequest.setDuration(this.duration);
         newRequest.setComment(this.comment);
-        newRequest.setRequestAutor(author);
+        newRequest.setRequestAuthor(author);
         newRequest.setAddress(this.address);
         newRequest.setStatus(RequestStatus.ACTNOANS);
 

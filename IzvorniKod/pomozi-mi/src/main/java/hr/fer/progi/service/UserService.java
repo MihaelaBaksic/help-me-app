@@ -4,6 +4,8 @@ import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.LoginDTO;
 import hr.fer.progi.mappers.UserDTO;
+import org.apache.coyote.Response;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 

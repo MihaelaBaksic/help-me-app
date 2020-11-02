@@ -1,11 +1,11 @@
 package hr.fer.progi.mappers;
 
-import java.sql.Date;
 import java.sql.Time;
+
+import hr.fer.progi.domain.Location;
 import lombok.Data;
 import hr.fer.progi.domain.User;
 import javax.persistence.Column;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
@@ -43,32 +43,34 @@ public class RegistrationDTO {
 	@NotNull
 	@Column(unique = true)
 	private String email;
-	
-	@NotNull
-	private Date dateOfBirth;
-	
+
 	@NotNull
 	@Column(unique = true)
 	private String phoneNumber;
 	
-	private boolean profilePicture;
-	
-	@ManyToOne
-	private Address address;
+	private String streetName;
+
+	private int streetNo;
+
+	private Long cityCode;
+
+	private String cityName;
 	
 	public RegistrationDTO(@Size(min = 2, max = 30) String name, @Size(min = 2, max = 30) String surname,
-			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email, Date dateOfBirth,
-			String phoneNumber, boolean profilePicture, Address address) {
-		super();
+			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
+			String phoneNumber, String streetName, int streetNo,
+						   Long cityCode,String cityName ) {
+
 		this.name = name;
 		this.surname = surname;
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.dateOfBirth = dateOfBirth;
 		this.phoneNumber = phoneNumber;
-		this.profilePicture = profilePicture;
-		this.address = address;
+		this.streetName = streetName;
+		this.streetNo = streetNo;
+		this.cityCode = cityCode;
+		this.cityName = cityName;
 	}
 	
 	public User mapToUser() {
@@ -77,10 +79,13 @@ public class RegistrationDTO {
 		UserStatus status = UserStatus.NOTBLOCKED;
 		
 		Time blockedUntil = null;
+
+		Location location = new Location(cityCode, cityName);
+		Address address = new Address(this.streetName, this.streetNo, location);
 		
 		return new User(this.name, this.surname, 
-		this.username, this.password, this.email, this.dateOfBirth,
-		this.phoneNumber, this.profilePicture, this.address, 
+		this.username, this.password, this.email,
+		this.phoneNumber,  address,
 		admin, status, blockedUntil);
 	}
 }

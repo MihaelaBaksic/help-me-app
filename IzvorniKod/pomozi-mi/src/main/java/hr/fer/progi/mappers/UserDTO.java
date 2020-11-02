@@ -6,18 +6,14 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+@Data
 public class UserDTO {
 
-    @Getter @Setter
     private String username;
-    @Getter @Setter
     private String name;
-    @Getter @Setter
     private String surname;
-    @Getter @Setter
     private String email;
     //profile picture
-    @Getter @Setter
     private boolean administrator;
 
     public UserDTO(){
@@ -31,8 +27,6 @@ public class UserDTO {
         this.administrator = administrator;
     }
 
-
-
     public User mapToUser(){
         User user = new User();
         user.setUsername(this.username);
@@ -42,7 +36,5 @@ public class UserDTO {
         user.setAdministrator(this.administrator);
         return user;
     }
-
-
 
 }

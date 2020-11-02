@@ -3,11 +3,7 @@ package hr.fer.progi.domain;
 import java.sql.Date;
 import java.sql.Time;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
@@ -16,15 +12,17 @@ import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotNull
@@ -47,17 +45,16 @@ public class User {
 	@NotNull
 	@Column(unique = true)
 	private String email;
-	
-	@NotNull
-	private Date dateOfBirth;
-	
+
 	@NotNull
 	@Column(unique = true)
 	private String phoneNumber;
 	
 	private boolean profilePicture;
-	
-	@ManyToOne
+
+	@NotNull
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", referencedColumnName = "address_id")
 	private Address address;
 	
 	@NotNull
@@ -71,5 +68,22 @@ public class User {
 	public UserDTO mapToUserDTO() {
 		return new UserDTO(username, name, surname, email, administrator);
 	}
+
+	public User(String name, String surname, String username, String password,
+				String email, String phoneNumber,
+				Address address, boolean admin, UserStatus status, Time blockedUntil){
+		this.name=name;
+		this.surname=surname;
+		this.username=username;
+		this.password=password;
+		this.email=email;
+		this.phoneNumber=phoneNumber;
+		this.address=address;
+		this.administrator=admin;
+		this.status=status;
+		this.blockTime = blockedUntil;
+
+	}
+
 
 }
