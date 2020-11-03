@@ -1,34 +1,23 @@
 import React from "react";
-import logo from "./resources/zec.png";
-//import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import logo from "./resources/todo_logo.png";
 
 function LoginForm(props) {
 	function onRegister() {
 		props.history.push("/register");
 	}
 
-	const [loginForm, setLoginForm] = React.useState({
-		username: "",
-		password: "",
-	});
+	const { handleSubmit, register, errors } = useForm({});
 
-	function onChange(event) {
-		const { name, value } = event.target;
-		setLoginForm((oldLoginForm) => ({ ...oldLoginForm, [name]: value }));
-	}
-
-	function onSubmit(e) {
+	function onSubmit(values, e) {
 		e.preventDefault();
-		const loginData = {
-			username: loginForm.username,
-			password: loginForm.password,
-		};
+
 		const options = {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify(loginData),
+			body: JSON.stringify(values),
 		};
 
 		return fetch("/login", options);
@@ -40,15 +29,26 @@ function LoginForm(props) {
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
 				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>
 			</div>
-			<form onSubmit={onSubmit}>
+			<form onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-group">
 					<input
 						name="username"
 						className="form-control"
 						placeholder="Unesite username"
-						onChange={onChange}
-						value={loginForm.username}
-					></input>
+						ref={register({
+							maxLength: {
+								value: 30,
+								message: "Predugačko korisničko ime",
+							},
+							required: {
+								value: "Required",
+								message: "Korisničko ime je obavezno",
+							},
+						})}
+					/>
+					<div className="error-message">
+						{errors.username && errors.username.message}
+					</div>
 				</div>
 				<div className="form-group">
 					<input
@@ -56,15 +56,22 @@ function LoginForm(props) {
 						type="password"
 						className="form-control"
 						placeholder="Unesite lozinku"
-						onChange={onChange}
-						value={loginForm.password}
-					></input>
+						ref={register({
+							required: {
+								value: "Required",
+								message: "Lozinka je obavezna",
+							},
+						})}
+					/>
+					<div className="error-message">
+						{errors.password && errors.password.message}
+					</div>
 				</div>
 
-				<div className="form-group form-check">
+				{/* <div className="form-group form-check">
 					<input type="checkbox" className="form-check-input" />
 					<label className="form-check-label">Zapamti me?</label>
-				</div>
+					</div> */}
 				<div className="loginOrRegisterBtns">
 					<button type="submit" className="btn btn-primary btn-lg">
 						Login

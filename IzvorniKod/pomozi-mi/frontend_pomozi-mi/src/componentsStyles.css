@@ -4,7 +4,7 @@ body {
 		to bottom right,
 		#00bcd4,
 		#b2ebf2,
-		#ff5722
+		#5fffcf
 	);
 }
 
@@ -67,4 +67,8 @@ body {
 	padding: 0;
 	min-width: 3em;
 	max-width: 3em;
+}
+
+.error-message {
+	color: red;
 }
