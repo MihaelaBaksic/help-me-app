@@ -6,43 +6,35 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+@Data
 public class UserDTO {
 
-    @Getter @Setter
     private String username;
-    @Getter @Setter
-    private String name;
-    @Getter @Setter
-    private String surname;
-    @Getter @Setter
+    private String firstName;
+    private String lastName;
     private String email;
     //profile picture
-    @Getter @Setter
     private boolean administrator;
 
     public UserDTO(){
     }
 
-    public UserDTO(String username, String name, String surname, String email, boolean administrator){
+    public UserDTO(String username, String firstName, String lastName, String email, boolean administrator){
         this.username = username;
-        this.name = name;
-        this.surname = surname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.administrator = administrator;
     }
 
-
-
     public User mapToUser(){
         User user = new User();
         user.setUsername(this.username);
-        user.setName(this.name);
-        user.setSurname(this.surname);
+        user.setFirstName(this.firstName);
+        user.setLastName(this.lastName);
         user.setEmail(this.email);
         user.setAdministrator(this.administrator);
         return user;
     }
-
-
 
 }

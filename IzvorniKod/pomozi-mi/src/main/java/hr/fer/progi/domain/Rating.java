@@ -1,10 +1,6 @@
 package hr.fer.progi.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import com.sun.istack.NotNull;
 
@@ -16,7 +12,7 @@ public class Rating {
 
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@NotNull
@@ -26,13 +22,13 @@ public class Rating {
 	private String comment;
 	
 	@NotNull
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private User reviewer;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@NotNull
 	private User rated;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Request request;
 }

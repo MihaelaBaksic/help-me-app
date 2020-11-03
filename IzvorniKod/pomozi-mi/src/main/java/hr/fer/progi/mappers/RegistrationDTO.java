@@ -1,11 +1,11 @@
 package hr.fer.progi.mappers;
 
-import java.sql.Date;
 import java.sql.Time;
+
+import hr.fer.progi.domain.Location;
 import lombok.Data;
 import hr.fer.progi.domain.User;
 import javax.persistence.Column;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
@@ -25,11 +25,11 @@ public class RegistrationDTO {
 
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String name;
+	private String firstName;
 	
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String surname;
+	private String lastName;
 	
 	@NotNull
 	@Column(unique = true)
@@ -43,32 +43,34 @@ public class RegistrationDTO {
 	@NotNull
 	@Column(unique = true)
 	private String email;
-	
-	@NotNull
-	private Date dateOfBirth;
-	
+
 	@NotNull
 	@Column(unique = true)
 	private String phoneNumber;
 	
-	private boolean profilePicture;
+	private String streetName;
+
+	private int streetNumber;
+
+	private Long cityCode;
+
+	private String cityName;
 	
-	@ManyToOne
-	private Address address;
-	
-	public RegistrationDTO(@Size(min = 2, max = 30) String name, @Size(min = 2, max = 30) String surname,
-			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email, Date dateOfBirth,
-			String phoneNumber, boolean profilePicture, Address address) {
-		super();
-		this.name = name;
-		this.surname = surname;
+	public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
+			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
+			String phoneNumber, String streetName, int streetNumber,
+						   Long cityCode,String cityName ) {
+
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.dateOfBirth = dateOfBirth;
 		this.phoneNumber = phoneNumber;
-		this.profilePicture = profilePicture;
-		this.address = address;
+		this.streetName = streetName;
+		this.streetNumber = streetNumber;
+		this.cityCode = cityCode;
+		this.cityName = cityName;
 	}
 	
 	public User mapToUser() {
@@ -77,10 +79,13 @@ public class RegistrationDTO {
 		UserStatus status = UserStatus.NOTBLOCKED;
 		
 		Time blockedUntil = null;
+
+		Location location = new Location(cityCode, cityName);
+		Address address = new Address(this.streetName, this.streetNumber, location);
 		
-		return new User(this.name, this.surname, 
-		this.username, this.password, this.email, this.dateOfBirth,
-		this.phoneNumber, this.profilePicture, this.address, 
+		return new User(this.firstName, this.lastName,
+		this.username, this.password, this.email,
+		this.phoneNumber,  address,
 		admin, status, blockedUntil);
 	}
 }

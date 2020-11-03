@@ -1,21 +1,22 @@
 package hr.fer.progi.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
+
 @Data
+@NoArgsConstructor
+@Entity
 public class Address {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="address_id")
 	private Long id;
 	
 	@NotNull
@@ -26,7 +27,14 @@ public class Address {
 	private int streetNumber;
 	
 	@NotNull
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL)
+	@JoinColumn(name = "zip_code", referencedColumnName = "zip_code")
 	private Location location;
-	
+
+	public Address(String streetName, int streetNumber, Location location){
+		this.streetName=streetName;
+		this.streetNumber=streetNumber;
+		this.location=location;
+	}
+
 }

@@ -1,8 +1,10 @@
 package hr.fer.progi.service.impl;
 
 
+import hr.fer.progi.dao.AddressRepository;
+import hr.fer.progi.dao.LocationRepository;
 import hr.fer.progi.dao.UserRepository;
-import hr.fer.progi.domain.Request;
+import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.service.FailedLoginException;
 import hr.fer.progi.service.UserService;
@@ -22,6 +24,12 @@ public class UserServiceJpa implements UserService {
     private UserRepository userRepository;
 
     @Autowired
+    private LocationRepository locationRepository;
+
+    @Autowired
+    private AddressRepository addressRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
@@ -32,8 +40,17 @@ public class UserServiceJpa implements UserService {
     @Override
     public User registerUser(User user) {
         Assert.notNull(user, "User object must be given");
-        String username = user.getEmail();
+        String username = user.getUsername();
+        //System.out.println("USERNAME: " + username);
         Assert.hasText(username, "Username must be given");
+
+        /*Long zip =  user.getAddress().getLocation().getZipCode();
+        if( locationRepository.findById(zip)==null);
+            locationRepository.save(user.getAddress().getLocation());
+
+        Address addr = user.getAddress();
+        if( addressRepository.getIdIfExists(addr.getStreetName(), addr.getStreetNumber(), addr.getLocation().getZipCode()) == null)
+            addressRepository.save(addr); */
 
         if (userRepository.countByUsername(user.getUsername()) > 0)
             throw new IllegalArgumentException("User with Username: " + user.getUsername() + " already exists");
