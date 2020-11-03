@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Represents data transfer object(DTO) for {@link Rating} entity. 
+ */
 @Data
 public class RatingDTO {
     @NotNull
@@ -18,6 +21,11 @@ public class RatingDTO {
     private User rated;
     private Request request;
 
+    /**
+     * Creates new {@link Rating} from {@link RatingDTO}.
+     * @param reviewer request author.
+     * @return new rating
+     */
     public Rating mapToRating(User reviewer){
         Rating rating = new Rating();
         rating.setRating(this.rating);

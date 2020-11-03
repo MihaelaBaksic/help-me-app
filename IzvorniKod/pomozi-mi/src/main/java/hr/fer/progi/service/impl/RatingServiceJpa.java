@@ -11,6 +11,9 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 
+/**
+ * Implementation of {@link RatingService} interface.
+ */
 @Service
 public class RatingServiceJpa implements RatingService {
 

@@ -5,12 +5,18 @@ import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.service.RequestService;
+import net.bytebuddy.implementation.Implementation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
+
+/**
+ * Implementation of {@link RequestService} interface.
+ */
 @Service
 public class RequestServiceJpa implements RequestService {
 

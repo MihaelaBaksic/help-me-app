@@ -1,7 +1,6 @@
 package hr.fer.progi.mappers;
 
 import java.sql.Time;
-
 import hr.fer.progi.domain.Location;
 import lombok.Data;
 import hr.fer.progi.domain.User;
@@ -12,6 +11,12 @@ import com.sun.istack.NotNull;
 
 import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.UserStatus;
+
+/**
+ * Represents data which user writes when he/she
+ * registers to web page.
+ *
+ */
 @Data
 public class RegistrationDTO {
 
@@ -73,6 +78,10 @@ public class RegistrationDTO {
 		this.cityName = cityName;
 	}
 	
+	/**
+	 * Creates {@link User} from {@link RegistrationDTO}.
+	 * @return new User
+	 */
 	public User mapToUser() {
 		boolean admin = false;
 		

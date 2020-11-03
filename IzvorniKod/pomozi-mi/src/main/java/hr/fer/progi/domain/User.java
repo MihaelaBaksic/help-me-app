@@ -14,13 +14,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-
+/**
+ * Represents one user.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class User {
 
+	/**
+	 * Unique identifier for every user.
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -57,18 +62,49 @@ public class User {
 	@JoinColumn(name = "address_id", referencedColumnName = "address_id")
 	private Address address;
 	
+	/**
+	 * Tells whether user is administrator or no.
+	 * Default is not an administrator.
+	 */
 	@NotNull
 	private boolean administrator;
 	
+	/**
+	 * Represents status of users account.
+	 * Default is NOTBLOCKED.
+	 */
 	@NotNull
 	private UserStatus status;
 	
+	
+	/**
+	 * Represents time period in which user is blocked.
+	 */
 	private Time blockTime;
 
+	
+	/**
+	 * Creates new {@link UserDTO} from {@link User}.
+	 * @return new UserDTO
+	 */
 	public UserDTO mapToUserDTO() {
 		return new UserDTO(username, name, surname, email, administrator);
 	}
 
+	/**
+	 * Creates one user.
+	 * @param name User's name
+	 * @param surname User's surname
+	 * @param username User's username
+	 * @param password User's password
+	 * @param email User's email
+	 * @param phoneNumber User's phone number
+	 * @param address User's address
+	 * @param admin Is user admin or not
+	 * @param status User's account status
+	 * @param blockedUntil Time period in which user is blocked
+	 */
+	
 	public User(String name, String surname, String username, String password,
 				String email, String phoneNumber,
 				Address address, boolean admin, UserStatus status, Time blockedUntil){
@@ -80,7 +116,7 @@ public class User {
 		this.phoneNumber=phoneNumber;
 		this.address=address;
 		this.administrator=admin;
-		this.status=status;
+		this.status=status;       
 		this.blockTime = blockedUntil;
 
 	}

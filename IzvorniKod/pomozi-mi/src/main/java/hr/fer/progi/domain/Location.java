@@ -9,12 +9,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+/**
+ * Represents place of residence for registered user.
+ *
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Location {
+
 
 	@Id
 	@Column(name="zip_code")

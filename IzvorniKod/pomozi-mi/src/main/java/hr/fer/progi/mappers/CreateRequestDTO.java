@@ -11,6 +11,9 @@ import java.lang.ref.ReferenceQueue;
 import java.sql.Date;
 import java.sql.Time;
 
+/**
+ * Represents data which user writes when he/she creates new request.
+ */
 @Data
 @AllArgsConstructor
 public class CreateRequestDTO {
@@ -19,6 +22,12 @@ public class CreateRequestDTO {
     private String comment;
     private Address address;
 
+    
+    /**
+     * Wraps {@link CreateRequestDTO} to {@link Request}.
+     * @param author
+     * @return newly created request
+     */
     //TODO add all args constructor to Request and fix this or constructor accepting these args
     public  Request mapToRequest(User author){
         Request newRequest = new Request();
