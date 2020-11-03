@@ -25,11 +25,11 @@ public class RegistrationDTO {
 
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String name;
+	private String firstName;
 	
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String surname;
+	private String lastName;
 	
 	@NotNull
 	@Column(unique = true)
@@ -50,25 +50,25 @@ public class RegistrationDTO {
 	
 	private String streetName;
 
-	private int streetNo;
+	private int streetNumber;
 
 	private Long cityCode;
 
 	private String cityName;
 	
-	public RegistrationDTO(@Size(min = 2, max = 30) String name, @Size(min = 2, max = 30) String surname,
+	public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
 			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
-			String phoneNumber, String streetName, int streetNo,
+			String phoneNumber, String streetName, int streetNumber,
 						   Long cityCode,String cityName ) {
 
-		this.name = name;
-		this.surname = surname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.streetName = streetName;
-		this.streetNo = streetNo;
+		this.streetNumber = streetNumber;
 		this.cityCode = cityCode;
 		this.cityName = cityName;
 	}
@@ -81,9 +81,9 @@ public class RegistrationDTO {
 		Time blockedUntil = null;
 
 		Location location = new Location(cityCode, cityName);
-		Address address = new Address(this.streetName, this.streetNo, location);
+		Address address = new Address(this.streetName, this.streetNumber, location);
 		
-		return new User(this.name, this.surname, 
+		return new User(this.firstName, this.lastName,
 		this.username, this.password, this.email,
 		this.phoneNumber,  address,
 		admin, status, blockedUntil);

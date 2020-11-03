@@ -27,11 +27,11 @@ public class User {
 	
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String name;
+	private String firstName;
 	
 	@NotNull
 	@Size(min = 2, max = 30)
-	private String surname;
+	private String lastName;
 	
 	@NotNull
 	@Column(unique = true)
@@ -66,14 +66,14 @@ public class User {
 	private Time blockTime;
 
 	public UserDTO mapToUserDTO() {
-		return new UserDTO(username, name, surname, email, administrator);
+		return new UserDTO(username, firstName, lastName, email, administrator);
 	}
 
-	public User(String name, String surname, String username, String password,
+	public User(String firstName, String lastName, String username, String password,
 				String email, String phoneNumber,
 				Address address, boolean admin, UserStatus status, Time blockedUntil){
-		this.name=name;
-		this.surname=surname;
+		this.firstName=firstName;
+		this.lastName=lastName;
 		this.username=username;
 		this.password=password;
 		this.email=email;
