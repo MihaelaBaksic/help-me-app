@@ -6,6 +6,7 @@ import hr.fer.progi.dao.LocationRepository;
 import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.service.FailedLoginException;
 import hr.fer.progi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -82,7 +83,7 @@ public class UserServiceJpa implements UserService {
                 return user;
             }
         }
-        return user; //fix this
+        throw new FailedLoginException("User failed to login.");
         //TODO throw new FailedLoginException (and create it)
     }
 
