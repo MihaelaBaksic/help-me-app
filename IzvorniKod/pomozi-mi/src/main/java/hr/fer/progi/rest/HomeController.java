@@ -27,6 +27,7 @@ public class HomeController {
     @Autowired
     private WebSecurity webSecurity;
 
+    @CrossOrigin
     @PostMapping("/register")
     ResponseEntity<User> register(@RequestBody RegistrationDTO regDTO){
         PasswordEncoder encoder = webSecurity.getPasswordEncoder();

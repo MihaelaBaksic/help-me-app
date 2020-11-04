@@ -2,11 +2,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
+const registerUrl = "http://localhost:8080/register";
+
 function RegisterForm() {
 	const { handleSubmit, register, errors, watch } = useForm({});
 
-	function onSubmit(values, e) {
+	async function onSubmit(values, e) {
 		e.preventDefault();
+		delete values["confirmPassword"];
+		console.log(values);
 		const options = {
 			method: "POST",
 			headers: {
@@ -15,7 +19,9 @@ function RegisterForm() {
 			body: JSON.stringify(values),
 		};
 
-		return fetch("/register", options);
+		const response = await fetch(registerUrl, options);
+		console.log(response.json());
+		return response;
 	}
 
 	return (
@@ -105,7 +111,7 @@ function RegisterForm() {
 				</div>
 				<div className="form-group">
 					<input
-						name="repeatPassword"
+						name="confirmPassword"
 						type="password"
 						className="form-control"
 						placeholder="Potvrdite lozinku"
