@@ -1,0 +1,74 @@
+body {
+	height: 100vh;
+	background-image: linear-gradient(
+		to bottom right,
+		#00bcd4,
+		#b2ebf2,
+		#5fffcf
+	);
+}
+
+.formHolder {
+	display: flex;
+	align-items: center;
+	align-self: center;
+	justify-content: center;
+	height: 100%;
+	width: 50%;
+	margin: auto;
+	max-width: 350px;
+}
+
+#root {
+	height: 100%;
+}
+
+.loginOrRegisterBtns {
+	display: flex;
+	justify-content: space-between;
+}
+.formHeader {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.formLogo {
+	width: 50%;
+	margin: 15px;
+	border-radius: 10px;
+}
+
+.kratkiOpis {
+	display: inline;
+	font-size: 0.9em;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.header {
+	width: 100%;
+	height: 4rem;
+	background-color: #ff5722;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.searchField {
+	margin: 0;
+}
+
+.searchBar {
+	display: flex;
+	align-items: center;
+}
+
+.searchButton {
+	padding: 0;
+	min-width: 3em;
+	max-width: 3em;
+}
+
+.error-message {
+	color: red;
+}
