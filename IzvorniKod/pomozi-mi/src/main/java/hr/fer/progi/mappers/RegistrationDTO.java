@@ -2,7 +2,6 @@ package hr.fer.progi.mappers;
 
 import java.sql.Time;
 
-import hr.fer.progi.domain.Location;
 import lombok.Data;
 import hr.fer.progi.domain.User;
 import javax.persistence.Column;

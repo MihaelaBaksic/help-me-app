@@ -18,7 +18,6 @@ public class Rating {
 	@NotNull
 	private int rating;
 	
-	@NotNull
 	private String comment;
 	
 	@NotNull
