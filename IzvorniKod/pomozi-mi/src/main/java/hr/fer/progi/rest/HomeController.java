@@ -1,9 +1,13 @@
 package hr.fer.progi.rest;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
+import hr.fer.progi.dao.AddressRepository;
+import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.service.UserService;
+import hr.fer.progi.wrappers.UserModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,39 +17,25 @@ import hr.fer.progi.mappers.*;
 @RequestMapping("/")
 public class HomeController {
 
-    /*@GetMapping("")
-    public RedirectView getUser(@AuthenticationPrincipal User user){
-        if(user== null)
-            return new RedirectView("/login");
-        else
-            return new RedirectView("/requests");
-    }*/
-
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserModelAssembler assembler;
+
+    @Autowired
+    private AddressRepository addressRepository;
 
     @Autowired
     private WebSecurity webSecurity;
 
     @PostMapping("/register")
-    ResponseEntity<User> register(@RequestBody RegistrationDTO regDTO){
+    ResponseEntity<EntityModel<UserDTO>> register(@RequestBody RegistrationDTO regDTO){
         PasswordEncoder encoder = webSecurity.getPasswordEncoder();
         String encodedPass = encoder.encode(regDTO.getPassword());
         regDTO.setPassword(encodedPass);
-        return ResponseEntity.ok(userService.registerUser(regDTO.mapToUser()));
+
+        return ResponseEntity.ok(assembler.toModel(userService.registerUser(regDTO.mapToUser()).mapToUserDTO()));
     }
-
-    /*@PostMapping("/login")
-    ResponseEntity<User> login(LoginDTO login){
-        //check login
-        return ResponseEntity.ok(userService.loginUser(login));
-    }*/
-
-    /*@PostMapping("/logout")
-    @Secured("ROLE_USER")
-    ResponseEntity logout(@AuthenticationPrincipal User user){
-
-
-    }*/
 
 }

@@ -25,16 +25,20 @@ public class Address {
 	
 	@NotNull
 	private int streetNumber;
-	
-	@NotNull
-	@ManyToOne( cascade = CascadeType.ALL)
-	@JoinColumn(name = "zip_code", referencedColumnName = "zip_code")
-	private Location location;
 
-	public Address(String streetName, int streetNumber, Location location){
+	@NotNull
+	private Long zipCode;
+
+	@NotNull
+	@Size(min = 2, max = 50)
+	private String locationName;
+
+
+	public Address(String streetName, int streetNumber, Long zipCode, String locationName){
 		this.streetName=streetName;
 		this.streetNumber=streetNumber;
-		this.location=location;
+		this.zipCode=zipCode;
+		this.locationName=locationName;
 	}
 
 }

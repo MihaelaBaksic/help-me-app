@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface AddressRepository extends JpaRepository<Address, Long> {
 
-    @Query("SELECT a.id FROM Address a WHERE a.streetName = :streetName AND a.streetNumber= :streetNumber AND a.location.zipCode= :zipCode" )
+    @Query("SELECT a.id FROM Address a WHERE a.streetName = :streetName AND a.streetNumber= :streetNumber AND a.zipCode= :zipCode" )
     Long getIdIfExists(
             @Param("streetName") String streetName, @Param("streetNumber") int streetNumber,
             @Param("zipCode") Long zipCode);

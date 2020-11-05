@@ -80,8 +80,7 @@ public class RegistrationDTO {
 		
 		Time blockedUntil = null;
 
-		Location location = new Location(cityCode, cityName);
-		Address address = new Address(this.streetName, this.streetNumber, location);
+		Address address = new Address(this.streetName, this.streetNumber, this.cityCode, this.cityName);
 		
 		return new User(this.firstName, this.lastName,
 		this.username, this.password, this.email,

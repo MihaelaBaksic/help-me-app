@@ -19,7 +19,7 @@ public class Location {
 	@Id
 	@Column(name="zip_code")
 	private Long zipCode;
-	
+
 	@NotNull
 	@Size(min = 2, max = 50)
 	private String locationName;
