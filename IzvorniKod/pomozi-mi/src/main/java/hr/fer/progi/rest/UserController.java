@@ -5,13 +5,13 @@ import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.UserService;
 import hr.fer.progi.wrappers.UserModelAssembler;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,10 +28,12 @@ public class UserController {
         this.assembler = assembler;
     }
 
-    @GetMapping("")
+    @GetMapping("/getCurrentUser")
     @Secured("ROLE_USER")
-    public EntityModel<UserDTO> getCurrentUser(@AuthenticationPrincipal User user){
-            return assembler.toModel(user.mapToUserDTO());
+    public ResponseEntity<EntityModel<UserDTO>> getCurrentUser(){
+        String username =  SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userService.findByUsername(username);
+        return ResponseEntity.ok(assembler.toModel(user.mapToUserDTO()));
     }
 
     @GetMapping("/settings")
