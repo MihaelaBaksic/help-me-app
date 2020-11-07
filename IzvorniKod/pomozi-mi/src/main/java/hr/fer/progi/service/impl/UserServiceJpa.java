@@ -2,9 +2,7 @@ package hr.fer.progi.service.impl;
 
 
 import hr.fer.progi.dao.AddressRepository;
-import hr.fer.progi.dao.LocationRepository;
 import hr.fer.progi.dao.UserRepository;
-import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.service.FailedLoginException;
 import hr.fer.progi.service.UserService;
@@ -22,9 +20,6 @@ public class UserServiceJpa implements UserService {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private LocationRepository locationRepository;
 
     @Autowired
     private AddressRepository addressRepository;

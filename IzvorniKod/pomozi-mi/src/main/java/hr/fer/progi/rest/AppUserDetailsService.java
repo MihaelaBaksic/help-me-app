@@ -20,7 +20,7 @@ import java.util.Optional;
 public class AppUserDetailsService implements UserDetailsService {
 
     @Value("${pomozi-mi.admin.password}")
-    private String adminPasswordHash = "pass";
+    private final String adminPasswordHash = "pass";
 
     @Autowired
     private UserService userService;
@@ -28,10 +28,22 @@ public class AppUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = Optional.ofNullable(userService.findByUsername(username));
-
         user.orElseThrow(()-> new UsernameNotFoundException("User not found : " + username));
 
-        System.out.println("THE USER IS FOUND" + username);
-        return new MyUserDetails(user.get());
+        org.springframework.security.core.userdetails.User us =  new org.springframework.security.core.userdetails.User(user.get().getUsername(),
+                user.get().getPassword(), true, true, true, true,
+                getGrantedAuthorities(user.get()));
+        System.out.println(us);
+        return us;
+    }
+
+    private static List<GrantedAuthority> getGrantedAuthorities(User user){
+        List<GrantedAuthority> authorities;
+
+        if (user.isAdministrator())
+            return commaSeparatedStringToAuthorityList("ROLE_ADMIN,ROLE_USER");
+        else
+            return commaSeparatedStringToAuthorityList("ROLE_USER");
+
     }
 }
