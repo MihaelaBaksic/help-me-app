@@ -53,7 +53,8 @@ public class User {
 	private boolean profilePicture;
 
 	@NotNull
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id", referencedColumnName = "address_id")
 	private Address address;
 	
 	@NotNull
