@@ -2,9 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
-const registerUrl = "http://localhost:8080/register";
+//za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
+//const registerUrl = "http://localhost:8080/register";
+const registerUrl = `${process.env.PUBLIC_URL}/register`;
 
-function RegisterForm() {
+function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
 
 	async function onSubmit(values, e) {
@@ -18,10 +20,35 @@ function RegisterForm() {
 			},
 			body: JSON.stringify(values),
 		};
+		//frontend dev
+		/* const response =  */ await fetch(registerUrl, options).then(
+			(response) => {
+				if (response.status === 200) {
+					//HANDLER AKO JE KORISNIK USPJESNO REGISTRIRAN
+					console.log("Korisnik uspješno registriran!?");
+					props.history.push("/");
+				} else {
+					//HANDLER AKO KORISNIK NIJE USPJESNO REGISTRIRAN
+					console.log("Činmise da nedjelja");
+				}
+			}
+		);
 
-		const response = await fetch(registerUrl, options);
-		console.log(response.json());
-		return response;
+		//production
+		/* const response = await fetch(
+			`${process.env.PUBLIC_URL}/register`,
+			options
+		).then((response) => {
+			if (response.status === 200) {
+
+
+				//HANDLER AKO JE KORISNIK USPJESNO REGISTRIRAN
+				//props.history.push("/");
+			}
+		}); */
+
+		//console.log(response.json());
+		//return response;
 	}
 
 	return (
@@ -103,6 +130,11 @@ function RegisterForm() {
 								value: "Required",
 								message: "Lozinka je obavezna",
 							},
+							minLength: {
+								value: 8,
+								message:
+									"Duljina lozinke mora biti najmanje 8 znakova",
+							},
 						})}
 					/>
 					<div className="error-message">
@@ -126,7 +158,8 @@ function RegisterForm() {
 						})}
 					/>
 					<div className="error-message">
-						{errors.repeatPassword && errors.repeatPassword.message}
+						{errors.confirmPassword &&
+							errors.confirmPassword.message}
 					</div>
 				</div>
 				<div className="form-group">
