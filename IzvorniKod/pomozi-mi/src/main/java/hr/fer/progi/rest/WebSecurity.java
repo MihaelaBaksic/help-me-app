@@ -1,5 +1,6 @@
 package hr.fer.progi.rest;
 
+import org.apache.catalina.filters.CorsFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
@@ -11,13 +12,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.context.SecurityContextPersistenceFilter;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @Profile("basic-security")
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-@CrossOrigin
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 
@@ -30,9 +31,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.cors();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers("/").permitAll()
-                .and().formLogin().loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password")
-                .and().logout().logoutSuccessUrl("/logout").invalidateHttpSession(true).and().csrf();
+                .and().formLogin().loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password");
         http.headers().frameOptions().sameOrigin(); // fixes h2-console problem
+        http.authorizeRequests().antMatchers("/login").permitAll();
         http.csrf().disable();
     }
 
@@ -41,6 +42,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         auth.eraseCredentials(false);
         auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
     }
+
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {

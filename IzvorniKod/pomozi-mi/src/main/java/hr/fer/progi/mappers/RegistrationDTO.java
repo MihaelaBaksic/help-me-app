@@ -2,6 +2,7 @@ package hr.fer.progi.mappers;
 
 import java.sql.Time;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import hr.fer.progi.domain.User;
 import javax.persistence.Column;
@@ -11,7 +12,10 @@ import com.sun.istack.NotNull;
 
 import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.UserStatus;
+import lombok.NoArgsConstructor;
+
 @Data
+@NoArgsConstructor
 public class RegistrationDTO {
 
 	//registracija:

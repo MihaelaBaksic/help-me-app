@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
 function LoginForm(props) {
+
+	const loginUrl = "http://localhost:8080/login";
+
 	function onRegister() {
 		props.history.push("/register");
 	}
@@ -12,15 +15,20 @@ function LoginForm(props) {
 	function onSubmit(values, e) {
 		e.preventDefault();
 
+		console.log(values);
+
 		const options = {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(values),
+				"username" : values.username,
+				"password" : values.password				
+			}
+			//,
+			//body: JSON.stringify(values),
 		};
 
-		return fetch("/login", options);
+		return fetch(loginUrl, options);
 	}
 
 	return (
