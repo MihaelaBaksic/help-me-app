@@ -1,5 +1,5 @@
 import React /* , { Component }  */ from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
@@ -11,7 +11,7 @@ function App() {
 	if (!isLoggedIn) {
 		return (
 			<div className="formHolder">
-				<HashRouter>
+				<BrowserRouter>
 					<Switch>
 						<Route path="/" exact component={LoginForm} />
 						<Route
@@ -20,7 +20,7 @@ function App() {
 							component={RegisterForm}
 						/>
 					</Switch>
-				</HashRouter>
+				</BrowserRouter>
 			</div>
 		);
 	}

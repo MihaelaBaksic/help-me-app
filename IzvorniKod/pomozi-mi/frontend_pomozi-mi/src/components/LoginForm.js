@@ -2,10 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
-//za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-const loginUrl = "http://localhost:8080/login";
-//const loginUrl = `${process.env.PUBLIC_URL}/login`;
-
 function LoginForm(props) {
 
 	const loginUrl = "http://localhost:8080/login";
@@ -16,7 +12,7 @@ function LoginForm(props) {
 
 	const { handleSubmit, register, errors } = useForm({});
 
-	async function onSubmit(values, e) {
+	function onSubmit(values, e) {
 		e.preventDefault();
 
 		console.log(values);
@@ -25,14 +21,14 @@ function LoginForm(props) {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				password: values.password,
-			},
-				username: values.username,
+				"username" : values.username,
+				"password" : values.password				
+			}
+			//,
+			//body: JSON.stringify(values),
 		};
-			.then((response) => response.json())
-		await fetch(loginUrl, options)
-		console.log(options);
-			.then((result) => console.log(result));
+
+		return fetch(loginUrl, options);
 	}
 
 	return (
