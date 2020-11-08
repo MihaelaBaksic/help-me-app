@@ -20,21 +20,14 @@ function LoginForm(props) {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				authorization:
-					"Basic " +
-					btoa(
-						unescape(
-							encodeURIComponent(
-								values.username + ":" + values.password
-							)
-						)
-					),
+				username: values.username,
+				password: values.password,
 			},
 		};
 		console.log(options);
-		await fetch(loginUrl, options).then((response) => {
-			console.log(response);
-		});
+		await fetch(loginUrl, options)
+			.then((response) => response.json())
+			.then((result) => console.log(result));
 	}
 
 	return (

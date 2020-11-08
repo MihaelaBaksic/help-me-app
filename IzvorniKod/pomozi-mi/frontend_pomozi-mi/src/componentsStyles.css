@@ -77,3 +77,13 @@ body {
 .error-message {
 	color: red;
 }
+.api_error_message {
+	width: 60%;
+	margin-left: 10px;
+	color: rgb(255, 0, 0);
+	font-weight: bold;
+	text-align: start;
+	padding: 5px;
+	border-radius: 20px;
+	height: inherit;
+}

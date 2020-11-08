@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
@@ -8,6 +8,8 @@ const registerUrl = "http://localhost:8080/register";
 
 function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
+
+	const [errorMessage, setErrorMessage] = useState("");
 
 	async function onSubmit(values, e) {
 		e.preventDefault();
@@ -21,19 +23,16 @@ function RegisterForm(props) {
 			body: JSON.stringify(values),
 		};
 		//frontend dev
-		/* const response =  */ await fetch(registerUrl, options).then(
-			(response) => {
-				if (response.status === 200) {
-					//HANDLER AKO JE KORISNIK USPJESNO REGISTRIRAN
-					console.log("Korisnik uspješno registriran!?");
-					props.history.push("/");
-				} else {
-					//HANDLER AKO KORISNIK NIJE USPJESNO REGISTRIRAN
-					console.log("Činmise da nedjelja");
-					console.log(response.body);
-				}
+		/* const response =  */
+		await fetch(registerUrl, options).then((response) => {
+			if (response.status === 200) {
+				props.history.push("/");
+			} else {
+				response.json().then((result) => {
+					setErrorMessage(result.message);
+				});
 			}
-		);
+		});
 	}
 
 	return (
@@ -53,6 +52,7 @@ function RegisterForm(props) {
 						className="form-control"
 						placeholder="Ime"
 						ref={register({
+							minLength: { value: 2, message: "Prekratko ime" },
 							maxLength: { value: 30, message: "Predugačko ime" },
 							required: {
 								value: "Required",
@@ -70,6 +70,10 @@ function RegisterForm(props) {
 						className="form-control"
 						placeholder="Prezime"
 						ref={register({
+							minLength: {
+								value: 2,
+								message: "Prekratko prezime",
+							},
 							maxLength: {
 								value: 30,
 								message: "Predugačko prezime",
@@ -90,6 +94,10 @@ function RegisterForm(props) {
 						className="form-control"
 						placeholder="Korisničko ime"
 						ref={register({
+							minLength: {
+								value: 4,
+								message: "Prekratak nadimak",
+							},
 							maxLength: {
 								value: 30,
 								message: "Predugačko korisničko ime",
@@ -167,7 +175,6 @@ function RegisterForm(props) {
 						{errors.email && errors.email.message}
 					</div>
 				</div>
-
 				<div className="form-group">
 					<input
 						name="phoneNumber"
@@ -198,6 +205,10 @@ function RegisterForm(props) {
 						className="form-control"
 						placeholder="Ime ulice"
 						ref={register({
+							minLength: {
+								value: 2,
+								message: "Prekratko ime ulice",
+							},
 							required: {
 								value: "Required",
 								message: "Ime ulice je obavezno",
@@ -234,6 +245,10 @@ function RegisterForm(props) {
 						className="form-control"
 						placeholder="Mjesto stanovanja"
 						ref={register({
+							minLength: {
+								value: 2,
+								message: "Prekratko ime prebivališta",
+							},
 							required: {
 								value: "Required",
 								message: "Mjesto stanovanja je obavezno",
@@ -266,9 +281,15 @@ function RegisterForm(props) {
 				</div>
 
 				<div className="loginOrRegisterBtns">
-					<button type="submit" className="btn btn-secondary btn-lg">
-						Register
-					</button>
+					<div>
+						<button
+							type="submit"
+							className="btn btn-secondary btn-lg"
+						>
+							Register
+						</button>
+					</div>
+					<div className="api_error_message">{errorMessage}</div>
 				</div>
 			</form>
 		</div>
