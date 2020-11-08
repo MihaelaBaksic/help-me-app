@@ -1,6 +1,5 @@
 package hr.fer.progi.domain;
 
-import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 
 @Data
@@ -47,7 +45,6 @@ public class User {
 	private String email;
 
 	@NotNull
-	@Column(unique = true)
 	private String phoneNumber;
 	
 	private boolean profilePicture;

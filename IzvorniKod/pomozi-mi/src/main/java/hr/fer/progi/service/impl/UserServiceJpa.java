@@ -50,6 +50,9 @@ public class UserServiceJpa implements UserService {
         if (userRepository.countByUsername(user.getUsername()) > 0)
             throw new IllegalArgumentException("User with Username: " + user.getUsername() + " already exists");
 
+        if (userRepository.countByEmail(user.getEmail()) > 0)
+            throw new IllegalArgumentException("User with Email: " + user.getEmail() + " already exists");
+
         return userRepository.save(user);
     }
 
