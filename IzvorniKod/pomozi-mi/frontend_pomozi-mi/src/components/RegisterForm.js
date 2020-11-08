@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-//const registerUrl = "http://localhost:8080/register";
-const registerUrl = `${process.env.PUBLIC_URL}/register`;
+const registerUrl = "http://localhost:8080/register";
+//const registerUrl = `${process.env.PUBLIC_URL}/register`;
 
 function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
@@ -30,25 +30,10 @@ function RegisterForm(props) {
 				} else {
 					//HANDLER AKO KORISNIK NIJE USPJESNO REGISTRIRAN
 					console.log("Činmise da nedjelja");
+					console.log(response.body);
 				}
 			}
 		);
-
-		//production
-		/* const response = await fetch(
-			`${process.env.PUBLIC_URL}/register`,
-			options
-		).then((response) => {
-			if (response.status === 200) {
-
-
-				//HANDLER AKO JE KORISNIK USPJESNO REGISTRIRAN
-				//props.history.push("/");
-			}
-		}); */
-
-		//console.log(response.json());
-		//return response;
 	}
 
 	return (
@@ -281,11 +266,7 @@ function RegisterForm(props) {
 				</div>
 
 				<div className="loginOrRegisterBtns">
-					<button
-						type="submit"
-						className="btn btn-secondary btn-lg"
-						//onClick={() => console.log("Napravit redirect")}
-					>
+					<button type="submit" className="btn btn-secondary btn-lg">
 						Register
 					</button>
 				</div>

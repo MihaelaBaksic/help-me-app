@@ -11,11 +11,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @Profile("basic-security")
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
+@CrossOrigin
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 
@@ -25,10 +27,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic();
-
+        http.cors();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers("/").permitAll()
-                .and().formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password")
+                .and().formLogin().loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password")
                 .and().logout().logoutSuccessUrl("/logout").invalidateHttpSession(true).and().csrf();
         http.headers().frameOptions().sameOrigin(); // fixes h2-console problem
         http.csrf().disable();
