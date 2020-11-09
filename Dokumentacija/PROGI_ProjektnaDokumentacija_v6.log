@@ -1,31 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  31 OCT 2020 03:30
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.18)  9 NOV 2020 20:42
->>>>>>> development-documentation
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.18)  9 NOV 2020 20:42
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  9 NOV 2020 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija_v6.tex
 (./PROGI_ProjektnaDokumentacija_v6.tex
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.9)  9 NOV 2020 19:04
-entering extended mode
-**./PROGI_ProjektnaDokumentacija_v6.tex
-(PROGI_ProjektnaDokumentacija_v6.tex
->>>>>>> 6-uc-diagrams
-LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-10-27> xparse <2020-03-03>
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+LaTeX2e <2020-10-01>
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(c:/texlive/2020/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+(c:/texlive/2020/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count175
@@ -37,254 +20,98 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \c@subparagraph=\count181
 \c@figure=\count182
 \c@table=\count183
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-)
-\c@part=\count167
-\c@chapter=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
->>>>>>> 6-uc-diagrams
-Package: babel 2020/10/27 3.51 The Babel package
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/10/03 3.49 The Babel package
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2020/10/27 3.51 Babel common definitions
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/10/03 3.49 Babel common definitions
 \babel@savecnt=\count184
 \U@D=\dimen139
-\l@babelnohyphens=\language79
+\l@babelnohyphens=\language86
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+(c:/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count185
 
-*************************************
-* Local config file bblopts.cfg used
-*
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
-)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/babel-croatian\croatian
-.ldf
+(c:/texlive/2020/texmf-dist/tex/generic/babel-croatian/croatian.ldf
 Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
 ))
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/02/14 3.40 The Babel package
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2020/02/14 3.40 Babel switching mechanism
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-croatian/croatian.ldf
-Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count176
-\U@D=\dimen135
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count177
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/02/14 3.40 The Babel package
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2020/02/14 3.40 Babel switching mechanism
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-croatian/croatian.ldf
-Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count176
-\U@D=\dimen135
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count177
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks14
+\@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-<<<<<<< HEAD
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
-=======
-)) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip49
-
-For additional information on amsmath, use the `?' option.
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip49
-
-For additional information on amsmath, use the `?' option.
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks15
-\ex@=\dimen136
+\@emptytoks=\toks16
+\ex@=\dimen140
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
+\pmbraise@=\dimen141
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count178
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count179
-\leftroot@=\count180
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count181
-\DOTSCASE@=\count182
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen138
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count183
-\c@MaxMatrixCols=\count184
+\inf@bad=\count186
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count187
+\leftroot@=\count188
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count189
+\DOTSCASE@=\count190
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count191
+\c@MaxMatrixCols=\count192
 \dotsspace@=\muskip16
-\c@parentequation=\count185
-\dspbrk@lvl=\count186
-\tag@help=\toks16
-\row@=\count187
-\column@=\count188
-\maxfields@=\count189
-\andhelp@=\toks17
-\eqnshift@=\dimen139
-\alignsep@=\dimen140
-\tagshift@=\dimen141
-\tagwidth@=\dimen142
-\totwidth@=\dimen143
-\lineht@=\dimen144
-\@envbody=\toks18
+\c@parentequation=\count193
+\dspbrk@lvl=\count194
+\tag@help=\toks17
+\row@=\count195
+\column@=\count196
+\maxfields@=\count197
+\andhelp@=\toks18
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/txfonts/txfonts.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\txfonts.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/txfonts/txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -370,128 +197,50 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
 LaTeX Info: Redefining \not on input line 1043.
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/mathdots/mathdots.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/mathdots/mathdots.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/mathdots\mathdots.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/mathdots/mathdots.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/generic/mathdots/mathdots.sty
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
-\MDo@unit=\dimen145
-\MDo@dotsbox=\box47
+\MDo@unit=\dimen149
+\MDo@dotsbox=\box49
 \MDoprekern=\muskip17
 \MDopostkern=\muskip18
 \MDodotkern=\muskip19
-<<<<<<< HEAD
-<<<<<<< HEAD
 )
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
->>>>>>> development-documentation
-=======
-) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
->>>>>>> 6-uc-diagrams
-=======
-)
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box48
+\ttl@box=\box50
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
-<<<<<<< HEAD
-<<<<<<< HEAD
 \ttl@plus=\dimen150
 \ttl@minus=\dimen151
 \ttl@toksa=\toks21
 \titlewidth=\dimen152
 \titlewidthlast=\dimen153
 \titlewidthfirst=\dimen154
-) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+)
+(c:/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen155
 \ar@mcellbox=\box51
 \extrarowheight=\dimen156
 \NC@list=\toks22
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-\ttl@plus=\dimen146
-\ttl@minus=\dimen147
-\ttl@toksa=\toks20
-\titlewidth=\dimen148
-\titlewidthlast=\dimen149
-\titlewidthfirst=\dimen150
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen151
-\ar@mcellbox=\box49
-\extrarowheight=\dimen152
-\NC@list=\toks21
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box50
+\ar@cellbox=\box52
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/lastpage/lastpage.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(c:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count198
 )
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
-Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count190
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
-Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count190
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip56
 \LTright=\skip57
 \LTpre=\skip58
 \LTpost=\skip59
-<<<<<<< HEAD
-<<<<<<< HEAD
 \LTchunksize=\count199
 \LTcapwidth=\dimen157
 \LT@head=\box53
@@ -504,271 +253,105 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count269
 \LT@p@ftn=\toks23
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/tabu\tabu.sty
+(c:/texlive/2020/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-\LTchunksize=\count191
-\LTcapwidth=\dimen153
-\LT@head=\box51
-\LT@firsthead=\box52
-\LT@foot=\box53
-\LT@lastfoot=\box54
-\LT@cols=\count192
-\LT@rows=\count193
-\c@LT@tables=\count194
-\c@LT@chunks=\count195
-\LT@p@ftn=\toks22
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + inter
-mediate FMi
-
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box55
-\sift@deathcycles=\count196
-\@vwid@loff=\dimen154
-\@vwid@roff=\dimen155
+\@vwid@box=\box57
+\sift@deathcycles=\count270
+\@vwid@loff=\dimen158
+\@vwid@roff=\dimen159
 )
-\c@taburow=\count197
-\tabu@nbcols=\count198
-\tabu@cnt=\count199
-\tabu@Xcol=\count266
-\tabu@alloc=\count267
-\tabu@nested=\count268
-\tabu@target=\dimen156
-\tabu@spreadtarget=\dimen157
-\tabu@naturalX=\dimen158
-\tabucolX=\dimen159
-\tabu@Xsum=\dimen160
-\extrarowdepth=\dimen161
-\abovetabulinesep=\dimen162
-\belowtabulinesep=\dimen163
-\tabustrutrule=\dimen164
-\tabu@thebody=\toks23
-\tabu@footnotes=\toks24
-\tabu@box=\box56
-\tabu@arstrutbox=\box57
-\tabu@hleads=\box58
-\tabu@vleads=\box59
+\c@taburow=\count271
+\tabu@nbcols=\count272
+\tabu@cnt=\count273
+\tabu@Xcol=\count274
+\tabu@alloc=\count275
+\tabu@nested=\count276
+\tabu@target=\dimen160
+\tabu@spreadtarget=\dimen161
+\tabu@naturalX=\dimen162
+\tabucolX=\dimen163
+\tabu@Xsum=\dimen164
+\extrarowdepth=\dimen165
+\abovetabulinesep=\dimen166
+\belowtabulinesep=\dimen167
+\tabustrutrule=\dimen168
+\tabu@thebody=\toks24
+\tabu@footnotes=\toks25
+\tabu@box=\box58
+\tabu@arstrutbox=\box59
+\tabu@hleads=\box60
+\tabu@vleads=\box61
 \tabu@cellskip=\skip60
-<<<<<<< HEAD
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
->>>>>>> development-documentation
-=======
-) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
-
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-))
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks25
+\everycr=\toks26
 \minrowclearance=\skip61
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+
+(c:/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
 \XKV@depth=\count277
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.st
-y
+))
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
-
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count269
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
-
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
-
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count269
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen165
-\Gin@req@width=\dimen166
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.s
-ty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box60
+\collectedbox=\box62
 )
-\tc@llx=\dimen167
-\tc@lly=\dimen168
-\tc@urx=\dimen169
-\tc@ury=\dimen170
+\tc@llx=\dimen171
+\tc@lly=\dimen172
+\tc@urx=\dimen173
+\tc@ury=\dimen174
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen175
@@ -780,47 +363,17 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 \adjbox@pdepth=\dimen181
 \adjbox@ptotalheight=\dimen182
 
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-\adjbox@Width=\dimen171
-\adjbox@Height=\dimen172
-\adjbox@Depth=\dimen173
-\adjbox@Totalheight=\dimen174
-\adjbox@pwidth=\dimen175
-\adjbox@pheight=\dimen176
-\adjbox@pdepth=\dimen177
-\adjbox@ptotalheight=\dimen178
-
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count270
+\c@checkoddpage=\count278
 ))
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count279
@@ -835,68 +388,18 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layouthoffset=\dimen189
 \Gm@layoutvoffset=\dimen190
 \Gm@dimlist=\toks29
-
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\kpfonts.sty
-Package: kpfonts  2010/08/20 v3.31
-
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/base/textcomp.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-))
-=======
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count270
-))
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-))
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-\Gm@cnth=\count271
-\Gm@cntv=\count272
-\c@Gm@tempcnt=\count273
-\Gm@bindingoffset=\dimen179
-\Gm@wd@mp=\dimen180
-\Gm@odd@mp=\dimen181
-\Gm@even@mp=\dimen182
-\Gm@layoutwidth=\dimen183
-\Gm@layoutheight=\dimen184
-\Gm@layouthoffset=\dimen185
-\Gm@layoutvoffset=\dimen186
-\Gm@dimlist=\toks28
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/kpfonts.sty
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2010/08/20 v3.31
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 LaTeX Font Info:    Changing ? sub-encoding to TS1/0 on input line 75.
 )
-\c@mv@rm=\count274
-\c@mv@boldrm=\count275
-\c@mv@sf=\count276
-\c@mv@boldsf=\count277
+\c@mv@rm=\count282
+\c@mv@boldrm=\count283
+\c@mv@sf=\count284
+\c@mv@boldsf=\count285
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 354.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
@@ -1225,230 +728,80 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 LaTeX Font Info:    Redeclaring math symbol \n@tch@r on input line 1578.
 LaTeX Info: Redefining \not on input line 1580.
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(c:/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
-.sty
+(c:/texlive/2020/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
-ty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
-ty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
-keys.sty
+(c:/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
-ty
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
-.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-<<<<<<< HEAD
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(c:/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+(c:/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+(c:/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+(c:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-<<<<<<< HEAD
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
->>>>>>> development-documentation
-)
-\@linkdim=\dimen187
-\Hy@linkcounter=\count278
-\Hy@pagecounter=\count279
-
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen191
 \Hy@linkcounter=\count286
 \Hy@pagecounter=\count287
- (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
->>>>>>> 6-uc-diagrams
+
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+(c:/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
->>>>>>> 6-uc-diagrams
-=======
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
-)
-\@linkdim=\dimen187
-\Hy@linkcounter=\count278
-\Hy@pagecounter=\count279
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count280
-\pdfmajorversion=\count281
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+\Hy@SavedSpaceFactor=\count288
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-<<<<<<< HEAD
-<<<<<<< HEAD
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count282
-
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/url/url.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
->>>>>>> development-documentation
-=======
 Package hyperref Info: Bookmarks ON on input line 4717.
 \c@Hy@tempcnt=\count289
- (C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
->>>>>>> 6-uc-diagrams
-=======
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count282
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen188
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen192
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
-.sty
+(c:/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -1465,7 +818,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+(c:/texlive/2020/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
@@ -1475,139 +828,30 @@ with kernel methods
 \c@Hfootnote=\count293
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+(c:/texlive/2020/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
-))
-\Fld@menulength=\count283
-\Field@Width=\dimen189
-\Fld@charsize=\dimen190
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
+\Fld@listcount=\count294
+\c@bookmark@seq@number=\count295
 
-(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-)
-\Hy@abspage=\count284
-\c@Item=\count285
-\c@Hfootnote=\count286
-)
-Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
->>>>>>> development-documentation
-)
-\Fld@listcount=\count287
-\c@bookmark@seq@number=\count288
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.st
-y
+(c:/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.st
-y
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
-echeck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
-ounter.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
-))
-\Fld@menulength=\count283
-\Field@Width=\dimen189
-\Fld@charsize=\dimen190
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
-
-(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-)
-\Hy@abspage=\count284
-\c@Item=\count285
-\c@Hfootnote=\count286
-)
-Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-)
-\Fld@listcount=\count287
-\c@bookmark@seq@number=\count288
-
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip62
-<<<<<<< HEAD
-<<<<<<< HEAD
-) (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-=======
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip63
@@ -1620,22 +864,15 @@ s
 \f@nch@O@olf=\skip70
 \f@nch@O@orf=\skip71
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/float/float.sty
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count289
+\rownum=\count296
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -1646,107 +883,50 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(c:/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen191
-\TX@old@table=\dimen192
-\TX@old@col=\dimen193
-\TX@target=\dimen194
-\TX@delta=\dimen195
-\TX@cols=\count290
-\TX@ftn=\toks29
+\TX@col@width=\dimen195
+\TX@old@table=\dimen196
+\TX@old@col=\dimen197
+\TX@target=\dimen198
+\TX@delta=\dimen199
+\TX@cols=\count297
+\TX@ftn=\toks30
 )
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count291
-\float@exts=\toks30
-\float@box=\box61
-\@float@everytoks=\toks31
-\@floatcapt=\box62
+\c@float@type=\count298
+\float@exts=\toks31
+\float@box=\box63
+\@float@everytoks=\toks32
+\@floatcapt=\box64
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-\@float@every@table=\toks32
+\@float@every@table=\toks33
 Package hyperref Info: Option `colorlinks' set `true' on input line 43.
+LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
+9.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ot1jkp.fd
->>>>>>> 6-uc-diagrams
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-tex.def
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count297
+\l__kernel_color_stack_int=\count299
 \l__pdf_internal_box=\box65
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count292
-\l__pdf_internal_box=\box63
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 )
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
 (./Dodatak.aux))
-=======
-) (PROGI_ProjektnaDokumentacija_v6.aux
-(Dnevnik_promjena_dokumentacije.aux) (Opis_projektnog_zadatka.aux)
-(Specifikacija_programske_potpore.aux) (Arhitektura.aux) (Implementacija.aux)
-(Zakljucak.aux) (Literatura.aux) (Dodatak.aux))
->>>>>>> 6-uc-diagrams
 \openout1 = `PROGI_ProjektnaDokumentacija_v6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 79.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 7
-<<<<<<< HEAD
-<<<<<<< HEAD
-6.
-
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/omljkp.fd
-=======
 9.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omljkp.fd
->>>>>>> 6-uc-diagrams
-=======
-9.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -1754,19 +934,7 @@ LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 7
 9.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/omsjkp.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omsjkp.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -1780,19 +948,7 @@ LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 7
 9.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/omxjkp.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\omxjkp.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -1800,93 +956,38 @@ LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
 79.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpexa.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
-9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
-File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
-)
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 79.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-=======
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count293
-\scratchdimen=\dimen196
-\scratchbox=\box64
-\nofMPsegments=\count294
-\nofMParguments=\count295
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count296
-\MPscratchDim=\dimen197
-\MPnumerator=\count297
-\makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks34
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-) (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count300
+\scratchdimen=\dimen256
+\scratchbox=\box66
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen257
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks35
+) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-=======
-)
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-)
->>>>>>> 6-uc-diagrams
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1921,175 +1022,58 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Package hyperref Info: Link coloring ON on input line 76.
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.
-sty
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-\AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring ON on input line 79.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+(c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
-lestring.sty
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count299
+\c@section@level=\count306
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
-<<<<<<< HEAD
- (./PROGI_ProjektnaDokumentacija_v6.out)
-(./PROGI_ProjektnaDokumentacija_v6.out)
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 LaTeX Info: Redefining \ref on input line 79.
 LaTeX Info: Redefining \pageref on input line 79.
 LaTeX Info: Redefining \nameref on input line 79.
 
 (./PROGI_ProjektnaDokumentacija_v6.out) (./PROGI_ProjektnaDokumentacija_v6.out)
->>>>>>> development-documentation
-=======
- (PROGI_ProjektnaDokumentacija_v6.out)
-(PROGI_ProjektnaDokumentacija_v6.out)
->>>>>>> 6-uc-diagrams
 \@outlinefile=\write3
 \openout3 = `PROGI_ProjektnaDokumentacija_v6.out'.
 
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-<<<<<<< HEAD
-<<<<<<< HEAD
-88.
-
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
-=======
 91.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsya.fd
->>>>>>> 6-uc-diagrams
-=======
-91.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
 91.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsyb.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
 1.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
 91.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
->>>>>>> development-documentation
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpmia.fd
->>>>>>> 6-uc-diagrams
-=======
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
 91.
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-(d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
-=======
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ujkpsyc.fd
->>>>>>> 6-uc-diagrams
-File: ujkpsyc.fd 2006/08/15 v1.0
-)
-[1
-
-<<<<<<< HEAD
-{d:/TexToPdf/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./PROGI_ProjektnaDokumentacija_v6.toc
-=======
-=======
-
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PROGI_ProjektnaDokument
-acija_v6.toc
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-{C:/Users/zacra/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-(PROGI_ProjektnaDokumentacija_v6.toc
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./PROGI_ProjektnaDokumentacija_v6.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
@@ -2100,19 +1084,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-l.29 ...: Prikaz aktivnosti grupe}{34}{chapter*.6}
-=======
-l.29 ...{Indeks slika i dijagrama}{38}{chapter*.5}
->>>>>>> development-documentation
-=======
-l.29 ...: Prikaz aktivnosti grupe}{45}{chapter*.6}
->>>>>>> 6-uc-diagrams
-=======
-l.29 ...{Indeks slika i dijagrama}{38}{chapter*.5}
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+l.29 ...: Prikaz aktivnosti grupe}{48}{chapter*.6}
                                                   % [1
 
 ])
@@ -2123,7 +1095,7 @@ l.29 ...{Indeks slika i dijagrama}{38}{chapter*.5}
 \openout2 = `Dnevnik_promjena_dokumentacije.aux'.
 
 
-(Dnevnik_promjena_dokumentacije.tex
+(./Dnevnik_promjena_dokumentacije.tex
 Poglavlje 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -2131,116 +1103,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 16.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 28.10.2020.|  
  []
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 38--38
-=======
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
->>>>>>> 6-uc-diagrams
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 31.10.2020.|  
-=======
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
-[]\OT1/jkp/m/n/12 09.11.2020.|  
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
  []
 
 
-<<<<<<< HEAD
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 38--38
-[]\OT1/jkp/m/n/12 24.08.2013.|  
-=======
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 37--37
-[]\OT1/jkp/m/n/12 09.11.2020.|  
->>>>>>> development-documentation
-=======
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 31.10.2020.|  
->>>>>>> 6-uc-diagrams
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
+[]\OT1/jkp/m/n/12 09.11.2020.|  
+ []
+
+
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 25.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 26.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 28.08.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 07.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 08.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 09.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 10.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 11.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 14.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 15.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 19.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 20.09.2013.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 40--40
 []\OT1/jkp/m/n/12 28.09.2013.|  
  []
 
@@ -2250,7 +1208,7 @@ Overfull \hbox (6.59265pt too wide) in paragraph at lines 39--39
 ]) [4]
 \openout2 = `Opis_projektnog_zadatka.aux'.
 
- (Opis_projektnog_zadatka.tex
+ (./Opis_projektnog_zadatka.tex
 Poglavlje 2.
 
 Overfull \hbox (7.2448pt too wide) in paragraph at lines 7--8
@@ -2258,96 +1216,36 @@ Overfull \hbox (7.2448pt too wide) in paragraph at lines 7--8
 di vrlo spe-cifi[]can na[]cin pomo[]ci,
  []
 
-<<<<<<< HEAD
-=======
-LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 7
-.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-) [5
-
->>>>>>> development-documentation
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
-<<<<<<< HEAD
-<<<<<<< HEAD
  []
 
-<slike/mayo-hero.PNG, id=165, 501.875pt x 626.34pt>
+<slike/mayo-hero.PNG, id=167, 501.875pt x 626.34pt>
 File: slike/mayo-hero.PNG Graphic file (type png)
 <use slike/mayo-hero.PNG>
 Package pdftex.def Info: slike/mayo-hero.PNG  used on input line 11.
 (pdftex.def)             Requested size: 100.37321pt x 125.26578pt.
 [5
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-]
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
->>>>>>> development-documentation
 
 
-<<<<<<< HEAD
-=======
-LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 24.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
-File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
->>>>>>> development-documentation
 
 
-<<<<<<< HEAD
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.19  D
        a bi korisnik napravio svoj račun, bit će potrebni: <./slike/mayo-hero
-.PNG>]
+.png>]
 LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 2
 2.
-
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ts1jkp.fd
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
 Overfull \hbox (4.76079pt too wide) in paragraph at lines 36--44
 \OT1/jkp/b/n/12 izvr[]siteljem zah-tjeva\OT1/jkp/m/n/12 . Va-lja na-po-me-nuti 
 kako je svaka lista sor-ti-rana po odre[]denom
-=======
-[6]
-<slike/aktivnost.PNG, id=193, 670.75594pt x 689.57625pt>
-File: slike/aktivnost.PNG Graphic file (type png)
-<use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 109.
-(pdftex.def)             Requested size: 268.2976pt x 275.8256pt.
-File: slike/aktivnost.PNG Graphic file (type png)
-<use slike/aktivnost.PNG>
-Package pdftex.def Info: slike/aktivnost.PNG  used on input line 116.
-(pdftex.def)             Requested size: 392.04704pt x 403.04799pt.
- [7pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.120 		
-         <./slike/aktivnost.PNG>] [8pdfTeX warning (ext4): destination with the
- same identifier (name{figure.2.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.123 		\eject
-              ])
-\openout2 = `Specifikacija_programske_potpore.aux'.
-
- (./Specifikacija_programske_potpore.tex
-Poglavlje 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
->>>>>>> development-documentation
  []
 
 
@@ -2371,23 +1269,15 @@ ogu[]cuje i do-datne iz-vje[]staje/preglede,
 [7])
 \openout2 = `Specifikacija_programske_potpore.aux'.
 
- (Specifikacija_programske_potpore.tex
+ (./Specifikacija_programske_potpore.tex
 Poglavlje 3.
 [8
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 ] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
->>>>>>> development-documentation
 
  []
 
@@ -2404,7 +1294,7 @@ ci-jal-nih izvr[]sitelja
  []
 
 [11] [12] [13] [14] [15] [16] [17] [18]
-<slike/admin.png, id=373, 579.66562pt x 524.71031pt>
+<slike/admin.png, id=376, 579.66562pt x 524.71031pt>
 File: slike/admin.png Graphic file (type png)
 <use slike/admin.png>
 Package pdftex.def Info: slike/admin.png  used on input line 686.
@@ -2420,7 +1310,7 @@ Overfull \hbox (28.12233pt too wide) in paragraph at lines 686--688
                                                   
 l.690 				\newpage
                    <./slike/admin.png>]
-<slike/reg-log.png, id=382, 494.59781pt x 453.19313pt>
+<slike/reg-log.png, id=385, 494.59781pt x 453.19313pt>
 File: slike/reg-log.png Graphic file (type png)
 <use slike/reg-log.png>
 Package pdftex.def Info: slike/reg-log.png  used on input line 693.
@@ -2431,7 +1321,7 @@ Package pdftex.def Info: slike/reg-log.png  used on input line 693.
                                                   
 l.697 				\newpage
                    <./slike/reg-log.png>]
-<slike/korisnik-profil.png, id=390, 603.75563pt x 540.51938pt>
+<slike/korisnik-profil.png, id=394, 603.75563pt x 540.51938pt>
 File: slike/korisnik-profil.png Graphic file (type png)
 <use slike/korisnik-profil.png>
 Package pdftex.def Info: slike/korisnik-profil.png  used on input line 700.
@@ -2447,7 +1337,7 @@ Overfull \hbox (47.39436pt too wide) in paragraph at lines 700--702
                                                   
 l.704 				\newpage
                    <./slike/korisnik-profil.png>]
-<slike/upravljanje-zahtjevima.png, id=398, 644.4075pt x 593.96906pt>
+<slike/upravljanje-zahtjevima.png, id=402, 644.4075pt x 593.96906pt>
 File: slike/upravljanje-zahtjevima.png Graphic file (type png)
 <use slike/upravljanje-zahtjevima.png>
 Package pdftex.def Info: slike/upravljanje-zahtjevima.png  used on input line 7
@@ -2464,7 +1354,7 @@ Overfull \hbox (15.47139pt too wide) in paragraph at lines 707--709
                                                   
 l.711 				\newpage
                    <./slike/upravljanje-zahtjevima.png>] [23]
-<slike/novi-zahtjev.png, id=411, 915.42pt x 566.115pt>
+<slike/novi-zahtjev.png, id=415, 915.42pt x 566.115pt>
 File: slike/novi-zahtjev.png Graphic file (type png)
 <use slike/novi-zahtjev.png>
 Package pdftex.def Info: slike/novi-zahtjev.png  used on input line 724.
@@ -2480,7 +1370,7 @@ Overfull \hbox (22.09808pt too wide) in paragraph at lines 724--726
                                                   
 l.728 				\newpage
                    <./slike/novi-zahtjev.png>] [25]
-<slike/pregled-zahtjeva.png, id=425, 772.38562pt x 566.115pt>
+<slike/pregled-zahtjeva.png, id=429, 772.38562pt x 566.115pt>
 File: slike/pregled-zahtjeva.png Graphic file (type png)
 <use slike/pregled-zahtjeva.png>
 Package pdftex.def Info: slike/pregled-zahtjeva.png  used on input line 736.
@@ -2502,7 +1392,7 @@ vih ak-tiv-nih zah-tjeva, poslu[]zitelj
  []
 
 [27]
-<slike/biranje-izvrsitelja.png, id=438, 809.27344pt x 638.385pt>
+<slike/biranje-izvrsitelja.png, id=442, 809.27344pt x 638.385pt>
 File: slike/biranje-izvrsitelja.png Graphic file (type png)
 <use slike/biranje-izvrsitelja.png>
 Package pdftex.def Info: slike/biranje-izvrsitelja.png  used on input line 748.
@@ -2519,7 +1409,7 @@ Overfull \hbox (49.95702pt too wide) in paragraph at lines 748--750
                                                   
 l.752 				\newpage
                    <./slike/biranje-izvrsitelja.png>] [29]
-<slike/izvrsavanje-zahtjeva.png, id=451, 768.62157pt x 620.3175pt>
+<slike/izvrsavanje-zahtjeva.png, id=455, 768.62157pt x 620.3175pt>
 File: slike/izvrsavanje-zahtjeva.png Graphic file (type png)
 <use slike/izvrsavanje-zahtjeva.png>
 Package pdftex.def Info: slike/izvrsavanje-zahtjeva.png  used on input line 760
@@ -2544,35 +1434,24 @@ Overfull \hbox (16.91959pt too wide) in paragraph at lines 771--772
 ) [31]
 \openout2 = `Arhitektura.aux'.
 
- (Arhitektura.tex
+ (./Arhitektura.tex
 Poglavlje 4.
-<./slike/Arhitektura_sustava.pdf, id=418, 448.5558pt x 189.8292pt>
-File: ./slike/Arhitektura_sustava.pdf Graphic file (type pdf)
-<use ./slike/Arhitektura_sustava.pdf>
-Package pdftex.def Info: ./slike/Arhitektura_sustava.pdf  used on input line 15
-.
+<./slike//Arhitektura_sustava.pdf, id=469, 448.5558pt x 189.8292pt>
+File: ./slike//Arhitektura_sustava.pdf Graphic file (type pdf)
+<use ./slike//Arhitektura_sustava.pdf>
+Package pdftex.def Info: ./slike//Arhitektura_sustava.pdf  used on input line 1
+5.
 (pdftex.def)             Requested size: 448.55469pt x 189.82872pt.
-<<<<<<< HEAD
 
 Overfull \hbox (12.9439pt too wide) in paragraph at lines 15--16
 [][]
  []
 
-[23
+[32
 
 
 
-=======
 
-Overfull \hbox (12.9439pt too wide) in paragraph at lines 15--16
-[][]
- []
-
-[23
-
-
-
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 ]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 63--63
 []|\OT1/jkp/m/n/12 VARCHAR| 
@@ -2601,65 +1480,12 @@ Overfull \hbox (1.97845pt too wide) in paragraph at lines 63--63
 
 Overfull \hbox (2.07445pt too wide) in paragraph at lines 63--63
 []|\OT1/jkp/m/n/12 BOOLEAN| 
-<<<<<<< HEAD
- []
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-[21
-=======
->>>>>>> development-documentation
-
-Overfull \hbox (1.97845pt too wide) in paragraph at lines 63--63
-[]|\OT1/jkp/m/n/12 VARCHAR| 
- []
-=======
-[32
->>>>>>> 6-uc-diagrams
-
-
-Overfull \hbox (2.07445pt too wide) in paragraph at lines 63--63
-[]|\OT1/jkp/m/n/12 BOOLEAN| 
- []
-
-
-<<<<<<< HEAD
-Overfull \hbox (1.97845pt too wide) in paragraph at lines 63--63
-[]|\OT1/jkp/m/n/12 VARCHAR| 
- []
-
-
-Overfull \hbox (4.58244pt too wide) in paragraph at lines 63--63
-[]|\OT1/jkp/m/n/12 DATETIME| 
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
  []
 
 
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 63--63
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
-<<<<<<< HEAD
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 63--64
-[][] 
- []
-
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.67 			\textbf{Adresa}
-                        Ovaj entitet modelira adresu prebivališta pojedinog...
- <./slike/Arhitektura_sustava.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./slike/Arhitektura_sustava.pdf): PDF i
-nclusion: invalid other resource which is no dict (key 'ProcSets', type <array>
-); ignored.
->]
-=======
 
 
 Overfull \hbox (2.07445pt too wide) in paragraph at lines 63--63
@@ -2686,45 +1512,27 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 63--64
 [][] 
  []
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.67 			\textbf{Adresa}
                         Ovaj entitet modelira adresu prebivališta pojedinog...
- <./slike/Arhitektura_sustava.pdf
+ <./slike//Arhitektura_sustava.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./slike/Arhitektura_sustava.pdf): PDF i
-nclusion: invalid other resource which is no dict (key 'ProcSets', type <array>
-); ignored.
+pdfTeX warning: pdflatex.exe (file ./slike//Arhitektura_sustava.pdf): PDF inclu
+sion: invalid other resource which is no dict (key 'ProcSets', type <array>); i
+gnored.
 >]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 86--86
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
 
 
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 86--86
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
 
-<<<<<<< HEAD
-
-Overfull \hbox (1.97845pt too wide) in paragraph at lines 86--86
-[]|\OT1/jkp/m/n/12 VARCHAR| 
- []
-
-<<<<<<< HEAD
-] [22]
-=======
-] [33]
->>>>>>> 6-uc-diagrams
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-=======
->>>>>>> development-documentation
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 86--86
 []|\OT1/jkp/m/n/12 VARCHAR| 
@@ -2757,40 +1565,22 @@ ocje-njiva) i zah-tje-vID(predstavlja
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 106--106
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 Overfull \hbox (17.62482pt too wide) in paragraph at lines 106--107
 [][] 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[23]
-=======
 [34]
->>>>>>> 6-uc-diagrams
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
-[25]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 129--129
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
 
-<<<<<<< HEAD
 
 Overfull \hbox (4.58244pt too wide) in paragraph at lines 129--129
 []|\OT1/jkp/m/n/12 DATETIME| 
  []
 
-<<<<<<< HEAD
 
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 129--129
 []|\OT1/jkp/m/n/12 VARCHAR| 
@@ -2805,7 +1595,6 @@ Overfull \hbox (1.88728pt too wide) in paragraph at lines 129--129
 Overfull \hbox (17.62482pt too wide) in paragraph at lines 129--130
 [][] 
  []
->>>>>>> development-documentation
 
 
 Overfull \hbox (0.86246pt too wide) in paragraph at lines 144--144
@@ -2817,109 +1606,31 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 144--145
 [][] 
  []
 
-<<<<<<< HEAD
-[24]
-=======
 [35]
->>>>>>> 6-uc-diagrams
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-=======
-[26]
->>>>>>> development-documentation
 
-pdfTeX warning: /usr/bin/pdflatex (file ./slike/Relacijski_model.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<./slike/Relacijski_model.pdf, id=455, 630.10406pt x 452.4403pt>
-File: ./slike/Relacijski_model.pdf Graphic file (type pdf)
-<use ./slike/Relacijski_model.pdf>
-Package pdftex.def Info: ./slike/Relacijski_model.pdf  used on input line 153.
+pdfTeX warning: pdflatex.exe (file ./slike//Relacijski_model.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<./slike//Relacijski_model.pdf, id=505, 630.10406pt x 452.4403pt>
+File: ./slike//Relacijski_model.pdf Graphic file (type pdf)
+<use ./slike//Relacijski_model.pdf>
+Package pdftex.def Info: ./slike//Relacijski_model.pdf  used on input line 153.
+
 (pdftex.def)             Requested size: 495.54617pt x 355.82538pt.
 
 Overfull \hbox (59.93538pt too wide) in paragraph at lines 153--154
 [][]
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[25]
-=======
-[36]
->>>>>>> 6-uc-diagrams
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
-
- []
-
-<<<<<<< HEAD
-) [26]
-=======
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.157 			\eject
-                <./slike/Relacijski_model.pdf>]
+                <./slike//Relacijski_model.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-=======
-
-Overfull \hbox (4.58244pt too wide) in paragraph at lines 129--129
-[]|\OT1/jkp/m/n/12 DATETIME| 
- []
-
-
-Overfull \hbox (1.97845pt too wide) in paragraph at lines 129--129
-[]|\OT1/jkp/m/n/12 VARCHAR| 
- []
-
-
-Overfull \hbox (1.88728pt too wide) in paragraph at lines 129--129
-[]|\OT1/jkp/m/n/12 autorskikorisnikID| 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 129--130
-[][] 
- []
-
-
-Overfull \hbox (0.86246pt too wide) in paragraph at lines 144--144
-[]|\OT1/jkp/m/n/12 korisnikID| 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 144--145
-[][] 
- []
-
-[26]
-
-pdfTeX warning: /usr/bin/pdflatex (file ./slike/Relacijski_model.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<./slike/Relacijski_model.pdf, id=455, 630.10406pt x 452.4403pt>
-File: ./slike/Relacijski_model.pdf Graphic file (type pdf)
-<use ./slike/Relacijski_model.pdf>
-Package pdftex.def Info: ./slike/Relacijski_model.pdf  used on input line 153.
-(pdftex.def)             Requested size: 495.54617pt x 355.82538pt.
-
-Overfull \hbox (59.93538pt too wide) in paragraph at lines 153--154
-[][]
- []
-
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.157 			\eject
-                <./slike/Relacijski_model.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
@@ -2935,32 +1646,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-[28]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
-[29]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-[30]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-) [31]
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
-) [37]
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+) [40]
 \openout2 = `Implementacija.aux'.
 
- (Implementacija.tex
+ (./Implementacija.tex
 Poglavlje 5.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -2977,20 +1681,8 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[27
-=======
-[38
->>>>>>> 6-uc-diagrams
+[41
 
-=======
-[32
->>>>>>> development-documentation
-=======
-[32
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 
 
 
@@ -3001,46 +1693,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
  28.
-(C:\Users\zacra\AppData\Local\Programs\MiKTeX\tex/latex/kpfonts\ot1jkptt.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[28] [29]
-=======
-[33] [34]
->>>>>>> development-documentation
-=======
-[39] [40]
->>>>>>> 6-uc-diagrams
-=======
-[33] [34]
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+[42] [43]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[30])
-=======
-[35])
->>>>>>> development-documentation
-=======
-[41])
->>>>>>> 6-uc-diagrams
-=======
-[35])
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+[44])
 \openout2 = `Zakljucak.aux'.
 
- (Zakljucak.tex
+ (./Zakljucak.tex
 Poglavlje 6.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -3052,27 +1720,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[31
-=======
-[42
->>>>>>> 6-uc-diagrams
+[45
 
-=======
-[36
->>>>>>> development-documentation
-=======
-[36
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 
 
 
 ])
 \openout2 = `Literatura.aux'.
 
- (Literatura.tex
+ (./Literatura.tex
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 12--13
 []\OT1/jkp/m/n/12 Programsko in[]zenjerstvo, FER ZE-MRIS, [][]$\OT1/jkptt/m/n/1
 2 http : / / www . fer . hr / predmet / proinz$[][] 
@@ -3084,64 +1740,28 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-) [32
-=======
-) [43
->>>>>>> 6-uc-diagrams
-
-=======
-) [37
->>>>>>> development-documentation
-=======
-) [37
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+) [46
 
 
 
-] (PROGI_ProjektnaDokumentacija_v6.lof)
+
+] (./PROGI_ProjektnaDokumentacija_v6.lof)
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- [33
-=======
- [44
->>>>>>> 6-uc-diagrams
+ [47
 
-=======
- [38
->>>>>>> development-documentation
-=======
- [38
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 
 
 ]
 \openout2 = `Dodatak.aux'.
 
- (Dodatak.tex
+ (./Dodatak.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[34
-=======
-[39
->>>>>>> development-documentation
-=======
-[45
->>>>>>> 6-uc-diagrams
-=======
-[39
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+[48
 
 
 ]
@@ -3149,128 +1769,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-[35] [36]
-=======
-[40] [41]
->>>>>>> development-documentation
-=======
-[46] [47]
->>>>>>> 6-uc-diagrams
-=======
-[40] [41]
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+[49] [50]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-) [37] 
-=======
-) [42] 
->>>>>>> development-documentation
-=======
-) [42] 
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+) [51] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
 (./Dodatak.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
-<<<<<<< HEAD
-=======
-) [48] 
-AED: lastpage setting LastPage
-(PROGI_ProjektnaDokumentacija_v6.aux (Dnevnik_promjena_dokumentacije.aux)
-(Opis_projektnog_zadatka.aux) (Specifikacija_programske_potpore.aux)
-(Arhitektura.aux) (Implementacija.aux) (Zakljucak.aux) (Literatura.aux)
-(Dodatak.aux))
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
  changed.
 (rerunfilecheck)             Checksum: 64F88E1A35086AF34402A9C5AD911392;1749.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- 12063 strings out of 479497
- 173976 string characters out of 5871915
- 556165 words of memory out of 5000000
- 28514 multiletter control sequences out of 15000+600000
+ 12585 strings out of 479916
+ 178910 string characters out of 5886648
+ 563387 words of memory out of 5000000
+ 28573 multiletter control sequences out of 15000+600000
  589630 words of font info for 151 fonts, out of 8000000 for 9000
-=======
- 12138 strings out of 479799
- 179075 string characters out of 2869723
- 547697 words of memory out of 3000000
- 28551 multiletter control sequences out of 15000+200000
- 589630 words of font info for 151 fonts, out of 3000000 for 9000
->>>>>>> 6-uc-diagrams
  1141 hyphenation exceptions out of 8191
- 93i,14n,98p,911b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,14n,88p,909b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
-{C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
-sers/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts/jkpbit8a.pf
-b><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfonts/jkpb
-n8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kpfont
-s/jkpmi.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kp
-fonts/jkpmit8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/kpfonts/jkpmn8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (49 pages, 735256 bytes).
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-
+dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
+t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (52 pages, 755053 bytes).
 
 PDF statistics:
-<<<<<<< HEAD
- 569 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 210 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
- 12395 strings out of 481239
- 175159 string characters out of 5920376
- 516416 words of memory out of 5000000
- 27086 multiletter control sequences out of 15000+600000
- 587651 words of font info for 148 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 45i,14n,45p,897b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/kpfonts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfont
-s/jkpmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (43 pages, 242960 bytes).
-
-PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 579 compressed objects within 6 object streams
- 224 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
-<<<<<<< HEAD
->>>>>>> development-documentation
-=======
- 658 PDF objects out of 1000 (max. 8388607)
- 229 named destinations out of 1000 (max. 500000)
- 254 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 6-uc-diagrams
-=======
->>>>>>> c9e7a8b... Opis arhitekture i baze podataka
+ 701 PDF objects out of 1000 (max. 8388607)
+ 611 compressed objects within 7 object streams
+ 233 named destinations out of 1000 (max. 500000)
+ 264 words of extra memory for PDF output out of 10000 (max. 10000000)
 
