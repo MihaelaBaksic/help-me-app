@@ -52,6 +52,7 @@
 \contentsline {chapter}{Popis literature}{37}{chapter*.4}%
 \contentsline {chapter}{Indeks slika i dijagrama}{38}{chapter*.5}%
 \contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{39}{chapter*.6}%
+<<<<<<< HEAD
 >>>>>>> development-documentation
 =======
 \contentsline {subsubsection}{Dijagrami obrazaca uporabe}{19}{subsubsection*.3}%
@@ -77,3 +78,5 @@
 \contentsline {chapter}{Indeks slika i dijagrama}{44}{chapter*.5}%
 \contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{45}{chapter*.6}%
 >>>>>>> 6-uc-diagrams
+=======
+>>>>>>> c9e7a8b... Opis arhitekture i baze podataka
