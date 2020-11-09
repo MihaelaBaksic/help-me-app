@@ -21,10 +21,13 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
 \usepackage{float}
 \usepackage{setspace}
 \restylefloat{table}
 
+\graphicspath{ {./slike/} }
 
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %redefiniranje stila stranice u paketu fancyhdr
 
