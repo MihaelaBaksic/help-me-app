@@ -16,18 +16,22 @@ function LoginForm(props) {
 	async function onSubmit(values, e) {
 		e.preventDefault();
 
+		var urlEncoded = new URLSearchParams();
+		urlEncoded.append("username", values.username);
+		urlEncoded.append("password", values.password);
+
 		const options = {
 			method: "POST",
+			credentials: "include",
 			headers: {
-				"Content-Type": "application/json",
-				username: values.username,
-				password: values.password,
+				"Content-Type": "application/x-www-form-urlencoded",
 			},
+			body: urlEncoded,
 		};
 		console.log(options);
-		await fetch(loginUrl, options)
-			.then((response) => response.json())
-			.then((result) => console.log(result));
+		await fetch(loginUrl, options).then((response) =>
+			console.log(response)
+		);
 	}
 
 	return (
