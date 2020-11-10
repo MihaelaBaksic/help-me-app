@@ -3,14 +3,15 @@
 			
 			Odabir odgovarajuće arhitekture je važna odluka koja utječe na cjelokupnu funkcionalnost sustava. Budući da je cilj aplikacije široka dostupnost, odabrali smo web aplikaciju. Web aplikacija funkcionira neovisno o platformi, što oslobađa razvojni tim višeplatformnog razvoja.\\
 			Korisnik aplikaciji pristupa pomoću web preglednika. Web preglednik je program koji omogućava korisniku pregled i prikaz web aplikacije na uređaju. Kako bi se omogućila komunikacija klijenta(korisnika) s aplikacijom koristi se web poslužitelj koji koristi HTTP protokol. Aplikacija komunicira sa backend-om preko REST API-ja. Backend dohvaća sve potrebne podatke iz baze podataka(više o njoj u sljedećoj sekciji) nakon čega preko poslužitelja i preglednika prikazuje te podatke korisniku u obliku HTML dokumenta.\\
-			Aplikacija je pisana u programskom jeziku Java i programskom okruženju Spring Boot, te React-u(JavaScript biblioteka za izgradnju korisničkih sučelja). Za arhitekturu web aplikacije odabrali smo MVC(engl. Model-View-Controller) obrazac. Budući da MVC odvaja pojedine dijelove aplikacije ovisno o njihovoj namjeni, omogućava se paralelan razvoj te jednostavna nadogradnja.\\
-			Naša aplikacija koristi MVC na sljedeći način:
+			Aplikacija je pisana u programskom jeziku Java i programskom okruženju Spring Boot, te React-u(JavaScript biblioteka za izgradnju korisničkih sučelja).\\
 			
+Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u tri sloja: Repository, Service i Controller. 
 			\begin{itemize}
-				\item \textbf{Model} – centralna komponenta obrasca. Sadržava pravila, logiku te bazu podataka. Kako bi implementirali ovu komponentu MVC obrasca koristiti ćemo servise Spring Boot-a, Java objekte za poslovnu logiku i PostgreSQL bazu podataka. 
-				\item \textbf{View} – vizualni dio aplikacije s kojim korisnik interaktira. Kako je naša aplikacija web aplikacija, View će biti korisničko sučelje ostvareno pomoću React-a, HTML-a i CSS-a. 
-				\item \textbf{Controller} –  prima i obrađuje svaku vrstu zahtjeva korisnika, te ih šalje Modelu ili Viewu. Budući da koristimo Spring Boot radni ovir, konvencija nalaže da se ovaj dio ostvari pomoću REST konrolera. Tu konvenciju poštuje i ova aplikacija. Svi se zahtjevi prosljeđuju koristeći JSON format.
+				\item \textbf{Repository} – Sloj Repository primarno je zadužen za komunikaciju s bazom podataka. U njemu se nalaze standardne metode za dohvaćanje, spremanje i izmjenu podataka u bazi. Te metode temelje se na atributima entiteta za koji je izgrađen pojedini repository. Također, svaki repository može biti nadopunjen vlastitim metodama.
+				\item \textbf{Service} – U Service sloju odvija se poslovna logika i manipulacija podacima koji dolaze s baze. To uključuje kreiranje klasa, promjenu tipova, omatanje i sl. 
+				\item \textbf{Controller} –  prima i obrađuje zahtjeve poslužitelja. Svi se zahtjevi prosljeđuju koristeći JSON format. Shodno pojedinom zahtjevu, controller zatražuje podatke sa repositoryja, izvodi metode koje mu pruža Service. Na kraju podatke u obliku objekata šalje kao odgovor web poslužitelju.  
 			\end{itemize}
+			React je javascript knjižnica za izgradnju korisničkih sučelja. Temelji se na deklariranju komponenata koje se prikazuju korisniku preko web preglednika.
 			\begin{figure}
 				\includegraphics{Arhitektura_sustava}
 				\caption{Arhitektura sustava}
@@ -21,7 +22,7 @@
 			\section{Baza podataka}
 			
 			Sve je podatke potrebno negdje spremiti kako bi se mogli dinamički dohvaćati. Za ovo nam služi baza podataka, koju također smatramo dijelom MVC obrasca. Naša aplikacija u pozadini koristi, kao relacijsku bazu podataka, PostgreSQL.
-			Sve relacije su dovedene u 3. normalnu formu.\\
+			\\
 			U bazi podataka nalaze se sljedeći entiteti:
 			\begin{itemize}
 				\item Korisnik
@@ -130,7 +131,7 @@
 			
 			\bigskip
 			\bigskip
-			\textbf{Potencijalni} Ovaj entitet predstavlja sve potencijalne izvršitelje jednog zahtjeva. Sadrži atribute: zahtjevID, korisnikID. Oba atributa su strani ključevi. Prvi predstavlja zahtjev kojeg korisnik želi izvršit, drugi predstavlja korisnika koji želi izvršit zahtjev.
+			\textbf{Potencijalni} Ovaj entitet predstavlja sve potencijalne izvršitelje jednog zahtjeva. Sadrži atribute: zahtjevID, korisnikID. Oba atributa su strani ključevi. Prvi predstavlja zahtjev kojeg korisnik želi izvršiti, drugi predstavlja korisnika koji želi izvršit zahtjev.
 			\bigskip
 			
 			\begin{tabularx}{\textwidth} {|p{2cm}|p{2cm}|X|}

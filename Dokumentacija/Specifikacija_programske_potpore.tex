@@ -451,14 +451,14 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Označavanje zahtjeva izvršenim 
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Korisnik je postavljen kao izvršitelj zahtjeva
+						\item  \textbf{Preduvjet:} Korisnik je postavljen kao autor zahtjeva
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
 							
 							\item Korisnik odabire zahtjev koji izvršava
 							\item Korisnik označuje zahtjev izvršenim
-							\item Korisniku autoru šalje se obavijest o izvršenju
+							\item Korisniku izvršitelju šalje se obavijest o izvršenju
 							\item Inicira se ocjenjivanje korisnika
 							
 						\end{packed_enum}
@@ -650,7 +650,7 @@
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
 					\begin{figure}[H]
-					\includegraphics[scale=0.8]{slike/admin.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=1.0]{slike/admin.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Admin}
 				\end{figure}
@@ -684,7 +684,7 @@
 				
 				\noindent \large {\textbf{Novi zahtjev}}
 				\newline
-				\noindent \normalsize Pri postavljanju novog zahtjeva, korisnik odabire opciju za dodavanje novog zahtjeva te mu poslužitelj šalje formu novog zahtjeva. Nakon toga, korisnik popunjava formu te ga sustav traži da popravi unos dok god su neka polja krivo popunjena. Nakon uspješne popune svih polja u formi, događa se evidentiranje sustava u bazi, te se nakon toga zahtjev može prikazivati drugim korisnicima aplikacije. 
+				\noindent \normalsize Pri postavljanju novog zahtjeva, korisnik odabire opciju za dodavanje novog zahtjeva te mu poslužitelj šalje formu novog zahtjeva. Nakon toga, korisnik popunjava formu te ga sustav traži da popravi unos dok god su neka polja krivo popunjena. Nakon uspješne popune svih polja u formi, događa se evidentiranje zahtjeva u bazi, te se nakon toga zahtjev može prikazivati drugim korisnicima aplikacije. 
 				   
 				\newpage
 				\begin{figure}[H]
@@ -696,11 +696,11 @@
 				
 				\noindent \large {\textbf{Pregled zahtjeva, javljanje na zahtjev}}
 				\newline
-				\noindent \normalsize Korisnik pri uobičajenom korištenju aplikacije može pregledavati listu dostupnih zahtjeva. Korisnik tada odabire opciju prikaza zahtjeva, a poslužitelj od baze podataka traži odgovarajuće podatke u odnosu na korisnikovu adresu i radijus u kojem želi obuhvatiti zahtjeve. U sluačaju da postoje aktivni zahtjevi sa ovim uvjetima korisnik ima mogućnost javiti se na zahtjev tako što odabere tu opciju u aplikaciji, a poslužitelj to evidentira u bazi. Nakon što se javio na zahtjev, autor zahtjeva može vidjeti kontakte korisnika i obratiti mu se. U slučaju da nema aktivnih zahtjeva korisniku se u aplikaciji ispisuje odgovarajuća poruka te nema daljnjih mogućnosti za javljanje na zahtjev. 
+				\noindent \normalsize Korisnik pri uobičajenom korištenju aplikacije može pregledavati listu dostupnih zahtjeva. Korisnik tada odabire opciju prikaza zahtjeva, a poslužitelj od baze podataka traži odgovarajuće zahtjeve obzirom na kriterije filtriranja zahtjeva za prikaz. U slučaju da postoje aktivni zahtjevi sa odgovarajućim uvjetima korisnik ima mogućnost javiti se na zahtjev tako što odabere tu opciju u aplikaciji, a poslužitelj to evidentira u bazi. Nakon što se javio na zahtjev, autor zahtjeva može vidjeti kontakte potencijalnih izvršitelja i kontaktirati ih. U slučaju da nema aktivnih zahtjeva korisniku se u aplikaciji ispisuje odgovarajuća poruka te nema daljnjih mogućnosti za javljanje na zahtjev. 
 				   
 				\newpage
 				\begin{figure}[H]
-					\includegraphics[scale=0.65]{slike/pregled-zahtjeva.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.7]{slike/pregled-zahtjeva.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Pregled zahtjeva, javljanje na zahtjev}
 				\end{figure}
@@ -708,7 +708,7 @@
 								
 				\noindent \large {\textbf{Biranje izvršitelja}}
 				\newline
-				\noindent \normalsize Isprva korisnik šalje zahtjev za prikazivanjem njegovih aktivnih zahtjeva, poslužitelj ih pronalazi u bazi i prosljeđuje poslužitelju te se ti zahtjevi prikazuju korisniku. Ako korisnik želi vidjeti neki pojedini zahtjev detaljnije, odabire taj zahtjev te mu se u slučaju da postoje ljudi koji su se javili na zahtjev nude opcije odbijanja i prihvaćanja pojedinog izvršitelja te može isto tako odgoditi odluko oko biranja izvršitelja i vratiti se na prikaz svih njegovih aktivnih zahtjeva. 
+				\noindent \normalsize Isprva korisnik šalje zahtjev za prikazivanjem njegovih aktivnih zahtjeva, poslužitelj ih pronalazi u bazi i prosljeđuje korisniku. Ako korisnik želi vidjeti neki pojedini zahtjev detaljnije, odabire taj zahtjev te mu se u slučaju da postoje ljudi koji su se javili na zahtjev nude opcije odbijanja i prihvaćanja pojedinog izvršitelja te može isto tako odgoditi odluko oko biranja izvršitelja i vratiti se na prikaz svih njegovih aktivnih zahtjeva. 
 				   
 				\newpage
 				\begin{figure}[H]
@@ -717,16 +717,16 @@
 					\caption{Biranje izvršitelja}
 				\end{figure}
 				\newpage
-								
-				\noindent \large {\textbf{Izvršavanje zahtjeva, ocjenjivanje korisnika}}
+				
+				\noindent \large {\textbf{Izvršavanje viša razina}}
 				\newline
-				\noindent \normalsize Nakon što je autor potvrdio izvršitelja zahtjeva, poslužitelj traži od baze podataka kontakte autora i izvršitelja kako bi ih mogao proslijediti odgovarajućim korisnicima. Kada su kontakti poslani, smatra se da se događa "realno izvršavanje zahtjeva", te nakon izvršavanja slijedi ocjenjivanje. Autor šalje ocjenu izvršitelja i obratno te se obje ocjene pohranjuju u bazi podataka. 
+				\noindent \normalsize Izvršavanje kreće tako da sustav šalje kontakte izvršitelju i autoru. Nakon izvršavanja autor označava da je zahtjev izvršen, čime se omogućava ocjenjivanje. Ocjenjivanje uključuje odabir ocjene od 1 do 5 te opcionalan unos komentara.
 				   
-				\newpage
-				\begin{figure}[H]
-					\includegraphics[scale=0.65]{slike/izvrsavanje-zahtjeva.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\newpage			
+\begin{figure}[H]
+					\includegraphics[scale=0.65]{slike/izvrsavanje-visa-razina.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
-					\caption{Izvršavanje zahtjeva}
+					\caption{Izvršavanje viša razina}
 				\end{figure}
 				
 				\
@@ -737,7 +737,6 @@
 		\begin{itemize}
 			\item Aplikacija treba biti izvedena kao web aplikacija prilagođena mobilnom uređaju.
 			\item Sustav mora podržavati rad više korisnika u stvarnom vremenu.
-			\item Sustav kao valutu koristi HRK.
 			\item Procesiranje bilo kakve korisničke interakcije sa sustavom ne bi trebalo trajati duže od par sekundi.
 			\item Administratori su dodijeljeni po geografskim lokacijama.
 			\item Sustav mora podržavati hrvatske dijakritičke znakove.
