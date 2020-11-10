@@ -22,16 +22,20 @@ function LoginForm(props) {
 
 		const options = {
 			method: "POST",
-			credentials: "include",
+			credentials: "same-origin",
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
 			},
 			body: urlEncoded,
 		};
 		console.log(options);
-		await fetch(loginUrl, options).then((response) =>
-			console.log(response)
-		);
+		await fetch(loginUrl, options).then((response) => {
+			if (response.status === 200) {
+				props.setLogInTrueHandler(values.username, values.password);
+			} else {
+				console.log("nije uspjeh");
+			}
+		});
 	}
 
 	return (
