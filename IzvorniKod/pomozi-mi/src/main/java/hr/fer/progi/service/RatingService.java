@@ -8,8 +8,7 @@ import hr.fer.progi.rest.RatingController;
 import java.util.List;
 
 /**
- * Represents connection between {@link RatingController} and
- * {@link RatingRepository}.
+ * Represents connection between {@link RatingController} and {@link RatingRepository}.
  */
 public interface RatingService {
 
@@ -31,6 +30,7 @@ public interface RatingService {
 
     /**
      * Adds new rating.
+     *
      * @param rating
      * @return Newly added rating
      */

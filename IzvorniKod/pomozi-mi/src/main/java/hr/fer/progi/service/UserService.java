@@ -14,19 +14,21 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 /**
- * Represents connection between {@link HomeController} and {@link UserRepository}
- * and connection between {@link UserController} and {@link UserRepository}.
+ * Represents connection between {@link HomeController} and {@link UserRepository} and connection between {@link
+ * UserController} and {@link UserRepository}.
  */
 public interface UserService {
 
     /**
      * Lists all users in the system.
+     *
      * @return All users in the system
      */
     List<User> listAll();
 
     /**
      * Registers new {@link User} and returns that {@link User}.
+     *
      * @param user to register
      * @return newly registered {@link User}
      */
@@ -34,6 +36,7 @@ public interface UserService {
 
     /**
      * Updates data for user.
+     *
      * @param user
      * @return newly updated user
      */
@@ -41,6 +44,7 @@ public interface UserService {
 
     /**
      * Finds {@link User} in the system by its property username.
+     *
      * @param username by which to search {@link User}
      * @return found {@link User}
      * @throws IllegalArgumentException if username is null
@@ -50,15 +54,17 @@ public interface UserService {
 
     /**
      * Logins user.
+     *
      * @param loginDTO
      * @return Logged user.
      */
     // TODO loginUser accepts Login and not LoginDTO
     User loginUser(LoginDTO loginDTO);
 
-    
+
     /**
      * Deletes user's account.
+     *
      * @param username
      * @return true if account has been deleted, false otherwise.
      */

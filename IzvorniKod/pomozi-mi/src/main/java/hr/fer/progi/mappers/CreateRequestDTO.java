@@ -22,16 +22,16 @@ public class CreateRequestDTO {
     private String comment;
     private Address address;
 
-    
+
     /**
      * Wraps {@link CreateRequestDTO} to {@link Request}.
+     *
      * @param author
      * @return newly created request
      */
-    //TODO add all args constructor to Request and fix this or constructor accepting these args
-    public  Request mapToRequest(User author){
+    public Request mapToRequest(User author) {
         Request newRequest = new Request();
-        newRequest.setRequestStartTime( new Date(System.currentTimeMillis()));
+        newRequest.setRequestStartTime(new Date(System.currentTimeMillis()));
         newRequest.setDuration(this.duration);
         newRequest.setComment(this.comment);
         newRequest.setRequestAuthor(author);

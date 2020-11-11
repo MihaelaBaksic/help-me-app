@@ -15,8 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Handles requests toward "/user", "/settings" and
- * "/{username}" path.
+ * Handles requests toward "/user", "/settings" and "/{username}" path.
  */
 @RestController
 @RequestMapping("/user")
@@ -34,33 +33,34 @@ public class UserController {
 
     @GetMapping("/getCurrentUser")
     @Secured("ROLE_USER")
-    public ResponseEntity<EntityModel<UserDTO>> getCurrentUser(){
-        String username =  SecurityContextHolder.getContext().getAuthentication().getName();
+    public ResponseEntity<EntityModel<UserDTO>> getCurrentUser() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userService.findByUsername(username);
         return ResponseEntity.ok(assembler.toModel(user.mapToUserDTO()));
     }
 
     /**
      * Gets current user.
+     *
      * @param user
      * @return
      */
     @GetMapping("/settings")
     @Secured("ROLE_USER")
-    public EntityModel<UserDTO> getUserSettings(@AuthenticationPrincipal User user){
+    public EntityModel<UserDTO> getUserSettings(@AuthenticationPrincipal User user) {
         return assembler.toModel(user.mapToUserDTO());
     }
 
     /**
-     * Handles a HTTP POST Request when user wants to update
-     * some information in their profile.
+     * Handles a HTTP POST Request when user wants to update some information in their profile.
+     *
      * @param updatedUser Changes that user made
-     * @param user User before changes
+     * @param user        User before changes
      * @return
      */
     @PostMapping("/settings")
     @Secured("ROLE_USER")
-    public ResponseEntity<?> updateUser(@RequestBody User updatedUser, @AuthenticationPrincipal User user){
+    public ResponseEntity<?> updateUser(@RequestBody User updatedUser, @AuthenticationPrincipal User user) {
         // TODO update user in database
         EntityModel<UserDTO> entityModel = assembler.toModel(userService.updateUser(updatedUser).mapToUserDTO());
         return ResponseEntity
@@ -71,17 +71,19 @@ public class UserController {
 
     /**
      * Gets current user.
+     *
      * @param username
      * @return
      */
     @GetMapping("/{username}")
     @Secured("ROLE_USER")
-    public EntityModel<UserDTO> getUser(@PathVariable("username") String username){
+    public EntityModel<UserDTO> getUser(@PathVariable("username") String username) {
         return assembler.toModel(userService.findByUsername(username).mapToUserDTO());
     }
 
     /**
      * Handles a HTTP DELETE Request when user wants to delete their account
+     *
      * @param username
      * @return
      */

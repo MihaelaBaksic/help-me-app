@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Represents data transfer object(DTO) for {@link User} entity. 
+ * Represents data transfer object(DTO) for {@link User} entity.
  */
 @Data
 public class UserDTO {
@@ -20,10 +20,10 @@ public class UserDTO {
     //profile picture
     private boolean administrator;
 
-    public UserDTO(){
+    public UserDTO() {
     }
 
-    public UserDTO(String username, String firstName, String lastName, String email, boolean administrator){
+    public UserDTO(String username, String firstName, String lastName, String email, boolean administrator) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -33,9 +33,10 @@ public class UserDTO {
 
     /**
      * Creates {@link User} from {@link UserDTO}.
+     *
      * @return new User
      */
-    public User mapToUser(){
+    public User mapToUser() {
         User user = new User();
         user.setUsername(this.username);
         user.setFirstName(this.firstName);

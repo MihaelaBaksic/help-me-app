@@ -26,7 +26,7 @@ import java.util.List;
 @Profile("basic-security")
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-@CrossOrigin(origins="*/*")
+@CrossOrigin(origins = "*/*")
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 
@@ -53,7 +53,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
         configuration.setAllowedOrigins(Collections.singletonList("http://localhost:3000"));
         configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST", "OPTIONS"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS"));
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -64,7 +64,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.eraseCredentials(false);
         auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
     }

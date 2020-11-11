@@ -4,6 +4,7 @@ import java.sql.Time;
 
 import lombok.Data;
 import hr.fer.progi.domain.User;
+
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
@@ -13,87 +14,88 @@ import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.UserStatus;
 
 /**
- * Represents data which user writes when he/she
- * registers to web page.
- *
+ * Represents data which user writes when he/she registers to web page.
  */
 @Data
 public class RegistrationDTO {
 
-	//registracija:
+    /*
+    registracija:
 
-	//korisnik daje sljedeće informacije -> 
-	//name, surname, username, email, password, dateOfBirth,
-	//phoneNumber, profilePicture, address
+    korisnik daje sljedeće informacije ->
+    name, surname, username, email, password, dateOfBirth,
+    phoneNumber, profilePicture, address
 
-	//ne daje -> id, administrator, status, blockTime
+    ne daje -> id, administrator, status, blockTime
+     */
 
-	@NotNull
-	@Size(min = 2, max = 30)
-	private String firstName;
-	
-	@NotNull
-	@Size(min = 2, max = 30)
-	private String lastName;
-	
-	@NotNull
-	@Column(unique = true)
-	@Size(min = 4, max = 20)
-	private String username;
-	
-	@NotNull
-	@Size(min = 6)
-	private String password;
-	
-	@NotNull
-	@Column(unique = true)
-	private String email;
+    @NotNull
+    @Size(min = 2, max = 30)
+    private String firstName;
 
-	@NotNull
-	@Column(unique = true)
-	private String phoneNumber;
-	
-	private String streetName;
+    @NotNull
+    @Size(min = 2, max = 30)
+    private String lastName;
 
-	private int streetNumber;
+    @NotNull
+    @Column(unique = true)
+    @Size(min = 4, max = 20)
+    private String username;
 
-	private Long cityCode;
+    @NotNull
+    @Size(min = 6)
+    private String password;
 
-	private String cityName;
-	
-	public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
-			@Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
-			String phoneNumber, String streetName, int streetNumber,
-						   Long cityCode,String cityName ) {
+    @NotNull
+    @Column(unique = true)
+    private String email;
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-		this.streetName = streetName;
-		this.streetNumber = streetNumber;
-		this.cityCode = cityCode;
-		this.cityName = cityName;
-	}
-	
-	/**
-	 * Creates {@link User} from {@link RegistrationDTO}.
-	 * @return new User
-	 */
-	public User mapToUser() {
-		boolean admin = false;
-		
-		UserStatus status = UserStatus.NOTBLOCKED;
-		
-		Time blockedUntil = null;
+    @NotNull
+    @Column(unique = true)
+    private String phoneNumber;
 
-		Address address = new Address(this.streetName, this.streetNumber, this.cityCode, this.cityName);
-		
-		return new User(this.firstName, this.lastName,
-		this.username, this.password, this.email,
-		this.phoneNumber,  address,
-		admin, status, blockedUntil);
-	}
+    private String streetName;
+
+    private int streetNumber;
+
+    private Long cityCode;
+
+    private String cityName;
+
+    public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
+                           @Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
+                           String phoneNumber, String streetName, int streetNumber,
+                           Long cityCode, String cityName) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.streetName = streetName;
+        this.streetNumber = streetNumber;
+        this.cityCode = cityCode;
+        this.cityName = cityName;
+    }
+
+    /**
+     * Creates {@link User} from {@link RegistrationDTO}.
+     *
+     * @return new User
+     */
+    public User mapToUser() {
+        boolean admin = false;
+
+        UserStatus status = UserStatus.NOTBLOCKED;
+
+        Time blockedUntil = null;
+
+        Address address = new Address(this.streetName, this.streetNumber, this.cityCode, this.cityName);
+
+        return new User(this.firstName, this.lastName,
+                this.username, this.password, this.email,
+                this.phoneNumber, address,
+                admin, status, blockedUntil);
+    }
 }

@@ -28,22 +28,19 @@ public class AppUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = Optional.ofNullable(userService.findByUsername(username));
-        user.orElseThrow(()-> new UsernameNotFoundException("User not found : " + username));
+        user.orElseThrow(() -> new UsernameNotFoundException("User not found : " + username));
 
-        org.springframework.security.core.userdetails.User us =  new org.springframework.security.core.userdetails.User(user.get().getUsername(),
+        org.springframework.security.core.userdetails.User us = new org.springframework.security.core.userdetails.User(user.get().getUsername(),
                 user.get().getPassword(), true, true, true, true,
                 getGrantedAuthorities(user.get()));
         System.out.println(us);
         return us;
     }
 
-    private static List<GrantedAuthority> getGrantedAuthorities(User user){
-        List<GrantedAuthority> authorities;
-
+    private static List<GrantedAuthority> getGrantedAuthorities(User user) {
         if (user.isAdministrator())
             return commaSeparatedStringToAuthorityList("ROLE_ADMIN,ROLE_USER");
         else
             return commaSeparatedStringToAuthorityList("ROLE_USER");
-
     }
 }

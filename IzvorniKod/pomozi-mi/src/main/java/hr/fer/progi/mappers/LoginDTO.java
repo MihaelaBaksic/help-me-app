@@ -9,8 +9,7 @@ import javax.validation.constraints.NotNull;
 import hr.fer.progi.domain.Request;
 
 /**
- * Represents data which user writes when he/she logins
- * to web page.
+ * Represents data which user writes when he/she logins to web page.
  */
 @Data
 @NoArgsConstructor
@@ -21,4 +20,5 @@ public class LoginDTO {
     private String username;
     @NotNull
     private String password;
+
 }

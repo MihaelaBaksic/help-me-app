@@ -8,19 +8,20 @@ import hr.fer.progi.rest.RequestController;
 import java.util.List;
 
 /**
- * Represents connection between {@link RequestController} and
- * {@link RequestRepository}.
+ * Represents connection between {@link RequestController} and {@link RequestRepository}.
  */
 public interface RequestService {
 
     /**
      * Lists all {@link Request} in the system.
+     *
      * @return All {@link Request} in the system
      */
     List<Request> listAll();
 
     /**
      * Adds given {@link Request} to the system.
+     *
      * @param request to be added in the system
      * @return added {@link Request}
      */
@@ -28,6 +29,7 @@ public interface RequestService {
 
     /**
      * Finds request for given id.
+     *
      * @param id
      * @return Founded request or null if request is not existing
      */
@@ -35,6 +37,7 @@ public interface RequestService {
 
     /**
      * Finds all {@link Request} from given {@link User}.
+     *
      * @param user which {@link Request} we should find
      * @return all {@link Request} that given {@link User} has
      */

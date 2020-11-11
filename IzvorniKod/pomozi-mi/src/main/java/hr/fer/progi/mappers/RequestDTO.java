@@ -10,7 +10,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 /**
- * Represents data transfer object(DTO) for {@link Request} entity. 
+ * Represents data transfer object(DTO) for {@link Request} entity.
  */
 @Data
 @AllArgsConstructor

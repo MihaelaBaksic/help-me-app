@@ -26,23 +26,27 @@ public class RequestModelAssembler implements RepresentationModelAssembler<Reque
 
     @Override
     public EntityModel<RequestDTO> toModel(RequestDTO requestDTO) {
+        /* Set request expire duration */
         if (requestDTO.getDuration() == null)
-            requestDTO.setDuration(new Time(7*24));
+            requestDTO.setDuration(new Time(7 * 24));
 
-        return EntityModel.of(new RequestDTO(requestDTO.getId(), requestDTO.getDuration(), requestDTO.getComment(), requestDTO.getAddress(), requestDTO.getRequestAuthor()),
+        /* Adds self referencing link to a model (HATEOAS API) */
+        return EntityModel.of(requestDTO,
                 linkTo(methodOn(RequestController.class).getRequest(requestDTO.getId())).withSelfRel());
     }
 
     /**
      * Wraps list of {@link RequestDTO}-s into {@link CollectionModel} instance.
+     *
      * @param requestsDTO
-     * @return List of requestDTO-s wrapped in {@link CollectionModel}.
+     * @return List of requestDTO-s wrapped in {@link CollectionModel}
      */
     public CollectionModel<EntityModel<RequestDTO>> toCollectionModel(List<RequestDTO> requestsDTO) {
-        List<EntityModel<RequestDTO>> entityModels  = requestsDTO.stream()
+        List<EntityModel<RequestDTO>> entityModels = requestsDTO.stream()
                 .map(this::toModel)
                 .collect(Collectors.toList());
 
+        /* Adds self referencing link to a model (HATEOAS API) */
         return CollectionModel.of(entityModels,
                 linkTo(methodOn(RequestController.class).getRequests()).withSelfRel());
     }
