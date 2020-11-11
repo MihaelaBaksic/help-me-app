@@ -7,14 +7,7 @@ function GetCurrentUserComponent(props) {
 		var myHeaders = new Headers();
 		myHeaders.append(
 			"Authorization",
-			"Basic " +
-				btoa(
-					unescape(
-						encodeURIComponent(
-							props.username + ":" + props.password
-						)
-					)
-				)
+			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
 		const options = {
 			method: "GET",
@@ -23,16 +16,29 @@ function GetCurrentUserComponent(props) {
 		};
 
 		console.log(sessionStorage.getItem("isLogedIn"));
-		console.log(sessionStorage.getItem("username"));
-		console.log(sessionStorage.getItem("password"));
+		console.log(sessionStorage.getItem("basicAuthToken"));
 
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
-			.then((result) => setPodaci(result))
+			.then((result) => setPodaci(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
-	});
 
-	return <div>{podaci}</div>;
+		console.log(JSON.stringify(podaci));
+	}, []);
+
+	return (
+		<div className="userData">
+			Dobrodošao ulogirani korisniče {podaci.firstName} {podaci.lastName}
+			<br />
+			Vaša email adresa je: {podaci.email}
+			<br />
+			Vaše korisničko ime je: {podaci.username}
+			<br />
+			{podaci.administrator == "true"
+				? "Ti si administrator"
+				: "Nisi administrator"}
+		</div>
+	);
 }
 
 export default GetCurrentUserComponent;

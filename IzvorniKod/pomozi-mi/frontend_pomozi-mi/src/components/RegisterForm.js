@@ -36,7 +36,7 @@ function RegisterForm(props) {
 	}
 
 	return (
-		<div>
+		<div className="formHolder">
 			<div className="formHeader">
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
 				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>

@@ -12,8 +12,7 @@ class App extends Component {
 
 		this.state = {
 			isLogedIn: sessionStorage.getItem("isLogedIn") || false,
-			username: sessionStorage.getItem("username") || "",
-			password: sessionStorage.getItem("password") || "",
+			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
 		this.setLogInTrue = this.setLogInTrue.bind(this);
@@ -22,18 +21,18 @@ class App extends Component {
 	setLogInTrue(usernameXD, passwordCF) {
 		this.setState({
 			isLogedIn: true,
-			username: usernameXD,
-			password: passwordCF,
+			basicAuthToken: btoa(
+				unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
+			),
 		});
 		sessionStorage.setItem("isLogedIn", "true");
-		sessionStorage.setItem("username", usernameXD);
-		sessionStorage.setItem("password", passwordCF);
+		sessionStorage.setItem("basicAuthToken", this.state.basicAuthToken);
 	}
 
 	render() {
 		if (!this.state.isLogedIn) {
 			return (
-				<div className="formHolder">
+				<div className="flexForCenter">
 					<HashRouter>
 						<Switch>
 							<Route
@@ -59,10 +58,9 @@ class App extends Component {
 			return (
 				<div>
 					<Header></Header>
-					<GetCurrentUserComponent
-						username={this.state.username}
-						password={this.state.password}
-					></GetCurrentUserComponent>
+					<div className="pageBody">
+						<GetCurrentUserComponent />
+					</div>
 				</div>
 			);
 		}
