@@ -13,6 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import hr.fer.progi.mappers.*;
+
+/**
+ * Responds to the requests from user. Handles requests towards "/",
+ * "/register" paths.
+ */
 @RestController
 @RequestMapping("/")
 public class HomeController {
@@ -30,6 +35,13 @@ public class HomeController {
     private WebSecurity webSecurity;
 
     @CrossOrigin
+    /**
+     * This method is called to handle all POST HTTP Requests
+     * toward path "/register". In addition this method registers
+     * user.
+     * @param regDTO DTO that contains all necessary information to register a user
+     * @return HTTP 200 if user is registered??? // ako neko zna što ovo točno vraća neka prepravi
+     */
     @PostMapping("/register")
     ResponseEntity<EntityModel<UserDTO>> register(@RequestBody RegistrationDTO regDTO){
         PasswordEncoder encoder = webSecurity.getPasswordEncoder();

@@ -1,11 +1,15 @@
 package hr.fer.progi.mappers;
 
+import hr.fer.progi.domain.Rating;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Represents data transfer object(DTO) for {@link User} entity. 
+ */
 @Data
 public class UserDTO {
 
@@ -27,6 +31,10 @@ public class UserDTO {
         this.administrator = administrator;
     }
 
+    /**
+     * Creates {@link User} from {@link UserDTO}.
+     * @return new User
+     */
     public User mapToUser(){
         User user = new User();
         user.setUsername(this.username);

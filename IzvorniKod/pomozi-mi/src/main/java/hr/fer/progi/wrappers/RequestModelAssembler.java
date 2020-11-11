@@ -7,6 +7,7 @@ import hr.fer.progi.rest.RequestController;
 import hr.fer.progi.rest.UserController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,9 @@ import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+/**
+ * Converts a domain object, {@link Request} in this case, to {@link RepresentationModel}.
+ */
 @Component
 public class RequestModelAssembler implements RepresentationModelAssembler<RequestDTO, EntityModel<RequestDTO>> {
 
@@ -29,6 +33,11 @@ public class RequestModelAssembler implements RepresentationModelAssembler<Reque
                 linkTo(methodOn(RequestController.class).getRequest(requestDTO.getId())).withSelfRel());
     }
 
+    /**
+     * Wraps list of {@link RequestDTO}-s into {@link CollectionModel} instance.
+     * @param requestsDTO
+     * @return List of requestDTO-s wrapped in {@link CollectionModel}.
+     */
     public CollectionModel<EntityModel<RequestDTO>> toCollectionModel(List<RequestDTO> requestsDTO) {
         List<EntityModel<RequestDTO>> entityModels  = requestsDTO.stream()
                 .map(this::toModel)

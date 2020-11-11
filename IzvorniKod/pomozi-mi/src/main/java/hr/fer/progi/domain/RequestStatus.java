@@ -1,5 +1,8 @@
 package hr.fer.progi.domain;
 
+/**
+ * Represents in which state is current request.
+ */
 public enum RequestStatus {
 
 	//active, but no answer
@@ -14,7 +17,7 @@ public enum RequestStatus {
 	
 	ACCEPTED,
 	
-	DONE;
+	DONE
 	
 	
 	

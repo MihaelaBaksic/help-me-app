@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
 
+/**
+ * Handles requests toward "/request" and "/{id}" path.
+ */
 @RestController
 @RequestMapping("/requests")
 public class RequestController {
@@ -31,6 +34,10 @@ public class RequestController {
     }
 
 
+    /**
+     * Gets all requests in system
+     * @return
+     */
     @GetMapping("")
     @Secured("ROLE_USER")
     public CollectionModel<EntityModel<RequestDTO>> getRequests() {
@@ -41,12 +48,25 @@ public class RequestController {
                 .collect(Collectors.toList()));
     }
 
+    /**
+     * Gets one request whose id equals given id.
+     * @param id Id of request we want to find
+     * @return
+     */
     @GetMapping("/{id}") //TODO handle exception if no request is found
     public EntityModel<RequestDTO> getRequest(@PathVariable("id") Long id){
         return assembler.toModel(requestService.getRequestById(id)
                 .mapToRequestDTO());
     }
 
+    /**
+     * Handles HTTP POST Request when user wants to create new
+     * request.
+     * @param createRequest DTO that contains all necessary data for creating
+     * new request.
+     * @param user User that wants to create new request.s
+     * @return
+     */
     @PostMapping("")
     @Secured("ROLE_USER")
     public ResponseEntity<Request> createRequest(@RequestBody CreateRequestDTO createRequest, @AuthenticationPrincipal User user){

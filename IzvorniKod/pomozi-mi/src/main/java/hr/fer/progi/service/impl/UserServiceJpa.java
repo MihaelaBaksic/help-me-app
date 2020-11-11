@@ -15,6 +15,9 @@ import org.springframework.util.Assert;
 import java.util.List;
 import hr.fer.progi.mappers.LoginDTO;
 
+/**
+ * Implementation of {@link UserServiceJpa} interface.
+ */
 @Service
 public class UserServiceJpa implements UserService {
 

@@ -12,13 +12,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+/**
+ * Represents one user.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class User {
 
+	/**
+	 * Unique identifier for every user.
+	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -54,18 +59,48 @@ public class User {
 	@JoinColumn(name = "address_id", referencedColumnName = "address_id")
 	private Address address;
 	
+	/**
+	 * Tells whether user is administrator or not.
+	 * Default is not an administrator.
+	 */
 	@NotNull
 	private boolean administrator;
 	
+	/**
+	 * Represents status of users account.
+	 * Default is NOTBLOCKED.
+	 */
 	@NotNull
 	private UserStatus status;
 	
+
+	/**
+	 * Represents time period in which user is blocked.
+	 */
 	private Time blockTime;
 
+
+	/**
+	 * Creates new {@link UserDTO} from {@link User}.
+	 * @return new UserDTO
+	 */
 	public UserDTO mapToUserDTO() {
 		return new UserDTO(username, firstName, lastName, email, administrator);
 	}
 
+	/**
+	 * Creates one user.
+	 * @param firstName User's name
+	 * @param lastName User's surname
+	 * @param username User's username
+	 * @param password User's password
+	 * @param email User's email
+	 * @param phoneNumber User's phone number
+	 * @param address User's address
+	 * @param admin Is user admin or not
+	 * @param status User's account status
+	 * @param blockedUntil Time period in which user is blocked
+	 */
 	public User(String firstName, String lastName, String username, String password,
 				String email, String phoneNumber,
 				Address address, boolean admin, UserStatus status, Time blockedUntil){

@@ -1,10 +1,16 @@
 package hr.fer.progi.service;
 
+import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.rest.RequestController;
 
 import java.util.List;
 
+/**
+ * Represents connection between {@link RequestController} and
+ * {@link RequestRepository}.
+ */
 public interface RequestService {
 
     /**
@@ -20,6 +26,11 @@ public interface RequestService {
      */
     Request addRequest(Request request);
 
+    /**
+     * Finds request for given id.
+     * @param id
+     * @return Founded request or null if request is not existing
+     */
     Request getRequestById(Long id);
 
     /**
