@@ -161,16 +161,84 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 		\section{Dijagram razreda}
 		
-			\textit{Potrebno je priložiti dijagram razreda s pripadajućim opisom. Zbog preglednosti je moguće dijagram razlomiti na više njih, ali moraju biti grupirani prema sličnim razinama apstrakcije i srodnim funkcionalnostima.}\\
+			U ovom poglavlju opisana je struktura \textit{backenda} aplikacije te opisana glavna funkcionalnost pojedinih klasa.\newline
+			\newline
+		
+		
+		
+				Na slici 4.3 prikazana je konfiguracija aplikacije \textit{Pomozi mi}. Konfiguracija aplikacije temelji se na postavkama u klasi \textit{WebSecurity}, kojom su definiranja dopuštenja pristupa za pojedini \textit{path}, ponašanje pri \textit{loginu} i \textit{logoutu}. \\
+				Klasom RestExceptionHandler regulirano je ponašanje sustava pri pojavi iznimke. Pojava iznimki rezultira \textit{responseom} u kojem je sadržana poruka iznimke.
+				
+				\begin{figure}[H]
+					\includegraphics[scale=0.6]{slike/cs1.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Struktura aplikacije i konfiguracija}
+					
+				\end{figure}
 			
-			\textbf{\textit{dio 1. revizije}}\\
+				\newpage
+				
+				Glavni preduvjet za obavljanje bilo kakve aktivnosti unutar aplikacije je da korisnik ima izrađen korisnički račun i prijavljen je u sustav. Klasom \textit{RegistrationDTO} modeliraju se podaci koje korisnik unosi prilikom registracije. Podaci takvog objekta služe kao predložak za stvaranje korisničkog računa. Za prijavu u sustav, provjeru korisničkog imena i lozinke te dodjeljivanje uloga zadužena je klasa \textit{AppUserDetailsService}. Korisniku može biti dodjeljena uloga ROLE\_USER i ROLE\_ADMIN kojima su određene ovlasti 
+				slanja zahtjeva na kontrolere.
+				
+				
+				\begin{figure}[H]
+					\includegraphics[scale=0.45]{slike/cs4.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Klase koje reguliraju registraciju i prijavu}
+					
+				\end{figure}
 			
-			\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
+				\newpage
+				
+				Slika 4.5 sadržava klase koje su ključne za aktivnosti i rad s korisnicima.
+				Klasa \textit{User} predstavlja sam entitet kojim je opisan pojedini korisnik. Sadržava sve relevantne atribute za opis korisnika, konstruktore te funkciju \textit{mapToUserDTO} kojom se objekt \textit{User} pretvara u objekt pogodniji za komunikaciju sa \textit{frontendom}. \textit{UserDTO} predstavlja glavni model komunikacije s vanjskim korisnikom te skriva informacije o pojedinom \textit{Useru} koje nisu relevantne za prikaz na \textit{frontendu}.
+				Omogućena je i pretvorba u suprotnom smjeru, iz klase \textit{UserDTO} u klasu \textit{User}. Klasa \textit{UserModelAssembler} omata klasu \textit{UserDTO} u oblik najprikladniji za interaktivnost prikaza, uključujući dodatne linkove. 
+				Pristup i manipulacija zapisima korisnika u bazi podataka ostvaren je klasom \textit{UserRepository} koja sadrži sve standardne metode za rad sa zapisima.
+				Poslovna logika koja se tiče korisnika ostvarena je u klasi \textit{UserServiceJpa}.
+				\textit{UserController} zadužen je za obrađivanje zahtjeva. On inicijalizira komunikaciju sa servisom i bazom podataka i oblikuje podatke o korisnicima u odgovor na zahtjev.
+				
+				
 			
-			\textbf{\textit{dio 2. revizije}}\\			
+				\begin{figure}[H]
+				\includegraphics[scale=0.38]{slike/cs2.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+				\centering
+				\caption{Klase koje reguliraju rad s korisnicima sustava}
+				
+				\end{figure}
 			
-			\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
+				\newpage
+				
+				Klasa \textit{Request} modelira zahtjeve korisnika. Kao i u slučaju sa klasom \textit{User}, ova klasa ima pripadajuću klasu DTO-a, repozitorija, servisa i kontrolera. 
+				Prilikom zadavanja zahtjeva, na kontoroler dolazi zahtjev koji u tijelu sadržava objekt tipa \textit{CreateRequestDTO} koji sadrži isključivo podatke koje unosi sam korisnik. Taj objekt je potrebno stvoriti objekt tipa \textit{Request} koristeći dobivene podatke i predefinirane podatke koji opisuju stanje zahtjeva kako bi se on mogao spremiti u bazu podataka.
+				
+				
 			
+				\begin{figure}[H]
+					\includegraphics[scale=0.38]{slike/cs3.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Klase koje reguliraju rad sa zahtjevima}
+					
+				\end{figure}
+			
+				\newpage
+				
+				Korisnicima je omogućeno međusobno ocjenjivanje te su na slici 4.7 prikazane klase koje služe modeliranju ocjena i ocjenjivanja. Svaka instancla klase \textit{RatingDTO} ima postavljenog korisnika koji je ocijenio te korisnika koji je ocjenjen,ocjenu, komentar te opcionalno zahtjev na koji se odnosi.
+				\textit{RatingServiceJpa} omogućuje prikaz ocjena koje je pojedini korisnik autorirao te ocjena koje je pojedini korisnik dobio.			
+				\begin{figure}[H]
+					\includegraphics[scale=0.6]{slike/cs5.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Klase koje reguliraju ocjenjivanje korisnika}
+					
+				\end{figure}
+				
+				
+			
+				
+			
+			
+				
+		
 			
 			
 			\eject

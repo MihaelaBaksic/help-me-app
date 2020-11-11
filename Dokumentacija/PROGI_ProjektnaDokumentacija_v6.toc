@@ -1,18 +1,18 @@
 \babel@toc {croatian}{}
 \contentsline {chapter}{\numberline {1}Dnevnik promjena dokumentacije}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Opis projektnog zadatka}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Specifikacija programske potpore}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Funkcionalni zahtjevi}{8}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Obrasci uporabe}{10}{subsection.3.1.1}%
-\contentsline {subsubsection}{Opis obrazaca uporabe}{10}{subsubsection*.2}%
-\contentsline {subsubsection}{Dijagrami obrazaca uporabe}{18}{subsubsection*.3}%
-\contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{22}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{30}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Baza podataka}{32}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{32}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Dijagram baze podataka}{35}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Dijagram razreda}{36}{section.4.2}%
+\contentsline {chapter}{\numberline {2}Opis projektnog zadatka}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Specifikacija programske potpore}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Funkcionalni zahtjevi}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Obrasci uporabe}{9}{subsection.3.1.1}%
+\contentsline {subsubsection}{Opis obrazaca uporabe}{9}{subsubsection*.2}%
+\contentsline {subsubsection}{Dijagrami obrazaca uporabe}{17}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {3.1.2}Sekvencijski dijagrami}{21}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Ostali zahtjevi}{25}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Arhitektura i dizajn sustava}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Baza podataka}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Opis tablica}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Dijagram baze podataka}{30}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Dijagram razreda}{31}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Dijagram stanja}{37}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Dijagram aktivnosti}{38}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Dijagram komponenti}{39}{section.4.5}%
