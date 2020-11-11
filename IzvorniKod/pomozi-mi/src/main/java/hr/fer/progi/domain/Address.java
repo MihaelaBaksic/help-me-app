@@ -16,44 +16,44 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Address {
 
-	/**
-	 * Unique identifier for each address.
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="address_id")
-	private Long id;
-	
-	@NotNull
-	@Size(min = 2, max = 50)
-	private String streetName;
-	
-	@NotNull
-	private int streetNumber;
+    /**
+     * Unique identifier for each address.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id")
+    private Long id;
 
-	/**
-	 * Represents user's place of residence.
-	 */
-	@NotNull
-	private Long zipCode;
+    @NotNull
+    @Size(min = 2, max = 50)
+    private String streetName;
 
-	@NotNull
-	@Size(min = 2, max = 50)
-	private String locationName;
+    @NotNull
+    private int streetNumber;
 
-	/**
-	 * Creates address with specified street name, street number, and
-	 * place of residence.
-	 * @param streetName The street's name
-	 * @param streetNumber The street's number
-	 * @param zipCode zip code of User's place of residence
-	 * @param locationName User's place of residence
-	 */
-	public Address(String streetName, int streetNumber, Long zipCode, String locationName){
-		this.streetName=streetName;
-		this.streetNumber=streetNumber;
-		this.zipCode=zipCode;
-		this.locationName=locationName;
-	}
+    /**
+     * Represents user's place of residence.
+     */
+    @NotNull
+    private Long zipCode;
+
+    @NotNull
+    @Size(min = 2, max = 50)
+    private String locationName;
+
+    /**
+     * Creates address with specified street name, street number, and place of residence.
+     *
+     * @param streetName   The street's name
+     * @param streetNumber The street's number
+     * @param zipCode      zip code of User's place of residence
+     * @param locationName User's place of residence
+     */
+    public Address(String streetName, int streetNumber, Long zipCode, String locationName) {
+        this.streetName = streetName;
+        this.streetNumber = streetNumber;
+        this.zipCode = zipCode;
+        this.locationName = locationName;
+    }
 
 }

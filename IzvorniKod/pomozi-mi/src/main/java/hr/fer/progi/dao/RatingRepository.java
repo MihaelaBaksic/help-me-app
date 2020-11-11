@@ -12,25 +12,25 @@ import java.util.List;
 
 
 /**
- * This is repository interface for Rating entity.
- * By extending {@link JpaRepository} it contains the full API of
- * {@link CrudRepository} and {@link PagingAndSortingRepository}.
- * Methods in this repository are used for queries over database.
+ * This is repository interface for {@link Rating} entity. By extending {@link JpaRepository} it contains the full API
+ * of {@link CrudRepository} and {@link PagingAndSortingRepository}. Methods in this repository are used for queries
+ * over database.
  */
 public interface RatingRepository extends JpaRepository<Rating, Long> {
 
-	/**
-	 * Gets all ratings where user has been rated.
-	 * @param username Rated user's username
-	 * @return List of all found ratings
-	 */
-    // TODO check if this query is optimized. I had 3 from databases :}
+    /**
+     * Gets all ratings where user has been rated.
+     *
+     * @param username Rated user's username
+     * @return List of all found ratings
+     */
     @Query("SELECT r FROM Rating r WHERE r.rated.username = :username")
     List<Rating> findAllWhereUserIsRated(
             @Param("username") String username);
 
     /**
-     * Gets all ratings where user rated other user.
+     * Gets all ratings where given user rated other user.
+     *
      * @param username Username of user who rated others
      * @return List of all ratings user gave
      */
