@@ -18,7 +18,6 @@ import hr.fer.progi.domain.UserStatus;
  * Represents data which user writes when he/she registers to web page.
  */
 @Data
-@NoArgsConstructor
 public class RegistrationDTO {
 
     /*

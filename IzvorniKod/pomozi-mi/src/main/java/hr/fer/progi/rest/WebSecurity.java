@@ -37,7 +37,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic();
-
+        http.cors();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers("/").permitAll()
                 .and().formLogin().loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password")
@@ -45,11 +45,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
                 .and().logout().logoutSuccessUrl("/logout").invalidateHttpSession(true).and().csrf();
         http.headers().frameOptions().sameOrigin(); // fixes h2-console problem
-        http.authorizeRequests().antMatchers("/login").permitAll();
         http.csrf().disable();
     }
 
-//    @Bean
+
+    //    @Bean
 //    CorsConfigurationSource corsConfigurationSource() {
 //        CorsConfiguration configuration = new CorsConfiguration();
 //
