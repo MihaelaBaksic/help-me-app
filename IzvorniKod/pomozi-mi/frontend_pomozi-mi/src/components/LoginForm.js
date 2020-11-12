@@ -33,7 +33,7 @@ function LoginForm(props) {
 			if (response.status === 200) {
 				props.setLogInTrueHandler(values.username, values.password);
 			} else {
-				console.log("nije uspjeh");
+				console.log("Neuspješan login");
 			}
 		});
 	}

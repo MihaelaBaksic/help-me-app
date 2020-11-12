@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+const baseUrl = `${process.env.PUBLIC_URL}`;
+
 function GetCurrentUserComponent(props) {
 	const [podaci, setPodaci] = useState([]);
 
@@ -18,7 +20,7 @@ function GetCurrentUserComponent(props) {
 		console.log(sessionStorage.getItem("isLogedIn"));
 		console.log(sessionStorage.getItem("basicAuthToken"));
 
-		fetch("http://localhost:8080/user/getCurrentUser", options)
+		fetch(baseUrl + "user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => setPodaci(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
