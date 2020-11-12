@@ -15,10 +15,12 @@ body {
 }
 
 .formHolder {
-	width: 50%;
-	max-width: 350px;
+	width: 70%;
+	max-width: 550px;
 	margin: auto;
-	padding: 20px 0;
+	padding: 2em;
+	background-color: rgb(236, 236, 236);
+	border-radius: 10px;
 }
 
 #root {
@@ -76,8 +78,6 @@ body {
 	font-weight: bold;
 	text-align: start;
 	padding: 5px;
-	border-radius: 20px;
-	height: inherit;
 }
 .pageBody {
 	display: flex;
@@ -90,6 +90,11 @@ body {
 	margin: auto;
 	padding: 2em;
 	font-weight: bold;
+
+	margin-top: 2em;
+	padding: 2em;
+	background-color: rgb(236, 236, 236);
+	border-radius: 10px;
 }
 .flexForCenter {
 	display: flex;

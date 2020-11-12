@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
@@ -12,6 +12,7 @@ function LoginForm(props) {
 	}
 
 	const { handleSubmit, register, errors } = useForm({});
+	const [errorMessage, setErrorMessage] = useState("");
 
 	async function onSubmit(values, e) {
 		e.preventDefault();
@@ -28,14 +29,16 @@ function LoginForm(props) {
 			},
 			body: urlEncoded,
 		};
-		console.log(options);
-		await fetch(loginUrl, options).then((response) => {
-			if (response.status === 200) {
-				props.setLogInTrueHandler(values.username, values.password);
-			} else {
-				console.log("Neuspješan login");
-			}
-		});
+		await fetch(loginUrl, options)
+			.then((response) => {
+				if (response.status === 200) {
+					console.log("Uspješan login");
+					props.setLogInTrueHandler(values.username, values.password);
+				} else {
+					console.log("Neuspješan login");
+				}
+			})
+			.catch(() => setErrorMessage("Korisnički podaci nisu ispravni"));
 	}
 
 	return (
@@ -83,10 +86,7 @@ function LoginForm(props) {
 					</div>
 				</div>
 
-				{/* <div className="form-group form-check">
-					<input type="checkbox" className="form-check-input" />
-					<label className="form-check-label">Zapamti me?</label>
-					</div> */}
+				<div className="api_error_message">{errorMessage}</div>
 				<div className="loginOrRegisterBtns">
 					<button type="submit" className="btn btn-primary btn-lg">
 						Login

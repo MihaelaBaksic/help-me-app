@@ -10,7 +10,7 @@ function RegisterForm() {
 	async function onSubmit(values, e) {
 		e.preventDefault();
 		delete values["confirmPassword"];
-		console.log(values);
+
 		const options = {
 			method: "POST",
 			headers: {
@@ -18,10 +18,18 @@ function RegisterForm() {
 			},
 			body: JSON.stringify(values),
 		};
-
-		const response = await fetch(registerUrl, options);
-		console.log(response.json());
-		return response;
+		//frontend dev
+		/* const response =  */
+		await fetch(registerUrl, options).then((response) => {
+			if (response.status === 200) {
+				console.log("Uspješna registracija");
+				props.history.push("/");
+			} else {
+				response.json().then((result) => {
+					setErrorMessage(result.message);
+				});
+			}
+		});
 	}
 
 	return (

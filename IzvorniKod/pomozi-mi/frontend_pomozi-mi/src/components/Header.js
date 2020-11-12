@@ -20,7 +20,6 @@ function Header(props) {
 			redirect: "follow",
 		};
 
-		console.log(options);
 		await fetch(logOutUrl, options).then((response) => {
 			if (response.status === 204) {
 				console.log("Uspješan logout");
@@ -32,14 +31,14 @@ function Header(props) {
 	}
 
 	function toggleSideMenu() {
-		if (document.getElementById("mySidenav").style.width == "250px") {
+		if (document.getElementById("mySidenav").style.width === "250px") {
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginRight = "0";
-			document.body.style.backgroundColor = "white";
+			//document.body.style.backgroundColor = "white";
 		} else {
 			document.getElementById("mySidenav").style.width = "250px";
 			document.getElementById("main").style.marginRight = "250px";
-			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+			//document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 		}
 	}
 
@@ -47,7 +46,7 @@ function Header(props) {
 		<div id="main" className="main">
 			<div className="header">
 				<div id="mySidenav" className="sidenav">
-					<a href="">About</a>
+					<a href="/">About</a>
 					<div
 						type="button"
 						class="btn btn-outline-secondary logOutButton"

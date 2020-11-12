@@ -17,15 +17,12 @@ function GetCurrentUserComponent(props) {
 			redirect: "follow",
 		};
 
-		console.log(sessionStorage.getItem("isLogedIn"));
-		console.log(sessionStorage.getItem("basicAuthToken"));
-
 		fetch(baseUrl + "user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => setPodaci(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
 
-		console.log(JSON.stringify(podaci));
+		//console.log(JSON.stringify(podaci));
 	}, []);
 
 	return (
@@ -36,7 +33,7 @@ function GetCurrentUserComponent(props) {
 			<br />
 			Vaše korisničko ime je: {podaci.username}
 			<br />
-			{podaci.administrator == "true"
+			{podaci.administrator === "true"
 				? "Ti si administrator"
 				: "Nisi administrator"}
 		</div>
