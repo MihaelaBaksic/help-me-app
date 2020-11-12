@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-//const loginUrl = "http://localhost:8080/login";
-const loginUrl = `${process.env.PUBLIC_URL}/login`;
+const loginUrl = "http://localhost:8080/login";
+//const loginUrl = `${process.env.PUBLIC_URL}/login`;
 
 function LoginForm(props) {
 	function onRegister() {
@@ -33,7 +33,7 @@ function LoginForm(props) {
 			if (response.status === 200) {
 				props.setLogInTrueHandler(values.username, values.password);
 			} else {
-				console.log("nije uspjeh");
+				console.log("Neuspješan login");
 			}
 		});
 	}
