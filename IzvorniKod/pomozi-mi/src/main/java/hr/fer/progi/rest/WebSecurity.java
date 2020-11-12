@@ -47,7 +47,21 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
     }
 
-    @Bean
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//
+//        configuration.setAllowedOrigins(Collections.singletonList("http://3.139.60.236"));
+//        configuration.setAllowedHeaders(List.of("*"));
+//        configuration.setAllowedMethods(Arrays.asList("GET","POST", "OPTIONS"));
+//        configuration.setAllowCredentials(true);
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//
+//        return source;
+//    }
+ @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
@@ -55,14 +69,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS"));
         configuration.setAllowCredentials(true);
-
+        
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
 
         return source;
     }
-
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.eraseCredentials(false);

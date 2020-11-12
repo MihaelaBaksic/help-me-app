@@ -48,8 +48,8 @@ body {
 }
 
 .header {
-	width: 100%;
-	height: 4rem;
+	/* width: 100%; */
+	height: 3.5rem;
 	background-color: #ff5722;
 
 	display: flex;
@@ -58,11 +58,6 @@ body {
 }
 .searchField {
 	margin: 0;
-}
-
-.searchBar {
-	display: flex;
-	align-items: center;
 }
 
 .searchButton {
@@ -100,4 +95,98 @@ body {
 	display: flex;
 	min-height: 100vh;
 	height: 100%;
+}
+.searchBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.menuExtender {
+	width: calc(1.5em + 0.75rem + 2px);
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 0;
+	margin: 0px 10px;
+	background-color: rgb(110, 66, 0);
+	color: beige;
+	padding: 3px;
+}
+.appSettings {
+	width: calc(1.5em + 0.75rem + 2px);
+	height: calc(1.5em + 0.75rem + 2px);
+}
+.searchBtn {
+	width: calc(1.5em + 0.75rem + 2px);
+	height: calc(1.5em + 0.75rem + 2px);
+	padding: 5px;
+	color: #495057;
+	background-color: white;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:focus,
+.btn:active {
+	outline: none;
+	box-shadow: none;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+#main {
+	transition: margin-right 0.5s;
+	padding: 0;
+}
+.logOutButton {
+	width: 90%;
+	margin: auto;
+	padding: 8px 32px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+.logOutButton div {
+	display: inline;
+}
+.logOutButton a:hover {
+	color: #f1f1f1;
+}
+.logOutIcon {
+	margin-left: 10px;
+	width: calc(1em + 0.75rem + 2px);
+	height: calc(1em + 0.75rem + 2px);
+	padding-bottom: 7px;
 }

@@ -4,7 +4,6 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
 import RegisterForm from "./components/RegisterForm";
-import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
 
 class App extends Component {
 	constructor(props) {
@@ -16,6 +15,7 @@ class App extends Component {
 		};
 
 		this.setLogInTrue = this.setLogInTrue.bind(this);
+		this.setLogInFalse = this.setLogInFalse.bind(this);
 	}
 
 	setLogInTrue(usernameXD, passwordCF) {
@@ -27,6 +27,15 @@ class App extends Component {
 		});
 		sessionStorage.setItem("isLogedIn", "true");
 		sessionStorage.setItem("basicAuthToken", this.state.basicAuthToken);
+	}
+
+	setLogInFalse() {
+		this.setState({
+			isLogedIn: false,
+			basicAuthToken: "",
+		});
+		sessionStorage.clear("isLogedIn");
+		sessionStorage.clear("basicAuthToken");
 	}
 
 	render() {
@@ -57,10 +66,7 @@ class App extends Component {
 		} else {
 			return (
 				<div>
-					<Header></Header>
-					<div className="pageBody">
-						<GetCurrentUserComponent />
-					</div>
+					<Header setLogInFalseHandler={this.setLogInFalse} />
 				</div>
 			);
 		}
