@@ -1,15 +1,9 @@
 package hr.fer.progi.service;
 
 import hr.fer.progi.dao.UserRepository;
-import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
-import hr.fer.progi.mappers.LoginDTO;
-import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.rest.HomeController;
 import hr.fer.progi.rest.UserController;
-
-import org.apache.coyote.Response;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -50,17 +44,6 @@ public interface UserService {
      * @throws IllegalArgumentException if username is null
      */
     User findByUsername(String username);
-
-
-    /**
-     * Logins user.
-     *
-     * @param loginDTO
-     * @return Logged user.
-     */
-    // TODO loginUser accepts Login and not LoginDTO
-    User loginUser(LoginDTO loginDTO);
-
 
     /**
      * Deletes user's account.

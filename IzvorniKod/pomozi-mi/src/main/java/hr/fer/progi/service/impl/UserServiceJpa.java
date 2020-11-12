@@ -4,7 +4,6 @@ package hr.fer.progi.service.impl;
 import hr.fer.progi.dao.AddressRepository;
 import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.User;
-import hr.fer.progi.service.FailedLoginException;
 import hr.fer.progi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,8 +12,6 @@ import org.springframework.util.Assert;
 
 
 import java.util.List;
-
-import hr.fer.progi.mappers.LoginDTO;
 
 /**
  * Implementation of {@link UserServiceJpa} interface.
@@ -61,20 +58,6 @@ public class UserServiceJpa implements UserService {
         Assert.notNull(username, "Username must be given");
 
         return userRepository.findByUsername(username);
-    }
-
-
-    @Override
-    public User loginUser(LoginDTO loginDTO) {
-        User user = userRepository.findByUsername(loginDTO.getUsername());
-
-        if (user != null) {
-            if (user.getPassword().equals(passwordEncoder.encode(loginDTO.getPassword()))) {
-                return user;
-            }
-        }
-
-        throw new FailedLoginException("User failed to login.");
     }
 
     @Override
