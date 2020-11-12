@@ -28,7 +28,7 @@
 					
 				\end{packed_enum}
 				
-				\item  \underbar{Registrirani korisnik može}
+				\item  \underbar{Registrirani korisnik može:}
 				
 				\begin{packed_enum}
 					
@@ -80,12 +80,8 @@
 				
 			\subsection{Obrasci uporabe}
 				
-				\textbf{\textit{dio 1. revizije}}
 				
 				\subsubsection{Opis obrazaca uporabe}
-					\textit{Funkcionalne zahtjeve razraditi u obliku obrazaca uporabe. Svaki obrazac je potrebno razraditi prema donjem predlošku. Ukoliko u nekom koraku može doći do odstupanja, potrebno je to odstupanje opisati i po mogućnosti ponuditi rješenje kojim bi se tijek obrasca vratio na osnovni tijek.}\\
-					
-
 					\noindent \underbar{\textbf{UC1 - Registracija}}
 					\begin{packed_item}
 						
@@ -123,10 +119,10 @@
 					\noindent \underbar{\textbf{UC2 - Prijava u sustav}}
 					\begin{packed_item}
 						
-						\item \textbf{Glavni sudionik: }Javni korisnik
+						\item \textbf{Glavni sudionik: } Korisnik
 						\item  \textbf{Cilj:} Prijava korisnika u sustav 
-						\item  \textbf{Sudionici:} -
-						\item  \textbf{Preduvjet:} Javni korisnik ima izrađen korisničkni račun u sustavu
+						\item  \textbf{Sudionici:} Baza podataka
+						\item  \textbf{Preduvjet:} Javni korisnik ima izrađen korisnički račun u sustavu
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
@@ -151,41 +147,12 @@
 					\end{packed_item}
 				
 				
-					\noindent \underbar{\textbf{UC3 - Upravljanje zahtjevima}}
-					\begin{packed_item}
-						
-						\item \textbf{Glavni sudionik: }Korisnik
-						\item  \textbf{Cilj:} Izmjena i upravljanje zahtjevima 
-						\item  \textbf{Sudionici:} -
-						\item  \textbf{Preduvjet:} 
-						\item  \textbf{Opis osnovnog tijeka:}
-						
-						\item[] \begin{packed_enum}
-							
-							\item Korisni odabire zahtjev s liste
-							\item Prikaz stranice odabranog zahtjeva
-
-						\end{packed_enum}
-						
-						\item  \textbf{Opis mogućih odstupanja:}
-						
-						\item[] \begin{packed_item}
-							
-							\item[2.a] Odabrani zahtjev je blokiran
-							\item[] \begin{packed_enum}
-								
-								\item Blokirani zahtjev prikazuje se no nad njim nije moguće vršiti nikakve akcije
-								
-							\end{packed_enum}
-							
-						\end{packed_item}
-					\end{packed_item}
 				
 				
 					\noindent \underbar{\textbf{UC3.1 - Pregled potencijalnih izvršitelja}}
 					\begin{packed_item}
 						
-						\item \textbf{Glavni sudionik: }Korisnik
+						\item \textbf{Glavni sudionik: }Korisnik autor
 						\item  \textbf{Cilj:} Pregledati listu korisnika koji su se javili kao potencijalni izvršitelji
 						\item  \textbf{Sudionici:}-
 						\item  \textbf{Preduvjet:} Korisnik pregledava zahtjev kojem je autor
@@ -198,25 +165,14 @@
 							\item Prikaz potencijalnih izvršitelja s opcijama za prihvaćanje i odbijanja
 						\end{packed_enum}
 						
-						\item  \textbf{Opis mogućih odstupanja:}
 						
-						\item[] \begin{packed_item}
-							
-							\item[2.a] Odabrani zahtjev nema potencijalnih izvršitelja
-							\item[] \begin{packed_enum}
-								
-								\item Odabir opcije za prikaz izvršitelja je onemogućen
-								
-							\end{packed_enum}
-							
-						\end{packed_item}
 					\end{packed_item}
 				
 				
 					\noindent \underbar{\textbf{UC3.1.1 - Odbijanje javljanja na zahtjev}}
 					\begin{packed_item}
 						
-						\item \textbf{Glavni sudionik: }Korisnik
+						\item \textbf{Glavni sudionik: }Korisnik autor
 						\item  \textbf{Cilj:} Odbijanje pojedinog ili više potencijalnih izvršitelja
 						\item  \textbf{Sudionici:} Korisnik izvršitelj
 						\item  \textbf{Preduvjet:} Postoji barem jedan potencijalni izvršitelj za zahtjev
@@ -236,7 +192,7 @@
 					\noindent \underbar{\textbf{UC3.1.2 - Prihvaćanje javljanja na zahtjev}}
 					\begin{packed_item}
 						
-						\item \textbf{Glavni sudionik: }Korisnik
+						\item \textbf{Glavni sudionik: }Korisnik autor
 						\item  \textbf{Cilj:} Prihvaćanje javljanja na zahtjev za pomoć 
 						\item  \textbf{Sudionici:} Korisnik izvršitelj
 						\item  \textbf{Preduvjet:} Postoji barem jedan potencijalni izvršitelj za zahtjev, Zahtjev je aktivan
@@ -244,7 +200,7 @@
 						
 						\item[] \begin{packed_enum}
 							
-							\item Prikaz liste potencijalnih izvršitelja
+							\item Prikaz liste potencijalnih izvršitelja s njihovim kontaktom
 							\item Korisnik prihvaća pojedino javljanje na zahtjev
 							\item Slanje obavijesti prihvaćenom korisniku
 							\item Automatsko odbijanje ostalih potencijalnih izvršitelja
@@ -289,7 +245,7 @@
 					\noindent \underbar{\textbf{UC3.3 - Izmjena zahtjeva}}
 					\begin{packed_item}
 						
-						\item \textbf{Glavni sudionik: }Korisnik
+						\item \textbf{Glavni sudionik: }Korisnik autor
 						\item  \textbf{Cilj:} Mogućnost izmjene, blokiranja ili brisanja zahtjeva
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} Korisnik pregledava vlastiti zahtjev
@@ -312,7 +268,7 @@
 							\item[2.a] Pokušaj brisanja zahtjeva za koje postoje aktivi izvršitelji
 							\item[] \begin{packed_enum}
 								
-								\item Zahtjev za koje postoje aktivni izvršitelji mogu biti samo blokirani
+								\item Zahtjevi za koje postoje aktivni izvršitelji mogu biti samo blokirani
 								\item Svim potencijalnim izvršiteljima se šalje obavijest o blokiranju zahtjeva
 								
 							\end{packed_enum}				
@@ -432,8 +388,6 @@
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} -
 						\item  \textbf{Opis osnovnog tijeka:}
-						
-						\item  \textbf{Opis mogućih odstupanja:}
 						\item[] \begin{packed_enum}
 							
 							\item Korisnik odabire opciju izmjene korisničkih podataka
@@ -441,6 +395,8 @@
 							\item Korisnik potvrđuje novi unos
 							
 						\end{packed_enum}
+						\item  \textbf{Opis mogućih odstupanja:}
+						
 					
 						\item[] \begin{packed_item}
 							
@@ -461,7 +417,7 @@
 					\begin{packed_item}
 						
 						\item \textbf{Glavni sudionik: }Korisnik
-						\item  \textbf{Cilj:}Jednostavna izmjena korisnikove lokacije
+						\item  \textbf{Cilj:} Izmjena korisnikove lokacije
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} -
 						\item  \textbf{Opis osnovnog tijeka:}
@@ -495,51 +451,62 @@
 						\item \textbf{Glavni sudionik: }Korisnik
 						\item  \textbf{Cilj:} Označavanje zahtjeva izvršenim 
 						\item  \textbf{Sudionici:} Baza podataka
-						\item  \textbf{Preduvjet:} Korisnik je postavljen kao izvršitelj zahtjeva
+						\item  \textbf{Preduvjet:} Korisnik je postavljen kao autor zahtjeva
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
 							
 							\item Korisnik odabire zahtjev koji izvršava
 							\item Korisnik označuje zahtjev izvršenim
-							\item Korisniku autoru šalje se obavijest o izvršenju
+							\item Korisniku izvršitelju šalje se obavijest o izvršenju
 							\item Inicira se ocjenjivanje korisnika
 							
 						\end{packed_enum}
-						
-						\item[1.a] Zahtjev je istekao prije nego što je korisnik potvrdio izvršenje
-						\item[] \begin{packed_enum}
-							
-							\item Zahtjevi za koje je korisnik odabran kao izvršitelj prikazuju se unatoč istjecanju i mogu se odabrati za izvršavanje
-							
-						\end{packed_enum}
-						\item[1.b] Zahtjev za koji je korisnik odabran kao izvršitelj je blokiran
-						\item[] \begin{packed_enum}
-							
-							\item Blokirani zahtjevi se ne mogu izvršavati i ne prikazuju se među korisnikovim zahtjevima za izvršavanje
-							
-						\end{packed_enum}
+					
 						
 						
-					\end{packed_item}
-				
+						
+						
+						
+						
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+							
+							\item[] \begin{packed_item}
+															
+							\item[1.a] Zahtjev je istekao prije nego što je korisnik potvrdio izvršenje
+							\item[] \begin{packed_enum}
+								
+								\item Zahtjevi za koje je korisnik odabran kao izvršitelj prikazuju se unatoč istjecanju i mogu se odabrati za izvršavanje
+								
+							\end{packed_enum}
+							\item[1.b] Zahtjev za koji je korisnik odabran kao izvršitelj je blokiran
+							\item[] \begin{packed_enum}
+								
+								\item Blokirani zahtjevi se ne mogu izvršavati i ne prikazuju se među korisnikovim zahtjevima za izvršavanje
+								
+									\end{packed_enum}
+							
+
+						\end{packed_item}
+				\end{packed_item}
 				
 					\noindent \underbar{\textbf{UC8 - Ocjenjivanje korisnika}}
 					\begin{packed_item}
 						
 						\item \textbf{Glavni sudionik: }Korisnik
-						\item  \textbf{Cilj:} Ocjena korisnika i/ili ocjena izvršenja zahtjeva uz popratan komentar 
+						\item  \textbf{Cilj:} Ocjena korisnika i/ili ocjena izvršenja zahtjeva uz popratni komentar 
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} -
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
 							
-							\item Korisnik inicira ocjenjivanje na profilu ili se ocjenjivanje pokreće nakon izvršenja zahtjeva
+							\item Korisnik inicira ocjenjivanje na profilu drugog korisnika ili se ocjenjivanje pokreće nakon izvršenja zahtjeva
 							\item Korisnik izabire ocjenu od 1 do 5
 							\item Korisnik opcionalno unosi komentar
 							\item Korisnik potvrđuje svoj odabir
-							\item Ocjena i komentar se
+							\item Ocjena i komentar se unose u bazu podataka
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
@@ -613,7 +580,7 @@
 					\begin{packed_item}
 						
 						\item \textbf{Glavni sudionik: }Administrator
-						\item  \textbf{Cilj:} Omogućiti rukovanje korisnicima 
+						\item  \textbf{Cilj:} Upravljanje korisnicima 
 						\item  \textbf{Sudionici:} Korisnici, Baza podataka
 						\item  \textbf{Preduvjet:} -
 						\item  \textbf{Opis osnovnog tijeka:}
@@ -634,7 +601,7 @@
 						
 						\item \textbf{Glavni sudionik: }Administrator
 						\item  \textbf{Cilj:} Postaviti nekog korisnika kao administratora 
-						\item  \textbf{Sudionici:} Baza Podataka
+						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} -
 						\item  \textbf{Opis osnovnog tijeka:}
 						
@@ -649,7 +616,7 @@
 						
 						\item[] \begin{packed_item}
 							
-							\item[1.a] Pregledavanje profila korisnika koji već ima dodjeljene administratorske ovlasti
+							\item[1.a] Pregledavanje profila korisnika koji već ima dodijeljene administratorske ovlasti
 							\item[] \begin{packed_enum}
 								
 								\item Administratoru se ne omogućava ponovo postavljanje ovlasti
@@ -675,20 +642,94 @@
 						\end{packed_enum}
 						
 					\end{packed_item}
-				
+					
+					\newpage
 			
 					
 					
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
-					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
+					\begin{figure}[H]
+					\includegraphics[scale=1.0]{slike/admin.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Admin}
+				\end{figure}
+				
+				
+					\begin{figure}[H]
+					\includegraphics[scale=0.8]{slike/reg-log.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Registracija, login}
+				\end{figure}
+				
+				
+					\begin{figure}[H]
+					\includegraphics[scale=0.8]{slike/korisnik-profil.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Korisnik i profil}
+				\end{figure}
+				
+				
+					\begin{figure}[H]
+					\includegraphics[scale=0.7]{slike/upravljanje-zahtjevima.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Upravljanje zahtjevima}
+				\end{figure}
+				\newpage
+				
+				
 				\eject		
 				
 			\subsection{Sekvencijski dijagrami}
 				
-				\textbf{\textit{dio 1. revizije}}\\
+				\noindent \large {\textbf{Novi zahtjev}}
+				\newline
+				\noindent \normalsize Pri postavljanju novog zahtjeva, korisnik odabire opciju za dodavanje novog zahtjeva te mu poslužitelj šalje formu novog zahtjeva. Nakon toga, korisnik popunjava formu te ga sustav traži da popravi unos dok god su neka polja krivo popunjena. Nakon uspješne popune svih polja u formi, događa se evidentiranje zahtjeva u bazi, te se nakon toga zahtjev može prikazivati drugim korisnicima aplikacije. 
+				   
 				
-				\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
+				\begin{figure}[H]
+					\includegraphics[scale=0.5]{slike/novi-zahtjev.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Novi zahtjev}
+				\end{figure}
+				\newpage
+				
+				\noindent \large {\textbf{Pregled zahtjeva, javljanje na zahtjev}}
+				\newline
+				\noindent \normalsize Korisnik pri uobičajenom korištenju aplikacije može pregledavati listu dostupnih zahtjeva. Korisnik tada odabire opciju prikaza zahtjeva, a poslužitelj od baze podataka traži odgovarajuće zahtjeve obzirom na kriterije filtriranja zahtjeva za prikaz. U slučaju da postoje aktivni zahtjevi sa odgovarajućim uvjetima korisnik ima mogućnost javiti se na zahtjev tako što odabere tu opciju u aplikaciji, a poslužitelj to evidentira u bazi. Nakon što se javio na zahtjev, autor zahtjeva može vidjeti kontakte potencijalnih izvršitelja i kontaktirati ih. U slučaju da nema aktivnih zahtjeva korisniku se u aplikaciji ispisuje odgovarajuća poruka te nema daljnjih mogućnosti za javljanje na zahtjev. 
+				   
+				
+				\begin{figure}[H]
+					\includegraphics[scale=0.7]{slike/pregled-zahtjeva.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Pregled zahtjeva, javljanje na zahtjev}
+				\end{figure}
+				\newpage
+								
+				\noindent \large {\textbf{Biranje izvršitelja}}
+				\newline
+				\noindent \normalsize Isprva korisnik šalje zahtjev za prikazivanjem njegovih aktivnih zahtjeva, poslužitelj ih pronalazi u bazi i prosljeđuje korisniku. Ako korisnik želi vidjeti neki pojedini zahtjev detaljnije, odabire taj zahtjev te mu se u slučaju da postoje ljudi koji su se javili na zahtjev nude opcije odbijanja i prihvaćanja pojedinog izvršitelja te može isto tako odgoditi odluko oko biranja izvršitelja i vratiti se na prikaz svih njegovih aktivnih zahtjeva. 
+				   
+				
+				\begin{figure}[H]
+					\includegraphics[scale=0.6]{slike/biranje-izvrsitelja.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Biranje izvršitelja}
+				\end{figure}
+				\newpage
+				
+				\noindent \large {\textbf{Izvršavanje viša razina}}
+				\newline
+				\noindent \normalsize Izvršavanje kreće tako da sustav šalje kontakte izvršitelju i autoru. Nakon izvršavanja autor označava da je zahtjev izvršen, čime se omogućava ocjenjivanje. Ocjenjivanje uključuje odabir ocjene od 1 do 5 te opcionalan unos komentara.
+				   
+							
+				\begin{figure}[H]
+					\includegraphics[scale=0.65]{slike/izvrsavanje-visa-razina.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Izvršavanje viša razina}
+				\end{figure}
+				
+				\newpage
 				\eject
 	
 		\section{Ostali zahtjevi}
@@ -696,7 +737,6 @@
 		\begin{itemize}
 			\item Aplikacija treba biti izvedena kao web aplikacija prilagođena mobilnom uređaju.
 			\item Sustav mora podržavati rad više korisnika u stvarnom vremenu.
-			\item Sustav kao valutu koristi HRK.
 			\item Procesiranje bilo kakve korisničke interakcije sa sustavom ne bi trebalo trajati duže od par sekundi.
 			\item Administratori su dodijeljeni po geografskim lokacijama.
 			\item Sustav mora podržavati hrvatske dijakritičke znakove.

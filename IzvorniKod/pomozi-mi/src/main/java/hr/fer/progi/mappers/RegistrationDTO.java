@@ -2,6 +2,7 @@ package hr.fer.progi.mappers;
 
 import java.sql.Time;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import hr.fer.progi.domain.User;
 
@@ -17,6 +18,7 @@ import hr.fer.progi.domain.UserStatus;
  * Represents data which user writes when he/she registers to web page.
  */
 @Data
+@NoArgsConstructor
 public class RegistrationDTO {
 
     /*

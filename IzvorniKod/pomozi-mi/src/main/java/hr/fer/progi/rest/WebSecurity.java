@@ -1,5 +1,6 @@
 package hr.fer.progi.rest;
 
+import org.apache.catalina.filters.CorsFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
@@ -44,6 +45,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
                 .and().logout().logoutSuccessUrl("/logout").invalidateHttpSession(true).and().csrf();
         http.headers().frameOptions().sameOrigin(); // fixes h2-console problem
+        http.authorizeRequests().antMatchers("/login").permitAll();
         http.csrf().disable();
     }
 
@@ -80,6 +82,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         auth.eraseCredentials(false);
         auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
     }
+
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {
