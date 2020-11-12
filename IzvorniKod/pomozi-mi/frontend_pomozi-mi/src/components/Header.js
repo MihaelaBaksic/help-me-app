@@ -2,8 +2,8 @@ import React from "react";
 import GetCurrentUserComponent from "./GetCurrentUserComponent";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-const logOutUrl = "http://localhost:8080/logout";
-//const loginUrl = `${process.env.PUBLIC_URL}/logout`;
+//const logOutUrl = "http://localhost:8080/logout";
+const loginUrl = `${process.env.PUBLIC_URL}/logout`;
 
 function Header(props) {
 	async function logout(e) {

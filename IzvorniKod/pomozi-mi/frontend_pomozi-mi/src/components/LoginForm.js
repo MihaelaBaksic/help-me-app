@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-const loginUrl = "http://localhost:8080/login";
-//const loginUrl = `${process.env.PUBLIC_URL}/login`;
+//const loginUrl = "http://localhost:8080/login";
+const loginUrl = `${process.env.PUBLIC_URL}/login`;
 
 function LoginForm(props) {
 	function onRegister() {
@@ -29,16 +29,15 @@ function LoginForm(props) {
 			},
 			body: urlEncoded,
 		};
-		await fetch(loginUrl, options)
-			.then((response) => {
-				if (response.status === 200) {
-					console.log("Uspješan login");
-					props.setLogInTrueHandler(values.username, values.password);
-				} else {
-					console.log("Neuspješan login");
-				}
-			})
-			.catch(() => setErrorMessage("Korisnički podaci nisu ispravni"));
+		await fetch(loginUrl, options).then((response) => {
+			if (response.status === 200) {
+				console.log("Uspješan login");
+				props.setLogInTrueHandler(values.username, values.password);
+			} else {
+				setErrorMessage("Korisnički podaci nisu ispravni");
+				console.log("Neuspješan login");
+			}
+		});
 	}
 
 	return (
