@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.9)  13 NOV 2020 19:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.9)  13 NOV 2020 20:14
 entering extended mode
 **./PROGI_ProjektnaDokumentacija_v6.tex
 (PROGI_ProjektnaDokumentacija_v6.tex
@@ -1373,7 +1373,13 @@ Overfull \hbox (2.74347pt too wide) in paragraph at lines 12--13
 lu[]zitelja. Svi se zah-tjevi proslje[]duju
  []
 
-<./slike//Arhitektura_sustava.pdf, id=430, 448.5558pt x 189.8292pt>
+[26
+
+
+
+
+]
+<./slike//Arhitektura_sustava.pdf, id=435, 448.5558pt x 189.8292pt>
 File: ./slike//Arhitektura_sustava.pdf Graphic file (type pdf)
 <use ./slike//Arhitektura_sustava.pdf>
 Package pdftex.def Info: ./slike//Arhitektura_sustava.pdf  used on input line 1
@@ -1384,13 +1390,8 @@ Overfull \hbox (12.9439pt too wide) in paragraph at lines 16--17
 [][]
  []
 
-[26
-
-
-
-
-] [27pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.1}) has been already used, duplicate ignored
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.41 			
@@ -1799,7 +1800,7 @@ s/jkpmi.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kp
 fonts/jkpmit8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/kpfonts/jkpmn8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (52 pages, 1277496 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (52 pages, 1277624 bytes)
 .
 PDF statistics:
  704 PDF objects out of 1000 (max. 8388607)
