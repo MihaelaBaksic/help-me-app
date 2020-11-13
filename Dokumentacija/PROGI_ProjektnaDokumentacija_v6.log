@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.9)  13 NOV 2020 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.9)  13 NOV 2020 19:02
 entering extended mode
 **./PROGI_ProjektnaDokumentacija_v6.tex
 (PROGI_ProjektnaDokumentacija_v6.tex
@@ -1095,7 +1095,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ...: Prikaz aktivnosti grupe}{47}{chapter*.6}
+l.29 ...: Prikaz aktivnosti grupe}{48}{chapter*.6}
                                                   % [1
 
 ])
@@ -1340,17 +1340,12 @@ Overfull \hbox (11.16876pt too wide) in paragraph at lines 721--724
 itelju i autoru. Na-kon izvr[]savanja
  []
 
-<slike/izvrsavanje-visa-razina.png, id=416, 700.41675pt x 473.97075pt>
+<slike/izvrsavanje-visa-razina.png, id=416, 566.115pt x 391.4625pt>
 File: slike/izvrsavanje-visa-razina.png Graphic file (type png)
 <use slike/izvrsavanje-visa-razina.png>
 Package pdftex.def Info: slike/izvrsavanje-visa-razina.png  used on input line 
 727.
-(pdftex.def)             Requested size: 455.26549pt x 308.07733pt.
-
-Overfull \hbox (19.6547pt too wide) in paragraph at lines 727--729
- [][] 
- []
-
+(pdftex.def)             Requested size: 367.97038pt x 254.4476pt.
 [24pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1394,7 +1389,17 @@ Overfull \hbox (12.9439pt too wide) in paragraph at lines 16--17
 
 
 
-]
+] [27pdfTeX warning (ext4): destination with the same identifier (name{figure.4
+.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.41 			
+         <./slike//Arhitektura_sustava.pdf
+
+pdfTeX warning: pdflatex (file ./slike//Arhitektura_sustava.pdf): PDF inclusion
+: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
+ed.
+>]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 64--64
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
@@ -1454,18 +1459,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 64--65
 [][] 
  []
 
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.68 			\textbf{Adresa}
-                        Ovaj entitet modelira adresu prebivališta pojedinog...
- <./slike//Arhitektura_sustava.pdf
 
-pdfTeX warning: pdflatex (file ./slike//Arhitektura_sustava.pdf): PDF inclusion
-: invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
-ed.
->]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 87--87
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
@@ -1498,12 +1492,12 @@ e-vID, pri-ma-ko-ris-ni-kID. Ovaj
  []
 
 
-Overfull \hbox (25.70718pt too wide) in paragraph at lines 91--93
-\OT1/jkp/m/n/12 njiva), pri-ma-ko-ris-ni-kID(predstavlja ko-ris-nika ko-jeg se 
-ocje-njiva) i zah-tje-vID(predstavlja
+Overfull \hbox (26.33118pt too wide) in paragraph at lines 91--93
+\OT1/jkp/m/n/12 njuje), pri-ma-ko-ris-ni-kID(predstavlja ko-ris-nika ko-jeg se 
+ocje-njuje) i zah-tje-vID(predstavlja
  []
 
-
+[28]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 107--107
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
@@ -1513,7 +1507,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 107--108
 [][] 
  []
 
-[28]
+
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 130--130
 []|\OT1/jkp/m/n/12 VARCHAR| 
  []
@@ -1538,7 +1532,7 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 130--131
 [][] 
  []
 
-
+[29]
 Overfull \hbox (0.86246pt too wide) in paragraph at lines 145--145
 []|\OT1/jkp/m/n/12 korisnikID| 
  []
@@ -1548,11 +1542,11 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 145--146
 [][] 
  []
 
-[29]
+[30]
 
 pdfTeX warning: pdflatex (file ./slike//Relacijski_model.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<./slike//Relacijski_model.pdf, id=466, 630.10406pt x 452.4403pt>
+<./slike//Relacijski_model.pdf, id=472, 630.10406pt x 452.4403pt>
 File: ./slike//Relacijski_model.pdf Graphic file (type pdf)
 <use ./slike//Relacijski_model.pdf>
 Package pdftex.def Info: ./slike//Relacijski_model.pdf  used on input line 154.
@@ -1563,7 +1557,7 @@ Overfull \hbox (59.93538pt too wide) in paragraph at lines 154--155
 [][]
  []
 
-[30pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1584,29 +1578,29 @@ Overfull \hbox (5.94319pt too wide) in paragraph at lines 169--171
 eb-Se-cu-rity\OT1/jkp/m/n/12 , ko-jom su de-fi-ni-ra-nja dopu[]stenja
  []
 
-<slike/cs1.png, id=475, 563.10374pt x 506.89375pt>
+<slike/cs1.png, id=480, 563.10374pt x 506.89375pt>
 File: slike/cs1.png Graphic file (type png)
 <use slike/cs1.png>
 Package pdftex.def Info: slike/cs1.png  used on input line 173.
 (pdftex.def)             Requested size: 337.86485pt x 304.1386pt.
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+[32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.179 				\newpage
                    <./slike/cs1.png (PNG copy)>]
-<slike/cs4.jpg, id=482, 802.49812pt x 1047.915pt>
+<slike/cs4.jpg, id=487, 802.49812pt x 1047.915pt>
 File: slike/cs4.jpg Graphic file (type jpg)
 <use slike/cs4.jpg>
 Package pdftex.def Info: slike/cs4.jpg  used on input line 186.
 (pdftex.def)             Requested size: 361.12082pt x 471.55739pt.
- [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.192 				\newpage
                    <./slike/cs4.jpg>]
-<slike/cs2.png, id=489, 1199.48125pt x 1510.64375pt>
+<slike/cs2.png, id=494, 1199.48125pt x 1510.64375pt>
 File: slike/cs2.png Graphic file (type png)
 <use slike/cs2.png>
 Package pdftex.def Info: slike/cs2.png  used on input line 204.
@@ -1616,24 +1610,24 @@ Overfull \hbox (20.19682pt too wide) in paragraph at lines 204--206
  [][] 
  []
 
-[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
+[34] [35pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.210 				\newpage
                    <./slike/cs2.png (PNG copy)>]
-<slike/cs3.png, id=501, 1064.97874pt x 1294.8375pt>
+<slike/cs3.png, id=506, 1064.97874pt x 1294.8375pt>
 File: slike/cs3.png Graphic file (type png)
 <use slike/cs3.png>
 Package pdftex.def Info: slike/cs3.png  used on input line 218.
 (pdftex.def)             Requested size: 404.69614pt x 492.04337pt.
- [35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.224 				\newpage
                    <./slike/cs3.png (PNG copy)>]
-<slike/cs5.png, id=508, 727.71875pt x 549.05125pt>
+<slike/cs5.png, id=514, 727.71875pt x 549.05125pt>
 File: slike/cs5.png Graphic file (type png)
 <use slike/cs5.png>
 Package pdftex.def Info: slike/cs5.png  used on input line 229.
@@ -1643,7 +1637,7 @@ Overfull \hbox (1.02382pt too wide) in paragraph at lines 229--231
  [][] 
  []
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1653,17 +1647,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
-[37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-[38]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
-) [39]
+) [40]
 \openout2 = `Implementacija.aux'.
 
  (Implementacija.tex
@@ -1683,7 +1677,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[40
+[41
 
 
 
@@ -1702,12 +1696,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[41] [42]
+[42] [43]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[43])
+[44])
 \openout2 = `Zakljucak.aux'.
 
  (Zakljucak.tex
@@ -1722,7 +1716,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[44
+[45
 
 
 
@@ -1742,7 +1736,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [45
+) [46
 
 
 
@@ -1751,7 +1745,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [46
+ [47
 
 
 
@@ -1763,7 +1757,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[47
+[48
 
 
 ]
@@ -1771,12 +1765,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[48] [49]
+[49] [50]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [50] 
+) [51] 
 AED: lastpage setting LastPage
 (PROGI_ProjektnaDokumentacija_v6.aux (Dnevnik_promjena_dokumentacije.aux)
 (Opis_projektnog_zadatka.aux) (Specifikacija_programske_potpore.aux)
@@ -1787,13 +1781,13 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 64F88E1A35086AF34402A9C5AD911392;1749.
  ) 
 Here is how much of TeX's memory you used:
- 12628 strings out of 479799
- 185442 string characters out of 2869723
+ 12629 strings out of 479799
+ 185449 string characters out of 2869723
  558342 words of memory out of 3000000
  29021 multiletter control sequences out of 15000+200000
  589630 words of font info for 151 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,14n,98p,911b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 93i,14n,98p,956b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1805,10 +1799,10 @@ s/jkpmi.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/public/kp
 fonts/jkpmit8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/kpfonts/jkpmn8a.pfb><C:/Users/zacra/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (51 pages, 1277869 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (52 pages, 1277496 bytes)
 .
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 233 named destinations out of 1000 (max. 500000)
+ 704 PDF objects out of 1000 (max. 8388607)
+ 234 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

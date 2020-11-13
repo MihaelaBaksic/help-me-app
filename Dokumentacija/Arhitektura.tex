@@ -37,7 +37,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			\textbf{Korisnik} Ovaj entitet modelira jednog korisnika aplikacije.\\
 			Sadrži atribute: korisnikID, ime, prezime, e-posta, lozinka, korisnickoIme, jeAdmin, telefon, slika, status, vrijemeBlokiranja i
-			adresaID koji predstavlja strani ključ na entitet Adresa.
+			adresaID koji predstavlja strani ključ na entitet Adresa. Korisnik je povezan s entitetom Ocjena vezama "prima" i "daje" (\textit{One-to-Many}) preko atributa korisnikID. Korisnik se također veže s entitetom Zahtjev vezama "autorski" i "izvršiteljski" (\textit{One-to-Many}) preko atributa korisnikID i vezom "potencijalni" (\textit{Many-to-Many}) preko atributa korisnikID. Ovaj entitet se još veže uz entitet Adresa vezom \textit{Many-to-One} preko atributa korisnikID.
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
 				
@@ -66,7 +66,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			\bigskip
 			\bigskip
 			\textbf{Adresa} Ovaj entitet modelira adresu prebivališta pojedinog korisnika aplikacije.
-			Sadrži sljedeće atribute: adresaID, ulica, broj, pbr, imeMjesto.
+			Sadrži sljedeće atribute: adresaID, ulica, broj, pbr, imeMjesto. Entitet Adresa je u vezi \textit{One-to-Many} s entitetom Zahtjev preko atributa adresaID i u vezi \textit{One-to-Many} s entitetom Korisnik pomoću atributa adresaID.
 			\bigskip
 			
 			
@@ -88,7 +88,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			\bigskip
 			\bigskip
-			\textbf{Ocjena} Ovaj entitet predstavlja ocjenu koju jedan korisnik daje drugome. Sadrži atribute: ocjenaID, komentar, ocjena, korisnikID, zahtjevID, primakorisnikID. Ovaj entite sadrži tri strana ključa, a to su: korisnikID(predstavlja korisnika koji ocjenjiva), primakorisnikID(predstavlja korisnika kojeg se ocjenjiva) i zahtjevID(predstavlja zahtjev koji se izvršava).
+			\textbf{Ocjena} Ovaj entitet predstavlja ocjenu koju jedan korisnik daje drugome. Sadrži atribute: ocjenaID, komentar, ocjena, korisnikID, zahtjevID, primakorisnikID. Ovaj entite sadrži tri strana ključa, a to su: korisnikID(predstavlja korisnika koji ocjenjuje), primakorisnikID(predstavlja korisnika kojeg se ocjenjuje) i zahtjevID(predstavlja zahtjev koji se izvršava). Ocjena je u  dvije veze s entitetom Korisnik, a to su "prima" (\textit{Many-to-One}) i "daje" (\textit{Many-to-One}) preko atributa korisnikID. Ocjena se još veže uz Zahtjev vezom \textit{One-to-One} preko atributa zahtjevID. 
 			\bigskip
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
@@ -98,17 +98,17 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				\hline
 				
 				\cellcolor{LightGreen}ocjenaID & INT	& jedinstveni identifikator svake ocjene	\\ \hline
-				komentar	& VARCHAR &  komentra kojeg korisnik ostavlja uz ocjenu 	\\ \hline 
+				komentar	& VARCHAR &  komentar kojeg korisnik ostavlja uz ocjenu 	\\ \hline 
 				ocjena & INT & ocjena koju korisnik dodjeljuje  \\ \hline 
-				\cellcolor{LightBlue} korisnikID	& INT &  korisnik koje ocjenjiva 	\\ \hline 
+				\cellcolor{LightBlue} korisnikID	& INT &  korisnik koji ocjenjuje 	\\ \hline 
 				\cellcolor{LightBlue} zahtjevID	& INT &  zahtjev koji se izvršava 	\\ \hline 
-				\cellcolor{LightBlue} primakorisnikID	& INT &  korsnik kojeg se ocjenjuje 	\\ \hline 
+				\cellcolor{LightBlue} primakorisnikID	& INT &  korisnik kojeg se ocjenjuje 	\\ \hline 
 				
 			\end{tabularx}
 			
 			\bigskip
 			\bigskip
-			\textbf{Zahtjev} Ovaj entitet predstavlja jedan zahtjev kojeg korisnik aplikacije zadaje ili izvršava. Sadrži atribute:zahtjevID, opis, datumVrPocetka, trajanje, status, adresaID, korisnikID, autorskikorisnikID. Kao i entitet ocjena i ovaj entitet sadrži tri strana ključa: adresaID(predstavlja adresu korisnika koji je zadao zahtjev, nije obavezno kako bi se kreirao zahtjev), korisnikID(predstavlja izvršitelja zahtjeva) i autorskikorisnikID(predstavlja samog kreatora zahtjeva).
+			\textbf{Zahtjev} Ovaj entitet predstavlja jedan zahtjev kojeg korisnik aplikacije zadaje ili izvršava. Sadrži atribute:zahtjevID, opis, datumVrPocetka, trajanje, status, adresaID, korisnikID, autorskikorisnikID. Kao i entitet ocjena i ovaj entitet sadrži tri strana ključa: adresaID(predstavlja adresu korisnika koji je zadao zahtjev, nije obavezno kako bi se kreirao zahtjev), korisnikID(predstavlja izvršitelja zahtjeva) i autorskikorisnikID(predstavlja samog kreatora zahtjeva). Entitet je u vezi s Ocjenom preko veze \textit{One-to-One} pomoću atributa zahtjevID. Zahtjev se veže uz entitet Korisnik preko tri veze "autorski" (\textit{Many-to-One}), veze "izvršiteljski" (\textit{Many-to-One}) i veze "potencijalni" (\textit{Many-to-Many}) svaka preko atributa korisnikID. Još se veže uz entitet Adresa \textit{One-to-Many} preko atributa adresaID. 
 			\bigskip
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
@@ -131,7 +131,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			\bigskip
 			\bigskip
-			\textbf{Potencijalni} Ovaj entitet predstavlja sve potencijalne izvršitelje jednog zahtjeva. Sadrži atribute: zahtjevID, korisnikID. Oba atributa su strani ključevi. Prvi predstavlja zahtjev kojeg korisnik želi izvršiti, drugi predstavlja korisnika koji želi izvršit zahtjev.
+			\textbf{Potencijalni} Ovaj entitet predstavlja sve potencijalne izvršitelje jednog zahtjeva. Sadrži atribute: zahtjevID, korisnikID. Oba atributa su strani ključevi. Prvi predstavlja zahtjev kojeg korisnik želi izvršiti, drugi predstavlja korisnika koji želi izvršit zahtjev. Ovaj entitet nastaje radi \textit{Many-to-Many} veze "potencijalni" između Zahtjeva i Korisnika.
 			\bigskip
 			
 			\begin{tabularx}{\textwidth} {|p{2cm}|p{2cm}|X|}
