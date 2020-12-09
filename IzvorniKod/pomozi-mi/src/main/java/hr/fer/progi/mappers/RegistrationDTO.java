@@ -1,6 +1,7 @@
 package hr.fer.progi.mappers;
 
 import java.sql.Time;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -86,17 +87,16 @@ public class RegistrationDTO {
      * @return new User
      */
     public User mapToUser() {
+
         boolean admin = false;
-
         UserStatus status = UserStatus.NOTBLOCKED;
-
-        Time blockedUntil = null;
+        LocalDateTime blockedUntil = null;
 
         Address address = new Address(this.streetName, this.streetNumber, this.cityCode, this.cityName);
 
         return new User(this.firstName, this.lastName,
                 this.username, this.password, this.email,
                 this.phoneNumber, address,
-                admin, status, blockedUntil);
+                admin, status);
     }
 }

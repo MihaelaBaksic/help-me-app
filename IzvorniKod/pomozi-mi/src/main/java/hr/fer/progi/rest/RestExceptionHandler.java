@@ -1,6 +1,8 @@
 package hr.fer.progi.rest;
 
+import hr.fer.progi.service.BlockingException;
 import hr.fer.progi.service.FailedLoginException;
+import hr.fer.progi.service.UnexistingUserReferencedException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -11,6 +13,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.BlockingDeque;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
@@ -33,4 +36,15 @@ public class RestExceptionHandler {
         props.put("error", "Bad Request");
         return new ResponseEntity<>(props, HttpStatus.UNAUTHORIZED);
     }
+
+    @ExceptionHandler(UnexistingUserReferencedException.class)
+    protected ResponseEntity<?> handleUnexistingUserReferenced(Exception e, WebRequest req) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(BlockingException.class)
+    protected ResponseEntity<?> handleBlockingException(Exception e, WebRequest req) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
 }

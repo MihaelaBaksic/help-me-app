@@ -57,7 +57,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * Deletes user with given username from database.
      *
      * @param username
-     * @return true if user has been deleted successfully, false otherwise.
+     * @return number of deleted users
      */
-    boolean deleteUserByUsername(String username);
+    //@Query("DELETE FROM User WHERE username = :username")
+    long deleteByUsername(String username);
+
 }

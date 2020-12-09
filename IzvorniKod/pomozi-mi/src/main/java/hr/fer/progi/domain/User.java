@@ -1,8 +1,5 @@
 package hr.fer.progi.domain;
 
-import java.sql.Date;
-import java.sql.Time;
-
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
@@ -12,7 +9,6 @@ import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 /**
  * Represents one user.
@@ -75,18 +71,12 @@ public class User {
 
 
     /**
-     * Represents time period in which user is blocked.
-     */
-    private Time blockTime;
-
-
-    /**
      * Creates new {@link UserDTO} from {@link User}.
      *
      * @return new UserDTO
      */
     public UserDTO mapToUserDTO() {
-        return new UserDTO(username, firstName, lastName, email, administrator);
+        return new UserDTO(username, firstName, lastName, email, administrator, status);
     }
 
     /**
@@ -101,10 +91,9 @@ public class User {
      * @param address      User's address
      * @param admin        Is user admin or not
      * @param status       User's account status
-     * @param blockedUntil Time period in which user is blocked
      */
     public User(String firstName, String lastName, String username, String password, String email,
-                String phoneNumber, Address address, boolean admin, UserStatus status, Time blockedUntil) {
+                String phoneNumber, Address address, boolean admin, UserStatus status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -114,7 +103,25 @@ public class User {
         this.address = address;
         this.administrator = admin;
         this.status = status;
-        this.blockTime = blockedUntil;
+    }
+
+
+    /**
+     *
+     * @param other    User object used to copy data to the referenced object
+     *                 Fields administrator, status and states are not being copied
+     *                 as they cannot be modified by the user
+     */
+
+    public void updateUserData(User other){
+        firstName = other.getFirstName();
+        lastName = other.getLastName();
+        username = other.getUsername();
+        password = other.getPassword();
+        email = other.getEmail();
+        phoneNumber = other.getEmail();
+        address = other.getAddress();
+
     }
 
 }
