@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
+import { useHistory } from "react-router-dom";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const registerUrl = "http://localhost:8080/register";
@@ -10,6 +11,8 @@ function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
 
 	const [errorMessage, setErrorMessage] = useState("");
+
+	let history = useHistory();
 
 	async function onSubmit(values, e) {
 		e.preventDefault();
@@ -27,7 +30,7 @@ function RegisterForm(props) {
 		await fetch(registerUrl, options).then((response) => {
 			if (response.status === 200) {
 				console.log("Uspješna registracija");
-				props.history.push("/");
+				history.push("/");
 			} else {
 				response.json().then((result) => {
 					setErrorMessage(result.message);
@@ -37,12 +40,12 @@ function RegisterForm(props) {
 	}
 
 	return (
-		<div className="formHolder">
+		<div className="registerHolder">
 			<div className="formHeader">
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
-				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>
+				<div className="kratkiOpis">Unesite Vaše podatke</div>
 			</div>
-			<div className="kratkiOpis">Unesite Vaše podatke</div>
+
 			<div>
 				<br />
 			</div>
