@@ -1,5 +1,5 @@
 import React from "react";
-import GetCurrentUserComponent from "./GetCurrentUserComponent";
+import CentarKomponenta from "./CentarKomponenta";
 import LijeviStupacKomponenta from "./LijeviStupacKomponenta";
 import DesniStupacKomponenta from "./DesniStupacKomponenta";
 
@@ -39,7 +39,7 @@ function LogedInUserComponent(props) {
 
 	return (
 		<div id="main" className="main">
-			<div className="header">
+			<div className="topHeader">
 				<button
 					type="button"
 					className="leftExtender btn btn-warning"
@@ -127,7 +127,7 @@ function LogedInUserComponent(props) {
 
 			<div id="pageBody" className="pageBody">
 				<LijeviStupacKomponenta />
-				<GetCurrentUserComponent />
+				<CentarKomponenta />
 				<DesniStupacKomponenta setLogInFalse={props.setLogInFalse} />
 			</div>
 		</div>
