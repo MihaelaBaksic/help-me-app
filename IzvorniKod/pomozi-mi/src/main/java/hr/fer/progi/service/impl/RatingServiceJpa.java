@@ -36,4 +36,12 @@ public class RatingServiceJpa implements RatingService {
 
         return ratingRepository.save(rating);
     }
+
+    @Override
+    public double calculateAverageRatingForUser(String username) {
+        return userRatings(username).stream()
+                .mapToInt(Rating::getRating)
+                .average()
+                .orElseThrow();
+    }
 }

@@ -39,9 +39,6 @@ public class RequestController {
     private UserService userService;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
     private final RequestModelAssembler assembler;
 
     public RequestController(RequestModelAssembler assembler) {

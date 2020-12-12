@@ -57,10 +57,13 @@ public class RatingController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User loggedUser = userService.findByUsername(username);
         User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
-        Request request = requestService.getRequestById(ratingDTO.getRequestId());
 
         // TODO Exception if id is null: "Referenced request doesn't exist"
         // U rest exception handler napravi handlanje bad request 400 (Ne kako Milde!)
+        Request request = null;
+        if (ratingDTO.getRequestId() != null)
+            request = requestService.getRequestById(ratingDTO.getRequestId());
+
 
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
