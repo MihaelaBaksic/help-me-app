@@ -3,14 +3,21 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+body,
+html {
+	height: unset !important;
+}
 body {
-	height: 100%;
-	min-height: 100vh;
-	background-image: linear-gradient(to bottom right,
-			#00bcd4,
-			#b2ebf2,
-			#5fffcf);
+	/* background-image: linear-gradient(
+		to bottom right,
+		#00bcd4,
+		#b2ebf2,
+		#5fffcf
+	); */
+	background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg") !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
 }
 
 #root {
@@ -22,26 +29,29 @@ body {
 	justify-content: center;
 }
 
-.loginHolder {
-	background-color: rgb(221, 255, 0);
-	width: max(30%, 350px);
+#loginHolder {
+	background-color: rgb(218, 216, 216);
+	width: 400px;
+	margin: 0 20px;
 }
 
-.loginHolder>* {
-	margin: 20px;
+.forma {
+	width: 90%;
+	margin: auto;
 }
-
 .loginOrRegisterBtns {
 	display: flex;
 	justify-content: space-between;
 	width: 90%;
 	margin: auto;
+	margin-bottom: 10px;
 }
 
 .formHeader {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	margin: 20px;
 }
 
 .formLogo {
@@ -63,13 +73,10 @@ body {
 	margin: auto;
 }
 
-.registerHolder {
-	background-color: rgb(229, 255, 0);
-	width: max(20%, 350px);
-}
-
-.registerHolder>* {
-	margin: 10px;
+#registerHolder {
+	background-color: rgb(218, 216, 216);
+	width: 350px;
+	margin: 20px;
 }
 
 .error-message {
@@ -127,6 +134,7 @@ body {
 
 .center {
 	flex-grow: 1;
+	background-color: rgb(245, 245, 245);
 }
 
 #requestList {
@@ -134,47 +142,20 @@ body {
 	padding-right: 1rem;
 }
 
-
 .pageBody {
 	flex-grow: 1;
-	background-color: #f1f1f1;
 	display: flex;
 	flex-direction: row;
 }
 
-.lijeviStupac {
-	/* background-color: lightseagreen;
-	flex-grow: 1; */
-	/* min-width: 250px; */
+#lijeviStupac {
+	margin: 10px;
 }
-
-.desniStupac {}
-
-.userData {
-	flex-grow: 1;
-	/* min-width: 800px; */
-	margin: auto;
-	font-weight: bold;
-	padding: 10px;
-	background-color: rgb(236, 236, 236);
-	border-radius: 10px;
+#desniStupac {
+	margin: 10px;
 }
-
-.searchBtn {
-	width: calc(1.5em + 0.75rem + 2px);
-	height: calc(1.5em + 0.75rem + 2px);
-	padding: 5px;
-	color: #495057;
-	background-color: white;
-	border: 1px solid #ced4da;
-	border-radius: 0.25rem;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.btn:focus,
-.btn:active {
-	outline: none;
-	box-shadow: none;
+#center {
+	margin: 10px;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -184,13 +165,14 @@ body {
 		overflow-x: hidden;
 		background-color: #111;
 		transition: 0.5s;
+		margin: 10px;
 	}
 
 	.rightExtender {
 		visibility: hidden;
 	}
 
-	.lijeviStupac {
+	#lijeviStupac {
 		background-color: lightseagreen;
 		width: 250px !important;
 
@@ -216,7 +198,7 @@ body {
 		visibility: visible;
 	}
 
-	.lijeviStupac {
+	#lijeviStupac {
 		background-color: lightseagreen;
 		width: 250px !important;
 		overflow-x: hidden;
@@ -241,7 +223,7 @@ body {
 		visibility: visible;
 	}
 
-	.lijeviStupac {
+	#lijeviStupac {
 		background-color: lightseagreen;
 		width: 0;
 		overflow-x: hidden;
@@ -266,19 +248,10 @@ body {
 	color: #f1f1f1;
 }
 
-.desniStupac .closebtn {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-}
-
 .logOutButton {
 	width: 90%;
 	white-space: nowrap;
 	margin: auto;
-	/* padding: 8px 32px 8px 32px; */
 	padding-top: min(8px, 10px);
 	padding-bottom: min(8px, 10px);
 	padding-right: min(32px, 33px);

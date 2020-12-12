@@ -5,15 +5,21 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
+import RequestComponent from "./components/RequestComponent";
 
 import LogedInUserComponent from "./components/LogedInUserComponent";
+import RequestList from "./components/RequestList";
+import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
+import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
+
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -45,7 +51,7 @@ class App extends Component {
 	}
 
 	render() {
-		if (!this.state.isLogedIn) {
+		if (!this.state.isLogedIn && devMode == "OFF") {
 			return (
 				<HashRouter>
 					<Switch>
@@ -64,8 +70,20 @@ class App extends Component {
 					</Switch>
 				</HashRouter>
 			);
-		} else {
+		} else if (devMode == "OFF") {
 			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
+		} else {
+			return (
+				<HashRouter>
+					<Switch>
+						<Route
+							exact
+							path="/test/requestList"
+							component={RequestList}
+						/>
+					</Switch>
+				</HashRouter>
+			);
 		}
 	}
 }

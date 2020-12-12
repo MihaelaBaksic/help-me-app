@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 import { useHistory } from "react-router-dom";
 
+import { Card } from "semantic-ui-react";
+
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const loginUrl = "http://localhost:8080/login";
 //const loginUrl = `${process.env.PUBLIC_URL}/login`;
@@ -43,7 +45,7 @@ function LoginForm(props) {
 	}
 
 	return (
-		<div className="loginHolder">
+		<Card id="loginHolder">
 			<div className="formHeader">
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
 				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>
@@ -101,7 +103,7 @@ function LoginForm(props) {
 					</button>
 				</div>
 			</form>
-		</div>
+		</Card>
 	);
 }
 
