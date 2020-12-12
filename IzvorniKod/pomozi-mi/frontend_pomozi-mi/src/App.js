@@ -11,14 +11,14 @@ import RequestList from "./components/RequestList";
 import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
 import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
 
-let devMode = "OOF";
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -69,7 +69,7 @@ class App extends Component {
 					</Switch>
 				</HashRouter>
 			);
-		} else if (devMode == "OOF") {
+		} else if (devMode == "OFF") {
 			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
 		} else {
 			return (
