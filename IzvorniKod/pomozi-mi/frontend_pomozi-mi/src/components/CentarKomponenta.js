@@ -2,8 +2,8 @@ import React from "react";
 import GetCurrentUserComponent from "./GetCurrentUserComponent";
 import RequestList from "./RequestList";
 
-function CentarKomponenta (props) {
-   /*const requests = [
+function CentarKomponenta(props) {
+	/*const requests = [
       {autor: 'Baja Bajić', naziv: 'Dođi mi na party',
        adresa: "Na krovu konzuma", komentar: "Tamo bude sviral Cetinski i bit će brutala buraz moraš doć e"}
       ,{autor: 'Maja Bajamić', naziv: 'Gledaj me na Farmi', 
@@ -11,11 +11,11 @@ function CentarKomponenta (props) {
       ,{autor: 'Tomislav Kralj', naziv: 'Gledaj me dok se krunim', 
       adresa: 'Trg kralja Tomislava', komentar: "Krunim se kaj hoćeš da ti još kažem..."}
 ];*/
-   return (
-      <div className = "center"> 
-         <RequestList/>
-      </div>
-   );
+	return (
+		<div id="center" className="center">
+			<RequestList />
+		</div>
+	);
 }
 
 export default CentarKomponenta;
