@@ -19,7 +19,7 @@ public class UserModelAssembler implements RepresentationModelAssembler<UserDTO,
 
     @Override
     public EntityModel<UserDTO> toModel(UserDTO userDTO) {
-        return EntityModel.of(new UserDTO(userDTO.getUsername(), userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(), userDTO.isAdministrator()),
+        return EntityModel.of((userDTO),
                 /* Adds self referencing link to a model (HATEOAS API) */
                 linkTo(methodOn(UserController.class).getUser(userDTO.getUsername())).withSelfRel());
     }

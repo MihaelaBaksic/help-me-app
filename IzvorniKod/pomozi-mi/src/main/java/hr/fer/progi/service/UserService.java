@@ -2,6 +2,7 @@ package hr.fer.progi.service;
 
 import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.rest.HomeController;
 import hr.fer.progi.rest.UserController;
 
@@ -31,7 +32,7 @@ public interface UserService {
     /**
      * Updates data for user.
      *
-     * @param user
+     * @param user user whose data will be updated
      * @return newly updated user
      */
     User updateUser(User user);
@@ -48,10 +49,16 @@ public interface UserService {
     /**
      * Deletes user's account.
      *
-     * @param username
-     * @return true if account has been deleted, false otherwise.
+     * @param username  of user whose account is to be deleted
+     * @return number of object deleted from database
      */
     // TODO check which is better to write: that services use User or just username ?
-    boolean deleteUser(String username);
+    long deleteUser(String username);
+
+    User setUserAsAdmin(User user);
+
+    User blockUser(User user, Boolean permanently);
+
+    User unblockUser(User user);
 
 }

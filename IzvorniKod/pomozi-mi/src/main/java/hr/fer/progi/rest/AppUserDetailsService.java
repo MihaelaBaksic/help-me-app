@@ -2,6 +2,7 @@ package hr.fer.progi.rest;
 
 
 import hr.fer.progi.domain.User;
+import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +32,7 @@ public class AppUserDetailsService implements UserDetailsService {
         user.orElseThrow(() -> new UsernameNotFoundException("User not found : " + username));
 
         org.springframework.security.core.userdetails.User us = new org.springframework.security.core.userdetails.User(user.get().getUsername(),
-                user.get().getPassword(), true, true, true, true,
+                user.get().getPassword(), true, true, true, user.get().getStatus().equals( UserStatus.NOTBLOCKED),
                 getGrantedAuthorities(user.get()));
         System.out.println(us);
         return us;

@@ -43,6 +43,7 @@ public class HomeController {
     @CrossOrigin
     @PostMapping("/register")
     ResponseEntity<EntityModel<UserDTO>> register(@RequestBody RegistrationDTO regDTO) {
+
         PasswordEncoder encoder = webSecurity.getPasswordEncoder();
         String encodedPass = encoder.encode(regDTO.getPassword());
         regDTO.setPassword(encodedPass);
