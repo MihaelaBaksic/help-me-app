@@ -58,7 +58,7 @@ public class RegistrationDTO {
 
     private String streetName;
 
-    private int streetNumber;
+    private Integer streetNumber;
 
     private Long cityCode;
 
@@ -66,7 +66,7 @@ public class RegistrationDTO {
 
     public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
                            @Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
-                           String phoneNumber, String streetName, int streetNumber,
+                           String phoneNumber, String streetName, Integer streetNumber,
                            Long cityCode, String cityName) {
 
         this.firstName = firstName;

@@ -9,6 +9,7 @@ import javax.persistence.*;
 import com.sun.istack.NotNull;
 
 import hr.fer.progi.mappers.RequestDTO;
+import hr.fer.progi.service.BlockingException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class Request {
      * Unique identifier for every request.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
@@ -58,7 +59,7 @@ public class Request {
     /**
      * Represents all users who responded to request.
      */
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<User> potentialHandler;
 
     /**
@@ -93,6 +94,25 @@ public class Request {
      * @return new RequestDTO
      */
     public RequestDTO mapToRequestDTO() {
-        return new RequestDTO(id, duration, comment, address, requestAuthor);
+        return new RequestDTO(id, duration, comment, address, status, potentialHandler, requestHandler);
     }
+    
+    
+    
+    
+    public void updateRequest(Request update) {
+    	if(this.status == RequestStatus.BLOCKED) {
+    		throw new BlockingException("Request has been blocked by administrator! You cannot update it!");
+    	}
+    	if(update.comment != null) this.setComment(update.comment);
+    	if(update.duration != null) this.setDuration(update.duration);
+    	if(update.address != null) {
+    		if(update.address.getLocationName() != null) this.address.setLocationName(update.address.getLocationName());
+    		if(update.address.getStreetName() != null) this.address.setStreetName(update.address.getStreetName());
+    		if(update.address.getStreetNumber() != null) this.address.setStreetNumber(update.address.getStreetNumber());
+    		if(update.address.getZipCode() != null) this.address.setZipCode(update.address.getZipCode());
+    	}
+    	if(update.status != null) this.setStatus(update.status);
+    }
+    
 }

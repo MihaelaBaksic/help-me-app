@@ -42,6 +42,21 @@ public interface RequestService {
      * @return all {@link Request} that given {@link User} has
      */
     List<Request> findUserRequests(User user);
+    
+    
+    boolean deleteRequest(Long id);
+    
+    
+    Request updateRequest(Request request);
+    
+    
+    Request blockRequest(Request request);
+    
+    
+    Request requestRespond(Request request, User user);
+    
+    
+    Request pickRequestHandler(Request request, User user);
 
 
 }
