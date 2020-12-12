@@ -1,12 +1,10 @@
 body {
 	height: 100%;
 	min-height: 100vh;
-	background-image: linear-gradient(
-		to bottom right,
-		#00bcd4,
-		#b2ebf2,
-		#5fffcf
-	);
+	background-image: linear-gradient(to bottom right,
+			#00bcd4,
+			#b2ebf2,
+			#5fffcf);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,11 +29,13 @@ body {
 	display: flex;
 	justify-content: space-between;
 }
+
 .formHeader {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 }
+
 .formLogo {
 	width: 50%;
 	margin: 15px;
@@ -52,12 +52,12 @@ body {
 .header {
 	/* width: 100%; */
 	height: 3.5rem;
-	background-color: #ff5722;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+
 .searchField {
 	margin: 0;
 }
@@ -71,6 +71,7 @@ body {
 .error-message {
 	color: red;
 }
+
 .api_error_message {
 	width: 60%;
 	margin-left: 10px;
@@ -79,6 +80,7 @@ body {
 	text-align: start;
 	padding: 5px;
 }
+
 .pageBody {
 	display: flex;
 	align-items: center;
@@ -96,16 +98,19 @@ body {
 	background-color: rgb(236, 236, 236);
 	border-radius: 10px;
 }
+
 .flexForCenter {
 	display: flex;
 	min-height: 100vh;
 	height: 100%;
 }
+
 .searchBar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+
 .menuExtender {
 	width: calc(1.5em + 0.75rem + 2px);
 	height: calc(1.5em + 0.75rem + 2px);
@@ -115,10 +120,12 @@ body {
 	color: beige;
 	padding: 3px;
 }
+
 .appSettings {
 	width: calc(1.5em + 0.75rem + 2px);
 	height: calc(1.5em + 0.75rem + 2px);
 }
+
 .searchBtn {
 	width: calc(1.5em + 0.75rem + 2px);
 	height: calc(1.5em + 0.75rem + 2px);
@@ -129,6 +136,7 @@ body {
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .btn:focus,
 .btn:active {
 	outline: none;
@@ -173,6 +181,7 @@ body {
 	transition: margin-right 0.5s;
 	padding: 0;
 }
+
 .logOutButton {
 	width: 90%;
 	margin: auto;
@@ -183,12 +192,15 @@ body {
 	display: block;
 	transition: 0.3s;
 }
+
 .logOutButton div {
 	display: inline;
 }
+
 .logOutButton a:hover {
 	color: #f1f1f1;
 }
+
 .logOutIcon {
 	margin-left: 10px;
 	width: calc(1em + 0.75rem + 2px);
