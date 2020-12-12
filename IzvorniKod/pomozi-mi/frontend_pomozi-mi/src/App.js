@@ -50,7 +50,7 @@ class App extends Component {
 	}
 
 	render() {
-		if (!this.state.isLogedIn && devMode == "OOF") {
+		if (!this.state.isLogedIn && devMode == "OFF") {
 			return (
 				<HashRouter>
 					<Switch>
