@@ -25,10 +25,22 @@
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
   <title>React App</title>
+
+  <style>
+    #map{
+      height: 400px;
+      width: 750px;
+    }
+  </style>
+
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<div id="root"></div>
+<div id="root">
+
+<div id="map"></div>
+
+</div>
 <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
@@ -39,5 +51,14 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
+
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById("map"), {center:{lat:45.8150, lng:15.9819}, zoom:5});
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKBCYKlYDgMP1wufrdK294jUjgF0baPXA&callback=initMap" async defer></script>
+
 </body>
 </html>

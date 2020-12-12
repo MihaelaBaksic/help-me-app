@@ -5,6 +5,7 @@ import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.CreateRequestDTO;
 import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.service.RequestService;
+import hr.fer.progi.service.UserService;
 import hr.fer.progi.wrappers.RequestModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
@@ -12,6 +13,7 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Collectors;
@@ -25,6 +27,9 @@ public class RequestController {
 
     @Autowired
     private RequestService requestService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private final RequestModelAssembler assembler;
@@ -65,14 +70,15 @@ public class RequestController {
      * Handles HTTP POST Request when user wants to create new request.
      *
      * @param createRequest DTO that contains all necessary data for creating new request.
-     * @param user          User that wants to create new request
      * @return
      */
     @PostMapping("")
     @Secured("ROLE_USER")
-    public ResponseEntity<Request> createRequest(@RequestBody CreateRequestDTO createRequest, @AuthenticationPrincipal User user) {
+    public ResponseEntity<Request> createRequest(@RequestBody CreateRequestDTO createRequest) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+
         return ResponseEntity.ok(requestService.addRequest(createRequest
-                .mapToRequest(user)));
+                .mapToRequest(userService.findByUsername(username))));
     }
 
 }
