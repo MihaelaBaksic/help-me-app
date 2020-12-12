@@ -1,17 +1,25 @@
 import React, { Component } from "react";
+
 import { HashRouter, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 import LoginForm from "./components/LoginForm";
-import Header from "./components/Header";
 import RegisterForm from "./components/RegisterForm";
 import RequestComponent from "./components/RequestComponent";
+
+import LogedInUserComponent from "./components/LogedInUserComponent";
+import RequestList from "./components/RequestList";
+import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
+import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
+
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -26,8 +34,11 @@ class App extends Component {
 				unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
 			),
 		});
+		let basicAuthToken = btoa(
+			unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
+		);
 		sessionStorage.setItem("isLogedIn", "true");
-		sessionStorage.setItem("basicAuthToken", this.state.basicAuthToken);
+		sessionStorage.setItem("basicAuthToken", basicAuthToken);
 	}
 
 	setLogInFalse() {
@@ -40,40 +51,38 @@ class App extends Component {
 	}
 
 	render() {
-		if (!this.state.isLogedIn) {
+		if (!this.state.isLogedIn && devMode == "OFF") {
 			return (
-				<div className="flexForCenter">
-					<HashRouter>
-						<Switch>
-							<Route
-								exact
-								path="/"
-								render={(props) => (
-									<LoginForm
-										{...props}
-										setLogInTrueHandler={this.setLogInTrue}
-									/>
-								)} /* component={LoginForm} */
-							/>
-							<Route
-								exact
-								path="/register"
-								component={RegisterForm}
-							/>
-							<Route
-								exact
-								path="/requests/:id"
-								component={RequestComponent}
-							/>
-						</Switch>
-					</HashRouter>
-				</div>
+				<HashRouter>
+					<Switch>
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<LoginForm setLogInTrue={this.setLogInTrue} />
+							)}
+						/>
+						<Route
+							exact
+							path="/register"
+							component={RegisterForm}
+						/>
+					</Switch>
+				</HashRouter>
 			);
+		} else if (devMode == "OFF") {
+			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
 		} else {
 			return (
-				<div>
-					<Header setLogInFalseHandler={this.setLogInFalse} />
-				</div>
+				<HashRouter>
+					<Switch>
+						<Route
+							exact
+							path="/test/requestList"
+							component={RequestList}
+						/>
+					</Switch>
+				</HashRouter>
 			);
 		}
 	}

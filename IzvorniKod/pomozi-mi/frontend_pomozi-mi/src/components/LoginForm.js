@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
+import { useHistory } from "react-router-dom";
+
+import { Card } from "semantic-ui-react";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const loginUrl = "http://localhost:8080/login";
 //const loginUrl = `${process.env.PUBLIC_URL}/login`;
 
 function LoginForm(props) {
+	let history = useHistory();
 	function onRegister() {
-		props.history.push("/register");
+		history.push("/register");
 	}
 
 	const { handleSubmit, register, errors } = useForm({});
@@ -31,8 +35,8 @@ function LoginForm(props) {
 		};
 		await fetch(loginUrl, options).then((response) => {
 			if (response.status === 200) {
+				props.setLogInTrue(values.username, values.password);
 				console.log("Uspješan login");
-				props.setLogInTrueHandler(values.username, values.password);
 			} else {
 				setErrorMessage("Korisnički podaci nisu ispravni");
 				console.log("Neuspješan login");
@@ -41,12 +45,12 @@ function LoginForm(props) {
 	}
 
 	return (
-		<div className="formHolder">
+		<Card id="loginHolder">
 			<div className="formHeader">
 				<img className="formLogo" src={logo} alt="neradi mi slika" />
 				<div className="kratkiOpis">Spremno iščekujemo Vašu pomoć</div>
 			</div>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form className="forma" onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-group">
 					<input
 						name="username"
@@ -99,7 +103,7 @@ function LoginForm(props) {
 					</button>
 				</div>
 			</form>
-		</div>
+		</Card>
 	);
 }
 
