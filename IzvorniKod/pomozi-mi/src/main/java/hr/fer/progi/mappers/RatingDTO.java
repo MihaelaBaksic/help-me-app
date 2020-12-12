@@ -16,30 +16,15 @@ import javax.validation.constraints.NotNull;
  * Represents data transfer object(DTO) for {@link Rating} entity.
  */
 @Data
+@AllArgsConstructor
 public class RatingDTO {
     @NotNull
     private int rating;
     @NotNull
     private String comment;
     @NotNull
-    private User rated;
-    private Request request;
+    private String ratedUsername;
 
-    /**
-     * Creates new {@link Rating} from {@link RatingDTO}.
-     *
-     * @param reviewer request author.
-     * @return new rating
-     */
-    public Rating mapToRating(User reviewer) {
-        Rating rating = new Rating();
-
-        rating.setRating(this.rating);
-        rating.setComment(this.comment);
-        rating.setReviewer(reviewer);
-        rating.setRated(this.rated);
-        rating.setRequest(this.request);
-
-        return rating;
-    }
+    // TODO Id can be null
+    private Long requestId;
 }

@@ -56,13 +56,14 @@ public class RatingController {
     public ResponseEntity<Rating> placeRating(@RequestBody RatingDTO ratingDTO) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User loggedUser = userService.findByUsername(username);
-        User ratedUser = userService.findByUsername(ratingDTO.getRated().getUsername());
-        Request request = requestService.getRequestById(ratingDTO.getRequest().getId());
+        User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
+        Request request = requestService.getRequestById(ratingDTO.getRequestId());
 
-        // Rating rating = ratingDTO.mapToRating(loggedUser);
-        Rating rating = ratingDTO.mapToRating(loggedUser);
-        rating.setRated(ratedUser);
-        rating.setRequest(request);
+        // TODO Exception if id is null: "Referenced request doesn't exist"
+        // U rest exception handler napravi handlanje bad request 400 (Ne kako Milde!)
+
+        Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
+                loggedUser, ratedUser, request);
 
         return ResponseEntity.ok(ratingService.addRating(rating));
     }

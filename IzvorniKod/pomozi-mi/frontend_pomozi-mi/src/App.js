@@ -4,6 +4,8 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
 import RegisterForm from "./components/RegisterForm";
+import GoogleMapComponent from "./components/GoogleMapComponent";
+
 
 class App extends Component {
 	constructor(props) {
@@ -67,6 +69,7 @@ class App extends Component {
 			return (
 				<div>
 					<Header setLogInFalseHandler={this.setLogInFalse} />
+					<GoogleMapComponent />
 				</div>
 			);
 		}
