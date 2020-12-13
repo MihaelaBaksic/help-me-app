@@ -9,8 +9,9 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 
 //Testiranje
 import RequestList from "./components/RequestList";
+import RequestForm from "./components/RequestForm";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
@@ -78,6 +79,11 @@ class App extends Component {
 							exact
 							path="/test/requestList"
 							component={RequestList}
+						/>
+						<Route
+							exact
+							path="/test/newRequest"
+							component={RequestForm}
 						/>
 					</Switch>
 				</HashRouter>

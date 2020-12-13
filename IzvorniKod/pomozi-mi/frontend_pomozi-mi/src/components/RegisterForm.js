@@ -48,7 +48,7 @@ function RegisterForm(props) {
 				<div className="kratkiOpis">Unesite Vaše podatke</div>
 			</div>
 
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form className="forma" onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-group">
 					<input
 						name="firstName"
