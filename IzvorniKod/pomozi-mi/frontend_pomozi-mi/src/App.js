@@ -11,14 +11,14 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 import RequestList from "./components/RequestList";
 import RequestForm from "./components/RequestForm";
 
-let devMode = "ON"; /* "ON" */
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || true /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 

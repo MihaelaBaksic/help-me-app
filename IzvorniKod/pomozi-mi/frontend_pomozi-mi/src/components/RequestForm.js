@@ -10,39 +10,54 @@ function RequestForm() {
 	console.log(errors);
 
 	return (
-		<Card>
+		<div className="card" id="newRequestCard">
 			<form
 				id="newRequest"
 				className="forma"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<div className="form-group">
-					<label for="Dokad najkasnije treba pomoć">
-						Dokad treba pomoć
-					</label>
-					<input
-						type="datetime-local"
-						className="form-control"
-						id="rokPomoci"
-						placeholder="Unesite datum"
-					/>
-				</div>
+				<div id="newRequestFormInputs">
+					<div className="form-group">
+						<label for="Dokad najkasnije treba pomoć">
+							Dokad treba pomoć
+						</label>
+						<input
+							type="datetime-local"
+							className="form-control"
+							id="rokPomoci"
+							placeholder="Unesite datum"
+						/>
+						<label for="Dokad najkasnije treba pomoć">
+							Dokad treba pomoć
+						</label>
+						<input
+							type="datetime-local"
+							className="form-control"
+							id="rokPomoci"
+							placeholder="Unesite datum"
+						/>
+					</div>
 
-				<div className="form-group">
-					<textarea
-						className="form-control"
-						id="requestKomentar"
-						rows="3"
-						placeholder="Komentar"
-					></textarea>
+					<div id="komentar" className="form-group">
+						<textarea
+							name="comment"
+							className="form-control"
+							id="requestKomentar"
+							rows="3"
+							placeholder="Komentar"
+						/>
+					</div>
 				</div>
 				<div className="loginOrRegisterBtns">
+					<button type="cancel" className="btn btn-secondary">
+						Cancel
+					</button>
 					<button type="submit" className="btn btn-primary">
 						Submit
 					</button>
 				</div>
 			</form>
-		</Card>
+		</div>
 	);
 }
 export default RequestForm;

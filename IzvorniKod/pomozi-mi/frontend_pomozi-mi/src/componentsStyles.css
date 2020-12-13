@@ -184,7 +184,6 @@ body {
 		overflow-x: hidden;
 		transition: 0.5s;
 	}
-
 	.rightExtender {
 		visibility: visible;
 	}
@@ -267,4 +266,27 @@ body {
 	width: calc(1em + 0.75rem + 2px);
 	height: calc(1em + 0.75rem + 2px);
 	padding-bottom: 7px;
+}
+#newRequestFormInputs {
+	display: flex;
+	flex-wrap: wrap;
+}
+#newRequestFormInputs {
+	display: flex;
+	flex-wrap: wrap;
+}
+/* #newRequestFormInputs div {
+	margin: auto;
+} */
+#newRequestCard {
+	width: unset;
+}
+#requestKomentar {
+	height: 100%;
+}
+#komentar {
+	margin-left: 10px;
+}
+#newRequest {
+	width: unset;
 }
