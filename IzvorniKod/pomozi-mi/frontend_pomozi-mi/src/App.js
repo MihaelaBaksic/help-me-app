@@ -4,7 +4,7 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import Header from "./components/Header";
 import RegisterForm from "./components/RegisterForm";
-import GoogleMapComponent from "./components/GoogleMapComponent";
+import MapView from "./components/MapView";
 
 
 class App extends Component {
@@ -40,7 +40,16 @@ class App extends Component {
 		sessionStorage.clear("basicAuthToken");
 	}
 
+
+
 	render() {
+
+		return (
+			<div className="App">
+			  <MapView/>
+			</div>
+		);
+
 		if (!this.state.isLogedIn) {
 			return (
 				<div className="flexForCenter">
@@ -68,8 +77,7 @@ class App extends Component {
 		} else {
 			return (
 				<div>
-					<Header setLogInFalseHandler={this.setLogInFalse} />
-					<GoogleMapComponent />
+					<Header setLogInsFalseHandler={this.setLogInFalse} />
 				</div>
 			);
 		}

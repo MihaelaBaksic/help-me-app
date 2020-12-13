@@ -1,0 +1,32 @@
+{
+    "venues": [
+        {
+            "description": "description 1",
+            "name": "name 1",
+            "geometry": [
+                45.784732, 15.948810
+            ]
+        },
+        {
+            "description": "description 2",
+            "name": "name 2",
+            "geometry": [
+                45.799848, 15.971006
+            ]
+        },
+        {
+            "description": "description 3",
+            "name": "name 3",
+            "geometry": [
+                45.813320, 15.974831
+            ]
+        },
+        {
+            "description": "description 4",
+            "name": "name 4",
+            "geometry": [
+                45.799638, 15.920032
+            ]
+        }
+    ]
+}
