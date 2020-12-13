@@ -43,6 +43,12 @@ public class RatingController {
         return ratingService.userRatings(userDTO.getUsername());
     }
 
+    /**
+     * Handles a HTTP GET Request when user wants to know rating of other user from 1.0 to 5.0
+     *
+     * @param username User whose ratings we want to know
+     * @return rating of given user in range 1.0 to 5.0
+     */
     // TODO Rename and change path
     @GetMapping("/average")
     @Secured("ROLE_USER")
@@ -63,8 +69,6 @@ public class RatingController {
         User loggedUser = userService.findByUsername(username);
         User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
 
-        // TODO Exception if id is null: "Referenced request doesn't exist"
-        // U rest exception handler napravi handlanje bad request 400 (Ne kako Milde!)
         if(ratingDTO.getRequestId() == null)
             throw new InvalidRatingException("Rating id can't be null.");
 
