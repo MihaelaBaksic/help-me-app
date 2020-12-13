@@ -1,9 +1,6 @@
 package hr.fer.progi.rest;
 
-import hr.fer.progi.service.BlockingException;
-import hr.fer.progi.service.FailedLoginException;
-import hr.fer.progi.service.InvalidRequestException;
-import hr.fer.progi.service.UnexistingUserReferencedException;
+import hr.fer.progi.service.*;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -51,6 +48,11 @@ public class RestExceptionHandler {
     @ExceptionHandler(InvalidRequestException.class)
     protected ResponseEntity<?> handleInvalidRequestException(Exception e, WebRequest req) {
     	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(InvalidRatingException.class)
+    protected ResponseEntity<?> handleInvalidRatingException(Exception e, WebRequest req) {
+        return ResponseEntity.badRequest().body(e.getMessage());
     }
 
 }

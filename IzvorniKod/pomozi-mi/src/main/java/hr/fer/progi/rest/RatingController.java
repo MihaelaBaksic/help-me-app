@@ -5,9 +5,7 @@ import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.UserDTO;
-import hr.fer.progi.service.RatingService;
-import hr.fer.progi.service.RequestService;
-import hr.fer.progi.service.UserService;
+import hr.fer.progi.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -67,10 +65,10 @@ public class RatingController {
 
         // TODO Exception if id is null: "Referenced request doesn't exist"
         // U rest exception handler napravi handlanje bad request 400 (Ne kako Milde!)
-        Request request = null;
-        if (ratingDTO.getRequestId() != null)
-            request = requestService.getRequestById(ratingDTO.getRequestId());
+        if(ratingDTO.getRequestId() == null)
+            throw new InvalidRatingException("Rating id can't be null.");
 
+        Request request = requestService.getRequestById(ratingDTO.getRequestId());
 
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
