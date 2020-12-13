@@ -45,6 +45,13 @@ public class RatingController {
         return ratingService.userRatings(userDTO.getUsername());
     }
 
+    // TODO Rename and change path
+    @GetMapping("/average")
+    @Secured("ROLE_USER")
+    public ResponseEntity<Double> getRating(String username) {
+        return ResponseEntity.ok(ratingService.calculateAverageRatingForUser(username));
+    }
+
     /**
      * Handles a HTTP POST Request when user wants rate some other user.
      *

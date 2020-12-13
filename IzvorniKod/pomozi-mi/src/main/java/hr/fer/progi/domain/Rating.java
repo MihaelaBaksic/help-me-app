@@ -54,4 +54,7 @@ public class Rating {
     @OneToOne(cascade = CascadeType.ALL)
     private Request request;
 
+    public Rating() {
+
+    }
 }
