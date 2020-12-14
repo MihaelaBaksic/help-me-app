@@ -2,7 +2,12 @@ package hr.fer.progi.rest;
 
 import hr.fer.progi.service.BlockingException;
 import hr.fer.progi.service.FailedLoginException;
+import hr.fer.progi.service.InvalidCurrentUserException;
 import hr.fer.progi.service.InvalidRequestException;
+import hr.fer.progi.service.RequestAcceptedException;
+import hr.fer.progi.service.RequestDoneException;
+import hr.fer.progi.service.RequestHandlerException;
+import hr.fer.progi.service.RequestRespondException;
 import hr.fer.progi.service.UnexistingUserReferencedException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -50,6 +55,31 @@ public class RestExceptionHandler {
     
     @ExceptionHandler(InvalidRequestException.class)
     protected ResponseEntity<?> handleInvalidRequestException(Exception e, WebRequest req) {
+    	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    
+    @ExceptionHandler(InvalidCurrentUserException.class)
+    protected ResponseEntity<?> handleInvalidCurrentException(Exception e, WebRequest req) {
+    	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    
+    @ExceptionHandler(RequestAcceptedException.class)
+    protected ResponseEntity<?> handleRequestAcceptedException(Exception e, WebRequest req) {
+    	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    
+    @ExceptionHandler(RequestDoneException.class)
+    protected ResponseEntity<?> handleRequestDoneException(Exception e, WebRequest req) {
+    	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    
+    @ExceptionHandler(RequestHandlerException.class)
+    protected ResponseEntity<?> handleRequestHandlerException(Exception e, WebRequest req) {
+    	return ResponseEntity.badRequest().body(e.getMessage());
+    }
+    
+    @ExceptionHandler(RequestRespondException.class)
+    protected ResponseEntity<?> handleRequestRespondException(Exception e, WebRequest req) {
     	return ResponseEntity.badRequest().body(e.getMessage());
     }
 

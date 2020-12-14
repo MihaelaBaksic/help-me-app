@@ -3,10 +3,12 @@ package hr.fer.progi.rest;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.mappers.CreateRequestDTO;
 import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.BlockingException;
+import hr.fer.progi.service.InvalidCurrentUserException;
 import hr.fer.progi.service.InvalidRequestException;
 import hr.fer.progi.service.RequestService;
 import hr.fer.progi.service.UserService;
@@ -92,19 +94,49 @@ public class RequestController {
     }
     
     
+    /**
+     * Deletes request.
+     * @param id request id
+     * @return
+     */
     @DeleteMapping("/delete/{id}")
     @Secured("ROLE_USER")
     @Transactional
     public ResponseEntity<?> deleteRequest(@PathVariable("id") Long id) {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User current = userService.findByUsername(username);
+        Request r = requestService.getRequestById(id);
+    	if(r == null) {
+    		throw new InvalidRequestException("Request does not exist.");
+    	}
+        if(r.getRequestAuthor().getId() != current.getId()) {
+        	throw new InvalidCurrentUserException("You cannot delete request that you did not create!");
+        }
     	
     	return ResponseEntity.ok(requestService.deleteRequest(id));
     }
     
     
+    
+    /**
+     * Updates request.
+     * @param createRequest updates on given request
+     * @param id request id
+     * @return
+     */
     @PostMapping("/settings/{id}")
     @Secured("ROLE_USER")
     public ResponseEntity<?> updateRequest(@RequestBody RequestDTO createRequest, @PathVariable("id") Long id) {
     	Request r = requestService.getRequestById(id);
+    	if(r == null) {
+    		throw new InvalidRequestException("Request does not exist.");
+    	}
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User current = userService.findByUsername(username);
+        if(r.getRequestAuthor().getId() != current.getId()) {
+        	throw new InvalidCurrentUserException("You cannot update request that you did not create!");
+        }
+        
     	r.updateRequest(createRequest.mapToRequest());
     	
     	EntityModel<RequestDTO> model = assembler.toModel(requestService.updateRequest(r).mapToRequestDTO());
@@ -114,15 +146,25 @@ public class RequestController {
     }
     
     
-    
+    /**
+     * Blocks request.
+     * @param id request id.
+     * @return
+     */
     @PostMapping("/blockRequest/{id}")
     @Secured("ROLE_ADMIN")
     public EntityModel<RequestDTO> blockRequest(@PathVariable("id") Long id) {
     	Request r = requestService.getRequestById(id);
-    	
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User current = userService.findByUsername(username);
     	if(r == null) {
     		throw new InvalidRequestException("Request does not exist.");
     	}
+        if(r.getRequestAuthor().getId() != current.getId()) {
+        	throw new InvalidCurrentUserException("You cannot update request that you did not create!");
+        }
+    	
+
     	if(r.getStatus() == RequestStatus.BLOCKED) {
     		throw new BlockingException("Request with id " + id + " is already blocked");
     	}
@@ -132,10 +174,18 @@ public class RequestController {
     
     
     
+    /**
+     * Allows user to respond to request.
+     * @param id request id
+     * @return
+     */
     @PostMapping("/respond/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> respondToRequest(@PathVariable("id") Long id) {
     	Request r = requestService.getRequestById(id);
+    	if(r == null) {
+    		throw new InvalidRequestException("Request does not exist.");
+    	}
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User potentialHandler = userService.findByUsername(username);
         
@@ -144,19 +194,54 @@ public class RequestController {
     
     
     
+    /**
+     * Allows user to pick request handler.
+     * @param id request id
+     * @param handlerDTO request handler
+     * @return
+     */
     @PostMapping("/pickHandler/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> pickHandler(@PathVariable("id") Long id, @RequestBody UserDTO handlerDTO) {
     	Request r = requestService.getRequestById(id);
+    	if(r == null) {
+    		throw new InvalidRequestException("Request does not exist.");
+    	}
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User current = userService.findByUsername(username);
-        if(r.getRequestAuthor() != current) {
-        	throw new InvalidRequestException("You cant pick handler for request you did not create!");
+        if(r.getRequestAuthor().getId() != current.getId()) {
+        	throw new InvalidCurrentUserException("You cant pick handler for request you did not create!");
         }
-    	System.out.println(handlerDTO.getUsername());
+    	//System.out.println(handlerDTO.getUsername());
     	User handler = userService.findByUsername(handlerDTO.getUsername());
     	
     	return assembler.toModel(requestService.pickRequestHandler(r, handler).mapToRequestDTO());
+    }
+    
+    
+    
+    /**
+     * Marks request done.
+     * @param id request id
+     * @return marked request
+     */
+    @PostMapping("/markDone/{id}")
+    @Secured("ROLE_USER")
+    public ResponseEntity<?> markRequestDone(@PathVariable("id") Long id) {
+    	Request r = requestService.getRequestById(id);
+    	if(r == null) {
+    		throw new InvalidRequestException("Request does not exist.");
+    	}
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User current = userService.findByUsername(username);
+        if(r.getRequestAuthor().getId() != current.getId()) {
+        	throw new InvalidCurrentUserException("You cant mark done request you did not create!");
+        }
+        if(!(current.getStatus() == UserStatus.NOTBLOCKED)) {
+        	throw new BlockingException("That account is blocked!");
+        }
+        
+        return ResponseEntity.ok(requestService.markRequestDone(r));
     }
     
     

@@ -99,7 +99,10 @@ public class Request {
     
     
     
-    
+    /**
+     * Updates request data.
+     * @param update request which carries updates.
+     */
     public void updateRequest(Request update) {
     	if(this.status == RequestStatus.BLOCKED) {
     		throw new BlockingException("Request has been blocked by administrator! You cannot update it!");

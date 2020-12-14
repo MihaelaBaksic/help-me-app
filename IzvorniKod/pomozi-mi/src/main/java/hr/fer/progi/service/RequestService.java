@@ -44,19 +44,55 @@ public interface RequestService {
     List<Request> findUserRequests(User user);
     
     
+    /**
+     * Deletes request.
+     * @param id request id
+     * @return true if request has been successfully deleted, false otherwise.
+     */
     boolean deleteRequest(Long id);
     
     
+    /**
+     * Updates request.
+     * @param request Request which is being updated
+     * @return newly updated request
+     */
     Request updateRequest(Request request);
     
     
+    /**
+     * Blocks request.
+     * @param request Request which is being blocked.
+     * @return blocked request
+     */
     Request blockRequest(Request request);
     
     
+    /**
+     * Allows user to respond to request.
+     * @param request Request on which user responds
+     * @param user User that responds to request
+     * @return Request on which user respods
+     */
     Request requestRespond(Request request, User user);
     
     
+    
+    /**
+     * Allows user to pick request handler.
+     * @param request Request for which request author pick handler
+     * @param user request handler
+     * @return Request for which request author pick handler
+     */
     Request pickRequestHandler(Request request, User user);
+    
+    
+    /**
+     * Sets request status to DONE.
+     * @param request
+     * @return
+     */
+    Request markRequestDone(Request request);
 
 
 }

@@ -21,12 +21,22 @@ import org.springframework.data.repository.query.Param;
  */
 public interface RequestRepository extends JpaRepository<Request, Long> {
 	
+	/**
+	 * Sets request handler.
+	 * @param id request id
+	 * @param rhId request handler id
+	 */
 	@Modifying
 	@Transactional
 	@Query("update Request req set req.requestHandler = :requestHandle where req.id = :id")
 	void updateRequestHandler(@Param("id") Long id, @Param("requestHandle") User rhId);
 	
 	
+	/**
+	 * Updated requests status.
+	 * @param id request id
+	 * @param status new request status
+	 */
 	@Modifying
 	@Transactional
 	@Query("update Request req set req.status = :status where req.id = :id")
