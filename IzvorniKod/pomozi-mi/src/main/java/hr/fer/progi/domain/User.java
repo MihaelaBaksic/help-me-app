@@ -114,14 +114,48 @@ public class User {
      */
 
     public void updateUserData(User other){
-        firstName = other.getFirstName();
-        lastName = other.getLastName();
-        username = other.getUsername();
-        password = other.getPassword();
-        email = other.getEmail();
-        phoneNumber = other.getEmail();
-        address = other.getAddress();
-
+    	if(other.getFirstName() != null) firstName = other.getFirstName();
+    	if(other.getLastName() != null) lastName = other.getLastName();
+    	if(other.getUsername() != null) username = other.getUsername();
+    	if(other.getPassword() != null) password = other.getPassword();
+    	if(other.getEmail() != null) email = other.getEmail();
+    	if(other.getPhoneNumber() != null) phoneNumber = other.getEmail();
+    	if(other.getAddress().getLocationName() != null) address.setLocationName(other.getAddress().getLocationName());
+   		if(other.getAddress().getStreetName() != null) address.setStreetName(other.getAddress().getStreetName());
+   		if(other.getAddress().getStreetNumber() != null) address.setStreetNumber(other.getAddress().getStreetNumber());
+    	if(other.getAddress().getZipCode() != null) address.setZipCode(other.getAddress().getZipCode());
     }
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
+	
+	
+    
+    
+    
+    
 
 }

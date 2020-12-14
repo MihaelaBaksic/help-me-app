@@ -9,6 +9,9 @@ import hr.fer.progi.service.BlockingException;
 import hr.fer.progi.service.UnexistingUserReferencedException;
 import hr.fer.progi.service.UserService;
 import hr.fer.progi.wrappers.UserModelAssembler;
+
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -95,8 +98,9 @@ public class UserController {
      *
      * @return response indicating success of the deleting
      */
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     @Secured("ROLE_USER")
+    @Transactional
     public ResponseEntity<?> deleteUser() {
         //get the current user object
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

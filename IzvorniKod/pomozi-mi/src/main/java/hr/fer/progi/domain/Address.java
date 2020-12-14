@@ -29,7 +29,7 @@ public class Address {
     private String streetName;
 
     @NotNull
-    private int streetNumber;
+    private Integer streetNumber;
 
     /**
      * Represents user's place of residence.
@@ -49,7 +49,7 @@ public class Address {
      * @param zipCode      zip code of User's place of residence
      * @param locationName User's place of residence
      */
-    public Address(String streetName, int streetNumber, Long zipCode, String locationName) {
+    public Address(String streetName, Integer streetNumber, Long zipCode, String locationName) {
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.zipCode = zipCode;

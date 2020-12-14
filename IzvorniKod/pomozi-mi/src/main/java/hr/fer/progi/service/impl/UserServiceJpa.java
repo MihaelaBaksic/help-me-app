@@ -34,17 +34,22 @@ public class UserServiceJpa implements UserService {
 
     @Override
     public User registerUser(User user) {
-        Assert.notNull(user, "User object must be given");
+    	assertData(user);
 
         if (userRepository.countByUsername(user.getUsername()) > 0)
             throw new IllegalArgumentException("User with Username: " + user.getUsername() + " already exists");
+        if(userRepository.countByEmail(user.getEmail()) > 0) 
+            throw new IllegalArgumentException("User with email: " + user.getEmail() + " already exists");
+        if(userRepository.countByPhoneNumber(user.getPhoneNumber()) > 0)
+            throw new IllegalArgumentException("User with phone number: " + user.getPhoneNumber() + " already exists");
+        
 
         return userRepository.save(user);
     }
 
     @Override
     public User updateUser(User user) {
-        Assert.notNull(user, "User object must be given");
+        assertData(user);
         return userRepository.save(user);
     }
 
@@ -86,6 +91,24 @@ public class UserServiceJpa implements UserService {
     {
         user.setStatus(UserStatus.NOTBLOCKED);
         return userRepository.save(user);
+    }
+    
+    
+    /**
+     * Validates user.
+     * @param user
+     */
+    private void assertData(User user) {
+        Assert.notNull(user, "User object must be given");
+        Assert.notNull(user.getEmail(), "Email must be given");
+        Assert.notNull(user.getFirstName(), "First name must be given");
+        Assert.notNull(user.getLastName(), "Last name must be given");
+        Assert.notNull(user.getPhoneNumber(), "Phone number must be given");
+        Assert.notNull(user.getUsername(), "Username must be given");
+        Assert.notNull(user.getAddress().getLocationName(), "Location name must be given");
+        Assert.notNull(user.getAddress().getStreetName(), "Street name must be given");
+        Assert.notNull(user.getAddress().getStreetNumber(), "Street number must be given");
+        Assert.notNull(user.getAddress().getZipCode(), "Zip code must be given");
     }
 }
 
