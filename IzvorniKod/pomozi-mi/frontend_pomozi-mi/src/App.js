@@ -5,12 +5,11 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
-import RequestComponent from "./components/RequestComponent";
-
 import LogedInUserComponent from "./components/LogedInUserComponent";
+
+//Testiranje
 import RequestList from "./components/RequestList";
-import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
-import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
+import RequestForm from "./components/RequestForm";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -80,6 +79,11 @@ class App extends Component {
 							exact
 							path="/test/requestList"
 							component={RequestList}
+						/>
+						<Route
+							exact
+							path="/test/newRequest"
+							component={RequestForm}
 						/>
 					</Switch>
 				</HashRouter>
