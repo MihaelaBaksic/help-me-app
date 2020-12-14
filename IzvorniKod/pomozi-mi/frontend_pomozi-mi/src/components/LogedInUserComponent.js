@@ -22,6 +22,12 @@ function LogedInUserComponent(props) {
 				tamniOverlay.style.zIndex = "2";
 				tamniOverlay.style.left = 0;
 				tamniOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
+
+				if (window.innerWidth < "1100" /*px*/) {
+					if (lijeviStpc.style.width === "250px") {
+						lijeviStpc.style.width = "0";
+					}
+				}
 			}
 		}
 	}
@@ -44,6 +50,12 @@ function LogedInUserComponent(props) {
 				tamniOverlay.style.zIndex = "2";
 				tamniOverlay.style.right = "0";
 				tamniOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
+
+				if (window.innerWidth < "1100" /*px*/) {
+					if (desniStpc.style.width === "250px") {
+						desniStpc.style.width = "0";
+					}
+				}
 			}
 		}
 	}
