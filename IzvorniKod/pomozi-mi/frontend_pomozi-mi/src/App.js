@@ -9,9 +9,11 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 
 //Testiranje
 import RequestList from "./components/RequestList";
-import RequestForm from "./components/RequestForm";
+import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
+import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
+import ViewProfileComponent from "./components/ViewProfileComponent";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
@@ -82,11 +84,13 @@ class App extends Component {
 						/>
 						<Route
 							exact
-							path="/test/newRequest"
-							component={RequestForm}
+							path="/test/profile"
+							component={ViewProfileComponent}
 						/>
 					</Switch>
 				</HashRouter>
+
+				
 			);
 		}
 	}
