@@ -243,7 +243,7 @@ body {
 	}
 }
 
-@media only screen and (max-width: 1099px) {
+@media only screen and (max-width: 1099px) /* and (min-width: 800px) */ {
 	#desniStupac {
 		width: 0px;
 		background-color: #111;
