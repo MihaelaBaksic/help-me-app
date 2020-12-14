@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.sun.istack.NotNull;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -12,6 +13,14 @@ import lombok.Data;
 @Entity
 @Data
 public class Rating {
+
+    public Rating(int rating, String comment, User reviewer, User rated, Request request) {
+        this.rating = rating;
+        this.comment = comment;
+        this.reviewer = reviewer;
+        this.rated = rated;
+        this.request = request;
+    }
 
     /**
      * Unique identifier for every rating.
@@ -44,4 +53,8 @@ public class Rating {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Request request;
+
+    public Rating() {
+
+    }
 }

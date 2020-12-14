@@ -36,4 +36,12 @@ public interface RatingService {
      */
     Rating addRating(Rating rating);
 
+    /**
+     * Calculates average rating for given User.
+     *
+     * @param username
+     * @return average rating for given User
+     */
+    double calculateAverageRatingForUser(String username);
+
 }

@@ -84,7 +84,8 @@ public class RequestServiceJpa implements RequestService {
     public Request getRequestById(Long id) {
         Assert.notNull(id, "Request id must be given");
 
-        return requestRepository.getOne(id);
+        // .getOne(id)  is changed to  .findById(id).get()  because the getOne() returns a reference
+        return requestRepository.findById(id).orElseThrow();
     }
 
     @Override
