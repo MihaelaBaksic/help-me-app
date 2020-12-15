@@ -2,6 +2,9 @@ import React from "react";
 import GetCurrentUserComponent from "./GetCurrentUserComponent";
 import RequestList from "./RequestList";
 
+import UserSettings from "./UserSettings";
+import DeleteComponent from "./DeleteComponent";
+
 function CentarKomponenta(props) {
 	/*const requests = [
       {autor: 'Baja Bajić', naziv: 'Dođi mi na party',
@@ -13,7 +16,10 @@ function CentarKomponenta(props) {
 ];*/
 	return (
 		<div id="center" className="center">
-			<RequestList />
+			{/* <RequestList /> */}
+			{props.show === "settings" && <UserSettings />}
+			{props.show === "myRequests" && <RequestList />}
+			{props.show === "delete" && <DeleteComponent />}
 		</div>
 	);
 }

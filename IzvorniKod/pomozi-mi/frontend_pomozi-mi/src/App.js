@@ -13,14 +13,14 @@ import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
 import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
 import ViewProfileComponent from "./components/ViewProfileComponent";
 
-let devMode = "ON"; /* "ON" */
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || true /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -89,8 +89,6 @@ class App extends Component {
 						/>
 					</Switch>
 				</HashRouter>
-
-				
 			);
 		}
 	}
