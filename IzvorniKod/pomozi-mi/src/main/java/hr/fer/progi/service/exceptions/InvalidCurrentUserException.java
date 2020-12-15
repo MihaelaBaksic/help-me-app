@@ -1,12 +1,12 @@
-package hr.fer.progi.service;
+package hr.fer.progi.service.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class RequestHandlerException extends RuntimeException{
+public class InvalidCurrentUserException extends RuntimeException{
 
-	public RequestHandlerException(String message) {
+	public InvalidCurrentUserException(String message) {
 		super(message);
 	}
 }

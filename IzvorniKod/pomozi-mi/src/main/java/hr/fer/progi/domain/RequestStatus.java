@@ -11,8 +11,6 @@ public enum RequestStatus {
     //active with answer
     ACTANS,
 
-    DELETED,
-
     BLOCKED,
 
     ACCEPTED,

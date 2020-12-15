@@ -41,8 +41,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @return List of all request given user has created
      */
     @Query("SELECT r FROM Request r WHERE r.requestAuthor.username = :username")
-    List<Request> findAllUserRequests(
-            @Param("username") String username);
+    List<Request> findAllAuthoredRequests(@Param("username") String username);
+
+    /**
+     * Finds all request that given user is chosen as handler
+     *
+     * @param username
+     * @return List of all requests where user is handler
+     */
+    @Query("SELECT r FROM Request r WHERE r.requestHandler.username = :username")
+    List<Request> findAllHandledRequests(@Param("username") String username);
 
     /**
      * Counts users by username. Should return 1 if there is user with given username, else 0. If this method returns
@@ -67,7 +75,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * Counts users by phone number. Should return 1 if there is user with given phone number, else 0. If this method returns
      * number bigger than 1, there has been a mistake in the database.
      *
-     * @param phone number
+     * @param phoneNumber number
      * @return 1 if there is an user with given phone number, else 0
      */
     int countByPhoneNumber(String phoneNumber);

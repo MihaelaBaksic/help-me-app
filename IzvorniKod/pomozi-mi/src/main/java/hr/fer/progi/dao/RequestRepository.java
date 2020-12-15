@@ -30,6 +30,7 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
 	@Transactional
 	@Query("update Request req set req.requestHandler = :requestHandle where req.id = :id")
 	void updateRequestHandler(@Param("id") Long id, @Param("requestHandle") User rhId);
+
 	
 	
 	/**
@@ -41,4 +42,5 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
 	@Transactional
 	@Query("update Request req set req.status = :status where req.id = :id")
 	void updateRequestStatus(@Param("id") Long id, @Param("status") RequestStatus status);
+
 }

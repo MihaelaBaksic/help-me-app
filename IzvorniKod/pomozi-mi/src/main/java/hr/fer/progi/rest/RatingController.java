@@ -6,10 +6,10 @@ import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
+import hr.fer.progi.service.exceptions.InvalidRatingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
