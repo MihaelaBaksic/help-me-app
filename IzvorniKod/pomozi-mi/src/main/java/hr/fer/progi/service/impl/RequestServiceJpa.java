@@ -2,20 +2,13 @@ package hr.fer.progi.service.impl;
 
 import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.dao.UserRepository;
-import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
-import hr.fer.progi.service.BlockingException;
-import hr.fer.progi.service.InvalidRequestException;
-import hr.fer.progi.service.RequestAcceptedException;
-import hr.fer.progi.service.RequestDoneException;
-import hr.fer.progi.service.RequestHandlerException;
-import hr.fer.progi.service.RequestRespondException;
-import hr.fer.progi.service.RequestService;
-import hr.fer.progi.service.UnexistingUserReferencedException;
+import hr.fer.progi.service.*;
 
+import hr.fer.progi.service.exceptions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -24,6 +17,7 @@ import org.springframework.util.Assert;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -46,8 +40,9 @@ public class RequestServiceJpa implements RequestService {
     @Override
     public Request addRequest(Request request) {
         Assert.notNull(request, "Request must be given");
-        Assert.notNull(request.getComment(), "Comment must be given");
-        Assert.notNull(request.getDuration(), "Duration must be given");
+        Assert.notNull(request.getTitle(), "Title must be given");
+        Assert.notNull(request.getDescription(), "Description must be given");
+        Assert.notNull(request.getExpirationDate(), "Expiration date must be given");
         
         
         User requestAuthor = request.getRequestAuthor();
@@ -85,17 +80,30 @@ public class RequestServiceJpa implements RequestService {
         Assert.notNull(id, "Request id must be given");
 
         // .getOne(id)  is changed to  .findById(id).get()  because the getOne() returns a reference
-        return requestRepository.findById(id).orElseThrow();
+        return requestRepository.findById(id).get();
     }
 
     @Override
     public List<Request> findUserRequests(User user) {
+        // TODO implement this (?)
+        return null;
+    }
+
+    @Override
+    public List<Request> findAuthoredRequests(User user) {
         Assert.notNull(user, "User must be given");
 
-        return userRepository.findAllUserRequests(user.getUsername());
+        return userRepository.findAllAuthoredRequests(user.getUsername());
     }
-    
-    
+
+    @Override
+    public List<Request> findHandlerRequests(User user) {
+        Assert.notNull(user, "User must be given");
+
+        return userRepository.findAllHandledRequests(user.getUsername());
+    }
+
+
     @Override
     public boolean deleteRequest(Long id) {
     	long beforeDeleting = requestRepository.count();
@@ -109,8 +117,9 @@ public class RequestServiceJpa implements RequestService {
     @Override
     public Request updateRequest(Request request) {
         Assert.notNull(request, "Request must be given");
-        Assert.notNull(request.getComment(), "Comment must be given");
-        Assert.notNull(request.getDuration(), "Duration must be given");
+        Assert.notNull(request.getTitle(), "Title must be given");
+        Assert.notNull(request.getDescription(), "Description must be given");
+        Assert.notNull(request.getExpirationDate(), "Expiration date must be given");
         assertAddress(request);
         
 
@@ -121,7 +130,7 @@ public class RequestServiceJpa implements RequestService {
         	throw new RequestAcceptedException("You cannot update request that has been accepted!");
         }
         if(request.getStatus() == RequestStatus.DONE) {
-        	throw new  RequestDoneException("You cannot update request that has already been processed!");
+        	throw new RequestDoneException("You cannot update request that has already been processed!");
         }
         
         return requestRepository.save(request);
@@ -176,7 +185,7 @@ public class RequestServiceJpa implements RequestService {
     		throw new RequestAcceptedException("You already accepted someone for this request.");
     	}
     	if(user == null || user.getUsername() == null) {
-    		throw new UnexistingUserReferencedException("You must pick a user to handle request.");
+    		throw new NonexistingObjectReferencedException("You must pick a user to handle request.");
     	}
     	if(request.getPotentialHandler() == null || request.getPotentialHandler().isEmpty()) {
     		throw new RequestHandlerException("No one has answered your request. Sorry :(");
@@ -203,13 +212,27 @@ public class RequestServiceJpa implements RequestService {
     	
     	return request;
     }
-    
-    
-    
+
+    @Override
+    public Request denyRequestHandler(Request request, User u) {
+        if (request.getStatus() != RequestStatus.ACTANS)
+                throw new IllegalArgumentException("Request handler cannot be denied for request with status " + request.getStatus());
+
+        if(! request.getPotentialHandler().contains(u))
+            throw new IllegalArgumentException("User to be rejected isn't one of the potential handlers");
+
+        request.setPotentialHandler(request.getPotentialHandler().stream().filter(h -> (! h.equals(u))).collect(Collectors.toSet()));
+        if (request.getPotentialHandler().isEmpty())
+            request.setStatus(RequestStatus.ACTNOANS);
+        return requestRepository.save(request);
+    }
+
+
+
     @Override
     public Request markRequestDone(Request request) {
         if(request.getStatus() == RequestStatus.DONE) {
-        	throw new  RequestDoneException("You cannot mark dobe request that has already been processed!");
+        	throw new  RequestDoneException("You cannot mark done request that has already been processed!");
         }
         if(request.getStatus() == RequestStatus.BLOCKED) {
         	throw new BlockingException("You cannot mark done blocked request!");

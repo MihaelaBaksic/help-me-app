@@ -85,6 +85,14 @@ public interface RequestService {
      * @return Request for which request author pick handler
      */
     Request pickRequestHandler(Request request, User user);
+
+    /**
+     * Allows user to deny request handler.
+     * @param request Request for which request author pick handler
+     * @param user request handler to be denied
+     * @return Request for which request author denied handler
+     */
+    Request denyRequestHandler(Request request, User user);
     
     
     /**
@@ -94,5 +102,18 @@ public interface RequestService {
      */
     Request markRequestDone(Request request);
 
+    /**
+     * Returns
+     * @param user
+     * @return list of all requests that user has authored
+     */
+    List<Request> findAuthoredRequests(User user);
+
+    /**
+     * Returns
+     * @param user
+     * @return list of all requests where user is chosen as
+     */
+    List<Request> findHandlerRequests(User user);
 
 }

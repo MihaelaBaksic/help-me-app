@@ -26,9 +26,9 @@ public class RequestModelAssembler implements RepresentationModelAssembler<Reque
 
     @Override
     public EntityModel<RequestDTO> toModel(RequestDTO requestDTO) {
-        /* Set request expire duration */
-        if (requestDTO.getDuration() == null)
-            requestDTO.setDuration(new Time(7 * 24));
+        /* Set request expire duration x
+        if (requestDTO.getExpirationDate() == null)
+            requestDTO.setDuration(new Time(7 * 24));*/
 
         /* Adds self referencing link to a model (HATEOAS API) */
         return EntityModel.of(requestDTO,

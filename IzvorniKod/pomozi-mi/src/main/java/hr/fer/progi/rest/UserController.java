@@ -1,18 +1,21 @@
 package hr.fer.progi.rest;
 
 
+import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.mappers.RegistrationDTO;
+import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.mappers.UserDTO;
-import hr.fer.progi.service.BlockingException;
-import hr.fer.progi.service.UnexistingUserReferencedException;
+import hr.fer.progi.service.RequestService;
+import hr.fer.progi.service.exceptions.BlockingException;
+import hr.fer.progi.service.exceptions.NonexistingObjectReferencedException;
 import hr.fer.progi.service.UserService;
+import hr.fer.progi.wrappers.RequestModelAssembler;
 import hr.fer.progi.wrappers.UserModelAssembler;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +23,9 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 /**
@@ -33,7 +39,13 @@ public class UserController {
     private UserService userService;
 
     @Autowired
+    private RequestService requestService;
+
+    @Autowired
     private final UserModelAssembler assembler;
+
+    @Autowired
+    private RequestModelAssembler requestAssembler;
 
     @Autowired
     private WebSecurity webSecurity;
@@ -87,27 +99,11 @@ public class UserController {
     public EntityModel<UserDTO> getUser(@PathVariable("username") String username) {
         User u = userService.findByUsername(username);
         if (u == null)
-            throw new UnexistingUserReferencedException("User with username " + username + " doesn't exist");
+            throw new NonexistingObjectReferencedException("User with username " + username + " doesn't exist");
 
         return assembler.toModel(u.mapToUserDTO());
     }
 
-
-    /**
-     * Handles a HTTP DELETE Request when user wants to delete their account
-     *
-     * @return response indicating success of the deleting
-     */
-    @DeleteMapping("/delete")
-    @Secured("ROLE_USER")
-    @Transactional
-    public ResponseEntity<?> deleteUser() {
-        //get the current user object
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-
-        return userService.deleteUser(username)==1 ?
-                ResponseEntity.ok("User deleted successfully") : ResponseEntity.badRequest().body("User can't be deleted");
-    }
 
     /**
      * Sets User as administrator
@@ -121,7 +117,7 @@ public class UserController {
 
         User user = userService.findByUsername(username);
         if (user == null) {
-            throw new UnexistingUserReferencedException("No user with username" + username);
+            throw new NonexistingObjectReferencedException("No user with username" + username);
         }
         return assembler.toModel(userService.setUserAsAdmin(user).mapToUserDTO());
     }
@@ -138,7 +134,7 @@ public class UserController {
 
         User user = userService.findByUsername(username);
         if (user == null) {
-            throw new UnexistingUserReferencedException("No user with username" + username);
+            throw new NonexistingObjectReferencedException("No user with username" + username);
         }
         if (!user.getStatus().equals(UserStatus.NOTBLOCKED)) {
             throw new BlockingException("User with username " + username + " is already blocked");
@@ -159,12 +155,63 @@ public class UserController {
 
         User user = userService.findByUsername(username);
         if (user == null) {
-            throw new UnexistingUserReferencedException("No user with username" + username);
+            throw new NonexistingObjectReferencedException("No user with username" + username);
         }
         if (user.getStatus().equals(UserStatus.PERMABLOCK))
             throw new BlockingException("User with username " + username +
                     " is blocked permanently and cannot be unblocked");
 
         return assembler.toModel(userService.unblockUser(user).mapToUserDTO());
+    }
+
+    /**
+     * Gets all requests where user with given username is author
+     * @param username
+     * @return all authored requests
+     */
+    @GetMapping("/authoredRequests/{username}")
+    @Secured("ROLE_USER")
+    public CollectionModel<EntityModel<RequestDTO>> getAuthoredRequests(@PathVariable("username") String username){
+        User user = userService.findByUsername(username);
+        if(user==null)
+            throw new NonexistingObjectReferencedException("User doesn't exist");
+
+        return requestAssembler.toCollectionModel(requestService.findAuthoredRequests(user)
+            .stream().map(r -> r.mapToRequestDTO()).collect(Collectors.toList()));
+    }
+
+    /**
+     * Returns all requests of current user that are operable
+     * Operable requests have status ACTNOANS, ACTANS or ACCEPTED
+     * @return all operable requests of current user
+     */
+    @GetMapping("/operableRequests")
+    @Secured("ROLE_USER")
+    public CollectionModel<EntityModel<RequestDTO>> getRequestsToOperate(){
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userService.findByUsername(username);
+
+        return requestAssembler.toCollectionModel(requestService.findAuthoredRequests(user)
+                .stream().filter(r -> r.getStatus()== RequestStatus.ACCEPTED
+                        || r.getStatus()== RequestStatus.ACTNOANS
+                        || r.getStatus()==RequestStatus.ACTANS)
+                .map(r -> r.mapToRequestDTO())
+                .collect(Collectors.toList()));
+    }
+
+
+    /**
+     * Gets all requests where user with given username is handler
+     * @param username
+     * @return all handler requests
+     */
+    @GetMapping("/handlerRequests/{username}")
+    public CollectionModel<EntityModel<RequestDTO>> getHandleRequests(@PathVariable("username") String username){
+        User user = userService.findByUsername(username);
+        if(user==null)
+            throw new NonexistingObjectReferencedException("User doesn't exist");
+
+        return requestAssembler.toCollectionModel(requestService.findHandlerRequests(user)
+                .stream().map(r -> r.mapToRequestDTO()).collect(Collectors.toList()));
     }
 }

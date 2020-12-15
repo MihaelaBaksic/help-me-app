@@ -1,11 +1,11 @@
-package hr.fer.progi.service;
+package hr.fer.progi.service.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class InvalidRatingException extends RuntimeException {
-    public InvalidRatingException(String message) {
+public class BlockingException extends RuntimeException{
+    public BlockingException(String message){
         super(message);
     }
 }

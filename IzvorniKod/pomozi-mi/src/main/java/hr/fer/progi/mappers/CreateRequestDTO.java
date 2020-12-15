@@ -18,8 +18,9 @@ import java.sql.Time;
 @AllArgsConstructor
 public class CreateRequestDTO {
 
-    private Time duration;
-    private String comment;
+    private Date expirationDate;
+    private String title;
+    private String description;
     private Address address;
 
 
@@ -32,8 +33,9 @@ public class CreateRequestDTO {
     public Request mapToRequest(User author) {
         Request newRequest = new Request();
         newRequest.setRequestStartTime(new Date(System.currentTimeMillis()));
-        newRequest.setDuration(this.duration);
-        newRequest.setComment(this.comment);
+        newRequest.setExpirationDate(this.expirationDate);
+        newRequest.setTitle(this.title);
+        newRequest.setDescription(this.description);
         newRequest.setRequestAuthor(author);
         newRequest.setAddress(this.address);
         newRequest.setStatus(RequestStatus.ACTNOANS);

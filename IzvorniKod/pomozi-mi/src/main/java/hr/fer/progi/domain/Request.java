@@ -1,15 +1,15 @@
 package hr.fer.progi.domain;
 
 import java.sql.Date;
-import java.sql.Time;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.*;
 
 import com.sun.istack.NotNull;
 
 import hr.fer.progi.mappers.RequestDTO;
-import hr.fer.progi.service.BlockingException;
+import hr.fer.progi.service.exceptions.BlockingException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,8 +21,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class
-Request {
+public class Request {
 
 
     /**
@@ -42,11 +41,15 @@ Request {
      * Represents time in which potential handler can respond to request. Default time is one week.
      */
     @NotNull
-    private Time duration;
+    private Date expirationDate;
+
+    @NotNull
+    @Column(length = 128)
+    private String title;
 
     @NotNull
     @Column(length = 512)
-    private String comment;
+    private String description;
 
 
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -79,13 +82,14 @@ Request {
     /**
      * Creates request with specified duration, comment and address.
      *
-     * @param duration Time in which potential handler can respond to request.
-     * @param comment  Text that gives more details for request
+     * @param expirationDate Date until potential handler can respond to request.
+     * @param description  Text that gives more details for request
      * @param address  Address of request author
      */
-    public Request(Time duration, String comment, Address address) {
-        this.duration = duration;
-        this.comment = comment;
+    public Request(Date expirationDate, String title, String description, Address address) {
+        this.expirationDate = expirationDate;
+        this.title = title;
+        this.description = description;
         this.address = address;
     }
 
@@ -95,7 +99,10 @@ Request {
      * @return new RequestDTO
      */
     public RequestDTO mapToRequestDTO() {
-        return new RequestDTO(id, duration, comment, address, status, potentialHandler, requestHandler);
+        System.out.println("MAPPING TO RequestDTO");
+        return new RequestDTO(id, expirationDate, title, description, address, status, requestAuthor.mapToUserDTO(),
+                potentialHandler!=null ? potentialHandler.stream().map(h -> h.mapToUserDTO()).collect(Collectors.toSet()) : null,
+                requestHandler!=null ? requestHandler.mapToUserDTO() : null);
     }
     
     
@@ -108,8 +115,8 @@ Request {
     	if(this.status == RequestStatus.BLOCKED) {
     		throw new BlockingException("Request has been blocked by administrator! You cannot update it!");
     	}
-    	if(update.comment != null) this.setComment(update.comment);
-    	if(update.duration != null) this.setDuration(update.duration);
+    	if(update.description != null) this.setDescription(update.description);
+    	if(update.expirationDate != null) this.setExpirationDate(update.expirationDate);
     	if(update.address != null) {
     		if(update.address.getLocationName() != null) this.address.setLocationName(update.address.getLocationName());
     		if(update.address.getStreetName() != null) this.address.setStreetName(update.address.getStreetName());
