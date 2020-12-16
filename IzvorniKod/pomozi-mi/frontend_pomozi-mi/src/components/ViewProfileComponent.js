@@ -64,7 +64,7 @@ class ViewProfileComponent extends Component {
 									? "list-group-item active"
 									: "list-group-item"
 							}
-							href="#/test/profile"
+							href="#/"
 						>
 							<div className="d-flex justify-content-between align-items-center">
 								<div className="d-inline-block font-weight-medium text-uppercase">
@@ -80,7 +80,7 @@ class ViewProfileComponent extends Component {
 									? "list-group-item active"
 									: "list-group-item"
 							}
-							href="#/test/profile"
+							href="#/"
 						>
 							<div className="d-flex justify-content-between align-items-center">
 								<div className="d-inline-block font-weight-medium text-uppercase">
@@ -96,7 +96,7 @@ class ViewProfileComponent extends Component {
 									? "list-group-item active"
 									: "list-group-item"
 							}
-							href="#/test/profile"
+							href="#/"
 						>
 							Postavke korisničkog računa
 						</a>
@@ -107,7 +107,7 @@ class ViewProfileComponent extends Component {
 									? "list-group-item active"
 									: "list-group-item"
 							}
-							href="#/test/profile"
+							href="#/"
 						>
 							Adresa djelovanja
 						</a>
@@ -118,7 +118,7 @@ class ViewProfileComponent extends Component {
 									? "list-group-item active"
 									: "list-group-item"
 							}
-							href="#/test/profile"
+							href="#/"
 						>
 							Brisanje korisničkog računa
 						</a>
