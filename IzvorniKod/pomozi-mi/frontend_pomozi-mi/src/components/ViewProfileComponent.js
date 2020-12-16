@@ -1,8 +1,4 @@
 import React, { Component, useEffect, useState } from "react";
-import CentarKomponenta from "./CentarKomponenta";
-import UserSettings from "./UserSettings";
-import DeleteComponent from "./DeleteComponent";
-
 class ViewProfileComponent extends Component {
 	constructor() {
 		super();
@@ -125,11 +121,6 @@ class ViewProfileComponent extends Component {
 					</nav>
 				</div>
 			</div>
-			//{/* {this.state.showing === "settings" && <UserSettings />}
-			//{this.state.showing === "myRequests" && (
-			//	<CentarKomponenta />
-			//)}
-			//{this.state.showing === "delete" && <DeleteComponent />} */}
 		);
 	}
 }

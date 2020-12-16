@@ -1,8 +1,4 @@
 import React from "react";
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
-import RequestForm from "./RequestForm";
-import RequestList from "./RequestList";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const logOutUrl = "http://localhost:8080/logout";

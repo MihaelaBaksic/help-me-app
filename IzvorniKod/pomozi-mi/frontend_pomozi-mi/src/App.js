@@ -9,9 +9,6 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 
 //Testiranje
 import RequestList from "./components/RequestList";
-import DesniStupacKomponenta from "./components/DesniStupacKomponenta";
-import GetCurrentUserComponent from "./components/GetCurrentUserComponent";
-import ViewProfileComponent from "./components/ViewProfileComponent";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -52,7 +49,7 @@ class App extends Component {
 	}
 
 	render() {
-		if (!this.state.isLogedIn && devMode == "OFF") {
+		if (!this.state.isLogedIn && devMode === "OFF") {
 			return (
 				<HashRouter>
 					<Switch>
@@ -71,7 +68,7 @@ class App extends Component {
 					</Switch>
 				</HashRouter>
 			);
-		} else if (devMode == "OFF") {
+		} else if (devMode === "OFF") {
 			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
 		} else {
 			return (

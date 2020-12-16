@@ -27,8 +27,6 @@ function RegisterForm(props) {
 			},
 			body: JSON.stringify(values),
 		};
-		//frontend dev
-		/* const response =  */
 		await fetch(registerUrl, options).then((response) => {
 			if (response.status === 200) {
 				console.log("Uspješna registracija");

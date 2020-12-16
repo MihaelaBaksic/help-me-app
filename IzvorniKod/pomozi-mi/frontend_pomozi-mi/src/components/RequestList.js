@@ -30,7 +30,7 @@ function RequestList() {
 	return (
 		<List selection celled id="requestList">
 			{requests.map((request) => (
-				<List.Item>
+				<List.Item key={request.id}>
 					<List.Header>
 						{request.title}
 						<Label as="a" image>

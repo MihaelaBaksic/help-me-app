@@ -1,5 +1,4 @@
 import React from "react";
-import GetCurrentUserComponent from "./GetCurrentUserComponent";
 import RequestList from "./RequestList";
 
 import UserSettings from "./UserSettings";

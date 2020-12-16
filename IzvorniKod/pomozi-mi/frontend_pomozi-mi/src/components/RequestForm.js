@@ -1,9 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import { Card } from "semantic-ui-react";
-
-import logo from "./resources/todo_logo.png";
 function RequestForm() {
 	const { register, handleSubmit, errors } = useForm();
 	const onSubmit = (data) => console.log(data);
