@@ -1,9 +1,11 @@
 import React from "react";
 
-function LijeviStupacKomponenta() {
+import ViewProfileComponent from "./ViewProfileComponent";
+
+function LijeviStupacKomponenta(props) {
 	return (
 		<div id="lijeviStupac" className="lijeviStupac">
-			<div>Upisa si krivi faks</div>
+			<ViewProfileComponent changeState={props.changeState} />
 		</div>
 	);
 }
