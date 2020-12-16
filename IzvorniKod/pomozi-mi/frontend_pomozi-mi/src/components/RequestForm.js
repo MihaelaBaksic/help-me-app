@@ -1,10 +1,56 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+const baseUrl = "http://localhost:8080";
+
 function RequestForm() {
 	const { register, handleSubmit, errors } = useForm();
-	const onSubmit = (data) => console.log(data);
-	console.log(errors);
+	/* const onSubmit = (data) => console.log(data); */
+	async function onSubmit(values, e) {
+		e.preventDefault();
+		class address {
+			constructor(streetName, streetNumber, zipCode, locationName) {
+				this.streetName = streetName;
+				this.streetNumber = streetNumber;
+				this.zipCode = zipCode;
+				this.locationName = locationName;
+			}
+		}
+		class newRequest {
+			constructor(expirationDate, title, description, address) {
+				this.expirationDate = expirationDate;
+				this.title = title;
+				this.description = description;
+				this.address = address;
+			}
+		}
+		let requestAddress = new address(
+			values.streetName,
+			values.streetNumber,
+			values.zipCode,
+			values.locationName
+		);
+		let preparedRequest = new newRequest(
+			values.expirationDate,
+			values.title,
+			values.description,
+			requestAddress
+		);
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+			body: JSON.stringify(preparedRequest),
+		};
+		await fetch(baseUrl + "/requests", options);
+
+		console.log(JSON.parse(JSON.stringify(preparedRequest)));
+	}
 
 	return (
 		<div className="card" id="newRequestCard">
@@ -58,9 +104,9 @@ function RequestForm() {
 								errors.expirationDate.message}
 						</div>
 					</div>
-					<div class="form-group">
-						<label>Adresa: </label>
-					</div>
+
+					<label>Adresa: </label>
+
 					<div className="form-group">
 						<input
 							name="streetName"
@@ -142,13 +188,14 @@ function RequestForm() {
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Opis:</label>
+						<label>Opis zahtjeva:</label>
 						<textarea
-							form="newRequest"
 							name="description"
 							class="form-control"
-							id="description"
+							id="exampleFormControlTextarea1"
 							rows="3"
+							placeholder="Opis"
+							ref={register}
 						></textarea>
 					</div>
 				</div>
