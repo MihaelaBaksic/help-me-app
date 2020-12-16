@@ -2,8 +2,8 @@ import React from "react";
 import { List, Button, Label } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 
-const baseUrl = `${process.env.PUBLIC_URL}`;
-
+//const baseUrl = `${process.env.PUBLIC_URL}`;
+const baseUrl = "http://localhost:8080";
 function RequestList() {
 	const [requests, setRequests] = useState([]);
 

@@ -6,8 +6,8 @@ import { useHistory } from "react-router-dom";
 import { Card } from "semantic-ui-react";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-//const loginUrl = "http://localhost:8080/login";
-const loginUrl = `${process.env.PUBLIC_URL}/login`;
+const loginUrl = "http://localhost:8080/login";
+//const loginUrl = `${process.env.PUBLIC_URL}/login`;
 
 function LoginForm(props) {
 	let history = useHistory();

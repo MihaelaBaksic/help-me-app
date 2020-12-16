@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = `${process.env.PUBLIC_URL}`;
 
+const baseUrl = "http://localhost:8080";
 function GetCurrentUserComponent(props) {
 	const [podaci, setPodaci] = useState([]);
 

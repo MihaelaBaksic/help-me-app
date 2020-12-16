@@ -9,6 +9,8 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 
 //Testiranje
 import RequestList from "./components/RequestList";
+import ViewProfileComponent from "./components/ViewProfileComponent";
+import RequestForm from "./components/RequestForm";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -79,11 +81,16 @@ class App extends Component {
 							path="/test/requestList"
 							component={RequestList}
 						/>
-						{/* <Route
+						<Route
 							exact
 							path="/test/profile"
 							component={ViewProfileComponent}
-						/> */}
+						/>
+						<Route
+							exact
+							path="/test/newRequest"
+							component={RequestForm}
+						/>
 					</Switch>
 				</HashRouter>
 			);
