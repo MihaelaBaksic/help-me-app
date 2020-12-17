@@ -11,6 +11,7 @@ import LogedInUserComponent from "./components/LogedInUserComponent";
 import RequestList from "./components/RequestList";
 import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
+import MapComponent from "./components/MapComponent";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -19,7 +20,7 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || true /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -91,6 +92,7 @@ class App extends Component {
 							path="/test/newRequest"
 							component={RequestForm}
 						/>
+						<Route exact path="/test/map" component={RequestForm} />
 					</Switch>
 				</HashRouter>
 			);
