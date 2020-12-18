@@ -66,6 +66,12 @@ public interface RequestService {
      * @return blocked request
      */
     Request blockRequest(Request request);
+
+    /**
+     * Deleting all ACTNOANS and ACTANS requests authored by the given user
+     * @param user
+     */
+    void deleteActiveAuthoredRequests(User user);
     
     
     /**

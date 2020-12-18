@@ -24,7 +24,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 
@@ -139,6 +138,10 @@ public class UserController {
         if (!user.getStatus().equals(UserStatus.NOTBLOCKED)) {
             throw new BlockingException("User with username " + username + " is already blocked");
         }
+
+        //deletion of all ACTNOANS and ACTANS requests authored by the user to be blocked
+        requestService.deleteActiveAuthoredRequests(user);
+
         return assembler.toModel(userService.blockUser(user, permanently).mapToUserDTO());
     }
 

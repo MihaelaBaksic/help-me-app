@@ -145,8 +145,18 @@ public class RequestServiceJpa implements RequestService {
     	request.setStatus(RequestStatus.BLOCKED);
     	return requestRepository.save(request);
     }
-    
-    
+
+    @Override
+    public void deleteActiveAuthoredRequests(User user) {
+        List<Request> activeAuthoredRequests = findAuthoredRequests(user)
+                .stream()
+                .filter(r -> r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS)
+                .collect(Collectors.toList());
+
+        requestRepository.deleteAll(activeAuthoredRequests);
+    }
+
+
     @Override
     public Request requestRespond(Request request, User potentialHandler) {
         if(!(potentialHandler.getStatus() == UserStatus.NOTBLOCKED)) {
