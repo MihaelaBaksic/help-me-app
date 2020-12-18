@@ -13,14 +13,14 @@ import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isLogedIn: sessionStorage.getItem("isLogedIn") || true /*true*/,
+			isLogedIn: sessionStorage.getItem("isLogedIn") || false /*true*/,
 			basicAuthToken: sessionStorage.getItem("basicAuthToken") || "",
 		};
 
@@ -29,17 +29,18 @@ class App extends Component {
 	}
 
 	setLogInTrue(usernameXD, passwordCF) {
+		let basicAuthToken = btoa(
+			unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
+		);
+		sessionStorage.setItem("basicAuthToken", basicAuthToken);
+
+		sessionStorage.setItem("isLogedIn", "true");
 		this.setState({
 			isLogedIn: true,
 			basicAuthToken: btoa(
 				unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
 			),
 		});
-		let basicAuthToken = btoa(
-			unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
-		);
-		sessionStorage.setItem("isLogedIn", "true");
-		sessionStorage.setItem("basicAuthToken", basicAuthToken);
 	}
 
 	setLogInFalse() {

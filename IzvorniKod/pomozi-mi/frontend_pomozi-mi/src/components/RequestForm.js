@@ -200,16 +200,20 @@ function RequestForm() {
 						/>
 					</div>
 				</div>
-				<MapComponent />
-				<div className="loginOrRegisterBtns">
-					<button type="cancel" className="btn btn-secondary">
-						Cancel
-					</button>
-					<button type="submit" className="btn btn-primary">
-						Submit
-					</button>
-				</div>
 			</form>
+			<MapComponent />
+			<div className="loginOrRegisterBtns">
+				<button type="cancel" className="btn btn-secondary">
+					Cancel
+				</button>
+				<button
+					type="submit"
+					className="btn btn-primary"
+					form="newRequest"
+				>
+					Submit
+				</button>
+			</div>
 		</div>
 	);
 }
