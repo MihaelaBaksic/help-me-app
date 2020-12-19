@@ -41,9 +41,9 @@ public class RatingServiceJpa implements RatingService {
     public double calculateAverageRatingForUser(String username) {
         List<Rating> ratingList = ratingRepository.findAllWhereUserIsRated(username);
 
-        return ratingList.stream()
-                .mapToInt(Rating::getRating)
+        return ratingList.size() == 0 ? 0.0 : ratingList.stream()
+                .mapToInt(r -> r.getRating())
                 .average()
-                .orElseThrow();
+                .getAsDouble();
     }
 }

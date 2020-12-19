@@ -61,4 +61,12 @@ public interface UserService {
 
     User unblockUser(User user);
 
+    /**
+     * Returns top rated users
+     * if more users have same rating, favour the one who has handled more requests
+     * if more users have the same rating and same number of handled requests, favor the one who was registered earlier
+     * @return list of top three users by rating
+     */
+    List<User> getStatistics();
+
 }

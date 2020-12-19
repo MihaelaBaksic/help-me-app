@@ -4,15 +4,20 @@ import hr.fer.progi.domain.Rating;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.RatingDTO;
+import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
 import hr.fer.progi.service.exceptions.InvalidRatingException;
+import hr.fer.progi.wrappers.UserModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +35,9 @@ public class RatingController {
 
     @Autowired
     private RequestService requestService;
+
+    @Autowired
+    private UserModelAssembler userAssembler;
 
     /**
      * Handles a HTTP GET Request when user wants to know rating score of other user.
@@ -79,4 +87,22 @@ public class RatingController {
 
         return ResponseEntity.ok(ratingService.addRating(rating));
     }
+
+    /**
+     *
+     * @return collection model of top rated users
+     */
+    @GetMapping("/statistics")
+    @Secured("ROLE_USER")
+    public CollectionModel<EntityModel<UserDTO>> getStatistics() {
+
+        List<User> bestUsers = userService.getStatistics();
+
+        List<UserDTO> bestUsersDTO = new ArrayList<>();
+        bestUsers.forEach(u -> bestUsersDTO.add(u.mapToUserDTO()));
+
+        return userAssembler.toCollectionModel(bestUsersDTO);
+    }
+
+
 }
