@@ -32,7 +32,6 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
 	void updateRequestHandler(@Param("id") Long id, @Param("requestHandle") User rhId);
 
 	
-	
 	/**
 	 * Updated requests status.
 	 * @param id request id
