@@ -1,11 +1,31 @@
 import React, { Component, useEffect, useState } from "react";
 class ViewProfileComponent extends Component {
+	
 	constructor() {
 		super();
 		this.state = {
 			showing: "myRequests",
+			podaci: []
 		};
 	}
+	componentDidMount() {
+        var myHeaders = new Headers();
+        myHeaders.append(
+            "Authorization",
+            "Basic " + sessionStorage.getItem("basicAuthToken")
+        );
+        const options = {
+            method: "GET",
+            headers: myHeaders,
+            redirect: "follow",
+        };
+
+        fetch("http://localhost:8080/user/getCurrentUser", options)
+            .then((response) => response.text())
+			.then((result) => this.setState({"podaci" : JSON.parse(result)}))
+			.then(() => console.log(this.state.podaci)) 
+            .catch((error) => console.log("error", error));
+    }
 	changeState(s) {
 		this.setState({
 			showing: s,
@@ -17,6 +37,8 @@ class ViewProfileComponent extends Component {
 		this.props.changeState(sranje);
 	}
 	render() {
+		const {podaci} = this.state.podaci;
+
 		return (
 			<div className="">
 				<div className="author-card">
@@ -38,15 +60,14 @@ class ViewProfileComponent extends Component {
 						<div className="author-card-avatar">
 							<img
 								src="https://bootdey.com/img/Content/avatar/avatar1.png"
-								alt="Daniel Adams"
 							/>
 						</div>
 						<div className="author-card-details">
 							<h5 className="author-card-name text-lg">
-								Dominik Milde
+								{this.state.podaci.firstName} {this.state.podaci.lastName}
 							</h5>
 							<span className="author-card-position">
-								Administrator
+								{this.state.podaci.administrator ? "Administrator": "Korisnik"}
 							</span>
 						</div>
 					</div>

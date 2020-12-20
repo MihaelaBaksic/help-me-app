@@ -28,19 +28,20 @@ class App extends Component {
 	}
 
 	setLogInTrue(usernameXD, passwordCF) {
+		let basicAuthToken = btoa(
+			unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
+		);
+		sessionStorage.setItem("basicAuthToken", basicAuthToken);
+
+		sessionStorage.setItem("isLogedIn", "true");
 		this.setState({
 			isLogedIn: true,
 			basicAuthToken: btoa(
 				unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
 			),
 		});
-		let basicAuthToken = btoa(
-			unescape(encodeURIComponent(usernameXD + ":" + passwordCF))
-		);
-		sessionStorage.setItem("isLogedIn", "true");
-		sessionStorage.setItem("basicAuthToken", basicAuthToken);
 	}
-
+	
 	setLogInFalse() {
 		this.setState({
 			isLogedIn: false,
