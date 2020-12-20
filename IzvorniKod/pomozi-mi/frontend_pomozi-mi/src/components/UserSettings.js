@@ -9,7 +9,7 @@ function UserSettings(props) {
 							className="form-control"
 							type="email"
 							id="account-email"
-							value="dm@fer.hr"
+							value={props.email}
 							disabled="true"
 						/>
 					</div>
