@@ -58,9 +58,10 @@ public class RatingController {
      * @return rating of given user in range 1.0 to 5.0
      */
     // TODO Rename and change path
-    @GetMapping("/average")
+    @GetMapping("/average/{username}")
     @Secured("ROLE_USER")
-    public ResponseEntity<Double> getRating(String username) {
+    public ResponseEntity<Double> getRating(@PathVariable String username) {
+        // TODO Check if username in databse HERE, if not throw Exception (UnexistingUserReference)
         return ResponseEntity.ok(ratingService.calculateAverageRatingForUser(username));
     }
 
@@ -82,6 +83,9 @@ public class RatingController {
 
         Request request = requestService.getRequestById(ratingDTO.getRequestId());
 
+        // TODO make another RatingDTOreturn (not create)
+        // TODO (all that is in RatingDTO (UserDTO who is rating and UserDTO rated and Request DTO if it references some Request))
+        // TODO It will return ResponseEntity<RatingDTO>
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
 
