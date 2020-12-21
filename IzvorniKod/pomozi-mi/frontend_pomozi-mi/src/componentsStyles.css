@@ -539,7 +539,7 @@ a.list-group-item,
 	height: 200px;
 }
 #mapSearchBar {
-	position: absolute;
+	position: relative;
 	z-index: 400;
 	width: 50%;
 	left: 25%;

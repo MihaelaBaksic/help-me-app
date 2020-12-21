@@ -8,10 +8,11 @@ import React, {
 import { useForm } from "react-hook-form";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const center = [45.784846, 15.947278];
+const initialCenter = [45.784846, 15.947278];
+let currentCenter = [45.784846, 15.947278];
 const zoomLevel = 14;
 
-function MapSearch() {
+function MapSearch(props) {
 	const { handleSubmit, register, errors } = useForm({});
 	async function onSubmit(values, e) {
 		e.preventDefault();
@@ -27,7 +28,19 @@ function MapSearch() {
 
 		await fetch(findUrl, options)
 			.then((response) => response.text())
-			.then((result) => console.log(JSON.parse(result)))
+			.then((result) => {
+				console.log(
+					"lat: " +
+						JSON.parse(result)[0].lat +
+						" lon: " +
+						JSON.parse(result)[0].lon
+				);
+				props.map.setView(
+					[JSON.parse(result)[0].lat, JSON.parse(result)[0].lon],
+					zoomLevel
+				);
+				console.log("jos jedna");
+			})
 			.catch((error) => console.log("error", error));
 	}
 	return (
@@ -45,23 +58,24 @@ function MapSearch() {
 		</form>
 	);
 }
-function DisplayPosition({ map }) {
-	const [position, setPosition] = useState(map.getCenter());
+function DisplayPosition(props) {
+	const [position, setPosition] = useState(props.map.getCenter());
 
 	const onClick = useCallback(() => {
-		map.setView(center, zoomLevel);
-	}, [map]);
+		props.map.setView(initialCenter, zoomLevel);
+	}, [props.map]);
 
 	const onMove = useCallback(() => {
-		setPosition(map.getCenter());
-	}, [map]);
+		setPosition(props.map.getCenter());
+		currentCenter = props.map.getCenter();
+	}, [props.map]);
 
 	useEffect(() => {
-		map.on("move", onMove);
+		props.map.on("move", onMove);
 		return () => {
-			map.off("move", onMove);
+			props.map.off("move", onMove);
 		};
-	}, [map, onMove]);
+	}, [props.map, onMove]);
 
 	return (
 		<p>
@@ -71,8 +85,15 @@ function DisplayPosition({ map }) {
 	);
 }
 
-function MyLocation({ map }) {
-	const [markerPos, setMarkerPos] = useState(center);
+function MapComponent() {
+	const [map, setMap] = useState(null);
+	const [markerPos, setMarkerPos] = useState(initialCenter);
+
+	function postaviMarka() {
+		console.log("bruh");
+		setMarkerPos(currentCenter);
+		console.log(markerPos);
+	}
 
 	const markerRef = useRef(null);
 	const eventHandlers = useMemo(
@@ -87,25 +108,10 @@ function MyLocation({ map }) {
 		}),
 		[]
 	);
-
-	return (
-		<div>
-			<Marker
-				draggable={/* draggable */ true}
-				eventHandlers={eventHandlers}
-				position={markerPos}
-				ref={markerRef}
-			></Marker>
-		</div>
-	);
-}
-function MapComponent() {
-	const [map, setMap] = useState(null);
-
 	const displayMap = useMemo(
 		() => (
 			<MapContainer
-				center={center}
+				center={initialCenter}
 				zoom={zoomLevel}
 				scrollWheelZoom={true}
 				whenCreated={setMap}
@@ -115,14 +121,21 @@ function MapComponent() {
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
 
-				<MyLocation map={map} />
-				<MapSearch />
+				<Marker
+					map={map}
+					draggable={/* draggable */ true}
+					eventHandlers={eventHandlers}
+					position={markerPos}
+					ref={markerRef}
+				></Marker>
 			</MapContainer>
 		),
-		[]
+		[markerPos]
 	);
 	return (
 		<div>
+			{map ? <button onClick={postaviMarka}>CenterMarker</button> : null}
+			{map ? <MapSearch map={map} /> : null}
 			{map ? <DisplayPosition map={map} /> : null}
 			{displayMap}
 		</div>
