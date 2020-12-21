@@ -1,5 +1,5 @@
-import React, { useState, useRef, useMemo, useCallback } from "react";
-import { Marker, Popup } from "react-leaflet";
+import React, { useState, useRef, useMemo } from "react";
+import { Marker } from "react-leaflet";
 
 const center = [45.784846, 15.947278];
 function MyLocation() {
