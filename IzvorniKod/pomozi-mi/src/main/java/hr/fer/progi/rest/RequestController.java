@@ -22,6 +22,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
@@ -217,6 +218,21 @@ public class RequestController {
     }
 
 
+    /**
+     * Method for fetching potential handlers of a request
+     * @param id id of the referenced request
+     * @return list of potentials handlers of the referenced request
+     */
+    @GetMapping("getPotentialHandlers/{id}")
+    @Secured("ROLE_USER")
+    public List<UserDTO> getPotentialHandlers(@PathVariable("id") Long id){
+        Request r = requestService.getRequestById(id);
 
+        if( r==null)
+            throw new NonexistingObjectReferencedException("Nonexisting request referenced");
+
+        return r.mapToRequestDTO().getPotentialHandler().stream().collect(Collectors.toList());
+
+    }
 
 }
