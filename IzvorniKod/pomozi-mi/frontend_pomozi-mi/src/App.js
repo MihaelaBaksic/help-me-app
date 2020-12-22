@@ -6,7 +6,6 @@ import "./App.css";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import LogedInUserComponent from "./components/LogedInUserComponent";
-import MapView from "./components/MapView";
 
 //Testiranje
 import RequestList from "./components/RequestList";
@@ -14,7 +13,7 @@ import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
@@ -43,7 +42,7 @@ class App extends Component {
 			),
 		});
 	}
-	
+
 	setLogInFalse() {
 		this.setState({
 			isLogedIn: false,

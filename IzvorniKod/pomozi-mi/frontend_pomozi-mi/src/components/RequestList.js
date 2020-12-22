@@ -43,7 +43,7 @@ function RequestList() {
 					</List.Header>
 					{request.description}
 					<Label as="a" tag>
-						{JSON.stringify(request.address)}
+						{request.address.description}
 					</Label>
 					<Button positive floated="right">
 						Javi se

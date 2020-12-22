@@ -6,18 +6,23 @@ import React, {
 	useCallback,
 } from "react";
 import { useForm } from "react-hook-form";
+import L from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import LogedInUserComponent from "./LogedInUserComponent";
 
-const initialCenter = [44.43378, 16.370707];
-let currentCenter = [44.43378, 16.370707];
-let intitialMarkerPostion = [45.800623, 15.971131];
-let currentMarkerPosition = [45.800623, 15.971131];
+const initialCenter = L.latLng(44.43378, 16.370707);
+let currentCenter = L.latLng(44.43378, 16.370707);
+let intitialMarkerPostion = L.latLng(45.800623, 15.971131);
+let currentMarkerPosition = L.latLng(45.800623, 15.971131);
 const zoomLevel = 5;
 
 function MapSearch(props) {
-	const { handleSubmit, register, errors } = useForm({});
-	async function onSubmit(values, e) {
-		e.preventDefault();
+	/* const { handleSubmit, register, errors } = useForm({}); */
+	const [searchParam, setSearchParam] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
+
+	async function onSubmit(values) {
+		/* e.preventDefault(); */
 
 		const options = {
 			method: "GET",
@@ -25,38 +30,49 @@ function MapSearch(props) {
 		};
 		let findUrl =
 			"https://nominatim.openstreetmap.org/?q=" +
-			values.q +
+			searchParam +
 			"&format=json";
 
 		await fetch(findUrl, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(
-					"lat: " +
-						JSON.parse(result)[0].lat +
-						" lon: " +
-						JSON.parse(result)[0].lon
-				);
-				props.map.setView(
-					[JSON.parse(result)[0].lat, JSON.parse(result)[0].lon],
-					13
-				);
-				console.log("jos jedna");
+				if (JSON.stringify(result) !== JSON.stringify("[]")) {
+					setErrorMessage("");
+					props.map.setView(
+						[JSON.parse(result)[0].lat, JSON.parse(result)[0].lon],
+						15
+					);
+				} else {
+					setErrorMessage("Ne možemo pronaći lokaciju");
+				}
 			})
-			.catch((error) => console.log("error", error));
+			.catch((error) => setErrorMessage(error));
+	}
+	function myChangeHandler(event) {
+		setSearchParam(event.target.value);
+	}
+	function logIT(e) {
+		if (e.key === "Enter") {
+			console.log("heureka");
+			onSubmit(e);
+		}
 	}
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className="form-group">
-				<input
-					className="form-control leaflet-bar"
-					type="search"
-					name="q"
-					placeholder="Pretraži.."
-					ref={register()}
-				/>
-			</div>
-		</form>
+		//<form onSubmit={handleSubmit(onSubmit)}>
+		<div /* className="form-group" */>
+			<input
+				className="form-control leaflet-bar"
+				type="search"
+				name="q"
+				value={searchParam}
+				placeholder="Pretraži.."
+				/* ref={register()} */
+				onChange={myChangeHandler}
+				onKeyPress={(e) => logIT(e)}
+			/>
+			<div className="error-message">{errorMessage}</div>
+		</div>
+		//</form>
 	);
 }
 function HomeButton(props) {
@@ -103,6 +119,7 @@ function CenterMarker(props) {
 		setMarkerPos(currentCenter);
 		currentMarkerPosition = currentCenter;
 		console.log("bruhJEDAN " + currentMarkerPosition);
+		props.setGeoLocation(currentMarkerPosition);
 	}
 	const eventHandlers = useMemo(
 		() => ({
@@ -112,6 +129,7 @@ function CenterMarker(props) {
 					setMarkerPos(marker.getLatLng());
 					currentMarkerPosition = marker.getLatLng();
 					console.log("bruhDVA " + currentMarkerPosition);
+					props.setGeoLocation(currentMarkerPosition);
 				}
 			},
 		}),
@@ -150,8 +168,12 @@ function CenterMarker(props) {
 	);
 }
 
-function MapComponent() {
+function MapComponent(props) {
 	const [map, setMap] = useState(null);
+
+	useEffect(() => {
+		props.setGeoLocation(currentMarkerPosition);
+	}, []);
 
 	const displayMap = useMemo(
 		() => (
@@ -160,6 +182,7 @@ function MapComponent() {
 				zoom={zoomLevel}
 				scrollWheelZoom={true}
 				whenCreated={setMap}
+				className="form-group"
 			>
 				<TileLayer
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
@@ -168,7 +191,12 @@ function MapComponent() {
 
 				<div className="leaflet-top leaflet-right">
 					<div className="leaflet-control-zoom leaflet-bar leaflet-control">
-						{map ? <CenterMarker map={map} /> : null}
+						{map ? (
+							<CenterMarker
+								map={map}
+								setGeoLocation={props.setGeoLocation}
+							/>
+						) : null}
 						{map ? <HomeButton map={map} /> : null}
 					</div>
 				</div>
