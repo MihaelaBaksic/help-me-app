@@ -3,13 +3,19 @@ package hr.fer.progi.service.impl;
 
 import hr.fer.progi.dao.AddressRepository;
 import hr.fer.progi.dao.UserRepository;
+import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.service.UserService;
+import hr.fer.progi.service.RatingService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -23,6 +29,9 @@ public class UserServiceJpa implements UserService {
 
     @Autowired
     private AddressRepository addressRepository;
+
+    @Autowired
+    private  RatingService ratingService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -92,11 +101,49 @@ public class UserServiceJpa implements UserService {
         user.setStatus(UserStatus.NOTBLOCKED);
         return userRepository.save(user);
     }
-    
-    
+
+    @Override
+    public List<User> getStatistics() {
+        List<User> users = userRepository.findAll();
+
+        Collections.sort(users, (User u1, User u2)-> {
+            double u1Rating = ratingService.calculateAverageRatingForUser(u1.getUsername());
+            System.out.println("U1 rating " + u1Rating);
+            double u2Rating = ratingService.calculateAverageRatingForUser(u2.getUsername());
+            System.out.println("U2 rating " + u1Rating);
+
+            if(u1Rating != u2Rating)
+                return u1Rating < u2Rating ? -1 : 1;
+
+            int u1NoOfHandled = calculateNumberOfHandledRequests(u1);
+            System.out.println("U1 number handled " + u1NoOfHandled);
+            int u2NoOfHandled = calculateNumberOfHandledRequests(u2);
+            System.out.println("U2 number handled " + u2NoOfHandled);
+
+            if(u1NoOfHandled != u2NoOfHandled)
+                return u1NoOfHandled < u2NoOfHandled ? -1 : 1;
+
+            return u1.getId() > u2.getId() ? -1 : 1;
+        });
+
+        Collections.reverse(users);
+
+        System.out.println(users);
+
+        return users.size() <= 3 ? users : users.subList(0,3);
+
+    }
+
+
+    private int calculateNumberOfHandledRequests(User user){
+        List<Request> handledRequests = userRepository.findAllHandledRequests(user.getUsername());
+        return handledRequests==null ? 0 : handledRequests.size();
+    }
+
+
     /**
      * Validates user.
-     * @param user
+     * @param user user to be asserted
      */
     private void assertData(User user) {
         Assert.notNull(user, "User object must be given");

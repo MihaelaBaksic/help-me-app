@@ -4,15 +4,20 @@ import hr.fer.progi.domain.Rating;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.RatingDTO;
+import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
 import hr.fer.progi.service.exceptions.InvalidRatingException;
+import hr.fer.progi.wrappers.UserModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +35,9 @@ public class RatingController {
 
     @Autowired
     private RequestService requestService;
+
+    @Autowired
+    private UserModelAssembler userAssembler;
 
     /**
      * Handles a HTTP GET Request when user wants to know rating score of other user.
@@ -50,9 +58,10 @@ public class RatingController {
      * @return rating of given user in range 1.0 to 5.0
      */
     // TODO Rename and change path
-    @GetMapping("/average")
+    @GetMapping("/average/{username}")
     @Secured("ROLE_USER")
-    public ResponseEntity<Double> getRating(String username) {
+    public ResponseEntity<Double> getRating(@PathVariable String username) {
+        // TODO Check if username in databse HERE, if not throw Exception (UnexistingUserReference)
         return ResponseEntity.ok(ratingService.calculateAverageRatingForUser(username));
     }
 
@@ -74,9 +83,30 @@ public class RatingController {
 
         Request request = requestService.getRequestById(ratingDTO.getRequestId());
 
+        // TODO make another RatingDTOreturn (not create)
+        // TODO (all that is in RatingDTO (UserDTO who is rating and UserDTO rated and Request DTO if it references some Request))
+        // TODO It will return ResponseEntity<RatingDTO>
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
 
         return ResponseEntity.ok(ratingService.addRating(rating));
     }
+
+    /**
+     *
+     * @return collection model of top rated users
+     */
+    @GetMapping("/statistics")
+    @Secured("ROLE_USER")
+    public CollectionModel<EntityModel<UserDTO>> getStatistics() {
+
+        List<User> bestUsers = userService.getStatistics();
+
+        List<UserDTO> bestUsersDTO = new ArrayList<>();
+        bestUsers.forEach(u -> bestUsersDTO.add(u.mapToUserDTO()));
+
+        return userAssembler.toCollectionModel(bestUsersDTO);
+    }
+
+
 }
