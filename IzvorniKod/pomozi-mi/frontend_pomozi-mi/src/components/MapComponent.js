@@ -60,14 +60,11 @@ function MapSearch(props) {
 	);
 }
 function HomeButton(props) {
-	/* const [position, setPosition] = useState(props.map.getCenter()); */
-
 	const onClick = useCallback(() => {
 		props.map.setView(initialCenter, zoomLevel);
 	}, [props.map]);
 
 	const onMove = useCallback(() => {
-		/* setPosition(props.map.getCenter()); */
 		currentCenter = props.map.getCenter();
 	}, [props.map]);
 
@@ -79,12 +76,7 @@ function HomeButton(props) {
 	}, [props.map, onMove]);
 
 	return (
-		//<p>
-		//	latitude: {position.lat.toFixed(4)}, longitude:
-		//	{position.lng.toFixed(4)}
-		//	<button onClick={onClick}>reset</button>
-		//</p>
-		<a className="leaflet-control-zoom-in" role="button" onClick={onClick}>
+		<a className="leaflet-control-zoom-out" role="button" onClick={onClick}>
 			<svg
 				width="20px"
 				height="20px"
@@ -103,18 +95,15 @@ function HomeButton(props) {
 		</a>
 	);
 }
-
-function MapComponent() {
-	const [map, setMap] = useState(null);
+function CenterMarker(props) {
 	const [markerPos, setMarkerPos] = useState(intitialMarkerPostion);
+	const markerRef = useRef(null);
 
 	function postaviMarker() {
 		setMarkerPos(currentCenter);
 		currentMarkerPosition = currentCenter;
 		console.log("bruhJEDAN " + currentMarkerPosition);
 	}
-
-	const markerRef = useRef(null);
 	const eventHandlers = useMemo(
 		() => ({
 			dragend() {
@@ -128,6 +117,41 @@ function MapComponent() {
 		}),
 		[]
 	);
+
+	return (
+		<a
+			className="leaflet-control-zoom-in"
+			role="button"
+			onClick={postaviMarker}
+		>
+			<svg
+				width="20px"
+				height="20px"
+				className="bi bi-geo-alt"
+				viewBox="0 0 16 16"
+			>
+				<path
+					fillRule="evenodd"
+					d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+				/>
+				<path
+					fillRule="evenodd"
+					d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+				/>
+			</svg>
+			<Marker
+				map={props.map}
+				draggable={true}
+				eventHandlers={eventHandlers}
+				position={markerPos}
+				ref={markerRef}
+			></Marker>
+		</a>
+	);
+}
+
+function MapComponent() {
+	const [map, setMap] = useState(null);
 
 	const displayMap = useMemo(
 		() => (
@@ -143,30 +167,8 @@ function MapComponent() {
 				/>
 
 				<div className="leaflet-top leaflet-right">
-					<div className="leaflet-control-zoom leaflet-bar leaflet-control ">
-						{markerPos ? (
-							<a
-								className="leaflet-control-zoom-in"
-								role="button"
-								onClick={postaviMarker}
-							>
-								<svg
-									width="20px"
-									height="20px"
-									className="bi bi-geo-alt"
-									viewBox="0 0 16 16"
-								>
-									<path
-										fillRule="evenodd"
-										d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
-									/>
-									<path
-										fillRule="evenodd"
-										d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-									/>
-								</svg>
-							</a>
-						) : null}
+					<div className="leaflet-control-zoom leaflet-bar leaflet-control">
+						{map ? <CenterMarker map={map} /> : null}
 						{map ? <HomeButton map={map} /> : null}
 					</div>
 				</div>
@@ -174,17 +176,9 @@ function MapComponent() {
 				<div className="centerTop">
 					{map ? <MapSearch map={map} /> : null}
 				</div>
-
-				<Marker
-					map={map}
-					draggable={true}
-					eventHandlers={eventHandlers}
-					position={markerPos}
-					ref={markerRef}
-				></Marker>
 			</MapContainer>
 		),
-		[markerPos, map, eventHandlers]
+		[map]
 	);
 	return <div>{displayMap}</div>;
 }

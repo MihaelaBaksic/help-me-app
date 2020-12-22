@@ -535,8 +535,8 @@ a.list-group-item,
 	color: orange;
 }
 .leaflet-container {
-	width: 300px;
-	height: 300px;
+	width: 70vw;
+	height: 90vh;
 }
 .centerTop {
 	position: relative;
