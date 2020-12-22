@@ -26,34 +26,19 @@ public class Address {
 
     @NotNull
     @Size(min = 2, max = 50)
-    private String streetName;
+    private String description;
 
     @NotNull
-    private Integer streetNumber;
-
-    /**
-     * Represents user's place of residence.
-     */
-    @NotNull
-    private Long zipCode;
+    Double x_coord;
 
     @NotNull
-    @Size(min = 2, max = 50)
-    private String locationName;
+    Double y_coord;
 
-    /**
-     * Creates address with specified street name, street number, and place of residence.
-     *
-     * @param streetName   The street's name
-     * @param streetNumber The street's number
-     * @param zipCode      zip code of User's place of residence
-     * @param locationName User's place of residence
-     */
-    public Address(String streetName, Integer streetNumber, Long zipCode, String locationName) {
-        this.streetName = streetName;
-        this.streetNumber = streetNumber;
-        this.zipCode = zipCode;
-        this.locationName = locationName;
+
+    public Address(String description, Double x_coord, Double y_coord) {
+        this.description = description;
+        this.x_coord = x_coord;
+        this.y_coord = y_coord;
     }
 
 }

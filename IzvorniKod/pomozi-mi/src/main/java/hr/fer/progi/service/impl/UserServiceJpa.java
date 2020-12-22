@@ -152,10 +152,9 @@ public class UserServiceJpa implements UserService {
         Assert.notNull(user.getLastName(), "Last name must be given");
         Assert.notNull(user.getPhoneNumber(), "Phone number must be given");
         Assert.notNull(user.getUsername(), "Username must be given");
-        Assert.notNull(user.getAddress().getLocationName(), "Location name must be given");
-        Assert.notNull(user.getAddress().getStreetName(), "Street name must be given");
-        Assert.notNull(user.getAddress().getStreetNumber(), "Street number must be given");
-        Assert.notNull(user.getAddress().getZipCode(), "Zip code must be given");
+        Assert.notNull(user.getAddress().getDescription(), "Location description must be given");
+        Assert.notNull(user.getAddress().getX_coord(), "X coordinate must be given");
+        Assert.notNull(user.getAddress().getY_coord(), "Y coordinate must be given");
     }
 }
 

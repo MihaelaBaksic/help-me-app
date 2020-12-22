@@ -99,7 +99,6 @@ public class Request {
      * @return new RequestDTO
      */
     public RequestDTO mapToRequestDTO() {
-        System.out.println("MAPPING TO RequestDTO");
         return new RequestDTO(id, expirationDate, title, description, address, status, requestAuthor.mapToUserDTO(),
                 potentialHandler!=null ? potentialHandler.stream().map(h -> h.mapToUserDTO()).collect(Collectors.toSet()) : null,
                 requestHandler!=null ? requestHandler.mapToUserDTO() : null);
@@ -118,10 +117,9 @@ public class Request {
     	if(update.description != null) this.setDescription(update.description);
     	if(update.expirationDate != null) this.setExpirationDate(update.expirationDate);
     	if(update.address != null) {
-    		if(update.address.getLocationName() != null) this.address.setLocationName(update.address.getLocationName());
-    		if(update.address.getStreetName() != null) this.address.setStreetName(update.address.getStreetName());
-    		if(update.address.getStreetNumber() != null) this.address.setStreetNumber(update.address.getStreetNumber());
-    		if(update.address.getZipCode() != null) this.address.setZipCode(update.address.getZipCode());
+    		if(update.address.getDescription() != null) this.address.setDescription(update.address.getDescription());
+    		if(update.address.getX_coord() != null) this.address.setX_coord(update.address.getX_coord());
+    		if(update.address.getY_coord() != null) this.address.setY_coord(update.address.getY_coord());
     	}
     	if(update.status != null) this.setStatus(update.status);
     }

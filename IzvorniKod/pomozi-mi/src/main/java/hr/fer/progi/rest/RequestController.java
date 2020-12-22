@@ -103,6 +103,11 @@ public class RequestController {
     }
 
 
+    /**
+     * Admin deletion of request deemed inappropriate
+     * @param id of the request to be deleted
+     * @return response
+     */
     @DeleteMapping("/delete/{id}")
     @Secured("ROLE_ADMIN")
     @Transactional
@@ -125,6 +130,13 @@ public class RequestController {
     }
 
 
+    /**
+     * User deletion or blocking of the request
+     * User can only block or delete the request where he is an author
+     * If request has been responded it can only be blocked, otherwise deleted
+     * @param id id of the referenced request
+     * @return response
+     */
     @PostMapping("/blockDeleteRequest/{id}")
     @Secured("ROLE_USER")
     public ResponseEntity<?> blockOrDeleteRequest(@PathVariable("id") Long id) {
@@ -136,7 +148,8 @@ public class RequestController {
         }
         //if no one answered the request it can be deleted
         if(r.getStatus() == RequestStatus.ACTNOANS)
-            return requestService.deleteRequest(r.getId()) ? ResponseEntity.ok("Successful deletion") : ResponseEntity.badRequest().body("Unsuccessful deletion");
+            return requestService.deleteRequest(r.getId()) ? ResponseEntity.ok("Successful deletion") :
+                    ResponseEntity.badRequest().body("Unsuccessful deletion");
 
         //otherwise it is to be blocked
         if (r.getStatus() == RequestStatus.BLOCKED) {
@@ -147,6 +160,11 @@ public class RequestController {
     }
 
 
+    /**
+     * Puts current user as the potential handler for the request
+     * @param id of the request that is responded to
+     * @return updated request
+     */
     @PostMapping("/respond/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> respondToRequest(@PathVariable("id") Long id) {
@@ -158,6 +176,12 @@ public class RequestController {
     }
 
 
+    /**
+     * Picking handler from the potential handlers set
+     * @param id id of the request for which handler is picked
+     * @param handlerDTO user that is to be picked as a handler
+     * @return updated request
+     */
     @PostMapping("/pickHandler/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> pickHandler(@PathVariable("id") Long id, @RequestBody UserDTO handlerDTO) {
@@ -183,6 +207,12 @@ public class RequestController {
         return assembler.toModel(requestService.pickRequestHandler(r, handler).mapToRequestDTO());
     }
 
+    /**
+     * Marking of the request as done
+     * Request can only be marked done if it is in ACCEPTED state, thus has a handler
+     * @param id referenced request id
+     * @return updated request
+     */
     @PostMapping("/markDone/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> markDone(@PathVariable("id") Long id) {
@@ -199,6 +229,12 @@ public class RequestController {
         return assembler.toModel(requestService.markRequestDone(r).mapToRequestDTO());
     }
 
+    /**
+     * Rejecting potential handler
+     * @param id referenced request id
+     * @param handlerDTO the user to be rejected
+     * @return updated request
+     */
     @PostMapping("/rejectHandler/{id}")
     @Secured("ROLE_USER")
     public EntityModel<RequestDTO> rejectHandler(@PathVariable("id") Long id, @RequestBody UserDTO handlerDTO) {
