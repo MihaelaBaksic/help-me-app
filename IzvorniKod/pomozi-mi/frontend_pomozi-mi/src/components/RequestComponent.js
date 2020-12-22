@@ -8,26 +8,15 @@ import {
 	Icon,
 	CardContent,
 } from "semantic-ui-react";
+//import PotentialUsers from "./PotentialUsers";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 
 function RequestComponent(props) {
-	//const { id } = useParams();
+	const { id } = useParams();
 	const [podaciReq, setPodaciReq] = useState([]);
 	const [podaciUser, setPodaciUser] = useState([]);
-
-	let description = [
-		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-		"At vero eos et accusam et justo duo dolores et ea rebum.",
-		"Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-	].join(" ");
-
-	let name = "Mateo Stanić | @mateostanic69  ";
-	let vrijeme = "22:00:00";
-	let adresaZah = "VIRTUELNI";
-	let colorBut1 = "green";
-	let colorBut2 = "red";
 
 	//Ovo je za fetch requesta
 	useEffect(() => {
@@ -42,7 +31,7 @@ function RequestComponent(props) {
 			redirect: "follow",
 		};
 
-		fetch(baseUrl + `/requests/2`, options) // `/requests/${id}` Ovo je hardcodirano zbog trenutnih uslova ali treba ici id
+		fetch(baseUrl + `/requests/${id}`, options)
 			.then((response) => response.text())
 			.then((result) => setPodaciReq(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
@@ -67,6 +56,86 @@ function RequestComponent(props) {
 			.catch((error) => console.log("error", error));
 	}, []);
 
+	async function blockRequest() {
+		var myHeaders = new Headers();
+
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+		};
+		await fetch(
+			baseUrl + `/requests/blockDeleteRequest/${id}`,
+			options
+		).then((response) => {
+			if (response.status === 200) {
+				console.log("Uspješano blokiranje");
+				window.location.reload(false);
+			} else {
+				console.log("Neuspješano blokiranje");
+			}
+		});
+	}
+
+	async function markAsDone() {
+		var myHeaders = new Headers();
+		var urlEncoded = new URLSearchParams();
+
+		urlEncoded.append("username", podaciReq.handler.username);
+		urlEncoded.append("firstName", podaciReq.handler.password);
+		urlEncoded.append("lastName", podaciReq.handler.lastName);
+		urlEncoded.append("email", podaciReq.handler.email);
+		urlEncoded.append("administrator", podaciReq.handler.administrator);
+		urlEncoded.append("status", podaciReq.handler.status);
+
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+		};
+		await fetch(baseUrl + `/requests/markDone/${id}`, options).then(
+			(response) => {
+				if (response.status === 200) {
+					console.log("Uspješano obavljanje");
+					window.location.reload(false);
+				} else {
+					console.log("Neuspješano obavljanje");
+				}
+			}
+		);
+	}
+
+	async function takeRequest() {
+		var myHeaders = new Headers();
+
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+		};
+		await fetch(baseUrl + `/requests/respond/${id}`, options).then(
+			(response) => {
+				if (response.status === 200) {
+					console.log("Uspješano javljanje");
+				} else {
+					console.log("Neuspješano javljanje");
+				}
+			}
+		);
+	}
+
 	console.log(JSON.stringify(podaciReq));
 	console.log(JSON.stringify(podaciUser));
 
@@ -74,20 +143,108 @@ function RequestComponent(props) {
 		let moj = "Ne";
 		let btnL = "Javi se";
 		let btnR = "";
-		if (podaciUser.administrator != false) {
+		if (podaciUser.administrator == true) {
 			moj = "Da";
-			btnL = "Javi";
+			btnL = "Javi se";
 			btnR = "Ukloni zahtjev";
 		}
 		if (podaciReq.requestAuthor.username == podaciUser.username) {
 			moj = "Da";
-			btnL = "Pregled";
+			btnL = "Pregled javljanja";
 			btnR = "Blokiraj";
 		}
 
+		let buttonLeft = (
+			<Button
+				onClick={() => takeRequest()}
+				color="blue"
+				size="large"
+				floated="right"
+			>
+				{btnL}
+			</Button>
+		);
+		let buttonRight = (
+			<Button
+				onClick={() => blockRequest()}
+				color="red"
+				size="large"
+				floated="right"
+			>
+				{btnR}
+			</Button>
+		);
+
+		//Ako je zahtjev blokiran
+		if (podaciReq.status === "BLOCKED") {
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
+							</Label>
+							<Label color="orange">
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>
+								<h2 color="red"> Zahtjev je blokiran! </h2>
+							</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		}
+
+		//Ako je zahtjev gotov
+		if (podaciReq.status === "DONE") {
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
+							</Label>
+							<Label color="orange">
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>
+								<h2 color="red"> Zahtjev je gotov! </h2>
+							</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		}
+
+		//Prednost ako je autor
 		if (
-			podaciUser.administrator != false ||
-			podaciReq.requestAuthor.username == podaciUser.username
+			podaciReq.requestAuthor.username === podaciUser.username &&
+			podaciReq.status === "ACTANS"
 		) {
 			return (
 				<Container textAlign="justified" color="blue">
@@ -99,15 +256,12 @@ function RequestComponent(props) {
 							{podaciReq.requestAuthor.firstName}{" "}
 							{podaciReq.requestAuthor.lastName}{" "}
 							<Label color="orange">
-								Kranji datum = {podaciReq.expirationDate}
+								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
 							<Label color="orange">
-								Adresa = {podaciReq.address.streetName}{" "}
-								{podaciReq.address.streetNumber}
+								Adresa = {podaciReq.address.description}
 							</Label>
-							<Label color="orange">
-								Autora Zahtjeva = {moj}
-							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
 							header={podaciReq.title}
@@ -115,26 +269,17 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-								<Button
-									color={colorBut2}
-									size="large"
-									floated="right"
-								>
-									{btnR}
-								</Button>
-								<Button
-									color={colorBut1}
-									size="large"
-									floated="right"
-								>
-									{btnL}
-								</Button>
+								{buttonRight}
+								{buttonLeft}
 							</div>
 						</Card.Content>
 					</Card>
 				</Container>
 			);
-		} else {
+		} else if (
+			podaciReq.requestAuthor.username === podaciUser.username &&
+			podaciReq.status === "ACTNOANS"
+		) {
 			return (
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
@@ -145,15 +290,85 @@ function RequestComponent(props) {
 							{podaciReq.requestAuthor.firstName}{" "}
 							{podaciReq.requestAuthor.lastName}{" "}
 							<Label color="orange">
-								Kranji datum = {podaciReq.expirationDate}
+								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
 							<Label color="orange">
-								Adresa = {podaciReq.address.streetName}{" "}
-								{podaciReq.address.streetNumber}
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>{buttonRight}</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		} else if (
+			podaciReq.requestAuthor.username === podaciUser.username &&
+			podaciReq.status === "ACTNOANS"
+		) {
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
 							<Label color="orange">
-								Autora Zahtjeva = {moj}
+								Adresa = {podaciReq.address.description}
 							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>{buttonRight}</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		} else if (
+			podaciReq.requestAuthor.username === podaciUser.username &&
+			podaciReq.status === "ACCEPTED"
+		) {
+			btnL = "Zahtjev završen";
+			buttonLeft = (
+				<Button
+					onClick={() => markAsDone()}
+					color="blue"
+					size="large"
+					floated="right"
+				>
+					{btnL}
+				</Button>
+			);
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
+							</Label>
+							<Label color="orange">
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
 							header={podaciReq.title}
@@ -161,14 +376,82 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-								<Button
-									color={colorBut1}
-									size="large"
-									floated="right"
-								>
-									{btnL}
-								</Button>
+								{buttonRight}
+								{buttonLeft}
 							</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		} else if (podaciReq.requestAuthor.administrator === true) {
+			if (podaciReq.status === "ACCEPTED") {
+				buttonLeft = (
+					<Button disabled color="blue" size="large" floated="right">
+						{btnL}
+					</Button>
+				);
+			}
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
+							</Label>
+							<Label color="orange">
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>
+								{buttonRight}
+								{buttonLeft}
+							</div>
+						</Card.Content>
+					</Card>
+				</Container>
+			);
+		} else {
+			if (podaciReq.status === "ACCEPTED") {
+				buttonLeft = (
+					<Button disabled color="blue" size="large" floated="right">
+						{btnL}
+					</Button>
+				);
+			}
+			return (
+				<Container textAlign="justified" color="blue">
+					<Card color="red" fluid>
+						<Card.Content extra>
+							<Icon name="user" size="big" />@
+							{podaciReq.requestAuthor.username}
+							{" | "}
+							{podaciReq.requestAuthor.firstName}{" "}
+							{podaciReq.requestAuthor.lastName}{" "}
+							<Label color="orange">
+								Krajnji datum = {podaciReq.expirationDate}
+							</Label>
+							<Label color="orange">
+								Adresa = {podaciReq.address.description}
+							</Label>
+							<Label color="orange">Autor Zahtjeva = {moj}</Label>
+						</Card.Content>
+						<Card.Content
+							header={podaciReq.title}
+							description={podaciReq.description}
+						/>
+						<Card.Content extra>
+							<div>{buttonLeft}</div>
 						</Card.Content>
 					</Card>
 				</Container>
