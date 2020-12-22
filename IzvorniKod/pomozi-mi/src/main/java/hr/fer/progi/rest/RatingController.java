@@ -78,25 +78,16 @@ public class RatingController {
         User loggedUser = userService.findByUsername(username);
         User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
 
-        // if (ratingDTO.getRequestId() == null)
-        // Request id can be null, because we can rate a User without
-        // throw new InvalidRatingException("Request id can't be null.");
-
-        // Request can be null if there is no Request with given id in database
         Long requestId = ratingDTO.getRequestId();
         Request request = requestId == null ? null :
                 requestService.getRequestById(ratingDTO.getRequestId());
 
-        // TODO make another RatingDTOreturn (not create)
-        //  (all that is in RatingDTO (UserDTO who is rating
-        //  and UserDTO rated and Request DTO if it references some Request))
-        //  It will return ResponseEntity<RatingDTO>
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
-        Rating addedRating = ratingService.addRating(rating);
 
-        return ResponseEntity.ok(addedRating.mapToReturnRatingDTO());
-
+        return ResponseEntity.ok(
+                ratingService.addRating(rating)
+                .mapToReturnRatingDTO());
     }
 
     /**

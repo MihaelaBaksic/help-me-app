@@ -12,10 +12,6 @@ import javax.validation.constraints.NotNull;
  @Data
  @AllArgsConstructor
 public class ReturnRatingDTO {
-    // TODO make another RatingDTOreturn (not create)
-    //  (all that is in RatingDTO (UserDTO who is rating
-    //  and UserDTO rated and Request DTO if it references some Request))
-    //  It will return ResponseEntity<RatingDTO>
 
     @NotNull
     private int rating;
@@ -27,7 +23,5 @@ public class ReturnRatingDTO {
     private UserDTO ratedUser;
 
     private RequestDTO request;
-
-
 
 }
