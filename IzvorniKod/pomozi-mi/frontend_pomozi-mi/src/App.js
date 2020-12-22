@@ -12,6 +12,7 @@ import MapView from "./components/MapView";
 import RequestList from "./components/RequestList";
 import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
+import MapComponent from "./components/MapComponent";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -92,6 +93,11 @@ class App extends Component {
 							exact
 							path="/test/newRequest"
 							component={RequestForm}
+						/>
+						<Route
+							exact
+							path="/test/map"
+							component={MapComponent}
 						/>
 					</Switch>
 				</HashRouter>

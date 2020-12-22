@@ -535,3 +535,14 @@ a.list-group-item,
 .checked {
 	color: orange;
 }
+.leaflet-container {
+	width: 70vw;
+	height: 90vh;
+}
+.centerTop {
+	position: relative;
+	z-index: 400;
+	width: 50%;
+	left: 25%;
+	top: 10px;
+}

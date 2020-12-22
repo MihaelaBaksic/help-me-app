@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import MapComponent from "./MapComponent";
 
 const baseUrl = "http://localhost:8080";
 
@@ -61,12 +62,12 @@ function RequestForm() {
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<div id="newRequestFormInputs">
-					<div class="form-group">
+					<div className="form-group">
 						<label>Naslov zahtjeva</label>
 						<input
 							type="text"
 							name="title"
-							class="form-control"
+							className="form-control"
 							id="title"
 							placeholder="Naslov"
 							ref={register({
@@ -84,12 +85,12 @@ function RequestForm() {
 							{errors.title && errors.title.message}
 						</div>
 					</div>
-					<div class="form-group">
+					<div className="form-group">
 						<label>Istek zahtjeva</label>
 						<input
 							name="expirationDate"
 							type="datetime-local"
-							class="form-control"
+							className="form-control"
 							id="expirationDate"
 							placeholder=""
 							ref={register({
@@ -187,27 +188,32 @@ function RequestForm() {
 							{errors.zipCode && errors.zipCode.message}
 						</div>
 					</div>
-					<div class="form-group">
+					<div className="form-group">
 						<label>Opis zahtjeva:</label>
 						<textarea
 							name="description"
-							class="form-control"
+							className="form-control"
 							id="exampleFormControlTextarea1"
 							rows="3"
 							placeholder="Opis"
 							ref={register}
-						></textarea>
+						/>
 					</div>
 				</div>
-				<div className="loginOrRegisterBtns">
-					<button type="cancel" className="btn btn-secondary">
-						Cancel
-					</button>
-					<button type="submit" className="btn btn-primary">
-						Submit
-					</button>
-				</div>
 			</form>
+			<MapComponent />
+			<div className="loginOrRegisterBtns">
+				<button type="cancel" className="btn btn-secondary">
+					Cancel
+				</button>
+				<button
+					type="submit"
+					className="btn btn-primary"
+					form="newRequest"
+				>
+					Submit
+				</button>
+			</div>
 		</div>
 	);
 }
