@@ -1,31 +1,30 @@
 import React, { Component, useEffect, useState } from "react";
 class ViewProfileComponent extends Component {
-	
 	constructor() {
 		super();
 		this.state = {
 			showing: "myRequests",
-			podaci: []
+			podaci: [],
 		};
 	}
 	componentDidMount() {
-        var myHeaders = new Headers();
-        myHeaders.append(
-            "Authorization",
-            "Basic " + sessionStorage.getItem("basicAuthToken")
-        );
-        const options = {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow",
-        };
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		const options = {
+			method: "GET",
+			headers: myHeaders,
+			redirect: "follow",
+		};
 
-        fetch("http://localhost:8080/user/getCurrentUser", options)
-            .then((response) => response.text())
-			.then((result) => this.setState({"podaci" : JSON.parse(result)}))
-			.then(() => console.log(this.state.podaci)) 
-            .catch((error) => console.log("error", error));
-    }
+		fetch("http://localhost:8080/user/getCurrentUser", options)
+			.then((response) => response.text())
+			.then((result) => this.setState({ podaci: JSON.parse(result) }))
+			.then(() => console.log(this.state.podaci))
+			.catch((error) => console.log("error", error));
+	}
 	changeState(s) {
 		this.setState({
 			showing: s,
@@ -37,10 +36,10 @@ class ViewProfileComponent extends Component {
 		this.props.changeState(sranje);
 	}
 	render() {
-		const {podaci} = this.state.podaci;
+		const { podaci } = this.state.podaci;
 
 		return (
-			<div className="">
+			<div className="lijeviStupacContentHolder">
 				<div className="author-card">
 					<div className="author-card-cover">
 						<a
@@ -58,16 +57,17 @@ class ViewProfileComponent extends Component {
 					</div>
 					<div className="author-card-profile">
 						<div className="author-card-avatar">
-							<img
-								src="https://bootdey.com/img/Content/avatar/avatar1.png"
-							/>
+							<img src="https://bootdey.com/img/Content/avatar/avatar1.png" />
 						</div>
 						<div className="author-card-details">
 							<h5 className="author-card-name text-lg">
-								{this.state.podaci.firstName} {this.state.podaci.lastName}
+								{this.state.podaci.firstName}{" "}
+								{this.state.podaci.lastName}
 							</h5>
 							<span className="author-card-position">
-								{this.state.podaci.administrator ? "Administrator": "Korisnik"}
+								{this.state.podaci.administrator
+									? "Administrator"
+									: "Korisnik"}
 							</span>
 						</div>
 					</div>

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "./resources/todo_logo.png";
 import { useHistory } from "react-router-dom";
+import L from "leaflet";
 
 import { Card } from "semantic-ui-react";
+import MapComponent from "./MapComponent";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const registerUrl = "http://localhost:8080/register";
@@ -13,30 +15,77 @@ function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
 
 	const [errorMessage, setErrorMessage] = useState("");
+	const [geoLocation, setGeoLocation] = useState(L.latLng(0, 0));
 
 	let history = useHistory();
 
-	async function onSubmit(values, e) {
+	function onSubmit(values, e) {
 		e.preventDefault();
-		delete values["confirmPassword"];
-
-		const options = {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(values),
+		console.log(geoLocation);
+		let desciption = "";
+		let options222 = {
+			method: "GET",
 		};
-		await fetch(registerUrl, options).then((response) => {
-			if (response.status === 200) {
-				console.log("Uspješna registracija");
-				history.push("/");
-			} else {
-				response.json().then((result) => {
-					setErrorMessage(result.message);
+		let fetchResult;
+		fetch(
+			"https://nominatim.openstreetmap.org/reverse.php?lat=" +
+				geoLocation.lat +
+				"&lon=" +
+				geoLocation.lng +
+				"&zoom=18&format=jsonv2",
+			options222
+		)
+			.then((response) => response.text())
+			.then((result) => {
+				fetchResult = JSON.parse(result);
+				console.log(fetchResult);
+			})
+			.catch((error) => console.log(error.message))
+			.finally(() => {
+				if (fetchResult.address !== undefined) {
+					desciption =
+						fetchResult.address.street ||
+						fetchResult.address.squares ||
+						fetchResult.address.farms ||
+						fetchResult.address.localities ||
+						fetchResult.address.neighbourhood ||
+						fetchResult.address.suburb ||
+						fetchResult.address.town ||
+						fetchResult.address.city ||
+						fetchResult.address.county ||
+						fetchResult.address.state ||
+						fetchResult.address.country ||
+						"";
+				} else {
+					desciption = "Unknown";
+				}
+				delete values["confirmPassword"];
+
+				values = JSON.parse(JSON.stringify(values));
+				values.description = desciption;
+				values.x_coord = geoLocation.lat;
+				values.y_coord = geoLocation.lng;
+
+				console.log(values);
+				values = JSON.stringify(values);
+				const options = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: values,
+				};
+				fetch(registerUrl, options).then((response) => {
+					if (response.status === 200) {
+						console.log("Uspješna registracija");
+						history.push("/");
+					} else {
+						response.json().then((result) => {
+							setErrorMessage(result.message);
+						});
+					}
 				});
-			}
-		});
+			});
 	}
 
 	return (
@@ -46,7 +95,13 @@ function RegisterForm(props) {
 				<div className="kratkiOpis">Unesite Vaše podatke</div>
 			</div>
 
-			<form className="forma" onSubmit={handleSubmit(onSubmit)}>
+			<form
+				className="forma"
+				onSubmit={handleSubmit(onSubmit)}
+				onKeyPress={(e) => {
+					e.key === "Enter" && e.preventDefault();
+				}}
+			>
 				<div className="form-group">
 					<input
 						name="firstName"
@@ -206,7 +261,7 @@ function RegisterForm(props) {
 						{errors.phoneNumber && errors.phoneNumber.message}
 					</div>
 				</div>
-				<div className="form-group">
+				{/* <div className="form-group">
 					<input
 						name="streetName"
 						className="form-control"
@@ -285,8 +340,9 @@ function RegisterForm(props) {
 					<div className="error-message">
 						{errors.cityCode && errors.cityCode.message}
 					</div>
-				</div>
+				</div> */}
 
+				<MapComponent setGeoLocation={setGeoLocation} />
 				<div className="loginOrRegisterBtns">
 					<div>
 						<button
