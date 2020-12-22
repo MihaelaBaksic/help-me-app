@@ -120,10 +120,9 @@ public class User {
     	if(other.getPassword() != null) password = other.getPassword();
     	if(other.getEmail() != null) email = other.getEmail();
     	if(other.getPhoneNumber() != null) phoneNumber = other.getEmail();
-    	if(other.getAddress().getLocationName() != null) address.setLocationName(other.getAddress().getLocationName());
-   		if(other.getAddress().getStreetName() != null) address.setStreetName(other.getAddress().getStreetName());
-   		if(other.getAddress().getStreetNumber() != null) address.setStreetNumber(other.getAddress().getStreetNumber());
-    	if(other.getAddress().getZipCode() != null) address.setZipCode(other.getAddress().getZipCode());
+    	if(other.getAddress().getDescription() != null) address.setDescription(other.getAddress().getDescription());
+   		if(other.getAddress().getX_coord() != null) address.setX_coord(other.getAddress().getX_coord());
+   		if(other.getAddress().getY_coord() != null) address.setY_coord(other.getAddress().getX_coord());
     }
 
 

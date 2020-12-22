@@ -56,18 +56,17 @@ public class RegistrationDTO {
     @Column(unique = true)
     private String phoneNumber;
 
-    private String streetName;
+    private String description;
 
-    private Integer streetNumber;
+    private  Double x_coord;
 
-    private Long cityCode;
+    private  Double y_coord;
 
-    private String cityName;
+
 
     public RegistrationDTO(@Size(min = 2, max = 30) String firstName, @Size(min = 2, max = 30) String lastName,
                            @Size(min = 4, max = 20) String username, @Size(min = 6) String password, String email,
-                           String phoneNumber, String streetName, Integer streetNumber,
-                           Long cityCode, String cityName) {
+                           String phoneNumber, String description, Double x_coord, Double y_coord) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,10 +74,9 @@ public class RegistrationDTO {
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.streetName = streetName;
-        this.streetNumber = streetNumber;
-        this.cityCode = cityCode;
-        this.cityName = cityName;
+        this.description = description;
+        this.x_coord = x_coord;
+        this.y_coord = y_coord;
     }
 
     /**
@@ -92,7 +90,7 @@ public class RegistrationDTO {
         UserStatus status = UserStatus.NOTBLOCKED;
         LocalDateTime blockedUntil = null;
 
-        Address address = new Address(this.streetName, this.streetNumber, this.cityCode, this.cityName);
+        Address address = new Address(this.description, this.x_coord, this.y_coord);
 
         return new User(this.firstName, this.lastName,
                 this.username, this.password, this.email,

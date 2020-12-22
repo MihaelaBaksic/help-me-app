@@ -19,14 +19,14 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
     /**
      * Gets id if it exists in database.
      *
-     * @param streetName
-     * @param streetNumber
-     * @param zipCode
+     * @param description
+     * @param x_coord
+     * @param y_coord
      * @return id
      */
-    @Query("SELECT a.id FROM Address a WHERE a.streetName = :streetName AND a.streetNumber= :streetNumber AND a.zipCode= :zipCode")
-    Long getIdIfExists(@Param("streetName") String streetName,
-                       @Param("streetNumber") int streetNumber,
-                       @Param("zipCode") Long zipCode);
+    @Query("SELECT a.id FROM Address a WHERE a.description = :description AND a.x_coord= :x_coord AND a.y_coord= :y_coord")
+    Long getIdIfExists(@Param("description") String description,
+                       @Param("x_coord") Double x_coord,
+                       @Param("y_coord") Double y_coord);
 
 }

@@ -69,10 +69,9 @@ public class RequestServiceJpa implements RequestService {
      * @param request
      */
     private void assertAddress(Request request) {
-        Assert.notNull(request.getAddress().getLocationName(), "Location name must be given");
-        Assert.notNull(request.getAddress().getStreetName(), "Street name must be given");
-        Assert.notNull(request.getAddress().getStreetNumber(), "Street number must be given");
-        Assert.notNull(request.getAddress().getZipCode(), "Zip code must be given");		
+        Assert.notNull(request.getAddress().getDescription(), "Location description must be given");
+        Assert.notNull(request.getAddress().getX_coord(), "X coordinate must be given");
+        Assert.notNull(request.getAddress().getY_coord(), "Y coordinate must be given");
 	}
 
 	@Override
