@@ -5,6 +5,7 @@ import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.RequestDTO;
+import hr.fer.progi.mappers.ReturnRatingDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
 import hr.fer.progi.service.exceptions.InvalidRatingException;
@@ -61,7 +62,6 @@ public class RatingController {
     @GetMapping("/average/{username}")
     @Secured("ROLE_USER")
     public ResponseEntity<Double> getRating(@PathVariable String username) {
-        // TODO Check if username in databse HERE, if not throw Exception (UnexistingUserReference)
         return ResponseEntity.ok(ratingService.calculateAverageRatingForUser(username));
     }
 
@@ -73,27 +73,33 @@ public class RatingController {
      */
     @PostMapping("")
     @Secured("ROLE_USER")
-    public ResponseEntity<Rating> placeRating(@RequestBody RatingDTO ratingDTO) {
+    public ResponseEntity<ReturnRatingDTO> placeRating(@RequestBody RatingDTO ratingDTO) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User loggedUser = userService.findByUsername(username);
         User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
 
-        if(ratingDTO.getRequestId() == null)
-            throw new InvalidRatingException("Rating id can't be null.");
+        // if (ratingDTO.getRequestId() == null)
+        // Request id can be null, because we can rate a User without
+        // throw new InvalidRatingException("Request id can't be null.");
 
-        Request request = requestService.getRequestById(ratingDTO.getRequestId());
+        // Request can be null if there is no Request with given id in database
+        Long requestId = ratingDTO.getRequestId();
+        Request request = requestId == null ? null :
+                requestService.getRequestById(ratingDTO.getRequestId());
 
         // TODO make another RatingDTOreturn (not create)
-        // TODO (all that is in RatingDTO (UserDTO who is rating and UserDTO rated and Request DTO if it references some Request))
-        // TODO It will return ResponseEntity<RatingDTO>
+        //  (all that is in RatingDTO (UserDTO who is rating
+        //  and UserDTO rated and Request DTO if it references some Request))
+        //  It will return ResponseEntity<RatingDTO>
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
+        Rating addedRating = ratingService.addRating(rating);
 
-        return ResponseEntity.ok(ratingService.addRating(rating));
+        return ResponseEntity.ok(addedRating.mapToReturnRatingDTO());
+
     }
 
     /**
-     *
      * @return collection model of top rated users
      */
     @GetMapping("/statistics")

@@ -5,6 +5,7 @@ import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.Rating;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.service.RatingService;
+import hr.fer.progi.service.exceptions.NonexistingUserReferencedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -19,6 +20,9 @@ public class RatingServiceJpa implements RatingService {
 
     @Autowired
     private RatingRepository ratingRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<Rating> userRatings(String username) {
@@ -39,6 +43,9 @@ public class RatingServiceJpa implements RatingService {
 
     @Override
     public double calculateAverageRatingForUser(String username) {
+        if (userRepository.findByUsername(username) == null)
+            throw new NonexistingUserReferencedException("No User with username: '" + username + "' in database");
+
         List<Rating> ratingList = ratingRepository.findAllWhereUserIsRated(username);
 
         return ratingList.size() == 0 ? 0.0 : ratingList.stream()
