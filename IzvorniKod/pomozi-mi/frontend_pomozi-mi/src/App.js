@@ -13,7 +13,7 @@ import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {

@@ -97,7 +97,8 @@ body {
 
 .topHeader {
 	height: 3.5rem;
-	background-color: #ff5722;
+	/* background-color: #ff5722; */
+	background-image: url("headerBackground.png");
 
 	display: flex;
 	justify-content: space-between;
@@ -116,19 +117,21 @@ body {
 	/* width: calc(1.5em + 0.75rem + 2px);
 	height: calc(1.5em + 0.75rem + 2px); */
 	margin: 0px 10px;
-	background-color: rgb(255, 225, 0);
 }
-
+#rightExtenderIcon {
+	width: 20px;
+}
 .leftExtender {
 	/* 	width: calc(1.5em + 0.75rem + 2px);
 	height: calc(1.5em + 0.75rem + 2px); */
 	margin: 0px 10px;
-	background-color: rgb(255, 225, 0);
 }
-
+#leftExtenderIcon {
+	width: 20px;
+}
 .center {
 	flex-grow: 1;
-	background-color: rgb(245, 245, 245);
+	background-color: rgb(252, 176, 176);
 	overflow: scroll;
 }
 
@@ -136,8 +139,11 @@ body {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
+#main {
+	background-color: plum;
+}
 
-.pageBody {
+#pageBody {
 	position: relative;
 }
 
@@ -146,6 +152,8 @@ body {
 }
 .lijeviStupacContentHolder > div {
 	min-width: 250px;
+}
+.desniStupacContentHolder > div {
 }
 #desniStupac {
 	margin: 10px;
@@ -322,9 +330,10 @@ body {
 }
 
 .logOutButton {
-	width: 90%;
+	width: 200px;
 	white-space: nowrap;
 	margin: auto;
+	margin-top: 20px;
 	padding-top: min(8px, 10px);
 	padding-bottom: min(8px, 10px);
 	padding-right: min(32px, 33px);
