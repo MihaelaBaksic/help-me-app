@@ -54,11 +54,8 @@ public class RequestServiceJpa implements RequestService {
         if(!(requestAuthor.getStatus() == UserStatus.NOTBLOCKED)) {
         	throw new BlockingException("Your account is blocked!");
         }
-        if(request.getAddress() == null) {
-        	request.setAddress(requestAuthor.getAddress());
-        } else {
-        	assertAddress(request);
-        }
+        if(request.getAddress() != null)
+            assertAddress(request);
         
         return requestRepository.save(request);
     }
