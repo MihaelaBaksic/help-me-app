@@ -110,7 +110,7 @@ function RequestComponent(props) {
 							</Label>
 						</Card.Content>
 						<Card.Content
-							header="Opis:"
+							header={podaciReq.title}
 							description={podaciReq.description}
 						/>
 						<Card.Content extra>
@@ -156,7 +156,7 @@ function RequestComponent(props) {
 							</Label>
 						</Card.Content>
 						<Card.Content
-							header="Opis:"
+							header={podaciReq.title}
 							description={podaciReq.description}
 						/>
 						<Card.Content extra>
