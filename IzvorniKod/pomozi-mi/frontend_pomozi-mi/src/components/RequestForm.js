@@ -12,23 +12,71 @@ function RequestForm() {
 	async function onSubmit(values, e) {
 		e.preventDefault();
 
-		console.log("hell yeah " + JSON.stringify(values));
-
-		var myHeaders = new Headers();
-		myHeaders.append(
-			"Authorization",
-			"Basic " + sessionStorage.getItem("basicAuthToken")
-		);
-		myHeaders.append("Content-Type", "application/json");
-		const options = {
-			method: "POST",
-			headers: myHeaders,
-			body: JSON.stringify(values),
+		e.preventDefault();
+		console.log(geoLocation);
+		let description = "";
+		let options222 = {
+			method: "GET",
 		};
-		fetch(baseUrl + "/requests", options)
+		let fetchResult;
+		fetch(
+			"https://nominatim.openstreetmap.org/reverse.php?lat=" +
+				geoLocation.lat +
+				"&lon=" +
+				geoLocation.lng +
+				"&zoom=18&format=jsonv2",
+			options222
+		)
 			.then((response) => response.text())
-			.then((result) => console.log(result))
-			.catch((error) => console.log(error));
+			.then((result) => {
+				fetchResult = JSON.parse(result);
+				console.log(fetchResult);
+			})
+			.catch((error) => console.log(error.message))
+			.finally(() => {
+				if (fetchResult.address !== undefined) {
+					description =
+						fetchResult.address.street ||
+						fetchResult.address.squares ||
+						fetchResult.address.farms ||
+						fetchResult.address.localities ||
+						fetchResult.address.neighbourhood ||
+						fetchResult.address.suburb ||
+						fetchResult.address.town ||
+						fetchResult.address.city ||
+						fetchResult.address.county ||
+						fetchResult.address.state ||
+						fetchResult.address.country ||
+						"";
+				} else {
+					description = "Unknown";
+				}
+
+				values = JSON.parse(JSON.stringify(values));
+				console.log(values);
+				values.address = {};
+				values.address.description = description;
+				values.address.x_coord = geoLocation.lat;
+				values.address.y_coord = geoLocation.lng;
+
+				console.log(values);
+				values = JSON.stringify(values);
+				var myHeaders = new Headers();
+				myHeaders.append(
+					"Authorization",
+					"Basic " + sessionStorage.getItem("basicAuthToken")
+				);
+				myHeaders.append("Content-Type", "application/json");
+				const options = {
+					method: "POST",
+					headers: myHeaders,
+					body: values,
+				};
+				fetch(baseUrl + "/requests", options)
+					.then((response) => response.text())
+					.then((result) => console.log(JSON.parse(result)))
+					.catch((error) => console.log(error));
+			});
 	}
 
 	return (
@@ -39,7 +87,7 @@ function RequestForm() {
 				className="forma"
 				onSubmit={handleSubmit(onSubmit)}
 			>
-				<div id="newRequestFormInputs">
+				<div id="newRequestFormInputs" className="naslov_istek">
 					<div className="form-group">
 						<label>Naslov zahtjeva</label>
 						<input
@@ -84,32 +132,31 @@ function RequestForm() {
 						</div>
 					</div>
 
-					<div className="form-group">
+					<div id="requestFormDescription" className="form-group">
 						<label>Opis zahtjeva:</label>
 						<textarea
 							name="description"
 							className="form-control"
-							id="exampleFormControlTextarea1"
 							rows="3"
 							placeholder="Opis"
 							ref={register}
 						/>
 					</div>
 				</div>
+				<MapComponent setGeoLocation={setGeoLocation} />
+				<div className="loginOrRegisterBtns">
+					<button type="cancel" className="btn btn-secondary">
+						Cancel
+					</button>
+					<button
+						type="submit"
+						className="btn btn-primary"
+						form="newRequest"
+					>
+						Submit
+					</button>
+				</div>
 			</form>
-			<MapComponent setGeoLocation={setGeoLocation} />
-			<div className="loginOrRegisterBtns">
-				<button type="cancel" className="btn btn-secondary">
-					Cancel
-				</button>
-				<button
-					type="submit"
-					className="btn btn-primary"
-					form="newRequest"
-				>
-					Submit
-				</button>
-			</div>
 		</div>
 	);
 }

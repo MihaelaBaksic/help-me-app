@@ -22,7 +22,7 @@ function RegisterForm(props) {
 	function onSubmit(values, e) {
 		e.preventDefault();
 		console.log(geoLocation);
-		let desciption = "";
+		let description = "";
 		let options222 = {
 			method: "GET",
 		};
@@ -43,7 +43,7 @@ function RegisterForm(props) {
 			.catch((error) => console.log(error.message))
 			.finally(() => {
 				if (fetchResult.address !== undefined) {
-					desciption =
+					description =
 						fetchResult.address.street ||
 						fetchResult.address.squares ||
 						fetchResult.address.farms ||
@@ -57,12 +57,12 @@ function RegisterForm(props) {
 						fetchResult.address.country ||
 						"";
 				} else {
-					desciption = "Unknown";
+					description = "Unknown";
 				}
 				delete values["confirmPassword"];
 
 				values = JSON.parse(JSON.stringify(values));
-				values.description = desciption;
+				values.description = description;
 				values.x_coord = geoLocation.lat;
 				values.y_coord = geoLocation.lng;
 

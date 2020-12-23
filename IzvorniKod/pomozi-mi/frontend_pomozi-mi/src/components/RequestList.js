@@ -42,9 +42,12 @@ function RequestList() {
 						</Label>
 					</List.Header>
 					{request.description}
-					<Label as="a" tag>
-						{request.address.description}
-					</Label>
+					{request.address ? (
+						<Label tag>{request.address.description}</Label>
+					) : (
+						<Label tag>Virtualni zahtjev</Label>
+					)}
+
 					<Button positive floated="right">
 						Javi se
 					</Button>
