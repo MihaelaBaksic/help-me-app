@@ -3,7 +3,7 @@ class ViewProfileComponent extends Component {
 	constructor() {
 		super();
 		this.state = {
-			showing: "myRequests",
+			showing: "requests",
 			podaci: [],
 		};
 	}
@@ -74,6 +74,21 @@ class ViewProfileComponent extends Component {
 				</div>
 				<div className="wizard">
 					<nav className="list-group list-group-flush">
+					<a
+							onClick={() => this.promjeniSranje("requests")}
+							className={
+								this.state.showing === "requests"
+									? "list-group-item active"
+									: "list-group-item"
+							}
+							href="#/"
+						>
+							<div className="d-flex justify-content-between align-items-center">
+								<div className="d-inline-block font-weight-medium text-uppercase">
+									Pomozi nekome!
+								</div>
+							</div>
+						</a>
 						<a
 							onClick={() => this.promjeniSranje("myRequests")}
 							className={
@@ -127,17 +142,6 @@ class ViewProfileComponent extends Component {
 							href="#/"
 						>
 							Adresa djelovanja
-						</a>
-						<a
-							onClick={() => this.promjeniSranje("delete")}
-							className={
-								this.state.showing === "delete"
-									? "list-group-item active"
-									: "list-group-item"
-							}
-							href="#/"
-						>
-							Brisanje korisničkog računa
 						</a>
 					</nav>
 				</div>
