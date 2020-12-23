@@ -12,6 +12,7 @@ import RequestList from "./components/RequestList";
 import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
+import OtherUserProfile from "./components/OtherUserProfile";
 
 let devMode = "OFF"; /* "ON" */
 
@@ -97,6 +98,11 @@ class App extends Component {
 							exact
 							path="/test/map"
 							component={MapComponent}
+						/>
+						<Route
+							exact
+							path="/test/userother"
+							component={OtherUserProfile}
 						/>
 					</Switch>
 				</HashRouter>
