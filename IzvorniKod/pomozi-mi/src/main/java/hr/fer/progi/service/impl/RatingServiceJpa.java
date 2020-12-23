@@ -3,7 +3,6 @@ package hr.fer.progi.service.impl;
 import hr.fer.progi.dao.RatingRepository;
 import hr.fer.progi.dao.UserRepository;
 import hr.fer.progi.domain.Rating;
-import hr.fer.progi.domain.User;
 import hr.fer.progi.service.RatingService;
 import hr.fer.progi.service.exceptions.NonexistingUserReferencedException;
 import org.springframework.beans.factory.annotation.Autowired;

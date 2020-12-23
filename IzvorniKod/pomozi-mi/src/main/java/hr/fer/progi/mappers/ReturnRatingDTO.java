@@ -9,8 +9,8 @@ import javax.validation.constraints.NotNull;
 /**
  * Represents data transfer object(DTO) for {@link Rating} entity when we return it to user.
  */
- @Data
- @AllArgsConstructor
+@Data
+@AllArgsConstructor
 public class ReturnRatingDTO {
 
     @NotNull
