@@ -8,7 +8,7 @@ import {
 	Icon,
 	CardContent,
 } from "semantic-ui-react";
-//import PotentialUsers from "./PotentialUsers";
+import PotentialUsers from "./PotentialUsers";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
@@ -270,7 +270,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<div>
 								{buttonRight}
-								{buttonLeft}
+								<PotentialUsers id={id}></PotentialUsers>
 							</div>
 						</Card.Content>
 					</Card>
