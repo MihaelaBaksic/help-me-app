@@ -7,6 +7,7 @@ import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.ReturnRatingDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
+import hr.fer.progi.service.exceptions.InvalidRatingException;
 import hr.fer.progi.service.exceptions.NonexistingUserReferencedException;
 import hr.fer.progi.wrappers.UserModelAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +86,8 @@ public class RatingController {
     public ResponseEntity<ReturnRatingDTO> placeRating(@RequestBody RatingDTO ratingDTO) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         String ratedUsername = ratingDTO.getRatedUsername();
+        if (username.equals(ratedUsername))
+            throw new InvalidRatingException("User can't rate himself");
 
         User loggedUser = userService.findByUsername(username);
         User ratedUser = userService.findByUsername(ratingDTO.getRatedUsername());
