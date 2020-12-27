@@ -175,40 +175,36 @@ function MapComponent(props) {
 		props.setGeoLocation(currentMarkerPosition);
 	}, []);
 
-	const displayMap = useMemo(
-		() => (
-			<MapContainer
-				center={initialCenter}
-				zoom={zoomLevel}
-				scrollWheelZoom={true}
-				whenCreated={setMap}
-				className="form-group"
-			>
-				<TileLayer
-					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
-					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-				/>
+	return (
+		<MapContainer
+			center={initialCenter}
+			zoom={zoomLevel}
+			scrollWheelZoom={true}
+			whenCreated={setMap}
+			className="form-group"
+		>
+			<TileLayer
+				attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+			/>
 
-				<div className="leaflet-top leaflet-right">
-					<div className="leaflet-control-zoom leaflet-bar leaflet-control">
-						{map ? (
-							<CenterMarker
-								map={map}
-								setGeoLocation={props.setGeoLocation}
-							/>
-						) : null}
-						{map ? <HomeButton map={map} /> : null}
-					</div>
+			<div className="leaflet-top leaflet-right">
+				<div className="leaflet-control-zoom leaflet-bar leaflet-control">
+					{map ? (
+						<CenterMarker
+							map={map}
+							setGeoLocation={props.setGeoLocation}
+						/>
+					) : null}
+					{map ? <HomeButton map={map} /> : null}
 				</div>
+			</div>
 
-				<div className="centerTop">
-					{map ? <MapSearch map={map} /> : null}
-				</div>
-			</MapContainer>
-		),
-		[map]
+			<div className="centerTop">
+				{map ? <MapSearch map={map} /> : null}
+			</div>
+		</MapContainer>
 	);
-	return <div>{displayMap}</div>;
 }
 
 export default MapComponent;

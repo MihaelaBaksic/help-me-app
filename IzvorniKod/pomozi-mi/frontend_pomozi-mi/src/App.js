@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 
-import { HashRouter, Switch, Route } from "react-router-dom";
+import {
+	HashRouter,
+	Switch,
+	Route,
+	Router,
+	BrowserRouter,
+} from "react-router-dom";
 
 import "./App.css";
 import LoginForm from "./components/LoginForm";
@@ -74,7 +80,20 @@ class App extends Component {
 				</HashRouter>
 			);
 		} else if (devMode === "OFF") {
-			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
+			return (
+				<HashRouter>
+					<Switch>
+						<Route
+							path="/"
+							render={() => (
+								<LogedInUserComponent
+									setLogInFalse={this.setLogInFalse}
+								/>
+							)}
+						/>
+					</Switch>
+				</HashRouter>
+			);
 		} else {
 			return (
 				<HashRouter>

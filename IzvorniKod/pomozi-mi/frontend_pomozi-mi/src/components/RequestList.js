@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
-function RequestList() {
+function RequestList(props) {
 	const [requests, setRequests] = useState([]);
 
 	useEffect(() => {
@@ -19,7 +19,12 @@ function RequestList() {
 			redirect: "follow",
 		};
 
-		fetch(baseUrl + "/requests", options)
+		fetch(
+			props.username
+				? baseUrl + "/user/authoredRequests/" + props.username
+				: baseUrl + "/requests",
+			options
+		)
 			.then((response) => response.text())
 			.then((result) =>
 				setRequests(JSON.parse(result)._embedded.requestDTOList)

@@ -1,4 +1,8 @@
 import React, { Component, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+
+/* function ViewProfileComponent(props) { */
 class ViewProfileComponent extends Component {
 	constructor() {
 		super();
@@ -7,6 +11,11 @@ class ViewProfileComponent extends Component {
 			podaci: [],
 		};
 	}
+	static propTypes = {
+		match: PropTypes.object.isRequired,
+		location: PropTypes.object.isRequired,
+		history: PropTypes.object.isRequired,
+	};
 	componentDidMount() {
 		var myHeaders = new Headers();
 		myHeaders.append(
@@ -22,7 +31,13 @@ class ViewProfileComponent extends Component {
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => this.setState({ podaci: JSON.parse(result) }))
-			.then(() => console.log(this.state.podaci))
+			.then(() => {
+				console.log(this.state.podaci);
+				sessionStorage.setItem(
+					"currentUserUsername",
+					this.state.podaci.username
+				);
+			})
 			.catch((error) => console.log("error", error));
 	}
 	changeState(s) {
@@ -37,6 +52,7 @@ class ViewProfileComponent extends Component {
 	}
 	render() {
 		const { podaci } = this.state.podaci;
+		const { match, location, history } = this.props;
 
 		return (
 			<div className="lijeviStupacContentHolder">
@@ -61,7 +77,7 @@ class ViewProfileComponent extends Component {
 						</div>
 						<div className="author-card-details">
 							<h5 className="author-card-name text-lg">
-								{this.state.podaci.firstName}{" "}
+								{this.state.podaci.firstName}
 								{this.state.podaci.lastName}
 							</h5>
 							<span className="author-card-position">
@@ -74,8 +90,32 @@ class ViewProfileComponent extends Component {
 				</div>
 				<div className="wizard">
 					<nav className="list-group list-group-flush">
-					<a
-							onClick={() => this.promjeniSranje("requests")}
+						<div
+							onClick={() => {
+								history.push("/newRequest");
+								console.log("/newRequest");
+								this.promjeniSranje("newRequest");
+							}}
+							className={
+								this.state.showing === "newRequest"
+									? "list-group-item active"
+									: "list-group-item"
+							}
+							href="#/"
+						>
+							<div className="d-flex justify-content-between align-items-center">
+								<div className="d-inline-block font-weight-medium text-uppercase">
+									Pomoz Bog!!!!
+								</div>
+							</div>
+						</div>
+
+						<div
+							onClick={() => {
+								history.push("/requests");
+								console.log("/requests");
+								this.promjeniSranje("requests");
+							}}
 							className={
 								this.state.showing === "requests"
 									? "list-group-item active"
@@ -88,9 +128,13 @@ class ViewProfileComponent extends Component {
 									Pomozi nekome!
 								</div>
 							</div>
-						</a>
-						<a
-							onClick={() => this.promjeniSranje("myRequests")}
+						</div>
+						<div
+							onClick={() => {
+								history.push("/myRequests");
+								console.log("/myRequests");
+								this.promjeniSranje("myRequests");
+							}}
 							className={
 								this.state.showing === "myRequests"
 									? "list-group-item active"
@@ -104,9 +148,13 @@ class ViewProfileComponent extends Component {
 								</div>
 								<span className="badge badge-secondary">2</span>
 							</div>
-						</a>
-						<a
-							onClick={() => this.promjeniSranje("otherRequests")}
+						</div>
+						<div
+							onClick={() => {
+								history.push("/otherRequests");
+								console.log("/otherRequests");
+								this.promjeniSranje("otherRequests");
+							}}
 							className={
 								this.state.showing === "otherRequests"
 									? "list-group-item active"
@@ -120,9 +168,13 @@ class ViewProfileComponent extends Component {
 								</div>
 								<span className="badge badge-secondary">6</span>
 							</div>
-						</a>
-						<a
-							onClick={() => this.promjeniSranje("settings")}
+						</div>
+						<div
+							onClick={() => {
+								history.push("/settings");
+								console.log("/settings");
+								this.promjeniSranje("settings");
+							}}
 							className={
 								this.state.showing === "settings"
 									? "list-group-item active"
@@ -131,9 +183,13 @@ class ViewProfileComponent extends Component {
 							href="#/"
 						>
 							Postavke korisničkog računa
-						</a>
-						<a
-							onClick={() => this.promjeniSranje("adress")}
+						</div>
+						<div
+							onClick={() => {
+								history.push("/adress");
+								console.log("/adress");
+								this.promjeniSranje("adress");
+							}}
 							className={
 								this.state.showing === "adress"
 									? "list-group-item active"
@@ -142,7 +198,7 @@ class ViewProfileComponent extends Component {
 							href="#/"
 						>
 							Adresa djelovanja
-						</a>
+						</div>
 					</nav>
 				</div>
 			</div>
@@ -150,4 +206,4 @@ class ViewProfileComponent extends Component {
 	}
 }
 
-export default ViewProfileComponent;
+export default withRouter(ViewProfileComponent);
