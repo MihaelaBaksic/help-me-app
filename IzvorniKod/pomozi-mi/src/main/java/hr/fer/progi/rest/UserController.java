@@ -6,6 +6,7 @@ import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
 import hr.fer.progi.mappers.RegistrationDTO;
 import hr.fer.progi.mappers.RequestDTO;
+import hr.fer.progi.mappers.UpdateUserDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.RequestService;
 import hr.fer.progi.service.exceptions.BlockingException;
@@ -65,20 +66,20 @@ public class UserController {
     /**
      * Handles a HTTP POST Request when user wants to update some information in their profile.
      *
-     * @param regDTO Changes that currently logged user made
+     * @param updateDTO Changes that currently logged user made
      * @return Http response entity containing UserDTO
      */
     @PostMapping("/settings")
     @Secured("ROLE_USER")
-    public ResponseEntity<?> updateUser(@RequestBody RegistrationDTO regDTO) {
+    public ResponseEntity<?> updateUser(@RequestBody UpdateUserDTO updateDTO) {
 
         PasswordEncoder encoder = webSecurity.getPasswordEncoder();
-        String encodedPass = encoder.encode(regDTO.getPassword());
-        regDTO.setPassword(encodedPass);
+        String encodedPass = encoder.encode(updateDTO.getPassword());
+        updateDTO.setPassword(encodedPass);
 
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User existingUser = userService.findByUsername(username);
-        existingUser.updateUserData(regDTO.mapToUser());
+        existingUser.updateUserData(updateDTO);
 
 
         EntityModel<UserDTO> entityModel = assembler.toModel(userService.updateUser(existingUser).mapToUserDTO());

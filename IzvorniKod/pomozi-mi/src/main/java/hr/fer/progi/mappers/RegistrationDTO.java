@@ -1,17 +1,11 @@
 package hr.fer.progi.mappers;
 
-import java.sql.Time;
 import java.time.LocalDateTime;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import hr.fer.progi.domain.User;
-
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
-
-import com.sun.istack.NotNull;
-
+import javax.validation.constraints.NotNull;
 import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.UserStatus;
 
@@ -53,7 +47,6 @@ public class RegistrationDTO {
     private String email;
 
     @NotNull
-    @Column(unique = true)
     private String phoneNumber;
 
     private String description;
