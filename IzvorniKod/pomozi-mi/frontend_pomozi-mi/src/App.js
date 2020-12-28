@@ -13,6 +13,7 @@ import ViewProfileComponent from "./components/ViewProfileComponent";
 import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 import OtherUserProfile from "./components/OtherUserProfile";
+import CommentComponent from "./components/CommentComponent";
 
 let devMode = "ON"; /* "ON" */
 
@@ -103,6 +104,11 @@ class App extends Component {
 							exact
 							path="/test/userother"
 							component={OtherUserProfile}
+						/>
+						<Route
+							exact
+							path="/test/comment"
+							component={CommentComponent}
 						/>
 					</Switch>
 				</HashRouter>
