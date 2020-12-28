@@ -20,6 +20,9 @@ function OtherUserProfile(props) {
                             <div className="mt-3">
                                 <a href="javascript:void(0)" className="btn btn-success rounded-pill">+&nbsp; Dodaj kao admina</a>
                             </div>
+                            <div className="mt-3">
+                                <a href="javascript:void(0)" className="btn btn-danger rounded-pill">+&nbsp; Blokiraj korisnika</a>
+                            </div>
 
                         </div>
 
@@ -30,10 +33,33 @@ function OtherUserProfile(props) {
 
                 <div className="row">
                     <div className="col">
+
                         <div className="card mb-4">
                             <div className="card-body">
-                                <div className="col-md-9">
+                                <div className="col-xl-12">
+                                    <div class="page-header">
+                                        <h3>Postavljeni zahtjevi</h3> 
+                                        <hr/>  
+                                    </div>
                                     OVDJE JE KOMPONENTA POSTAVLJENIH ZAHTJEVA
+                      </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col">
+
+                        <div className="card mb-4">
+                            <div className="card-body">
+                                <div className="col-xl-12">
+                                    <div class="page-header">
+                                        <h3>Izvršeni zahtjevi</h3> 
+                                        <hr/>  
+                                    </div>
+                                    OVDJE JE KOMPONENTA IZVRŠENIH ZAHTJEVA
                       </div>
                             </div>
                         </div>
@@ -42,7 +68,12 @@ function OtherUserProfile(props) {
                     <div className="col-xl-4">
 
                         <div className="card mb-4">
+                            
                             <div className="card-body">
+                            <div class="page-header">
+                                <h3>Komentari</h3> 
+                                    <hr/>  
+                            </div>
                                 OVDJE JE KOMPONENTA KOMENTARA
                     </div>
 

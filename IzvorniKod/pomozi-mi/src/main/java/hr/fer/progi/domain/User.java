@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 
+import hr.fer.progi.mappers.UpdateUserDTO;
 import hr.fer.progi.mappers.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -113,16 +114,11 @@ public class User {
      *                 as they cannot be modified by the user
      */
 
-    public void updateUserData(User other){
+    public void updateUserData(UpdateUserDTO other){
     	if(other.getFirstName() != null) firstName = other.getFirstName();
     	if(other.getLastName() != null) lastName = other.getLastName();
-    	if(other.getUsername() != null) username = other.getUsername();
     	if(other.getPassword() != null) password = other.getPassword();
-    	if(other.getEmail() != null) email = other.getEmail();
-    	if(other.getPhoneNumber() != null) phoneNumber = other.getEmail();
-    	if(other.getAddress().getDescription() != null) address.setDescription(other.getAddress().getDescription());
-   		if(other.getAddress().getX_coord() != null) address.setX_coord(other.getAddress().getX_coord());
-   		if(other.getAddress().getY_coord() != null) address.setY_coord(other.getAddress().getX_coord());
+    	if(other.getPhoneNumber() != null) phoneNumber = other.getPhoneNumber();
     }
 
 
