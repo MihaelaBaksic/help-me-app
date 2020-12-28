@@ -14,7 +14,7 @@ import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 import OtherUserProfile from "./components/OtherUserProfile";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
