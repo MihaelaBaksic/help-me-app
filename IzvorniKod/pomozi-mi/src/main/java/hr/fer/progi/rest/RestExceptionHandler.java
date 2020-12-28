@@ -32,6 +32,11 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler(NonexistingObjectReferencedException.class)
+    protected ResponseEntity<?> handleUnexistingObjectReferenced(Exception e, WebRequest req) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(NonexistingUserReferencedException.class)
     protected ResponseEntity<?> handleUnexistingUserReferenced(Exception e, WebRequest req) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }

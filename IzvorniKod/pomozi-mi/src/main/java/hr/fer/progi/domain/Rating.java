@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import com.sun.istack.NotNull;
 
+import hr.fer.progi.mappers.ReturnRatingDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -57,4 +58,11 @@ public class Rating {
     public Rating() {
 
     }
+
+    public ReturnRatingDTO mapToReturnRatingDTO() {
+        return new ReturnRatingDTO(rating, comment,
+                reviewer.mapToUserDTO(), rated.mapToUserDTO(),
+                request == null ? null : request.mapToRequestDTO());
+    }
+
 }

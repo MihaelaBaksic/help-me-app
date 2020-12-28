@@ -2,7 +2,6 @@ package hr.fer.progi.service;
 
 import hr.fer.progi.dao.RatingRepository;
 import hr.fer.progi.domain.Rating;
-import hr.fer.progi.domain.User;
 import hr.fer.progi.rest.RatingController;
 
 import java.util.List;
