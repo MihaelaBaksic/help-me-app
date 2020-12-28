@@ -1,7 +1,9 @@
 package hr.fer.progi.service.impl;
 
+import hr.fer.progi.dao.NotificationRepository;
 import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.dao.UserRepository;
+import hr.fer.progi.domain.Notification;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
@@ -31,6 +33,9 @@ public class RequestServiceJpa implements RequestService {
 
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     @Override
     public List<Request> listAll() {
@@ -56,6 +61,9 @@ public class RequestServiceJpa implements RequestService {
         }
         if(request.getAddress() != null)
             assertAddress(request);
+        
+        Notification notification = new Notification(requestAuthor, "Vaš zahtjev je uspješno stvoren.", request);
+        notificationRepository.save(notification);
         
         return requestRepository.save(request);
     }
@@ -102,10 +110,22 @@ public class RequestServiceJpa implements RequestService {
 
     @Override
     public boolean deleteRequest(Long id) {
+    	Request r = requestRepository.findById(id).get();
+
+        
     	long beforeDeleting = requestRepository.count();
     	requestRepository.deleteById(id);
     	long afterDeleting = requestRepository.count();
-    	return beforeDeleting-1 == afterDeleting ? true : false;
+    	
+    	boolean isDeleted = beforeDeleting-1 == afterDeleting ? true : false;
+    	if(isDeleted) {
+            User user = userRepository.findByUsername(r.getRequestAuthor().getUsername());
+    		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", r);
+    		notificationRepository.save(notification);
+    	}
+    	
+    	
+    	return isDeleted;
     }
     
     
@@ -128,6 +148,10 @@ public class RequestServiceJpa implements RequestService {
         if(request.getStatus() == RequestStatus.DONE) {
         	throw new RequestDoneException("You cannot update request that has already been processed!");
         }
+        
+        User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
+        Notification notification = new Notification(user, "Vaš je zahtjev uspješno ažuriran.", request);
+        notificationRepository.save(notification);
         
         return requestRepository.save(request);
     }
@@ -179,6 +203,10 @@ public class RequestServiceJpa implements RequestService {
     		request.getPotentialHandler().add(potentialHandler);
     	}
     	
+    	User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
+    	Notification notification = new Notification(user, "Korisnik " + potentialHandler.getUsername() + " se javio na vaš zahtjev", request);
+    	notificationRepository.save(notification);
+    	
     	request.setStatus(RequestStatus.ACTANS);
     	
     	return requestRepository.save(request);
@@ -216,6 +244,27 @@ public class RequestServiceJpa implements RequestService {
     	requestRepository.updateRequestHandler(request.getId(), request.getRequestHandler());
     	requestRepository.updateRequestStatus(request.getId(), request.getStatus());
     	
+    	User requestAuthor = userRepository.findByUsername(request.getRequestAuthor().getUsername());
+    	
+    	Notification notifyRequestAuthor = new Notification(requestAuthor, "Odabrali ste korisnika " + user.getUsername() +
+    			" za izvršavanje vašeg zahtjeva. Kontakt broj korisnika " + user.getUsername() + " je: " + 
+    			user.getPhoneNumber() + ", te email adresa: " + user.getEmail(), request);
+    	Notification notifyHandler = new Notification(user, "Odabrani ste za izvršavanje zahtjeva " + request.getTitle() +
+    			". Kontakt broj autora zahtjeva je: " + requestAuthor.getPhoneNumber() +
+    			", te email adresa: " + requestAuthor.getEmail(), request);
+    	
+    	notificationRepository.save(notifyHandler);
+    	notificationRepository.save(notifyRequestAuthor);
+    	
+    	for(User deniedHandler : request.getPotentialHandler()) {
+    		if(deniedHandler.equals(user)) {
+    			continue;
+    		}
+    		Notification notifyRejectedHandlers = new Notification(deniedHandler, "Za zahtjev " + request.getTitle() + 
+    				" je odabran izvršitelj, nažalost to niste vi.", request);
+    		notificationRepository.save(notifyRejectedHandlers);
+    	}
+    	
     	return request;
     }
 
@@ -230,6 +279,11 @@ public class RequestServiceJpa implements RequestService {
         request.setPotentialHandler(request.getPotentialHandler().stream().filter(h -> (! h.equals(u))).collect(Collectors.toSet()));
         if (request.getPotentialHandler().isEmpty())
             request.setStatus(RequestStatus.ACTNOANS);
+        
+        
+        Notification notifyRejectedHandler = new Notification(u, "Odbijeni ste za izvršavanje zahtjeva " + request.getTitle(), request);
+        notificationRepository.save(notifyRejectedHandler);
+        
         return requestRepository.save(request);
     }
 
