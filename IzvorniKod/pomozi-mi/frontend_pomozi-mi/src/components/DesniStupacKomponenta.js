@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory, withRouter } from "react-router-dom";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const logOutUrl = "http://localhost:8080/logout";
@@ -23,11 +24,13 @@ function DesniStupacKomponenta(props) {
 			if (response.status === 204) {
 				console.log("Uspješan logout");
 				props.setLogInFalse();
+				history.push("/");
 			} else {
 				console.log("Neuspješan logout");
 			}
 		});
 	}
+	let history = useHistory();
 
 	return (
 		<div id="desniStupac" className="desniStupac">
@@ -61,4 +64,4 @@ function DesniStupacKomponenta(props) {
 	);
 }
 
-export default DesniStupacKomponenta;
+export default withRouter(DesniStupacKomponenta);

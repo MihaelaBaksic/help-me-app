@@ -1,36 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RequestList from "./RequestList";
 
 import UserSettings from "./UserSettings";
-import DeleteComponent from "./DeleteComponent";
 import RequestForm from "./RequestForm";
-import {
-	HashRouter,
-	Switch,
-	Route,
-	BrowserRouter,
-	useRouteMatch,
-	Router,
-} from "react-router-dom";
-import { Browser } from "leaflet";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 
 function CentarKomponenta(props) {
-	let { path, url } = useRouteMatch();
-	console.log(path);
+	let history = useHistory();
+
 	return (
-		<div id="center" className="center">
+		<div
+			id="center"
+			className={
+				history.location.pathname === "/newRequest"
+					? "center centerOverflow hiddenScroll"
+					: "center centerOverflow"
+			}
+		>
 			<HashRouter>
 				<Switch>
 					<Route path="/newRequest" render={() => <RequestForm />} />
 					<Route path="/settings" render={() => <UserSettings />} />
-					<Route path="requests" render={() => <RequestList />} />
+					<Route path="/requests" render={() => <RequestList />} />
 					<Route
 						path="/myRequests"
 						render={() => (
 							<RequestList
-								username={sessionStorage.getItem(
-									"currentUserUsername"
-								)}
+								username={
+									sessionStorage.getItem(
+										"currentUserUsername"
+									)
+										? sessionStorage.getItem(
+												"currentUserUsername"
+										  )
+										: ""
+								}
 							/>
 						)}
 					/>
@@ -49,4 +54,4 @@ function CentarKomponenta(props) {
 	);
 }
 
-export default CentarKomponenta;
+export default withRouter(CentarKomponenta);

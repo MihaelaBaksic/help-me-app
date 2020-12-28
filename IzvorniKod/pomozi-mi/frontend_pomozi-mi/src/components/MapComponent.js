@@ -61,7 +61,7 @@ function MapSearch(props) {
 		//<form onSubmit={handleSubmit(onSubmit)}>
 		<div /* className="form-group" */>
 			<input
-				className="form-control leaflet-bar"
+				className="form-control leaflet-bar roundedEdges"
 				type="search"
 				name="q"
 				value={searchParam}

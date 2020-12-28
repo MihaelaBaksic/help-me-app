@@ -18,7 +18,6 @@ function RequestList(props) {
 			headers: myHeaders,
 			redirect: "follow",
 		};
-
 		fetch(
 			props.username
 				? baseUrl + "/user/authoredRequests/" + props.username
@@ -26,11 +25,14 @@ function RequestList(props) {
 			options
 		)
 			.then((response) => response.text())
-			.then((result) =>
-				setRequests(JSON.parse(result)._embedded.requestDTOList)
-			)
-			.catch((error) => console.log("error", error));
-	}, []);
+			.then((result) => {
+				setRequests(JSON.parse(result)._embedded.requestDTOList);
+			})
+			.catch((error) => {
+				console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+				setRequests([]);
+			});
+	}, [props]);
 
 	return (
 		<List selection celled id="requestList">

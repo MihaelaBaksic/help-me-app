@@ -43,6 +43,8 @@ body {
 .loginOrRegisterBtns {
 	display: flex;
 	justify-content: space-between;
+	width: 330px;
+	margin: auto;
 }
 
 .formHeader {
@@ -130,11 +132,20 @@ body {
 	width: 20px;
 }
 .center {
-	flex-grow: 1;
 	background-color: rgb(252, 176, 176);
+}
+.centerOverflow {
 	overflow: scroll;
 }
-
+.hiddenScroll {
+	overflow-x: hidden;
+	scrollbar-width: none; /* za firefox */
+}
+.hiddenScroll::-webkit-scrollbar /* za chrome */ {
+	width: 0px;
+	background: transparent;
+	scrollbar-width: none;
+}
 #requestList {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -361,9 +372,13 @@ body {
 }
 
 #newRequestFormInputs {
+	width: 330px;
+	margin: auto;
 }
 #newRequestCard {
-	width: 350px;
+	height: 100%;
+	justify-content: center;
+	min-height: 710px;
 }
 #newRequest {
 }
@@ -553,8 +568,15 @@ a.list-group-item,
 }
 .leaflet-container {
 	min-width: 260px;
-	width: 100%;
+	width: 85%;
 	height: 400px;
+	margin: auto;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+}
+.roundedEdges {
+	border-radius: 30px;
 }
 .centerTop {
 	position: relative;
