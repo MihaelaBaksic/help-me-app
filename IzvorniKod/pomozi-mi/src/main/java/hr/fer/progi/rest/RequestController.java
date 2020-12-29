@@ -57,7 +57,7 @@ public class RequestController {
      * Only requests that are ACTNOANS and ACTANS are returned if they haven't expired
      * @return all requests encapsulated in a model
      */
-    @GetMapping("")
+    @PostMapping("/all")
     @Secured("ROLE_USER")
     public CollectionModel<EntityModel<RequestDTO>> getRequests(@RequestBody FilterDTO filterDTO) {
         System.out.println(filterDTO);
