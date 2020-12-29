@@ -36,6 +36,7 @@ function LoginForm(props) {
 		await fetch(loginUrl, options).then((response) => {
 			if (response.status === 200) {
 				props.setLogInTrue(values.username, values.password);
+				history.push("/requests");
 				console.log("Uspješan login");
 			} else {
 				setErrorMessage("Korisnički podaci nisu ispravni");
