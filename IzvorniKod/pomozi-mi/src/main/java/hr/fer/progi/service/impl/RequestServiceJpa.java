@@ -118,10 +118,27 @@ public class RequestServiceJpa implements RequestService {
     	long afterDeleting = requestRepository.count();
     	
     	boolean isDeleted = beforeDeleting-1 == afterDeleting ? true : false;
-    	if(isDeleted) {
-            User user = userRepository.findByUsername(r.getRequestAuthor().getUsername());
+    	String username = SecurityContextHolder.getContext().getAuthentication().getName();
+    	User user = userRepository.findByUsername(username);
+    	
+    	if(isDeleted && !user.isAdministrator()) {
     		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", r);
     		notificationRepository.save(notification);
+    	} else if(isDeleted && user.isAdministrator()) {
+    		Notification notification = new Notification(user, "Vaš zahtjev je izbrisao administrator.", r);
+    		notificationRepository.save(notification);
+            if(r.getRequestHandler() == null && !r.getPotentialHandler().isEmpty()) {
+            	for(User potentialHandler : r.getPotentialHandler()) {
+            		Notification notifyPotentialHandler = new Notification(potentialHandler, "Zahtjev " + r.getTitle() + 
+            				"je izbrisao administrator. Više se ne može izvršiti.", r);
+            		notificationRepository.save(notifyPotentialHandler);
+            	} 
+            } else {
+        		Notification notifyRequestHandler = new Notification(r.getRequestAuthor(), "Zahtjev " + r.getTitle() + 
+        				"je izbrisao administrator. Više se ne može izvršiti.", r);
+        		notificationRepository.save(notifyRequestHandler);
+        	}
+    		
     	}
     	
     	
@@ -163,6 +180,23 @@ public class RequestServiceJpa implements RequestService {
         	throw new BlockingException("Request has already been blocked!");
         }
     	request.setStatus(RequestStatus.BLOCKED);
+    	
+        User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
+        Notification notification = new Notification(user, "Vaš je zahtjev uspješno blokiran.", request);
+        notificationRepository.save(notification);
+        
+        if(request.getRequestHandler() == null && !request.getPotentialHandler().isEmpty()) {
+        	for(User potentialHandler : request.getPotentialHandler()) {
+        		Notification notifyPotentialHandler = new Notification(potentialHandler, "Zahtjev " + request.getTitle() + 
+        				" je blokiran. Više se ne može izvršiti.", request);
+        		notificationRepository.save(notifyPotentialHandler);
+        	} 
+        } else {
+    		Notification notifyRequestHandler = new Notification(request.getRequestHandler(), "Zahtjev " + request.getTitle() + 
+    				"je blokiran. Više se ne može izvršiti.", request);
+    		notificationRepository.save(notifyRequestHandler);
+    	}
+    	
     	return requestRepository.save(request);
     }
 
@@ -172,8 +206,23 @@ public class RequestServiceJpa implements RequestService {
                 .stream()
                 .filter(r -> r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS)
                 .collect(Collectors.toList());
+        
+        List<Request> answeredRequests = findAuthoredRequests(user)
+        		.stream()
+        		.filter(r -> r.getStatus() == RequestStatus.ACTANS)
+        		.collect(Collectors.toList());
+        
+        for(Request request : answeredRequests) {
+        	for(User potentialHandler : request.getPotentialHandler()) {
+        		Notification notification = new Notification(potentialHandler, "Zahtjev " + request.getTitle() + 
+        				" nije moguće izvšiti jer je korisnik " + user.getUsername() + " blokiran", request);
+        		notificationRepository.save(notification);
+        	}
+        }
 
         requestRepository.deleteAll(activeAuthoredRequests);
+        
+
     }
 
 
@@ -195,6 +244,12 @@ public class RequestServiceJpa implements RequestService {
         	throw new  RequestDoneException("You cannot respond to request that has already been processed!");
         }
         
+    	User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
+    	if(!request.getPotentialHandler().contains(potentialHandler)) {
+	    	Notification notification = new Notification(user, "Korisnik " + potentialHandler.getUsername() + " se javio na vaš zahtjev", request);
+	    	notificationRepository.save(notification);
+    	}
+        
     	if(request.getPotentialHandler() == null) {
     		Set<User> tmp = new HashSet<>();
     		tmp.add(potentialHandler);
@@ -203,9 +258,7 @@ public class RequestServiceJpa implements RequestService {
     		request.getPotentialHandler().add(potentialHandler);
     	}
     	
-    	User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
-    	Notification notification = new Notification(user, "Korisnik " + potentialHandler.getUsername() + " se javio na vaš zahtjev", request);
-    	notificationRepository.save(notification);
+
     	
     	request.setStatus(RequestStatus.ACTANS);
     	
@@ -300,6 +353,12 @@ public class RequestServiceJpa implements RequestService {
         
         request.setStatus(RequestStatus.DONE);
         requestRepository.updateRequestStatus(request.getId(), request.getStatus());
+        
+        User requestHandler = request.getRequestAuthor();
+        Notification notifyRequestHandler = new Notification(requestHandler, "Zahtjev je uspješno izvšen."
+        		+ " Molimo vas ocijenite autora zahtjeva.", request);
+        notificationRepository.save(notifyRequestHandler);
+        
         return request;
     }
 
