@@ -48,6 +48,6 @@ public class RequestModelAssembler implements RepresentationModelAssembler<Reque
 
         /* Adds self referencing link to a model (HATEOAS API) */
         return CollectionModel.of(entityModels,
-                linkTo(methodOn(RequestController.class).getRequests()).withSelfRel());
+                linkTo(methodOn(RequestController.class).getRequests(null)).withSelfRel());
     }
 }

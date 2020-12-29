@@ -4,9 +4,12 @@ import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.CreateRequestDTO;
+import hr.fer.progi.mappers.FilterDTO;
 import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.mappers.UserDTO;
 import hr.fer.progi.service.*;
+
+import java.util.Comparator;
 import java.util.Date;
 
 import hr.fer.progi.service.exceptions.BlockingException;
@@ -56,14 +59,25 @@ public class RequestController {
      */
     @GetMapping("")
     @Secured("ROLE_USER")
-    public CollectionModel<EntityModel<RequestDTO>> getRequests() {
-        return assembler.toCollectionModel(
-                requestService.listAll()
-                        .stream()
-                        .filter(r -> (r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS))
-                        .filter(r -> (r.getExpirationDate().after(new Date()) || r.getExpirationDate().equals(new Date())) )
-                        .map(Request::mapToRequestDTO)
-                        .collect(Collectors.toList()));
+    public CollectionModel<EntityModel<RequestDTO>> getRequests(@RequestBody FilterDTO filterDTO) {
+        System.out.println(filterDTO);
+        List<RequestDTO> requests = requestService.listAll()
+                .stream()
+                .filter(r -> (r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS))
+                .filter(r -> (r.getExpirationDate().after(new Date()) || r.getExpirationDate().equals(new Date())) )
+                .filter(r -> (!filterDTO.getVirtual() || r.getAddress()==null))
+                .map(Request::mapToRequestDTO)
+                .collect(Collectors.toList());
+
+        switch (filterDTO.getOrder()){
+            case ATOZ:
+                requests.sort(Comparator.comparing(RequestDTO::getTitle));
+                break;
+            case ZTOA:
+                requests.sort(Comparator.comparing(RequestDTO::getTitle).reversed());
+                break;
+        }
+        return assembler.toCollectionModel(requests);
     }
 
     /**
