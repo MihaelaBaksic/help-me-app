@@ -7,6 +7,7 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import { useHistory, withRouter } from "react-router-dom";
 import OtherUserProfile from "./OtherUserProfile";
 
+
 function CentarKomponenta(props) {
 	let history = useHistory();
 

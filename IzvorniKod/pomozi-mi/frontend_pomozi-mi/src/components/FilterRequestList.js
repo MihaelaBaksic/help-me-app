@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Button, Label, Divider } from "semantic-ui-react";
+import { List, Button, Label, Divider, Grid } from "semantic-ui-react";
 import { useEffect, useState, useCallback } from "react";
 import FilterComponent from "./FilterComponent";
 
@@ -65,28 +65,34 @@ function FilterRequestList(props) {
 				/>
 				<Divider hidden fitted />
 				{requestsF.map((request) => (
-					<List.Item key={request.id}>
-						<List.Header>
-							{request.title}
-							<Label as="a" image>
-								<img
-									src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-									alt=""
-								/>
-								{request.requestAuthor.username}
-							</Label>
-						</List.Header>
-						{request.description}
-						{request.address ? (
-							<Label tag>{request.address.description}</Label>
-						) : (
-							<Label tag>Virtualni zahtjev</Label>
-						)}
-
-						<Button positive floated="right">
-							Javi se
-						</Button>
+					<List.Item key={request.id} /*onClick={}*/>
+						<Grid padded>		
+							<Grid.Row columns={2}>
+								<Grid.Column>
+									<List.Header>
+										<Label as="a" image>
+											<img
+												src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+												alt=""
+											/>
+											&nbsp;
+											{request.requestAuthor.username}
+											{request.address ? <Label.Detail>{request.address.description}</Label.Detail>
+										: <Label.Detail>Virtualni zahtjev</Label.Detail>}
+										</Label>
+										<br/>
+										<div id="requestTitle" >{request.title}</div>
+									</List.Header>
+								</Grid.Column>	
+								<Grid.Column floated="right">
+									<Button color='blue' floated="right">
+										Pregledaj
+									</Button>
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>		
 					</List.Item>
+
 				))}
 			</List>
 		);
