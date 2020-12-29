@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 
-import {
-	HashRouter,
-	Switch,
-	Route,
-	Router,
-	BrowserRouter,
-} from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import LoginForm from "./components/LoginForm";
@@ -20,7 +14,7 @@ import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 import OtherUserProfile from "./components/OtherUserProfile";
 
-let devMode = "ON"; /* "ON" */
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {

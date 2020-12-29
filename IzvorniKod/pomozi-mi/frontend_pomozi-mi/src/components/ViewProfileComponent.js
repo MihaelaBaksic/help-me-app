@@ -4,9 +4,13 @@ import { useHistory, withRouter } from "react-router-dom";
 function ViewProfileComponent(props) {
 	let history = useHistory();
 	let [podaci, setPodaci] = useState("");
-	let [showing, setShowing] = useState(
-		/* "newRequest" */ history.location.pathname.substr(1)
-	);
+	let [showing, setShowing] = useState(/* "requests" */ "");
+
+	console.log(history.location.pathname.substr(1));
+
+	useEffect(() => {
+		setShowing(history.location.pathname.substr(1));
+	}, []);
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -24,10 +28,13 @@ function ViewProfileComponent(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				setPodaci(JSON.parse(result));
-				console.log(JSON.parse(result));
 				sessionStorage.setItem(
 					"currentUserUsername",
 					JSON.parse(result).username
+				);
+				sessionStorage.setItem(
+					"isAdmin",
+					JSON.parse(result).administrator
 				);
 			})
 			.then(() => {})
