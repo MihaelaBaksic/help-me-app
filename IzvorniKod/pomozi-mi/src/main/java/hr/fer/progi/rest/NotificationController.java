@@ -5,6 +5,7 @@ import hr.fer.progi.mappers.CreateNotificationDTO;
 import hr.fer.progi.mappers.NotificationDTO;
 import hr.fer.progi.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,9 @@ public class NotificationController {
      * @param createNotificationDTO
      * @return DTO of a newly created notification
      */
+    
     @PostMapping("/create")
+    @Secured("ROLE_USER")
     public NotificationDTO createNotification(@RequestBody CreateNotificationDTO createNotificationDTO){
         Notification n = notificationService.createNewNotification(createNotificationDTO);
         System.out.println(n);
@@ -30,13 +33,16 @@ public class NotificationController {
     }
 
     @GetMapping("")
+    @Secured("ROLE_USER")
     public List<NotificationDTO> getNotifications(){
         return notificationService.getCurrentUserNotifications()
                 .stream().map(n -> n.mapToNotificationDTO())
                 .collect(Collectors.toList());
     }
 
+    
     @GetMapping("/checkUnread")
+    @Secured("ROLE_USER")
     public int checkUnreadNotifications(){
         return notificationService.getNumberOfUnreadNotifications();
     }
