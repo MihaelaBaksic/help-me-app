@@ -15,7 +15,7 @@ import MapComponent from "./components/MapComponent";
 import OtherUserProfile from "./components/OtherUserProfile";
 import CommentComponent from "./components/CommentComponent";
 
-let devMode = "ON"; /* "ON" */
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
@@ -75,7 +75,20 @@ class App extends Component {
 				</HashRouter>
 			);
 		} else if (devMode === "OFF") {
-			return <LogedInUserComponent setLogInFalse={this.setLogInFalse} />;
+			return (
+				<HashRouter>
+					<Switch>
+						<Route
+							path="/"
+							render={() => (
+								<LogedInUserComponent
+									setLogInFalse={this.setLogInFalse}
+								/>
+							)}
+						/>
+					</Switch>
+				</HashRouter>
+			);
 		} else {
 			return (
 				<HashRouter>
