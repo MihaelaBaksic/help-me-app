@@ -28,7 +28,7 @@ public class Notification {
     private User user;
 
     @NotNull
-    @Size(min = 2, max = 100)
+    @Size(min = 2, max = 300)
     private String message;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -51,5 +51,6 @@ public class Notification {
                 this.message,
                 this.isRead);
     }
+
 
 }
