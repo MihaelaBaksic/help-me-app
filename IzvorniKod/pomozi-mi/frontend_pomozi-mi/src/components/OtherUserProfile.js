@@ -35,10 +35,12 @@ function OtherUserProfile(props) {
 			"Authorization",
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
+		var raw = "true";
 		const options = {
 			method: "POST",
 			headers: myHeaders,
 			redirect: "follow",
+			body: raw
 		};
 
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
@@ -87,6 +89,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
+				console.log(result);
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -178,7 +181,7 @@ function OtherUserProfile(props) {
 								</a> */}
 
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.administrator === "false" ? (
+								userInfo.administrator === false ? (
 									<div className="mt-3">
 										<div
 											role="button"

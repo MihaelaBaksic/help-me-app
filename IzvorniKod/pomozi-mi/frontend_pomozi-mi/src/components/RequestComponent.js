@@ -143,12 +143,12 @@ function RequestComponent(props) {
 		let moj = "Ne";
 		let btnL = "Javi se";
 		let btnR = "";
-		if (podaciUser.administrator == true) {
+		if (podaciUser.administrator === true) {
 			moj = "Da";
 			btnL = "Javi se";
 			btnR = "Ukloni zahtjev";
 		}
-		if (podaciReq.requestAuthor.username == podaciUser.username) {
+		if (podaciReq.requestAuthor.username === podaciUser.username) {
 			moj = "Da";
 			btnL = "Pregled javljanja";
 			btnR = "Blokiraj";
