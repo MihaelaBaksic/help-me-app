@@ -215,10 +215,10 @@ function OtherUserProfile(props) {
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-success rounded-pill"
+											className="btn btn-success rounded-pill col-xl-6"
 											onClick={addAsAdmin}
 										>
-											+&nbsp; Dodaj kao admina
+											<i class="far fa-id-badge"></i>&nbsp; Dodaj kao admina
 										</div>
 									</div>
 								) : null}
@@ -226,12 +226,13 @@ function OtherUserProfile(props) {
 								userInfo.administrator === false &&
 								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
-										<div
+										<div 
+											
 											role="button"
-											className="btn btn-danger rounded-pill"
+											className="btn btn-warning rounded-pill col-xl-6"
 											onClick={blockUser}
 										>
-											+&nbsp; Blokiraj korisnika
+											<i class="fas fa-lock"></i>&nbsp; Privremeno blokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -241,10 +242,10 @@ function OtherUserProfile(props) {
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
+											className="btn btn-danger rounded-pill col-xl-6"
 											onClick={permaBlockUser}
 										>
-											+&nbsp; Trajno blokiraj korisnika
+											<i class="fas fa-ban"></i>&nbsp; Trajno blokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -253,10 +254,10 @@ function OtherUserProfile(props) {
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
+											className="btn btn-info rounded-pill col-xl-6"
 											onClick={unBlockUser}
 										>
-											+&nbsp; Odblokiraj korisnika
+											<i class="fas fa-lock-open"></i>&nbsp; Odblokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -265,8 +266,10 @@ function OtherUserProfile(props) {
 
 						<hr className="m-0" />
 					</div>
-
-					<div className="row">
+					
+					{userInfo.status === "NOTBLOCKED" ? (
+						<div>
+						<div className="row">
 						<div className="col">
 							<div className="card mb-4">
 								<div className="card-body">
@@ -315,7 +318,24 @@ function OtherUserProfile(props) {
 								</div>
 							</div>
 						</div>
+						</div>
 					</div>
+					) : 
+					(
+						<div className="col-xl-12">
+							<div className="card mb-4">
+								<div className="card-body">
+									<div className="page-header">
+										<h3>KORISNIK JE BLOKIRAN!</h3>
+										<hr />
+									</div>
+									<i class="fas fa-lock fa-10x mb-4"></i>
+								</div>
+							</div>
+						</div>
+					)
+					}
+
 				</div>
 			</div>
 		);
