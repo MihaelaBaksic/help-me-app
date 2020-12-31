@@ -5,5 +5,39 @@
 		 \textit{U ovom poglavlju potrebno je napisati osvrt na vrijeme izrade projektnog zadatka, koji su tehnički izazovi prepoznati, jesu li riješeni ili kako bi mogli biti riješeni, koja su znanja stečena pri izradi projekta, koja bi znanja bila posebno potrebna za brže i kvalitetnije ostvarenje projekta i koje bi bile perspektive za nastavak rada u projektnoj grupi.}
 		
 		 \textit{Potrebno je točno popisati funkcionalnosti koje nisu implementirane u ostvarenoj aplikaciji.}
+		 
+		 \section{Izrada projekta i tehnički izazovi}
+		 
+		 Izrada projekta protezala se kroz period od 12 tjedana. Prvi dio izrade fokusirao se na definiranje korisničkih zahtjeva i zahtjeva sustava, dok se drugi dio okrenuo ka implementaciji definiranog sustava.
+		 
+		 Imajući na umu da nitko iz projektne grupe nije bio upoznat sa tehnologijama koje su se koristile (Spring Framework i React), glavni izazov predstavljalo je upoznavanje s novim tehnologijama. \newline
+		 Inicijalno, to je otežavalo vremensko planiranje i nošenje sa klasičnim problemima uporabe Springa i Reacta koji se mogu zaobići korištenjem koncepta \textit{best practice}. \newline 
+		 
+		 \subsection{Tehnički izazovi korištenja radnog okvira Spring}
+		 Najveći izazov prilikom korištenja radnog okvira Spring bili su u uspostavi autentikacije i autorizacije. Radi jednostavnost izvedbe inicijalne inačice, odlučeno je za konfiguraciju sigurnosti aplikacije koristiti već postojeću Springovu klasu \textit{WebSecurityConfigurerAdapter}. Najduže je trajalo uspostavljanje konfiguracije autentikacije putem \textit{UserDetailsSerivce}-a iz razloga nepotpunosti i manjkavosti informacija o funkcionalnostima navedenog service-a na internetu i čestih neočekivanih ponašanja koja su posljedica različitih konfiguracija sigurnosti u referentnim primjerima i našoj aplikaciji. Autentikacija je uspješno uspostavljena pregledavanjem implementacije korištenih klasa i službene dokumentacije. 
+		 Manjkavost koju uviđamo u našoj izvedbi sigurnosti je nekorištenje tokena, već svaki zahtjev mora sadržavati autentikacijske podatke \textit{username} i \textit{password}.
+			 
+	
+		
+		\subsection{Izazovi korištenja knjižnice React}
+		Glavnina tehničkih izazova korištenja knjižnice React je proizašla iz potrebe za adaptacijom komponenti koje React nudi. Kao kompromis između pisanja vlastitih i relativno teške adaptacije već postojećih komponenti, glavni \textit{layout} web stranice izrađen je ručno i uz pomoć \textit{Bootstrapa}, dok su se za pojedine komponente unutar stranice koristile komponente \textit{Semantic-UI}.
+		
+		
+		 
+		 \section{Budući rad}
+		 S obzirom na kratko vrijeme za izvedbu aplikacije i ograničeno prethodno iskustvo projektnog tima, prva inačica aplikacije ostaje otvorena za neka poboljšanja. U ovom odjeljku opisani su prijedlozi za restrukturiranje dijela funkcionalnosti te koje dodatne funkcionalnosti bi poboljšale aplikaciju.\newline 
+		 
+		 Restrukturiranje sigurnosti i izmjene potrebne za uvođenje \textit{JWT tokena} kao sredstva autentikacije prva je i možda najbitnija potrebna izmjena. Time se osigurava veća sigurnost podataka u odnosu na slanje \textit{passworda} u svakom HTTP zahtjevu.
+		 
+		 Dodatna bitna opcija koju bi svaki korisnik trebao imati je mogućnost brisanja njegovog korisničkog računa i podataka te potvrđivanje unesene e-mail adrese prilikom registracije. To je također u skladu sa međunarodnim odredbama koje se tiču sigurnosti i zaštite osobnih podataka korisnika. 
+		 
+		 Kako bi se osigurala kvalitetnija komunikacija i interakcija između korisnika aplikacije te bolji \textit{user experience} dodatne implementacija funkcionalnosti pretraživanja korisnika i zahtjeva te \textit{chat} koje nisu izvedene u prvoj inačici je nužna.
+		 
+		 
+		 \section{Zaključak}
+		 Izvođenje ovog projekta uvelike je pridonjelo praktičnom iskustvu svih članova projektne grupe. Nadasve najbitnije znanje koje je projektna grupa dobila je uvid u cjelokupni proces razvoja određenog programskog proizvoda, počevši sa planiranjem, razradom pa sve do \textit{deployment}-a. To znanje je učinilo dosadašnja znanja članova projektne grupe kompletnijima i primjenjivijima. Također, projekt je potaknuo grupu na aktivnije korištenje već gotovih knjižnica i komponenata i njihovu adaptaciju za specifične potrebe projekta.
+		 \eject
+		 
+		 
 		
 		\eject 
