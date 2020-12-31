@@ -155,6 +155,11 @@ body {
 	margin-top: 5px;
 }
 
+#grid {
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
 #main {
 	background-color: plum;
 }
