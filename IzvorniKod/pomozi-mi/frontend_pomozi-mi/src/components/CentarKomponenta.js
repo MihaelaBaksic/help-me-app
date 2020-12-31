@@ -6,7 +6,7 @@ import RequestForm from "./RequestForm";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import { useHistory, withRouter } from "react-router-dom";
 import OtherUserProfile from "./OtherUserProfile";
-
+import Statistics from "./Statistics";
 
 function CentarKomponenta(props) {
 	let history = useHistory();
@@ -45,6 +45,7 @@ function CentarKomponenta(props) {
 						path="/user/:username"
 						render={() => <OtherUserProfile />}
 					/>
+					<Route path="/rating/statistics" component={Statistics} />
 				</Switch>
 			</HashRouter>
 			{/* {props.show === "newRequest" && <RequestForm />}
