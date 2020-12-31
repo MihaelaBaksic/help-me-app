@@ -24,6 +24,32 @@ function OtherUserProfile(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
+			})
+			.catch((error) => {
+				console.log("error", error);
+			});
+	}
+	function permaBlockUser() {
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "true";
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+			redirect: "follow",
+			body: raw,
+		};
+
+		fetch("http://localhost:8080/user/blockUser/" + username, options)
+			.then((response) => response.text())
+			.then((result) => {
+				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -35,18 +61,20 @@ function OtherUserProfile(props) {
 			"Authorization",
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
-		var raw = "true";
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "false";
 		const options = {
 			method: "POST",
 			headers: myHeaders,
 			redirect: "follow",
-			body: raw
+			body: raw,
 		};
 
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -68,6 +96,7 @@ function OtherUserProfile(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -89,7 +118,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(result);
+				console.log(JSON.parse(result));
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -181,7 +210,8 @@ function OtherUserProfile(props) {
 								</a> */}
 
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.administrator === false ? (
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
 											role="button"
@@ -193,6 +223,7 @@ function OtherUserProfile(props) {
 									</div>
 								) : null}
 								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.administrator === false &&
 								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
@@ -205,7 +236,20 @@ function OtherUserProfile(props) {
 									</div>
 								) : null}
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.status === "TEMPBLOCKED" ? (
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
+									<div className="mt-3">
+										<div
+											role="button"
+											className="btn btn-danger rounded-pill"
+											onClick={permaBlockUser}
+										>
+											+&nbsp; Trajno blokiraj korisnika
+										</div>
+									</div>
+								) : null}
+								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.status === "TEMPBLOCK" ? (
 									<div className="mt-3">
 										<div
 											role="button"

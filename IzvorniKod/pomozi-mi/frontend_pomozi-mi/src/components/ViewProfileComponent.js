@@ -6,7 +6,7 @@ function ViewProfileComponent(props) {
 	let [podaci, setPodaci] = useState("");
 	let [showing, setShowing] = useState(/* "requests" */ "");
 
-	console.log(history.location.pathname.substr(1));
+	console.log(history.location.pathname.substr());
 
 	useEffect(() => {
 		setShowing(history.location.pathname.substr(1));
@@ -27,7 +27,7 @@ function ViewProfileComponent(props) {
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(result);
+				console.log(JSON.parse(result));
 				setPodaci(JSON.parse(result));
 				sessionStorage.setItem(
 					"currentUserUsername",
