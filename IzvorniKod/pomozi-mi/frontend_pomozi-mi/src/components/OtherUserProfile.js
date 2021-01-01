@@ -24,6 +24,32 @@ function OtherUserProfile(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
+			})
+			.catch((error) => {
+				console.log("error", error);
+			});
+	}
+	function permaBlockUser() {
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "true";
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+			redirect: "follow",
+			body: raw,
+		};
+
+		fetch("http://localhost:8080/user/blockUser/" + username, options)
+			.then((response) => response.text())
+			.then((result) => {
+				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -35,16 +61,20 @@ function OtherUserProfile(props) {
 			"Authorization",
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "false";
 		const options = {
 			method: "POST",
 			headers: myHeaders,
 			redirect: "follow",
+			body: raw,
 		};
 
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -66,6 +96,7 @@ function OtherUserProfile(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -87,6 +118,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
+				console.log(JSON.parse(result));
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -178,38 +210,54 @@ function OtherUserProfile(props) {
 								</a> */}
 
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.administrator === "false" ? (
-									<div className="mt-3">
-										<div
-											role="button"
-											className="btn btn-success rounded-pill"
-											onClick={addAsAdmin}
-										>
-											+&nbsp; Dodaj kao admina
-										</div>
-									</div>
-								) : null}
-								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.administrator === false &&
 								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
-											onClick={blockUser}
+											className="btn btn-success rounded-pill col-xl-6"
+											onClick={addAsAdmin}
 										>
-											+&nbsp; Blokiraj korisnika
+											<i class="far fa-id-badge"></i>&nbsp; Dodaj kao admina
 										</div>
 									</div>
 								) : null}
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.status === "TEMPBLOCKED" ? (
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
+									<div className="mt-3">
+										<div 
+											
+											role="button"
+											className="btn btn-warning rounded-pill col-xl-6"
+											onClick={blockUser}
+										>
+											<i class="fas fa-lock"></i>&nbsp; Privremeno blokiraj korisnika
+										</div>
+									</div>
+								) : null}
+								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
+											className="btn btn-danger rounded-pill col-xl-6"
+											onClick={permaBlockUser}
+										>
+											<i class="fas fa-ban"></i>&nbsp; Trajno blokiraj korisnika
+										</div>
+									</div>
+								) : null}
+								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.status === "TEMPBLOCK" ? (
+									<div className="mt-3">
+										<div
+											role="button"
+											className="btn btn-info rounded-pill col-xl-6"
 											onClick={unBlockUser}
 										>
-											+&nbsp; Odblokiraj korisnika
+											<i class="fas fa-lock-open"></i>&nbsp; Odblokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -218,8 +266,10 @@ function OtherUserProfile(props) {
 
 						<hr className="m-0" />
 					</div>
-
-					<div className="row">
+					
+					{userInfo.status === "NOTBLOCKED" ? (
+						<div>
+						<div className="row">
 						<div className="col">
 							<div className="card mb-4">
 								<div className="card-body">
@@ -268,7 +318,24 @@ function OtherUserProfile(props) {
 								</div>
 							</div>
 						</div>
+						</div>
 					</div>
+					) : 
+					(
+						<div className="col-xl-12">
+							<div className="card mb-4">
+								<div className="card-body">
+									<div className="page-header">
+										<h3>KORISNIK JE BLOKIRAN!</h3>
+										<hr />
+									</div>
+									<i class="fas fa-lock fa-10x mb-4"></i>
+								</div>
+							</div>
+						</div>
+					)
+					}
+
 				</div>
 			</div>
 		);

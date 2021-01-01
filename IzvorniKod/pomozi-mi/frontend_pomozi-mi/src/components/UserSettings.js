@@ -9,7 +9,7 @@ function UserSettings(props) {
 							className="form-control"
 							type="email"
 							id="account-email"
-							value={props.email}
+							value={sessionStorage.getItem("currentUserEmail")}
 							disabled="true"
 						/>
 					</div>
@@ -21,7 +21,7 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-user"
-							value="mrki"
+							value={sessionStorage.getItem("currentUserUsername")}
 							disabled="true"
 						/>
 					</div>
@@ -33,7 +33,7 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-fn"
-							value="Dominik"
+							value={sessionStorage.getItem("currentUserFirstName")}
 							required=""
 						/>
 					</div>
@@ -45,7 +45,7 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-ln"
-							value="Milde"
+							value={sessionStorage.getItem("currentUserLastName")}
 							required=""
 						/>
 					</div>

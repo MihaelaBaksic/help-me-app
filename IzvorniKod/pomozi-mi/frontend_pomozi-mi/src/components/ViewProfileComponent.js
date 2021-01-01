@@ -6,7 +6,7 @@ function ViewProfileComponent(props) {
 	let [podaci, setPodaci] = useState("");
 	let [showing, setShowing] = useState(/* "requests" */ "");
 
-	console.log(history.location.pathname.substr(1));
+	console.log(history.location.pathname.substr());
 
 	useEffect(() => {
 		setShowing(history.location.pathname.substr(1));
@@ -27,6 +27,7 @@ function ViewProfileComponent(props) {
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
+				console.log(JSON.parse(result));
 				setPodaci(JSON.parse(result));
 				sessionStorage.setItem(
 					"currentUserUsername",
@@ -35,6 +36,18 @@ function ViewProfileComponent(props) {
 				sessionStorage.setItem(
 					"isAdmin",
 					JSON.parse(result).administrator
+				);
+				sessionStorage.setItem(
+					"currentUserFirstName",
+					JSON.parse(result).firstName
+				);
+				sessionStorage.setItem(
+					"currentUserLastName",
+					JSON.parse(result).lastName
+				);
+				sessionStorage.setItem(
+					"currentUserEmail",
+					JSON.parse(result).email
 				);
 			})
 			.then(() => {})
@@ -64,8 +77,7 @@ function ViewProfileComponent(props) {
 					</div>
 					<div className="author-card-details">
 						<h5 className="author-card-name text-lg">
-							{podaci.firstName}
-							{podaci.lastName}
+							{podaci.firstName} {podaci.lastName}
 						</h5>
 						<span className="author-card-position">
 							{podaci.administrator
