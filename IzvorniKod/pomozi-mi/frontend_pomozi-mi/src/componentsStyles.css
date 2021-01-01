@@ -7,6 +7,7 @@ body,
 html {
 	height: unset !important;
 }
+
 body {
 	/* background-image: linear-gradient(
 		to bottom right,
@@ -178,6 +179,16 @@ body {
 #desniStupac {
 	margin: 10px;
 }
+
+#newNotification {
+	padding-left: 21px;
+}
+
+#oldNotification {
+	padding-left: 21px;
+	opacity: 0.5;
+}
+
 #center {
 	margin-top: 10px;
 }
@@ -343,6 +354,11 @@ body {
 	color: #818181;
 	display: block;
 	transition: 0.3s;
+}
+
+#linkToRequest {
+	font-size: 12px;
+	padding: 0px;
 }
 
 .desniStupac a:hover {

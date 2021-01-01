@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, withRouter } from "react-router-dom";
-
+import Notifications from "./Notifications";
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const logOutUrl = "http://localhost:8080/logout";
 //const logOutUrl = `${process.env.PUBLIC_URL}/logout`;
@@ -59,6 +59,7 @@ function DesniStupacKomponenta(props) {
 						</svg>
 					</div>
 				</div>
+				<Notifications></Notifications>
 			</div>
 		</div>
 	);
