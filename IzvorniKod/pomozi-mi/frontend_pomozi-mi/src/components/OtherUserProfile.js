@@ -148,7 +148,13 @@ function OtherUserProfile(props) {
 			)
 				.then((response) => response.text())
 				.then((result) => {
-					setAuthoredRequests(JSON.parse(result));
+					if (JSON.parse(result)._embedded) {
+						setAuthoredRequests(
+							JSON.parse(result)._embedded.requestDTOList
+						);
+					} else {
+						setAuthoredRequests("");
+					}
 				})
 				.catch((error) => {
 					console.log("error", error);
@@ -218,7 +224,8 @@ function OtherUserProfile(props) {
 											className="btn btn-success rounded-pill col-xl-6"
 											onClick={addAsAdmin}
 										>
-											<i class="far fa-id-badge"></i>&nbsp; Dodaj kao admina
+											<i class="far fa-id-badge"></i>
+											&nbsp; Dodaj kao admina
 										</div>
 									</div>
 								) : null}
@@ -226,13 +233,13 @@ function OtherUserProfile(props) {
 								userInfo.administrator === false &&
 								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
-										<div 
-											
+										<div
 											role="button"
 											className="btn btn-warning rounded-pill col-xl-6"
 											onClick={blockUser}
 										>
-											<i class="fas fa-lock"></i>&nbsp; Privremeno blokiraj korisnika
+											<i class="fas fa-lock"></i>&nbsp;
+											Privremeno blokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -245,7 +252,8 @@ function OtherUserProfile(props) {
 											className="btn btn-danger rounded-pill col-xl-6"
 											onClick={permaBlockUser}
 										>
-											<i class="fas fa-ban"></i>&nbsp; Trajno blokiraj korisnika
+											<i class="fas fa-ban"></i>&nbsp;
+											Trajno blokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -257,7 +265,8 @@ function OtherUserProfile(props) {
 											className="btn btn-info rounded-pill col-xl-6"
 											onClick={unBlockUser}
 										>
-											<i class="fas fa-lock-open"></i>&nbsp; Odblokiraj korisnika
+											<i class="fas fa-lock-open"></i>
+											&nbsp; Odblokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -266,62 +275,67 @@ function OtherUserProfile(props) {
 
 						<hr className="m-0" />
 					</div>
-					
+
 					{userInfo.status === "NOTBLOCKED" ? (
 						<div>
-						<div className="row">
-						<div className="col">
-							<div className="card mb-4">
-								<div className="card-body">
-									<div className="col-xl-12">
-										<div className="page-header">
-											<h3>Postavljeni zahtjevi</h3>
-											<hr />
+							<div className="row">
+								<div className="col">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="col-xl-12">
+												<div className="page-header">
+													<h3>
+														Postavljeni zahtjevi
+													</h3>
+													<hr />
+												</div>
+												{authoredRequests ? (
+													<RequestList
+														listaZahtjeva={
+															authoredRequests
+														}
+													/>
+												) : null}
+											</div>
 										</div>
-										{authoredRequests._embedded ? (
-											<RequestList
-												listaZahtjeva={authoredRequests}
-											/>
-										) : null}
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 
-					<div className="row">
-						<div className="col">
-							<div className="card mb-4">
-								<div className="card-body">
-									<div className="col-xl-12">
-										<div className="page-header">
-											<h3>Izvršeni zahtjevi</h3>
-											<hr />
+							<div className="row">
+								<div className="col">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="col-xl-12">
+												<div className="page-header">
+													<h3>Izvršeni zahtjevi</h3>
+													<hr />
+												</div>
+												{handlerRequests._embedded ? (
+													<RequestList
+														listaZahtjeva={
+															handlerRequests
+														}
+													/>
+												) : null}
+											</div>
 										</div>
-										{handlerRequests._embedded ? (
-											<RequestList
-												listaZahtjeva={handlerRequests}
-											/>
-										) : null}
+									</div>
+								</div>
+								<div className="col-xl-4">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="page-header">
+												<h3>Komentari</h3>
+												<hr />
+											</div>
+											OVDJE JE KOMPONENTA KOMENTARA
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="col-xl-4">
-							<div className="card mb-4">
-								<div className="card-body">
-									<div className="page-header">
-										<h3>Komentari</h3>
-										<hr />
-									</div>
-									OVDJE JE KOMPONENTA KOMENTARA
-								</div>
-							</div>
-						</div>
-						</div>
-					</div>
-					) : 
-					(
+					) : (
 						<div className="col-xl-12">
 							<div className="card mb-4">
 								<div className="card-body">
@@ -333,9 +347,7 @@ function OtherUserProfile(props) {
 								</div>
 							</div>
 						</div>
-					)
-					}
-
+					)}
 				</div>
 			</div>
 		);

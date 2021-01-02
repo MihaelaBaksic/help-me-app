@@ -7,6 +7,8 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import { useHistory, withRouter } from "react-router-dom";
 import OtherUserProfile from "./OtherUserProfile";
 import Statistics from "./Statistics";
+import FilterRequestList from "./FilterRequestList";
+import RequestComponent from "./RequestComponent";
 
 function CentarKomponenta(props) {
 	let history = useHistory();
@@ -24,7 +26,7 @@ function CentarKomponenta(props) {
 				<Switch>
 					<Route path="/newRequest" component={RequestForm} />
 					<Route path="/settings" component={UserSettings} />
-					<Route path="/requests" component={RequestList} />
+					<Route path="/requests" component={FilterRequestList} />
 					<Route
 						path="/myRequests"
 						render={() => (
@@ -44,6 +46,10 @@ function CentarKomponenta(props) {
 					<Route
 						path="/user/:username"
 						render={() => <OtherUserProfile />}
+					/>
+					<Route
+						path="/request/:id"
+						render={() => <RequestComponent />}
 					/>
 					<Route path="/rating/statistics" component={Statistics} />
 				</Switch>
