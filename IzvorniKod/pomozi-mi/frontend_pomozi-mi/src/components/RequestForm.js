@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import MapComponent from "./MapComponent";
 import L from "leaflet";
 import { FormGroup } from "@material-ui/core";
+import { useHistory, withRouter } from "react-router-dom";
 
 const baseUrl = "http://localhost:8080";
 
 function RequestForm() {
+	let history = useHistory();
 	const { register, handleSubmit, errors } = useForm();
 	const [useLocation, setUseLocation] = useState("true");
 	const [geoLocation, setGeoLocation] = useState(
@@ -83,7 +85,10 @@ function RequestForm() {
 				};
 				fetch(baseUrl + "/requests", options)
 					.then((response) => response.text())
-					.then((result) => console.log(JSON.parse(result)))
+					.then((result) => {
+						console.log(JSON.parse(result));
+						history.push("/myRequests");
+					})
 					.catch((error) => console.log(error));
 			});
 	}
@@ -200,4 +205,4 @@ function RequestForm() {
 		</div>
 	);
 }
-export default RequestForm;
+export default withRouter(RequestForm);
