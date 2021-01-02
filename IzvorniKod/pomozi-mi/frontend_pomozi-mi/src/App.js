@@ -14,8 +14,9 @@ import RequestForm from "./components/RequestForm";
 import MapComponent from "./components/MapComponent";
 import OtherUserProfile from "./components/OtherUserProfile";
 import CommentComponent from "./components/CommentComponent";
+import CommentFormComponent from "./components/CommentFormComponent";
 
-let devMode = "OFF"; /* "ON" */
+let devMode = "ON"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {
@@ -122,6 +123,11 @@ class App extends Component {
 							exact
 							path="/test/comment"
 							component={CommentComponent}
+						/>
+						<Route
+							exact
+							path="/test/commentForm"
+							component={CommentFormComponent}
 						/>
 					</Switch>
 				</HashRouter>
