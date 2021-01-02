@@ -10,7 +10,7 @@ function ViewProfileComponent(props) {
 
 	useEffect(() => {
 		setShowing(history.location.pathname.substr(1));
-	}, []);
+	}, [history.location.pathname]);
 
 	useEffect(() => {
 		var myHeaders = new Headers();

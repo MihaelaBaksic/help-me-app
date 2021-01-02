@@ -35,7 +35,7 @@ function RequestComponent(props) {
 			.then((response) => response.text())
 			.then((result) => setPodaciReq(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
-	}, []);
+	}, [id]);
 
 	//Ovo je trenutno redudantno ali se hvata trenutni user
 	useEffect(() => {
@@ -54,7 +54,7 @@ function RequestComponent(props) {
 			.then((response) => response.text())
 			.then((result) => setPodaciUser(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
-	}, []);
+	}, [id]);
 
 	async function blockRequest() {
 		var myHeaders = new Headers();

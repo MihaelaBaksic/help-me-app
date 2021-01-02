@@ -1,11 +1,18 @@
 import React from "react";
-import { List, Button, Label } from "semantic-ui-react";
+import { List, Button, Label, Grid } from "semantic-ui-react";
 import { useEffect, useState } from "react";
+import { useHistory, withRouter } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 function RequestList(props) {
+	let history = useHistory();
 	const [requests, setRequests] = useState("");
+
+	function pregledajZahtjev(valerija) {
+		console.log(valerija);
+		history.push("/request/" + valerija);
+	}
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -19,14 +26,9 @@ function RequestList(props) {
 			redirect: "follow",
 		};
 		if (props.listaZahtjeva) {
-			setRequests(props.listaZahtjeva._embedded.requestDTOList);
-		} else {
-			fetch(
-				props.username
-					? baseUrl + "/user/authoredRequests/" + props.username
-					: baseUrl + "/requests",
-				options
-			)
+			setRequests(props.listaZahtjeva);
+		} else if (props.username) {
+			fetch(baseUrl + "/user/authoredRequests/" + props.username, options)
 				.then((response) => response.text())
 				.then((result) => {
 					if (JSON.parse(result)._embedded) {
@@ -42,32 +44,55 @@ function RequestList(props) {
 					setRequests("");
 				});
 		}
-	}, [props]);
+	}, [props.listaZahtjeva]);
 	if (requests) {
 		return (
 			<List selection celled id="requestList">
 				{requests.map((request) => (
-					<List.Item key={request.id}>
-						<List.Header>
-							{request.title}
-							<Label as="a" image>
-								<img
-									src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-									alt=""
-								/>
-								{request.requestAuthor.username}
-							</Label>
-						</List.Header>
-						{request.description}
-						{request.address ? (
-							<Label tag>{request.address.description}</Label>
-						) : (
-							<Label tag>Virtualni zahtjev</Label>
-						)}
-
-						<Button positive floated="right">
-							Javi se
-						</Button>
+					<List.Item key={request.id} /*onClick={}*/>
+						<Grid padded>
+							<Grid.Row columns={2}>
+								<Grid.Column>
+									<List.Header>
+										<Label as="a" image>
+											<img
+												src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
+												alt=""
+											/>
+											&nbsp;
+											{request.requestAuthor.username}
+											{request.address ? (
+												<Label.Detail>
+													{
+														request.address
+															.description
+													}
+												</Label.Detail>
+											) : (
+												<Label.Detail>
+													Virtualni zahtjev
+												</Label.Detail>
+											)}
+										</Label>
+										<br />
+										<div id="requestTitle">
+											{request.title}
+										</div>
+									</List.Header>
+								</Grid.Column>
+								<Grid.Column floated="right">
+									<Button
+										color="blue"
+										floated="right"
+										onClick={(e) =>
+											pregledajZahtjev(request.id, e)
+										}
+									>
+										Pregledaj
+									</Button>
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>
 					</List.Item>
 				))}
 			</List>
@@ -77,4 +102,4 @@ function RequestList(props) {
 	}
 }
 
-export default RequestList;
+export default withRouter(RequestList);
