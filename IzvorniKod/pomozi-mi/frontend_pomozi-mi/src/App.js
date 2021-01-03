@@ -16,7 +16,7 @@ import OtherUserProfile from "./components/OtherUserProfile";
 import CommentComponent from "./components/CommentComponent";
 import CommentFormComponent from "./components/CommentFormComponent";
 
-let devMode = "ON"; /* "ON" */
+let devMode = "OFF"; /* "ON" */
 
 class App extends Component {
 	constructor(props) {

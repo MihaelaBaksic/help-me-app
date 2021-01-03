@@ -4,6 +4,7 @@ import { useHistory, withRouter } from "react-router-dom";
 function ViewProfileComponent(props) {
 	let history = useHistory();
 	let [podaci, setPodaci] = useState("");
+	let [rating, setRating] = useState("");
 	let [showing, setShowing] = useState(/* "requests" */ "");
 
 	console.log(history.location.pathname.substr());
@@ -24,6 +25,7 @@ function ViewProfileComponent(props) {
 			redirect: "follow",
 		};
 
+	
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
@@ -52,6 +54,15 @@ function ViewProfileComponent(props) {
 			})
 			.then(() => {})
 			.catch((error) => console.log("error", error));
+
+			fetch("http://localhost:8080/rating/average/" + sessionStorage.getItem("currentUserUsername"), options)
+			.then((response) => response.text())
+			.then((result) => {
+				//console.log("rating");
+				setRating(result);
+				console.log(rating);
+			})
+				
 	}, []);
 
 	return (
@@ -60,15 +71,13 @@ function ViewProfileComponent(props) {
 				<div className="author-card-cover">
 					<a
 						className="btn btn-style-1 btn-white btn-sm"
-						href="#/test/profile"
 						data-toggle="tooltip"
 					>
-						<i className="fa fa-award text-md"></i>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star"></span>
-						<span className="fa fa-star"></span>
+						{rating >= 0.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
+						{rating >= 1.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
+						{rating >= 2.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
+						{rating >= 3.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
+						{rating >= 4.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
 					</a>
 				</div>
 				<div className="author-card-profile">
@@ -104,7 +113,7 @@ function ViewProfileComponent(props) {
 					>
 						<div className="d-flex justify-content-between align-items-center">
 							<div className="d-inline-block font-weight-medium text-uppercase">
-								Pomoz Bog!!!!
+								Postavi zahtjev
 							</div>
 						</div>
 					</div>
