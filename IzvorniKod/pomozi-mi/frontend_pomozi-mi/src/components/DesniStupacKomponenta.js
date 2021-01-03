@@ -35,6 +35,7 @@ function DesniStupacKomponenta(props) {
 	return (
 		<div id="desniStupac" className="desniStupac">
 			<div className="desniStupacContentHolder">
+				<Notifications></Notifications>
 				<div
 					type="button"
 					className="btn btn-outline-secondary logOutButton"
@@ -59,7 +60,6 @@ function DesniStupacKomponenta(props) {
 						</svg>
 					</div>
 				</div>
-				<Notifications></Notifications>
 			</div>
 		</div>
 	);

@@ -24,45 +24,43 @@ function CentarKomponenta(props) {
 		>
 			<HashRouter>
 				<Switch>
-					<Route path="/newRequest" component={RequestForm} />
-					<Route path="/settings" component={UserSettings} />
-					<Route path="/requests" component={FilterRequestList} />
-					<Route
-						path="/myRequests"
-						render={() => (
-							<RequestList
-								username={
-									sessionStorage.getItem(
-										"currentUserUsername"
-									)
-										? sessionStorage.getItem(
-												"currentUserUsername"
-										  )
-										: ""
-								}
-							/>
-						)}
-					/>
-					<Route
-						path="/user/:username"
-						render={() => <OtherUserProfile />}
-					/>
-					<Route
-						path="/request/:id"
-						render={() => <RequestComponent />}
-					/>
-					<Route path="/rating/statistics" component={Statistics} />
+					<Route path="/newRequest">
+						<RequestForm />
+					</Route>
+
+					<Route path="/settings">
+						<UserSettings />
+					</Route>
+
+					<Route path="/requests">
+						<FilterRequestList />
+					</Route>
+
+					<Route path="/myRequests">
+						<RequestList
+							username={
+								sessionStorage.getItem("currentUserUsername")
+									? sessionStorage.getItem(
+											"currentUserUsername"
+									  )
+									: ""
+							}
+						/>
+					</Route>
+
+					<Route path="/user/:username">
+						<OtherUserProfile />
+					</Route>
+
+					<Route path="/request/:id">
+						<RequestComponent />
+					</Route>
+
+					<Route path="/rating/statistics">
+						<Statistics />
+					</Route>
 				</Switch>
 			</HashRouter>
-			{/* {props.show === "newRequest" && <RequestForm />}
-			{props.show === "settings" && <UserSettings />}
-			{props.show === "requests" && <RequestList />}
-			{props.show === "myRequests" && (
-				<RequestList
-					username={sessionStorage.getItem("currentUserUsername")}
-				/>
-			)}
-			{props.show === "delete" && <DeleteComponent />} */}
 		</div>
 	);
 }
