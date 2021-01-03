@@ -94,7 +94,7 @@ function PotentialUsers(props) {
 	return (
 		<div>
 			<Button color="blue" size="large" floated="right" onClick={toggle}>
-				Notice me senpai{" "}
+				Pregled javljanja{" "}
 			</Button>{" "}
 			<Modal isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>
