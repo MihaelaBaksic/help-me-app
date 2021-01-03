@@ -38,11 +38,11 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-fn">Ime</label>
+						<label for="firstName">Ime</label>
 						<input
 							className="form-control"
 							type="text"
-							id="account-fn"
+							id="firstName"
 							value={sessionStorage.getItem(
 								"currentUserFirstName"
 							)}
@@ -52,11 +52,11 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-ln">Prezime</label>
+						<label for="lastName">Prezime</label>
 						<input
 							className="form-control"
 							type="text"
-							id="account-ln"
+							id="lastName"
 							value={sessionStorage.getItem(
 								"currentUserLastName"
 							)}
@@ -66,11 +66,11 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-phone">Kontakt broj</label>
+						<label for="phoneNumber">Kontakt broj</label>
 						<input
 							className="form-control"
 							type="text"
-							id="account-phone"
+							id="phoneNumber"
 							value="09548654465"
 							required=""
 						/>
@@ -86,11 +86,11 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-pass">Promjena zaporke</label>
+						<label for="password">Promjena zaporke</label>
 						<input
 							className="form-control"
 							type="password"
-							id="account-pass"
+							id="password"
 						/>
 					</div>
 				</div>
@@ -109,28 +109,15 @@ function UserSettings(props) {
 				<div className="col-12">
 					<hr className="mt-2 mb-3" />
 					<div className="d-flex flex-wrap justify-content-between align-items-center">
-						<div className="custom-control custom-checkbox d-block"></div>
 						<button
-							className="btn btn-style-1 btn-primary"
+							className="btn btn-style-1 btn-secondary float-left"
 							type="button"
-							data-toast=""
-							data-toast-position="topLeft"
-							data-toast-type="success"
-							data-toast-icon="fe-icon-check-circle"
-							data-toast-title="Success!"
-							data-toast-message="Your profile updated successfuly."
 						>
 							Cancel
 						</button>
 						<button
 							className="btn btn-style-1 btn-primary"
 							type="button"
-							data-toast=""
-							data-toast-position="topRight"
-							data-toast-type="success"
-							data-toast-icon="fe-icon-check-circle"
-							data-toast-title="Success!"
-							data-toast-message="Your profile updated successfuly."
 						>
 							Potvrdi
 						</button>
