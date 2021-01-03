@@ -166,7 +166,9 @@ function OtherUserProfile(props) {
 			)
 				.then((response) => response.text())
 				.then((result) => {
-					setHandlerRequests(JSON.parse(result));
+					setHandlerRequests(
+						JSON.parse(result)._embedded.requestDTOList
+					);
 				})
 				.catch((error) => {
 					console.log("error", error);
@@ -311,7 +313,7 @@ function OtherUserProfile(props) {
 													<h3>Izvršeni zahtjevi</h3>
 													<hr />
 												</div>
-												{handlerRequests._embedded ? (
+												{handlerRequests ? (
 													<RequestList
 														listaZahtjeva={
 															handlerRequests
