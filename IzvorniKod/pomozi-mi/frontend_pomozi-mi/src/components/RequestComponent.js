@@ -7,6 +7,7 @@ import {
 	Card,
 	Icon,
 	CardContent,
+	Header,
 } from "semantic-ui-react";
 import PotentialUsers from "./PotentialUsers";
 import L from "leaflet";
@@ -243,7 +244,11 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-								<h2 color="red"> Zahtjev je gotov! </h2>
+								<h2 color="red">
+									{" "}
+									Zahtjev je izvršio{" "}
+									{podaciReq.handler.username}{" "}
+								</h2>
 							</div>
 						</Card.Content>
 					</Card>
@@ -287,6 +292,31 @@ function RequestComponent(props) {
 								<PotentialUsers id={id}></PotentialUsers>
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -352,41 +382,6 @@ function RequestComponent(props) {
 			);
 		} else if (
 			podaciReq.requestAuthor.username === podaciUser.username &&
-			podaciReq.status === "ACTNOANS"
-		) {
-			return (
-				<Container textAlign="justified" color="blue">
-					<Card color="red" fluid>
-						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
-							<Label color="orange">
-								Krajnji datum = {podaciReq.expirationDate}
-							</Label>
-							{podaciReq.address ? (
-								<Label color="orange">
-									Adresa: {podaciReq.address.description}
-								</Label>
-							) : (
-								<Label color="orange">Virtualni zahtjev</Label>
-							)}
-							<Label color="orange">Autor Zahtjeva = {moj}</Label>
-						</Card.Content>
-						<Card.Content
-							header={podaciReq.title}
-							description={podaciReq.description}
-						/>
-						<Card.Content extra>
-							<div>{buttonRight}</div>
-						</Card.Content>
-					</Card>
-				</Container>
-			);
-		} else if (
-			podaciReq.requestAuthor.username === podaciUser.username &&
 			podaciReq.status === "ACCEPTED"
 		) {
 			btnL = "Zahtjev završen";
@@ -431,6 +426,31 @@ function RequestComponent(props) {
 								{buttonLeft}
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -469,10 +489,36 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
+							{podaciReq.handler === null ? "" : (podaciReq.handler.username === podaciUser.username ? <Header size='large' color='green'>Autor Vas je izabrao kao izvršitelja!</Header> : <Header size='large' color='red'>Autor Vas NIJE izabrao kao izvršitelja!</Header>)}
 								{buttonRight}
 								{buttonLeft}
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -510,8 +556,36 @@ function RequestComponent(props) {
 							description={podaciReq.description}
 						/>
 						<Card.Content extra>
-							<div>{buttonLeft}</div>
+							<div>
+							{podaciReq.handler === null ? "" : (podaciReq.handler.username === podaciUser.username ? <Header size='large' color='green'>Autor Vas je izabrao kao izvršitelja!</Header> : <Header size='large' color='red'>Autor Vas NIJE izabrao kao izvršitelja!</Header>)}
+								{buttonLeft}
+							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
