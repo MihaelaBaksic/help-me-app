@@ -179,7 +179,20 @@ body {
 #desniStupac {
 	margin: 10px;
 }
-
+.desniStupacContentHolder {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.desniStupacContentHolder > div {
+	min-width: 90%;
+	white-space: nowrap;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	margin-top: 15px !important;
+	margin-bottom: 15px !important;
+}
 #newNotification {
 	padding-left: 21px;
 }
@@ -366,10 +379,8 @@ body {
 }
 
 .logOutButton {
-	width: 200px;
 	white-space: nowrap;
-	margin: auto;
-	margin-top: 20px;
+
 	padding-top: min(8px, 10px);
 	padding-bottom: min(8px, 10px);
 	padding-right: min(32px, 33px);
@@ -401,9 +412,9 @@ body {
 	margin: auto;
 }
 #newRequestCard {
-	height: 100%;
-	justify-content: center;
-	min-height: 710px;
+	/* height: 100%; */
+	/* justify-content: center; */
+	/* min-height: 710px; */
 }
 #newRequest {
 }
@@ -859,4 +870,16 @@ a.list-group-item,
 .virtualOrLocationCheckBox {
 	width: 330px;
 	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.test {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+	/* width: 100%; */
+	height: fit-content;
 }
