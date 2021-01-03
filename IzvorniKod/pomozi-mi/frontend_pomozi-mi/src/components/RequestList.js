@@ -52,6 +52,7 @@ function RequestList(props) {
 	if (requests) {
 		return (
 			<List selection celled id="requestList">
+				{console.log(requests)}
 				{requests.map((request) => (
 					<List.Item key={request.id}>
 						<Grid padded style={{ cursor: "initial" }}>
