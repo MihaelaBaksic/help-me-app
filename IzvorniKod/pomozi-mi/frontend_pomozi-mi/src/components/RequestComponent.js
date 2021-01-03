@@ -9,6 +9,8 @@ import {
 	CardContent,
 } from "semantic-ui-react";
 import PotentialUsers from "./PotentialUsers";
+import L from "leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
@@ -189,9 +191,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -222,9 +228,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -258,9 +268,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -292,9 +306,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -304,6 +322,31 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<div>{buttonRight}</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -323,9 +366,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -365,9 +412,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -403,9 +454,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -441,9 +496,13 @@ function RequestComponent(props) {
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content

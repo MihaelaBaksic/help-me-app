@@ -9,6 +9,10 @@ function RequestList(props) {
 	let history = useHistory();
 	const [requests, setRequests] = useState("");
 
+	function pogledajUsera(username) {
+		console.log(username);
+		history.push("/user/" + username);
+	}
 	function pregledajZahtjev(valerija) {
 		console.log(valerija);
 		history.push("/request/" + valerija);
@@ -49,12 +53,22 @@ function RequestList(props) {
 		return (
 			<List selection celled id="requestList">
 				{requests.map((request) => (
-					<List.Item key={request.id} /*onClick={}*/>
-						<Grid padded>
+					<List.Item key={request.id}>
+						<Grid padded style={{ cursor: "initial" }}>
 							<Grid.Row columns={2}>
 								<Grid.Column>
 									<List.Header>
-										<Label as="a" image>
+										<Label
+											as="a"
+											image
+											onClick={(e) =>
+												pogledajUsera(
+													request.requestAuthor
+														.username,
+													e
+												)
+											}
+										>
 											<img
 												src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
 												alt=""
@@ -74,20 +88,20 @@ function RequestList(props) {
 												</Label.Detail>
 											)}
 										</Label>
+
 										<br />
 										<div id="requestTitle">
 											{request.title}
 										</div>
 									</List.Header>
 								</Grid.Column>
-								<Grid.Column floated="right">
-									<Button
-										color="blue"
-										floated="right"
-										onClick={(e) =>
-											pregledajZahtjev(request.id, e)
-										}
-									>
+								<Grid.Column
+									floated="right"
+									onClick={(e) =>
+										pregledajZahtjev(request.id, e)
+									}
+								>
+									<Button color="blue" floated="right">
 										Pregledaj
 									</Button>
 								</Grid.Column>

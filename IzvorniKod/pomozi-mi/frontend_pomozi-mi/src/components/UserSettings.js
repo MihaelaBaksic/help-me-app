@@ -1,4 +1,12 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+
 function UserSettings(props) {
+	const { handleSubmit, register, errors, watch } = useForm({});
+	function onSubmit(values, e) {
+		e.preventDefault();
+	}
+
 	return (
 		<div className="col-lg-8 pb-5">
 			<form className="row">
@@ -21,7 +29,9 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-user"
-							value={sessionStorage.getItem("currentUserUsername")}
+							value={sessionStorage.getItem(
+								"currentUserUsername"
+							)}
 							disabled="true"
 						/>
 					</div>
@@ -33,7 +43,9 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-fn"
-							value={sessionStorage.getItem("currentUserFirstName")}
+							value={sessionStorage.getItem(
+								"currentUserFirstName"
+							)}
 							required=""
 						/>
 					</div>
@@ -45,7 +57,9 @@ function UserSettings(props) {
 							className="form-control"
 							type="text"
 							id="account-ln"
-							value={sessionStorage.getItem("currentUserLastName")}
+							value={sessionStorage.getItem(
+								"currentUserLastName"
+							)}
 							required=""
 						/>
 					</div>
@@ -96,6 +110,18 @@ function UserSettings(props) {
 					<hr className="mt-2 mb-3" />
 					<div className="d-flex flex-wrap justify-content-between align-items-center">
 						<div className="custom-control custom-checkbox d-block"></div>
+						<button
+							className="btn btn-style-1 btn-primary"
+							type="button"
+							data-toast=""
+							data-toast-position="topLeft"
+							data-toast-type="success"
+							data-toast-icon="fe-icon-check-circle"
+							data-toast-title="Success!"
+							data-toast-message="Your profile updated successfuly."
+						>
+							Cancel
+						</button>
 						<button
 							className="btn btn-style-1 btn-primary"
 							type="button"
