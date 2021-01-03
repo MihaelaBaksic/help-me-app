@@ -84,8 +84,8 @@ function CommentFormComponent() {
                                             Submit
 					                    </button>
                                     </div>
-                                    <input name="ratedUsername" style={{display: 'none'}}  value="ja sam" ref={register}/>
-                                    <input name="requestId" style={{display: 'none'}}  value="null" ref={register}/>
+                                    <input name="ratedUsername" style={{display: 'none'}}  value="korisnik" ref={register}/>
+                                    <input name="requestId" style={{display: 'none'}}  value="2" ref={register}/>
                                 </form>
                             </div>
                         </div>
