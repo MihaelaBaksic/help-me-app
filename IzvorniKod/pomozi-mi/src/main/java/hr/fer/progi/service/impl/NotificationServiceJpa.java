@@ -6,6 +6,7 @@ import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.mappers.CreateNotificationDTO;
 import hr.fer.progi.mappers.NotificationDTO;
+import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.service.NotificationService;
 import hr.fer.progi.service.RequestService;
 import hr.fer.progi.service.UserService;
@@ -44,7 +45,7 @@ public class NotificationServiceJpa implements NotificationService {
                 throw new NonexistingObjectReferencedException("Referenced request doesn't exist");
         }
 
-        return notificationRepository.save(new Notification(user, notificationDTO.getMessage(), request));
+        return notificationRepository.save(new Notification(user, notificationDTO.getMessage(), request, notificationDTO.getStatus()));
 
     }
 
@@ -70,6 +71,22 @@ public class NotificationServiceJpa implements NotificationService {
                 .filter(n -> !n.getIsRead())
                 .count();
 
+    }
+
+    @Override
+    public void markRatingNotificationAsRated(RatingDTO ratingDTO) {
+        //Search for notification with message "Zahtjev je uspješno izvšen."
+        //        		+ " Molimo vas ocijenite autora zahtjeva."
+        // and requestId from above if not null and set its status to RATED
+        if(ratingDTO.getRequestId() != null){
+            List<Notification> notifications = notificationRepository.findAll()
+                    .stream().filter(n -> n.getMessage().equals("Zahtjev je uspješno izvšen." + " Molimo vas ocijenite autora zahtjeva."))
+                    .filter(n -> n.getRequest().getId().equals(ratingDTO.getRequestId()))
+                    .collect(Collectors.toList());
+            Notification notif = notifications.get(0);
+            notif.setStatus(Notification.NotificationStatus.RATED);
+            notificationRepository.save(notif);
+        }
     }
 
 }

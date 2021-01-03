@@ -18,4 +18,7 @@ public class CreateNotificationDTO {
     @Size(min = 2, max = 100)
     private String message;
 
+    @NotNull
+    private Notification.NotificationStatus status;
+
 }

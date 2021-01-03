@@ -2,6 +2,7 @@ package hr.fer.progi.service;
 
 import hr.fer.progi.domain.Notification;
 import hr.fer.progi.mappers.CreateNotificationDTO;
+import hr.fer.progi.mappers.RatingDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,4 +28,10 @@ public interface NotificationService {
      * @return number of unread notifications of current user
      */
     int getNumberOfUnreadNotifications();
+
+    /**
+     * Changes notification of handler that author has to be rated
+     * from not rated to rated
+     */
+    void markRatingNotificationAsRated(RatingDTO ratingDTO);
 }

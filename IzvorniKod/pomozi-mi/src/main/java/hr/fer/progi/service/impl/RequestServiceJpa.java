@@ -62,7 +62,7 @@ public class RequestServiceJpa implements RequestService {
         if(request.getAddress() != null)
             assertAddress(request);
         
-        Notification notification = new Notification(requestAuthor, "Vaš zahtjev je uspješno stvoren.", request);
+        Notification notification = new Notification(requestAuthor, "Vaš zahtjev je uspješno stvoren.", request, Notification.NotificationStatus.STANDARD);
         notificationRepository.save(notification);
         
         return requestRepository.save(request);
@@ -122,20 +122,20 @@ public class RequestServiceJpa implements RequestService {
     	User user = userRepository.findByUsername(username);
     	
     	if(isDeleted && !user.isAdministrator()) {
-    		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", r);
+    		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", r, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notification);
     	} else if(isDeleted && user.isAdministrator()) {
-    		Notification notification = new Notification(user, "Vaš zahtjev je izbrisao administrator.", r);
+    		Notification notification = new Notification(user, "Vaš zahtjev je izbrisao administrator.", r, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notification);
             if(r.getRequestHandler() == null && !r.getPotentialHandler().isEmpty()) {
             	for(User potentialHandler : r.getPotentialHandler()) {
             		Notification notifyPotentialHandler = new Notification(potentialHandler, "Zahtjev " + r.getTitle() + 
-            				"je izbrisao administrator. Više se ne može izvršiti.", r);
+            				"je izbrisao administrator. Više se ne može izvršiti.", r, Notification.NotificationStatus.STANDARD);
             		notificationRepository.save(notifyPotentialHandler);
             	} 
             } else {
         		Notification notifyRequestHandler = new Notification(r.getRequestAuthor(), "Zahtjev " + r.getTitle() + 
-        				"je izbrisao administrator. Više se ne može izvršiti.", r);
+        				"je izbrisao administrator. Više se ne može izvršiti.", r, Notification.NotificationStatus.STANDARD);
         		notificationRepository.save(notifyRequestHandler);
         	}
     		
@@ -167,7 +167,7 @@ public class RequestServiceJpa implements RequestService {
         }
         
         User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
-        Notification notification = new Notification(user, "Vaš je zahtjev uspješno ažuriran.", request);
+        Notification notification = new Notification(user, "Vaš je zahtjev uspješno ažuriran.", request, Notification.NotificationStatus.STANDARD);
         notificationRepository.save(notification);
         
         return requestRepository.save(request);
@@ -182,18 +182,18 @@ public class RequestServiceJpa implements RequestService {
     	request.setStatus(RequestStatus.BLOCKED);
     	
         User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
-        Notification notification = new Notification(user, "Vaš je zahtjev uspješno blokiran.", request);
+        Notification notification = new Notification(user, "Vaš je zahtjev uspješno blokiran.", request, Notification.NotificationStatus.STANDARD);
         notificationRepository.save(notification);
         
         if(request.getRequestHandler() == null && !request.getPotentialHandler().isEmpty()) {
         	for(User potentialHandler : request.getPotentialHandler()) {
         		Notification notifyPotentialHandler = new Notification(potentialHandler, "Zahtjev " + request.getTitle() + 
-        				" je blokiran. Više se ne može izvršiti.", request);
+        				" je blokiran. Više se ne može izvršiti.", request, Notification.NotificationStatus.STANDARD);
         		notificationRepository.save(notifyPotentialHandler);
         	} 
         } else {
     		Notification notifyRequestHandler = new Notification(request.getRequestHandler(), "Zahtjev " + request.getTitle() + 
-    				"je blokiran. Više se ne može izvršiti.", request);
+    				"je blokiran. Više se ne može izvršiti.", request, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notifyRequestHandler);
     	}
     	
@@ -215,7 +215,7 @@ public class RequestServiceJpa implements RequestService {
         for(Request request : answeredRequests) {
         	for(User potentialHandler : request.getPotentialHandler()) {
         		Notification notification = new Notification(potentialHandler, "Zahtjev " + request.getTitle() + 
-        				" nije moguće izvšiti jer je korisnik " + user.getUsername() + " blokiran", request);
+        				" nije moguće izvšiti jer je korisnik " + user.getUsername() + " blokiran", request, Notification.NotificationStatus.STANDARD);
         		notificationRepository.save(notification);
         	}
         }
@@ -246,7 +246,7 @@ public class RequestServiceJpa implements RequestService {
         
     	User user = userRepository.findByUsername(request.getRequestAuthor().getUsername());
     	if(!request.getPotentialHandler().contains(potentialHandler)) {
-	    	Notification notification = new Notification(user, "Korisnik " + potentialHandler.getUsername() + " se javio na vaš zahtjev", request);
+	    	Notification notification = new Notification(user, "Korisnik " + potentialHandler.getUsername() + " se javio na vaš zahtjev", request, Notification.NotificationStatus.STANDARD);
 	    	notificationRepository.save(notification);
     	}
         
@@ -301,10 +301,10 @@ public class RequestServiceJpa implements RequestService {
     	
     	Notification notifyRequestAuthor = new Notification(requestAuthor, "Odabrali ste korisnika " + user.getUsername() +
     			" za izvršavanje vašeg zahtjeva. Kontakt broj korisnika " + user.getUsername() + " je: " + 
-    			user.getPhoneNumber() + ", te email adresa: " + user.getEmail(), request);
+    			user.getPhoneNumber() + ", te email adresa: " + user.getEmail(), request, Notification.NotificationStatus.STANDARD);
     	Notification notifyHandler = new Notification(user, "Odabrani ste za izvršavanje zahtjeva " + request.getTitle() +
     			". Kontakt broj autora zahtjeva je: " + requestAuthor.getPhoneNumber() +
-    			", te email adresa: " + requestAuthor.getEmail(), request);
+    			", te email adresa: " + requestAuthor.getEmail(), request, Notification.NotificationStatus.STANDARD);
     	
     	notificationRepository.save(notifyHandler);
     	notificationRepository.save(notifyRequestAuthor);
@@ -314,7 +314,7 @@ public class RequestServiceJpa implements RequestService {
     			continue;
     		}
     		Notification notifyRejectedHandlers = new Notification(deniedHandler, "Za zahtjev " + request.getTitle() + 
-    				" je odabran izvršitelj, nažalost to niste vi.", request);
+    				" je odabran izvršitelj, nažalost to niste Vi.", request, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notifyRejectedHandlers);
     	}
     	
@@ -334,7 +334,7 @@ public class RequestServiceJpa implements RequestService {
             request.setStatus(RequestStatus.ACTNOANS);
         
         
-        Notification notifyRejectedHandler = new Notification(u, "Odbijeni ste za izvršavanje zahtjeva " + request.getTitle(), request);
+        Notification notifyRejectedHandler = new Notification(u, "Odbijeni ste za izvršavanje zahtjeva " + request.getTitle(), request, Notification.NotificationStatus.STANDARD);
         notificationRepository.save(notifyRejectedHandler);
         
         return requestRepository.save(request);
@@ -356,7 +356,7 @@ public class RequestServiceJpa implements RequestService {
         
         User requestHandler = request.getRequestAuthor();
         Notification notifyRequestHandler = new Notification(requestHandler, "Zahtjev je uspješno izvšen."
-        		+ " Molimo vas ocijenite autora zahtjeva.", request);
+        		+ " Molimo vas ocijenite autora zahtjeva.", request, Notification.NotificationStatus.NOTRATED);
         notificationRepository.save(notifyRequestHandler);
         
         return request;

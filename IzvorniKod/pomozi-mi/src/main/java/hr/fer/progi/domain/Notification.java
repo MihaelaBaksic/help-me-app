@@ -19,6 +19,15 @@ import javax.validation.constraints.Size;
 @Entity
 public class Notification {
 
+    public enum NotificationStatus {
+
+        STANDARD,
+
+        RATED,
+
+        NOTRATED
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,19 +46,24 @@ public class Notification {
     @NotNull
     private Boolean isRead;
 
+    @NotNull
+    private NotificationStatus status;
 
-    public Notification(User user, String message, Request request){
+
+    public Notification(User user, String message, Request request, NotificationStatus status){
         this.user = user;
         this.message = message;
         this.request = request;
         this.isRead = false;
+        this.status = status;
     }
 
     public NotificationDTO mapToNotificationDTO(){
         return new NotificationDTO(this.user.mapToUserDTO(),
                 this.request != null ? this.request.mapToRequestDTO() : null,
                 this.message,
-                this.isRead);
+                this.isRead,
+                this.status);
     }
 
 

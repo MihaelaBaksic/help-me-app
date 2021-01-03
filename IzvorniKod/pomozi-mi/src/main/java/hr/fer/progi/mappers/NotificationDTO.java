@@ -1,5 +1,6 @@
 package hr.fer.progi.mappers;
 
+import hr.fer.progi.domain.Notification;
 import hr.fer.progi.domain.Request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,8 @@ public class NotificationDTO {
 
     @NotNull
     Boolean isRead;
+
+    @NotNull
+    private Notification.NotificationStatus status;
 
 }
