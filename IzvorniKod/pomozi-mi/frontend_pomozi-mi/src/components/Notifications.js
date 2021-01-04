@@ -10,11 +10,13 @@ import {
 } from "semantic-ui-react";
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 function Notifications(props) {
 	const [notifications, setNotifications] = useState("");
+	let history = useHistory();
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -32,65 +34,83 @@ function Notifications(props) {
 		fetch(baseUrl + "/notifications", options)
 			.then((response) => response.text())
 			.then((result) => {
-				if (JSON.parse(result)._embedded) {
-					setNotifications(
-						JSON.parse(result)._embedded.notificationDTOList
-					);
-				} else {
-					setNotifications("");
-				}
+				setNotifications(JSON.parse(result));
+				console.log(JSON.parse(result));
 			})
 			.catch((error) => {
-				console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+				console.log(
+					"error: ",
+					error,
+					"LISTA OBAVIJESTI VJEROJATNO PRAZNA"
+				);
 				setNotifications("");
 			});
 	}, []);
 
 	// if (notifications)
-	if (true) {
+	if (notifications) {
 		return (
-			<Segment>
+			<Segment id="notificationHolder" className="hiddenScroll">
 				<List divided relaxed>
-					{true ? ( //je li pročitan
-						<List.Item id="oldNotification">
-							Stara obavijest
-							{/* tu treba doci {...notification.request} */}
-							{true ? ( //je li vezan za zahtjev
+					{console.log(notifications[0])}
+					{notifications.map((notif, index) =>
+						notif.isRead ? (
+							<List.Item
+								id="oldNotification"
+								key={
+									index
+								} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
+							>
+								<div className="notificationMessage">
+									{notif.message}
+									<br />
+									{notif.request.title}
+								</div>
+
 								<List.Item
 									content={
-										<a
-											id="linkToRequest"
-											href="http://www.semantic-ui.com"
+										<div
+											className="notificationToRequestLink"
+											role="button"
+											onClick={() =>
+												history.push(
+													"/request/" +
+														notif.request.id
+												)
+											}
 										>
 											<List.Icon name="arrow circle right"></List.Icon>
 											Odi na zahtjev!
-										</a>
+										</div>
 									}
 								/>
-							) : (
-								<span>&nbsp;</span>
-							)}
-						</List.Item>
-					) : (
-						<List.Item id="newNotification">
-							Nova obavijest
-							{/* tu treba doci {...notification.request} */}
-							{true ? ( //je li vezan za zahtjev
+							</List.Item>
+						) : (
+							<List.Item
+								id="newNotification"
+								key={
+									index
+								} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
+							>
+								Nova obavijest
 								<List.Item
 									content={
-										<a
-											id="linkToRequest"
-											href="http://www.semantic-ui.com"
+										<div
+											role="button"
+											onClick={() =>
+												history.push(
+													"/request/" +
+														notif.request.id
+												)
+											}
 										>
 											<List.Icon name="arrow circle right"></List.Icon>
 											Odi na zahtjev!
-										</a>
+										</div>
 									}
 								/>
-							) : (
-								<span>&nbsp;</span>
-							)}
-						</List.Item>
+							</List.Item>
+						)
 					)}
 				</List>
 			</Segment>
@@ -100,4 +120,4 @@ function Notifications(props) {
 	}
 }
 
-export default Notifications;
+export default withRouter(Notifications);

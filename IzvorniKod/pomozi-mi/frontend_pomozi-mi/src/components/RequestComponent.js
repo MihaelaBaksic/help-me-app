@@ -21,6 +21,18 @@ function RequestComponent(props) {
 	const [podaciReq, setPodaciReq] = useState([]);
 	const [podaciUser, setPodaciUser] = useState([]);
 
+	//testovi
+	const [map, setMap] = useState(null);
+
+	useEffect(() => {
+		if (podaciReq.address && map) {
+			map.setView(
+				L.latLng(podaciReq.address.x_coord, podaciReq.address.y_coord),
+				13
+			);
+		}
+	}, [map, podaciReq.address]);
+
 	//Ovo je za fetch requesta
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -302,6 +314,7 @@ function RequestComponent(props) {
 									zoom={13}
 									scrollWheelZoom={true}
 									className="form-group"
+									whenCreated={setMap}
 								>
 									<TileLayer
 										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
@@ -362,6 +375,7 @@ function RequestComponent(props) {
 									zoom={13}
 									scrollWheelZoom={true}
 									className="form-group"
+									whenCreated={setMap}
 								>
 									<TileLayer
 										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
@@ -436,6 +450,7 @@ function RequestComponent(props) {
 									zoom={13}
 									scrollWheelZoom={true}
 									className="form-group"
+									whenCreated={setMap}
 								>
 									<TileLayer
 										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
@@ -489,7 +504,18 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-							{podaciReq.handler === null ? "" : (podaciReq.handler.username === podaciUser.username ? <Header size='large' color='green'>Autor Vas je izabrao kao izvršitelja!</Header> : <Header size='large' color='red'>Autor Vas NIJE izabrao kao izvršitelja!</Header>)}
+								{podaciReq.handler === null ? (
+									""
+								) : podaciReq.handler.username ===
+								  podaciUser.username ? (
+									<Header size="large" color="green">
+										Autor Vas je izabrao kao izvršitelja!
+									</Header>
+								) : (
+									<Header size="large" color="red">
+										Autor Vas NIJE izabrao kao izvršitelja!
+									</Header>
+								)}
 								{buttonRight}
 								{buttonLeft}
 							</div>
@@ -504,6 +530,7 @@ function RequestComponent(props) {
 									zoom={13}
 									scrollWheelZoom={true}
 									className="form-group"
+									whenCreated={setMap}
 								>
 									<TileLayer
 										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
@@ -557,7 +584,18 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-							{podaciReq.handler === null ? "" : (podaciReq.handler.username === podaciUser.username ? <Header size='large' color='green'>Autor Vas je izabrao kao izvršitelja!</Header> : <Header size='large' color='red'>Autor Vas NIJE izabrao kao izvršitelja!</Header>)}
+								{podaciReq.handler === null ? (
+									""
+								) : podaciReq.handler.username ===
+								  podaciUser.username ? (
+									<Header size="large" color="green">
+										Autor Vas je izabrao kao izvršitelja!
+									</Header>
+								) : (
+									<Header size="large" color="red">
+										Autor Vas NIJE izabrao kao izvršitelja!
+									</Header>
+								)}
 								{buttonLeft}
 							</div>
 						</Card.Content>
@@ -571,6 +609,7 @@ function RequestComponent(props) {
 									zoom={13}
 									scrollWheelZoom={true}
 									className="form-group"
+									whenCreated={setMap}
 								>
 									<TileLayer
 										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '

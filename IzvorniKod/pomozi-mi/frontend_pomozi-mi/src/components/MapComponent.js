@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import LogedInUserComponent from "./LogedInUserComponent";
+import { useHistory, withRouter } from "react-router-dom";
 
 const initialCenter = L.latLng(44.43378, 16.370707);
 let currentCenter = L.latLng(44.43378, 16.370707);
@@ -170,10 +171,11 @@ function CenterMarker(props) {
 
 function MapComponent(props) {
 	const [map, setMap] = useState(null);
+	let history = useHistory();
 
 	useEffect(() => {
 		props.setGeoLocation(currentMarkerPosition);
-	}, []);
+	}, [history.location.pathname]);
 
 	return (
 		<MapContainer
