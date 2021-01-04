@@ -55,7 +55,7 @@ function RequestList(props) {
 				{console.log(requests)}
 				{requests.map((request) => (
 					<List.Item key={request.id}>
-						<Grid padded style={{ cursor: "initial" }}>
+						<Grid stackable padded style={{ cursor: "initial" }}>
 							<Grid.Row columns={2}>
 								<Grid.Column>
 									<List.Header>
@@ -90,13 +90,18 @@ function RequestList(props) {
 											)}
 										</Label>
 
-										<br />
-										<div id="requestTitle">
+										<div
+											id="requestTitle"
+											onClick={(e) =>
+												pregledajZahtjev(request.id, e)
+											}
+										>
 											{request.title}
 										</div>
 									</List.Header>
 								</Grid.Column>
 								<Grid.Column
+									only="large screen"
 									floated="right"
 									onClick={(e) =>
 										pregledajZahtjev(request.id, e)
