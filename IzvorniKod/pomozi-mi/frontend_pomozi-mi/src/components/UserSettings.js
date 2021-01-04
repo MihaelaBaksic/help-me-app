@@ -1,15 +1,89 @@
-import React from "react";
+import { jssPreset } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory, withRouter } from "react-router-dom";
 
 function UserSettings(props) {
+	let history = useHistory();
 	const { handleSubmit, register, errors, watch } = useForm({});
+	const [ime, setIme] = useState("");
+	const [prezime, setPrezime] = useState("");
+
+	useEffect(() => {
+		setIme(sessionStorage.getItem("currentUserFirstName"));
+	}, []);
+	useEffect(() => {
+		setPrezime(sessionStorage.getItem("currentUserLastName"));
+	}, []);
+
 	function onSubmit(values, e) {
 		e.preventDefault();
+
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+
+		let prepBody = {};
+		prepBody.password = values.password;
+		console.log(values.firstName);
+		if (values.firstName) {
+			prepBody.firstName = values.firstName;
+		}
+		if (values.lastName) {
+			prepBody.lastName = values.lastName;
+		}
+		if (values.phoneNumber) {
+			prepBody.phoneNumber = values.phoneNumber;
+		}
+		console.log(prepBody);
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+			body: JSON.stringify(prepBody),
+		};
+		fetch("http://localhost:8080/user/settings", options)
+			.then((response) => {
+				if (response.status === 201) {
+					return response.text();
+				}
+			})
+			.then((result) => {
+				console.log(JSON.parse(result));
+
+				sessionStorage.setItem(
+					"currentUserFirstName",
+					JSON.parse(result).firstName
+				);
+				sessionStorage.setItem(
+					"currentUserLastName",
+					JSON.parse(result).lastName
+				);
+
+				setPrezime(JSON.parse(result).lastName);
+				setIme(JSON.parse(result).firstName);
+
+				let basicAuthToken = btoa(
+					unescape(
+						encodeURIComponent(
+							sessionStorage.getItem("currentUserUsername") +
+								":" +
+								prepBody.password
+						)
+					)
+				);
+				sessionStorage.setItem("basicAuthToken", basicAuthToken);
+				//refresh page
+				history.go(0);
+			})
+			.catch((error) => console.log("error", error));
 	}
 
 	return (
 		<div className="col-lg-8 pb-5">
-			<form className="row">
+			<form className="row" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-md-6">
 					<div className="form-group">
 						<label for="account-email">E-mail adresa</label>
@@ -40,40 +114,77 @@ function UserSettings(props) {
 					<div className="form-group">
 						<label for="firstName">Ime</label>
 						<input
-							className="form-control"
-							type="text"
 							id="firstName"
-							value={sessionStorage.getItem(
-								"currentUserFirstName"
-							)}
-							required=""
+							name="firstName"
+							type="text"
+							className="form-control"
+							/* placeholder="Ime" */
+							placeholder={ime}
+							ref={register({
+								minLength: {
+									value: 2,
+									message: "Prekratko ime",
+								},
+								maxLength: {
+									value: 30,
+									message: "Predugačko ime",
+								},
+							})}
 						/>
+						<div className="error-message">
+							{errors.firstName && errors.firstName.message}
+						</div>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="lastName">Prezime</label>
-						<input
-							className="form-control"
-							type="text"
-							id="lastName"
-							value={sessionStorage.getItem(
-								"currentUserLastName"
-							)}
-							required=""
-						/>
+						<div className="form-group">
+							<label for="lastName">Prezime</label>
+							<input
+								name="lastName"
+								type="text"
+								id="lastName"
+								className="form-control"
+								/* placeholder="Prezime" */
+								placeholder={prezime}
+								ref={register({
+									minLength: {
+										value: 2,
+										message: "Prekratko prezime",
+									},
+									maxLength: {
+										value: 30,
+										message: "Predugačko prezime",
+									},
+								})}
+							/>
+							<div className="error-message">
+								{errors.lastName && errors.lastName.message}
+							</div>
+						</div>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
 						<label for="phoneNumber">Kontakt broj</label>
 						<input
+							name="phoneNumber"
 							className="form-control"
-							type="text"
-							id="phoneNumber"
-							value="09548654465"
-							required=""
+							placeholder="Telefon"
+							ref={register({
+								maxLength: {
+									value: 15,
+									message: "Predugačak broj telefona",
+								},
+								pattern: {
+									value: /^\d+$/i,
+									message: "Unesite ispravan telefonski broj",
+								},
+							})}
 						/>
+						<div className="error-message">
+							{errors.phoneNumber && errors.phoneNumber.message}
+						</div>
 					</div>
 				</div>
 				<div className="col-md-6">
@@ -86,24 +197,55 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="password">Promjena zaporke</label>
+						<label for="password">
+							Potvrda izmjena/Promjena lozinke
+						</label>
 						<input
-							className="form-control"
+							name="password"
 							type="password"
-							id="password"
+							className="form-control"
+							placeholder="Lozinka"
+							ref={register({
+								required: {
+									value: "Required",
+									message: "Lozinka je obavezna",
+								},
+								minLength: {
+									value: 8,
+									message:
+										"Duljina lozinke mora biti najmanje 8 znakova",
+								},
+							})}
 						/>
+						<div className="error-message">
+							{errors.password && errors.password.message}
+						</div>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
 						<label for="account-confirm-pass">
-							Potvrdi zaporku
+							Potvrdi lozinku
 						</label>
 						<input
-							className="form-control"
+							name="confirmPassword"
 							type="password"
-							id="account-confirm-pass"
+							className="form-control"
+							placeholder="Potvrdite lozinku"
+							ref={register({
+								required: {
+									value: "Required",
+									message: "Obavezno potvrdite lozinku",
+								},
+								validate: (value) =>
+									value === watch("password") ||
+									"Lozinke se ne poklapaju",
+							})}
 						/>
+						<div className="error-message">
+							{errors.confirmPassword &&
+								errors.confirmPassword.message}
+						</div>
 					</div>
 				</div>
 				<div className="col-12">
@@ -117,7 +259,7 @@ function UserSettings(props) {
 						</button>
 						<button
 							className="btn btn-style-1 btn-primary"
-							type="button"
+							type="submit"
 						>
 							Potvrdi
 						</button>
@@ -127,4 +269,4 @@ function UserSettings(props) {
 		</div>
 	);
 }
-export default UserSettings;
+export default withRouter(UserSettings);

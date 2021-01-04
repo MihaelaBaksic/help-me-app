@@ -190,7 +190,11 @@ function RequestForm() {
 				) : null}
 
 				<div className="loginOrRegisterBtns">
-					<button type="cancel" className="btn btn-secondary">
+					<button
+						type="cancel"
+						onClick={() => history.push("/requests")}
+						className="btn btn-secondary"
+					>
 						Cancel
 					</button>
 					<button
