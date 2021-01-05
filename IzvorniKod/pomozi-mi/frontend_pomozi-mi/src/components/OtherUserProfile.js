@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RequestList from "./RequestList";
+import CommentComponent from "./CommentComponent";
 
 function OtherUserProfile(props) {
 	let { username } = useParams();
 	let [userInfo, setUserInfo] = useState("");
 	let [authoredRequests, setAuthoredRequests] = useState("");
 	let [handlerRequests, setHandlerRequests] = useState("");
+	let [ratings, setRatings] = useState("");
 
 	function addAsAdmin() {
 		var myHeaders = new Headers();
@@ -178,6 +180,33 @@ function OtherUserProfile(props) {
 	}, [userInfo.status, username]);
 
 	useEffect(() => {
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+
+		const options = {
+			method: "GET",
+			headers: myHeaders,
+			redirect: "follow"
+        };
+
+		fetch("http://localhost:8080/rating/of/" + username, options)
+            .then((response) => response.text())
+            .then((result) => {
+				setRatings(JSON.parse(result));
+				//console.log(result);
+                }
+            )
+    }, [username]);
+
+	useEffect(() => {
+		console.log(ratings);
+	}, [ratings]);
+
+	useEffect(() => {
 		console.log(authoredRequests);
 	}, [authoredRequests]);
 
@@ -324,14 +353,14 @@ function OtherUserProfile(props) {
 										</div>
 									</div>
 								</div>
-								<div className="col-xl-4">
+								<div className="col-xl-12">
 									<div className="card mb-4">
 										<div className="card-body">
 											<div className="page-header">
 												<h3>Komentari</h3>
 												<hr />
 											</div>
-											OVDJE JE KOMPONENTA KOMENTARA
+											<CommentComponent listaKomentara = {ratings} korIme = {username}/>
 										</div>
 									</div>
 								</div>
