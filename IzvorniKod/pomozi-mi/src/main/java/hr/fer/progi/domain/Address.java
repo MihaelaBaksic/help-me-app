@@ -29,16 +29,35 @@ public class Address {
     private String description;
 
     @NotNull
-    Double x_coord;
+    private Double x_coord;
 
     @NotNull
-    Double y_coord;
+    private Double y_coord;
 
 
     public Address(String description, Double x_coord, Double y_coord) {
         this.description = description;
         this.x_coord = x_coord;
         this.y_coord = y_coord;
+    }
+
+    /**
+     * Calculates distance between two longitude-latitude points
+     * ergo address coordinates
+     * @param a1 address1
+     * @param a2 address2
+     * @return distance between a1 and a2 in km
+     */
+    public static double calculateDistance(Address a1, Address a2){
+
+        double p = Math.PI /180;
+        double a = 0.5 - (Math.cos((a2.y_coord - a1.y_coord)*p)/2)
+                + Math.cos(a1.y_coord*p) * Math.cos(a2.y_coord*p) * ((1-Math.cos((a1.x_coord- a2.x_coord)*p))/2);
+
+        double ret = 12742 * Math.asin(Math.sqrt(a));
+        System.out.println(ret);
+        return ret;
+
     }
 
 }

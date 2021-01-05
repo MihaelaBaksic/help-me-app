@@ -3,11 +3,9 @@ package hr.fer.progi.service.impl;
 import hr.fer.progi.dao.NotificationRepository;
 import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.dao.UserRepository;
-import hr.fer.progi.domain.Notification;
-import hr.fer.progi.domain.Request;
-import hr.fer.progi.domain.RequestStatus;
-import hr.fer.progi.domain.User;
-import hr.fer.progi.domain.UserStatus;
+import hr.fer.progi.domain.*;
+import hr.fer.progi.mappers.FilterDTO;
+import hr.fer.progi.mappers.RequestDTO;
 import hr.fer.progi.service.*;
 
 import hr.fer.progi.service.exceptions.*;
@@ -16,9 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -33,6 +29,9 @@ public class RequestServiceJpa implements RequestService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
     
     @Autowired
     private NotificationRepository notificationRepository;
@@ -105,6 +104,32 @@ public class RequestServiceJpa implements RequestService {
         Assert.notNull(user, "User must be given");
 
         return userRepository.findAllHandledRequests(user.getUsername());
+    }
+
+    @Override
+    public List<Request> getFilteredRequests(FilterDTO filter) {
+        Address currentUserAddress = userService.findByUsername(
+                SecurityContextHolder.getContext().getAuthentication().getName())
+                .getAddress();
+        List<Request> requests = this.listAll()
+                .stream()
+                .filter(r -> (r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS))
+                .filter(r -> (r.getExpirationDate().after(new Date()) || r.getExpirationDate().equals(new Date())) )
+                .filter(r -> (filter.getVirtual() && r.getAddress()==null) || (!filter.getVirtual() && (r.getAddress()==null ||
+                        true)))
+                .collect(Collectors.toList());
+
+        //Address.calculateDistance(r.getAddress(), currentUserAddress) <= filter.getRadius())
+        switch (filter.getOrder()){
+            case ATOZ:
+                requests.sort(Comparator.comparing(Request::getTitle));
+                break;
+            case ZTOA:
+                requests.sort(Comparator.comparing(Request::getTitle).reversed());
+                break;
+        }
+
+        return requests;
     }
 
 

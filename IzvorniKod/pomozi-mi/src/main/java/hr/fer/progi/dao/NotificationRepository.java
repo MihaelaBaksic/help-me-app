@@ -21,7 +21,7 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
      * @param username Notification user username
      * @return List of all found notifications
      */
-    @Query("SELECT n FROM Notification n WHERE n.user.username = :username order by n.isRead ")
+    @Query("SELECT n FROM Notification n WHERE n.user.username = :username order by n.isRead, n.id DESC")
     List<Notification> findAllByUsername( @Param("username") String username);
 
     /**

@@ -3,6 +3,7 @@ package hr.fer.progi.service;
 import hr.fer.progi.dao.RequestRepository;
 import hr.fer.progi.domain.Request;
 import hr.fer.progi.domain.User;
+import hr.fer.progi.mappers.FilterDTO;
 import hr.fer.progi.rest.RequestController;
 
 import java.util.List;
@@ -121,5 +122,14 @@ public interface RequestService {
      * @return list of all requests where user is chosen as
      */
     List<Request> findHandlerRequests(User user);
+
+    /**
+     * Returns filtered and ordered requests based on iformation given in filter parameter
+     * If filter doesn't request only virtual requests, the given diameter will be
+     * taken into consideration for filtering
+     * @param filter
+     * @return list of filtered and ordered requests
+     */
+    List<Request> getFilteredRequests(FilterDTO filter);
 
 }
