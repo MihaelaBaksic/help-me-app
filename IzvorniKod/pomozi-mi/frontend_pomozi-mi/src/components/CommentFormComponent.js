@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 const baseUrl = "http://localhost:8080";
 
 
-function CommentFormComponent() {
+function CommentFormComponent(props) {
     const { register, handleSubmit, errors } = useForm();
 
     /* const onSubmit = (data) => console.log(data); */
@@ -33,7 +33,7 @@ function CommentFormComponent() {
     return (
         <div className="container">
             <div className="row" style={{ marginTop: "40px" }}>
-                <div className="col-md-8">
+                <div className="col-12">
                     <div className="well well-sm">
 
 
@@ -84,7 +84,7 @@ function CommentFormComponent() {
                                             Submit
 					                    </button>
                                     </div>
-                                    <input name="ratedUsername" style={{display: 'none'}}  value="korisnik" ref={register}/>
+                                    <input name="ratedUsername" style={{display: 'none'}}  value={props.korIme} ref={register}/>
                                     <input name="requestId" style={{display: 'none'}}  value="null" ref={register}/>
                                 </form>
                             </div>

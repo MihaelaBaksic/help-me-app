@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RequestList from "./RequestList";
 import CommentComponent from "./CommentComponent";
+import CommentFormComponent from "./CommentFormComponent";
 
 function OtherUserProfile(props) {
 	let { username } = useParams();
@@ -353,7 +354,9 @@ function OtherUserProfile(props) {
 										</div>
 									</div>
 								</div>
-								<div className="col-xl-12">
+							</div>
+							<div className="row">
+								<div className="col-xl-8">
 									<div className="card mb-4">
 										<div className="card-body">
 											<div className="page-header">
@@ -364,10 +367,21 @@ function OtherUserProfile(props) {
 										</div>
 									</div>
 								</div>
+								<div className="col-xl-4">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="page-header">
+												<h3>Ocijeni korisnika</h3>
+												<hr />
+											</div>
+											<CommentFormComponent korIme = {username}/>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					) : (
-						<div className="col-xl-12">
+						<div className="col-xl-8">
 							<div className="card mb-4">
 								<div className="card-body">
 									<div className="page-header">
