@@ -1,10 +1,7 @@
 package hr.fer.progi.rest;
 
 import hr.fer.progi.dao.NotificationRepository;
-import hr.fer.progi.domain.Notification;
-import hr.fer.progi.domain.Rating;
-import hr.fer.progi.domain.Request;
-import hr.fer.progi.domain.User;
+import hr.fer.progi.domain.*;
 import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.ReturnRatingDTO;
 import hr.fer.progi.mappers.UserDTO;
@@ -102,6 +99,9 @@ public class RatingController {
         Long requestId = ratingDTO.getRequestId();
         Request request = requestId == null ? null :
                 requestService.getRequestById(requestId);
+
+        if(request!= null && request.getStatus()!= RequestStatus.DONE)
+            throw new InvalidRatingException("User can't be rated for a request that isn't marked DONE");
 
         notificationService.markRatingNotificationAsRated(ratingDTO);
 

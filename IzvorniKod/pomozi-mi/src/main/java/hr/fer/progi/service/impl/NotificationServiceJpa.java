@@ -79,10 +79,12 @@ public class NotificationServiceJpa implements NotificationService {
         //        		+ " Molimo vas ocijenite autora zahtjeva."
         // and requestId from above if not null and set its status to RATED
         if(ratingDTO.getRequestId() != null){
+
             List<Notification> notifications = notificationRepository.findAll()
-                    .stream().filter(n -> n.getMessage().equals("Zahtjev je uspješno izvšen." + " Molimo vas ocijenite autora zahtjeva."))
+                    .stream().filter(n -> n.getMessage().contains("ocijenite"))
                     .filter(n -> n.getRequest().getId().equals(ratingDTO.getRequestId()))
                     .collect(Collectors.toList());
+
             Notification notif = notifications.get(0);
             notif.setStatus(Notification.NotificationStatus.RATED);
             notificationRepository.save(notif);
