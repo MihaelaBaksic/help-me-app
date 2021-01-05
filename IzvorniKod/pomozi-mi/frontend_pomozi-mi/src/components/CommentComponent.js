@@ -56,7 +56,7 @@ function CommentComponent(props) {
                                         {r.rating >= 4.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
                                         </span>
                                         <h6 className="mb-1"><div role="button">{r.reviewer.username}</div></h6>
-                                        <p className="text-gray">{r.request === null ? (<i>Ocjena korisnika</i>) : (<i>Ocjena zahtjeva</i>)}</p>
+                                        <p className="text-gray">{r.request === null ? (<i>Ocjena korisnika</i>) : (<i>Ocjena zahtjeva: {r.request.description}</i>)}</p>
                                     </div>
                                     <div className="reviews-members-body">
                                         <p>{r.comment}</p>
