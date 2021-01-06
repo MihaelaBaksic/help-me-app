@@ -83,6 +83,7 @@ public class NotificationServiceJpa implements NotificationService {
             List<Notification> notifications = notificationRepository.findAll()
                     .stream().filter(n -> n.getMessage().contains("ocijenite"))
                     .filter(n -> n.getRequest().getId().equals(ratingDTO.getRequestId()))
+                    .filter(n -> n.getUser().getUsername().equals(SecurityContextHolder.getContext().getAuthentication().getName()))
                     .collect(Collectors.toList());
 
             Notification notif = notifications.get(0);
