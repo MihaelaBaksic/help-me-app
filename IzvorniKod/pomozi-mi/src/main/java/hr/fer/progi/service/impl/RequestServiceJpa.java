@@ -385,10 +385,15 @@ public class RequestServiceJpa implements RequestService {
         request.setStatus(RequestStatus.DONE);
         requestRepository.updateRequestStatus(request.getId(), request.getStatus());
         
-        User requestHandler = request.getRequestAuthor();
+        User requestHandler = request.getRequestHandler();
         Notification notifyRequestHandler = new Notification(requestHandler, "Zahtjev je uspješno izvšen."
         		+ " Molimo vas ocijenite autora zahtjeva.", request, Notification.NotificationStatus.NOTRATED);
         notificationRepository.save(notifyRequestHandler);
+
+        User requestAuthor = request.getRequestAuthor();
+        Notification notifyRequestAuthor = new Notification(requestAuthor, "Zahtjev je uspješno izvšen."
+                + " Molimo vas ocijenite izvršitelja zahtjeva.", request, Notification.NotificationStatus.NOTRATED);
+        notificationRepository.save(notifyRequestAuthor);
         
         return request;
     }
