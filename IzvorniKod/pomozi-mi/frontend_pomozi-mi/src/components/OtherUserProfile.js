@@ -1,15 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory, withRouter } from "react-router-dom";
 import RequestList from "./RequestList";
 import CommentComponent from "./CommentComponent";
 import CommentFormComponent from "./CommentFormComponent";
 
 function OtherUserProfile(props) {
+	let history = useHistory();
 	let { username } = useParams();
 	let [userInfo, setUserInfo] = useState("");
 	let [authoredRequests, setAuthoredRequests] = useState("");
 	let [handlerRequests, setHandlerRequests] = useState("");
 	let [ratings, setRatings] = useState("");
+
+	/*  */
+	const [refreshCenter, setRefreshCenter] = useState("");
+
+	function reRenderaj() {
+		if (refreshCenter === "") {
+			setRefreshCenter("1");
+		} else {
+			setRefreshCenter("");
+		}
+	}
+	/*  */
 
 	function addAsAdmin() {
 		var myHeaders = new Headers();
@@ -191,17 +204,16 @@ function OtherUserProfile(props) {
 		const options = {
 			method: "GET",
 			headers: myHeaders,
-			redirect: "follow"
-        };
+			redirect: "follow",
+		};
 
 		fetch("http://localhost:8080/rating/of/" + username, options)
-            .then((response) => response.text())
-            .then((result) => {
+			.then((response) => response.text())
+			.then((result) => {
 				setRatings(JSON.parse(result));
 				//console.log(result);
-                }
-            )
-    }, [username]);
+			});
+	}, [username, refreshCenter]);
 
 	useEffect(() => {
 		console.log(ratings);
@@ -363,25 +375,31 @@ function OtherUserProfile(props) {
 												<h3>Komentari</h3>
 												<hr />
 											</div>
-											<CommentComponent listaKomentara = {ratings} korIme = {username}/>
+											<CommentComponent
+												listaKomentara={ratings}
+												korIme={username}
+											/>
 										</div>
 									</div>
 								</div>
-								{sessionStorage.getItem("currentUserUsername") !== username ? (
+								{sessionStorage.getItem(
+									"currentUserUsername"
+								) !== username ? (
 									<div className="col-xl-4">
-									<div className="card mb-4">
-										<div className="card-body">
-											<div className="page-header">
-												<h3>Ocijeni korisnika</h3>
-												<hr />
+										<div className="card mb-4">
+											<div className="card-body">
+												<div className="page-header">
+													<h3>Ocijeni korisnika</h3>
+													<hr />
+												</div>
+												<CommentFormComponent
+													korIme={username}
+													reRenderaj={reRenderaj}
+												/>
 											</div>
-											<CommentFormComponent korIme = {username}/>
 										</div>
 									</div>
-								</div>
-								) : null}						
-									
-
+								) : null}
 							</div>
 						</div>
 					) : (
