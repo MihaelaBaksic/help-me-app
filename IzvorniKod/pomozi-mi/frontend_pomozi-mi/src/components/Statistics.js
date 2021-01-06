@@ -10,6 +10,9 @@ import {
 } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import OtherUserProfile from "./OtherUserProfile";
+import first from "./resources/1st.png";
+import second from "./resources/2st.png";
+import third from "./resources/3rd.png";
 
 const baseUrl = "http://localhost:8080";
 
@@ -41,11 +44,7 @@ function Statistics() {
 			<Grid id="grid" centered columns={3}>
 				<Grid.Column>
 					<Card>
-						<Image
-							src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-							wrapped
-							ui={false}
-						/>
+						<Image src={first} wrapped ui={false} />
 						<Card.Content>
 							<Card.Header>{topUsers[0].username}</Card.Header>
 							<Card.Meta>
@@ -58,11 +57,7 @@ function Statistics() {
 				<Grid.Row centered columns={4}>
 					<Grid.Column>
 						<Card>
-							<Image
-								src="https://react.semantic-ui.com/images/avatar/large/elliot.jpg"
-								wrapped
-								ui={false}
-							/>
+							<Image src={second} wrapped ui={false} />
 							<Card.Content>
 								<Card.Header>
 									{topUsers[1].username}
@@ -77,11 +72,7 @@ function Statistics() {
 					</Grid.Column>
 					<Grid.Column>
 						<Card>
-							<Image
-								src="https://react.semantic-ui.com/images/avatar/large/daniel.jpg"
-								wrapped
-								ui={false}
-							/>
+							<Image src={third} wrapped ui={false} />
 							<Card.Content>
 								<Card.Header>
 									{topUsers[2].username}

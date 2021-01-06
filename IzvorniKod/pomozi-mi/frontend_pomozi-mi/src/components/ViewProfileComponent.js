@@ -25,7 +25,6 @@ function ViewProfileComponent(props) {
 			redirect: "follow",
 		};
 
-	
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
@@ -55,14 +54,17 @@ function ViewProfileComponent(props) {
 			.then(() => {})
 			.catch((error) => console.log("error", error));
 
-			fetch("http://localhost:8080/rating/average/" + sessionStorage.getItem("currentUserUsername"), options)
+		fetch(
+			"http://localhost:8080/rating/average/" +
+				sessionStorage.getItem("currentUserUsername"),
+			options
+		)
 			.then((response) => response.text())
 			.then((result) => {
 				//console.log("rating");
 				setRating(result);
 				console.log(rating);
-			})
-				
+			});
 	}, []);
 
 	return (
@@ -73,11 +75,31 @@ function ViewProfileComponent(props) {
 						className="btn btn-style-1 btn-white btn-sm"
 						data-toggle="tooltip"
 					>
-						{rating >= 0.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
-						{rating >= 1.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
-						{rating >= 2.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
-						{rating >= 3.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
-						{rating >= 4.5 ? <span className="fa fa-star checked"></span> : <span className="fa fa-star"></span>}
+						{rating >= 0.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 1.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 2.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 3.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 4.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
 					</a>
 				</div>
 				<div className="author-card-profile">
@@ -204,6 +226,21 @@ function ViewProfileComponent(props) {
 						role="button"
 					>
 						Adresa djelovanja
+					</div>
+					<div
+						onClick={() => {
+							history.push("/rating/statistics");
+							console.log("/rating/statistics");
+							setShowing("rating/statistics");
+						}}
+						className={
+							showing === "rating/statistics"
+								? "list-group-item active"
+								: "list-group-item"
+						}
+						role="button"
+					>
+						Statistika
 					</div>
 				</nav>
 			</div>
