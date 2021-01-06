@@ -12,17 +12,23 @@ import {
 import PotentialUsers from "./PotentialUsers";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { useHistory } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 
 function RequestComponent(props) {
+	let history = useHistory();
 	const { id } = useParams();
 	const [podaciReq, setPodaciReq] = useState([]);
 	const [podaciUser, setPodaciUser] = useState([]);
 
-	//testovi
 	const [map, setMap] = useState(null);
+
+	function pogledajUsera(username) {
+		console.log(username);
+		history.push("/user/" + username);
+	}
 
 	useEffect(() => {
 		if (podaciReq.address && map) {
@@ -196,11 +202,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -233,11 +249,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -259,7 +285,16 @@ function RequestComponent(props) {
 								<h2 color="red">
 									{" "}
 									Zahtjev je izvršio{" "}
-									{podaciReq.handler.username}{" "}
+									<Label size = "big"
+										onClick={(e) =>
+											pogledajUsera(
+												podaciReq.handler.username,
+												e
+											)
+										}
+									>
+										{podaciReq.handler.username}
+									</Label>
 								</h2>
 							</div>
 						</Card.Content>
@@ -277,11 +312,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -341,11 +386,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -413,11 +468,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -481,11 +546,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
@@ -561,11 +636,21 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
