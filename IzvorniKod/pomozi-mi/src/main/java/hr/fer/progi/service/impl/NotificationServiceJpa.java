@@ -91,4 +91,13 @@ public class NotificationServiceJpa implements NotificationService {
         }
     }
 
+    @Override
+    public void updateToNullByRequestId(Long id) {
+        List<Notification> notifications = notificationRepository.findAll()
+                .stream().filter(n -> n.getRequest().getId().equals(id))
+                .map(n -> {n.setRequest(null); return n;})
+                .collect(Collectors.toList());
+        notificationRepository.saveAll(notifications);
+    }
+
 }

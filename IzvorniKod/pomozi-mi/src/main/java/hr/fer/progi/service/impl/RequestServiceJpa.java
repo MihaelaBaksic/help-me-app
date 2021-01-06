@@ -31,6 +31,9 @@ public class RequestServiceJpa implements RequestService {
     private UserRepository userRepository;
 
     @Autowired
+    private NotificationService notificationService;
+
+    @Autowired
     private UserService userService;
     
     @Autowired
@@ -116,7 +119,7 @@ public class RequestServiceJpa implements RequestService {
                 .filter(r -> (r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS))
                 .filter(r -> (r.getExpirationDate().after(new Date()) || r.getExpirationDate().equals(new Date())) )
                 .filter(r -> (filter.getVirtual() && r.getAddress()==null) || (!filter.getVirtual() && (r.getAddress()==null ||
-                        true)))
+                        Address.calculateDistance(r.getAddress(), currentUserAddress) <= filter.getRadius())))
                 .collect(Collectors.toList());
 
         //Address.calculateDistance(r.getAddress(), currentUserAddress) <= filter.getRadius())
@@ -139,7 +142,10 @@ public class RequestServiceJpa implements RequestService {
 
         
     	long beforeDeleting = requestRepository.count();
-    	requestRepository.deleteById(id);
+        System.out.println("ID za brisanje: " +  id);
+        //Delete all notifications related to that request
+        notificationService.updateToNullByRequestId(id);
+    	requestRepository.delete(requestRepository.findById(id).get());
     	long afterDeleting = requestRepository.count();
     	
     	boolean isDeleted = beforeDeleting-1 == afterDeleting ? true : false;
@@ -147,10 +153,10 @@ public class RequestServiceJpa implements RequestService {
     	User user = userRepository.findByUsername(username);
     	
     	if(isDeleted && !user.isAdministrator()) {
-    		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", r, Notification.NotificationStatus.STANDARD);
+    		Notification notification = new Notification(user, "Vaš zahtjev je uspješno izbrisan.", null, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notification);
     	} else if(isDeleted && user.isAdministrator()) {
-    		Notification notification = new Notification(user, "Vaš zahtjev je izbrisao administrator.", r, Notification.NotificationStatus.STANDARD);
+    		Notification notification = new Notification(user, "Vaš zahtjev je izbrisao administrator.", null, Notification.NotificationStatus.STANDARD);
     		notificationRepository.save(notification);
             if(r.getRequestHandler() == null && !r.getPotentialHandler().isEmpty()) {
             	for(User potentialHandler : r.getPotentialHandler()) {
@@ -256,7 +262,7 @@ public class RequestServiceJpa implements RequestService {
         if(!(potentialHandler.getStatus() == UserStatus.NOTBLOCKED)) {
         	throw new BlockingException("Your account is blocked!");
         }
-    	if(request.getRequestAuthor().getId() == potentialHandler.getId()) {
+    	if(request.getRequestAuthor().getId().equals( potentialHandler.getId())) {
     		throw new RequestRespondException("You cannot respond to your own request!");
     	}
         if(request.getStatus() == RequestStatus.BLOCKED) {

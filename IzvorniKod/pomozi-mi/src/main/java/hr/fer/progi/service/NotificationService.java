@@ -34,4 +34,10 @@ public interface NotificationService {
      * from not rated to rated
      */
     void markRatingNotificationAsRated(RatingDTO ratingDTO);
+
+    /**
+     * Deletes all notifications related to request with given id
+     * @param id
+     */
+    void updateToNullByRequestId(Long id);
 }
