@@ -367,7 +367,8 @@ function OtherUserProfile(props) {
 										</div>
 									</div>
 								</div>
-								<div className="col-xl-4">
+								{sessionStorage.getItem("currentUserUsername") !== username ? (
+									<div className="col-xl-4">
 									<div className="card mb-4">
 										<div className="card-body">
 											<div className="page-header">
@@ -378,6 +379,9 @@ function OtherUserProfile(props) {
 										</div>
 									</div>
 								</div>
+								) : null}						
+									
+
 							</div>
 						</div>
 					) : (

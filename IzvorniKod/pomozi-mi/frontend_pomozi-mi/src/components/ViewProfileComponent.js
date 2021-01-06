@@ -154,7 +154,6 @@ function ViewProfileComponent(props) {
 							<div className="d-inline-block font-weight-medium text-uppercase">
 								Moji zahtjevi
 							</div>
-							<span className="badge badge-secondary">2</span>
 						</div>
 					</div>
 					<div
@@ -174,7 +173,6 @@ function ViewProfileComponent(props) {
 							<div className="d-inline-block font-weight-medium text-uppercase">
 								Kontaktirani zahtjevi
 							</div>
-							<span className="badge badge-secondary">6</span>
 						</div>
 					</div>
 					<div
