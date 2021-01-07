@@ -150,6 +150,7 @@ function RequestComponent(props) {
 			(response) => {
 				if (response.status === 200) {
 					/* console.log("Uspješano javljanje"); */
+					window.location.reload(false);
 				} else {
 					/* console.log("Neuspješano javljanje"); */
 				}
@@ -653,6 +654,18 @@ function RequestComponent(props) {
 						{btnL}
 					</Button>
 				);
+			}
+			if(podaciReq.PotentialUsers !== null){
+				for (let i in podaciReq.potentialHandler) {
+					if(podaciReq.potentialHandler[i].username === podaciUser.username){
+						buttonLeft = (
+							<Button disabled color="blue" size="large" floated="right">
+								{btnL}
+							</Button>
+						);
+						break;
+					}
+				}
 			}
 			return (
 				<Container textAlign="justified" color="blue">
