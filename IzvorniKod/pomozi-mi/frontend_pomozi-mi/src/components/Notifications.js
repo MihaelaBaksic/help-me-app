@@ -15,8 +15,27 @@ import { useHistory, withRouter } from "react-router-dom";
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 function Notifications(props) {
-	const [notifications, setNotifications] = useState("");
 	let history = useHistory();
+	const [notifications, setNotifications] = useState("");
+	const [notifOpen, setNotifOpen] = useState("closed");
+	const [refreshNotifList, setRefreshNotifList] = useState("");
+
+	function toggleNotifs() {
+		if (notifOpen === "closed") {
+			setNotifOpen("open");
+		} else {
+			setNotifOpen("closed");
+		}
+	}
+	useEffect(() => {
+		if (notifOpen === "open") {
+			if (refreshNotifList === "") {
+				setRefreshNotifList("1");
+			} else {
+				setRefreshNotifList("");
+			}
+		}
+	}, [notifOpen]);
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -45,76 +64,109 @@ function Notifications(props) {
 				);
 				setNotifications("");
 			});
-	}, []);
+	}, [refreshNotifList]);
 
 	// if (notifications)
 	if (notifications) {
-		return (
-			<Segment id="notificationHolder" className="hiddenScroll">
-				<List divided relaxed>
-					{console.log(notifications[0])}
-					{notifications.map((notif, index) =>
-						notif.isRead ? (
-							<List.Item
-								id="oldNotification"
-								key={
-									index
-								} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
-							>
-								<div className="notificationMessage">
-									{notif.message}
-									<br />
-									{notif.request.title}
-								</div>
-
+		if (notifOpen === "open") {
+			return (
+				<Segment id="notificationHolder" className="hiddenScroll">
+					<button className="ui button" onClick={toggleNotifs}>
+						Obavijesti
+					</button>
+					<List divided relaxed>
+						{console.log(notifications[0])}
+						{notifications.map((notif, index) =>
+							!notif.isRead || notif.status === "NOTRATED" ? (
 								<List.Item
-									content={
-										<div
-											className="notificationToRequestLink"
-											role="button"
-											onClick={() =>
-												history.push(
-													"/request/" +
-														notif.request.id
-												)
-											}
-										>
-											<List.Icon name="arrow circle right"></List.Icon>
-											Odi na zahtjev!
-										</div>
-									}
-								/>
-							</List.Item>
-						) : (
-							<List.Item
-								id="newNotification"
-								key={
-									index
-								} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
-							>
-								Nova obavijest
+									id="newNotification"
+									key={
+										index
+									} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
+								>
+									<div className="notificationMessage">
+										{notif.message}
+										<br />
+										{notif.request
+											? notif.request.title
+											: null}
+									</div>
+									<List.Item
+										content={
+											<div
+												className="notificationToRequestLink"
+												role="button"
+												onClick={() => {
+													notif.isRead = "true";
+													history.push(
+														"/request/" +
+															notif.request.id
+													);
+												}}
+											>
+												<List.Icon name="arrow circle right"></List.Icon>
+												Odi na zahtjev!
+											</div>
+										}
+									/>
+								</List.Item>
+							) : (
 								<List.Item
-									content={
-										<div
-											role="button"
-											onClick={() =>
-												history.push(
-													"/request/" +
-														notif.request.id
-												)
-											}
-										>
-											<List.Icon name="arrow circle right"></List.Icon>
-											Odi na zahtjev!
-										</div>
-									}
-								/>
-							</List.Item>
-						)
-					)}
-				</List>
-			</Segment>
-		);
+									id="oldNotification"
+									key={
+										index
+									} /* OVO JE PRIVREMENO, NOTIFIKACIJE TREBA OMOTATI DA MOGU PRISTUPIT ID-U */
+								>
+									<div className="notificationMessage">
+										{notif.message}
+										<br />
+										{notif.request
+											? notif.request.title
+											: null}
+										{notif.isRead}
+									</div>
+									<List.Item
+										content={
+											<div
+												className="notificationToRequestLink"
+												role="button"
+												onClick={() =>
+													notif.request
+														? history.push(
+																"/request/" +
+																	notif
+																		.request
+																		.id
+														  )
+														: console.log(
+																"zahtjev ne postoji više"
+														  )
+												}
+											>
+												<List.Icon name="arrow circle right"></List.Icon>
+												Odi na zahtjev!
+											</div>
+										}
+									/>
+								</List.Item>
+							)
+						)}
+					</List>
+				</Segment>
+			);
+		} else {
+			return (
+				<Segment
+					id=""
+					className="hiddenScroll"
+					style={{ padding: 5 + "px" }}
+				>
+					<button className="ui button" onClick={toggleNotifs}>
+						Obavijesti
+					</button>
+				</Segment>
+			);
+		}
 	} else {
 		return <div>Nema obavijesti!</div>;
 	}

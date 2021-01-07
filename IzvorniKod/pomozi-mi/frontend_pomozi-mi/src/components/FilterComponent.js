@@ -44,7 +44,7 @@ function FilterComponent(props) {
 	}
 
 	return (
-		<div>
+		<div className="filterZahtjeva">
 			<Form inline onSubmit={handleSubmit(onSubmit)}>
 				<FormGroup>
 					<Label for="radius">Radius:</Label>
@@ -56,7 +56,9 @@ function FilterComponent(props) {
 						onChange={handleRadius}
 					/>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<FormGroup>
 					<Label for="radius">Sortiranje:</Label>
 					<CustomInput
@@ -74,7 +76,9 @@ function FilterComponent(props) {
 						onChange={handleSortZA}
 					/>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<FormGroup check>
 					<Input
 						type="checkbox"
@@ -86,9 +90,11 @@ function FilterComponent(props) {
 						Virtualni
 					</Label>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<div>
-					<Button type="submit" size = "small">
+					<Button type="submit" size="small">
 						Filtriraj
 					</Button>
 				</div>

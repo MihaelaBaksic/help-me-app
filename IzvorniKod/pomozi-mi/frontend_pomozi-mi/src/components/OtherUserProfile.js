@@ -182,9 +182,13 @@ function OtherUserProfile(props) {
 			)
 				.then((response) => response.text())
 				.then((result) => {
-					setHandlerRequests(
-						JSON.parse(result)._embedded.requestDTOList
-					);
+					if (JSON.parse(result)._embedded) {
+						setHandlerRequests(
+							JSON.parse(result)._embedded.requestDTOList
+						);
+					} else {
+						setHandlerRequests("");
+					}
 				})
 				.catch((error) => {
 					console.log("error", error);

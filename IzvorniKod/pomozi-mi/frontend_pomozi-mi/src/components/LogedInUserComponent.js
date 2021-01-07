@@ -94,7 +94,11 @@ class LogedInUserComponent extends Component {
 							placeholder="Pretraži.."
 							aria-label="Search"
 						/>
-						<button className="btn btn-light" type="submit">
+						<button
+							className="btn btn-light"
+							type="button"
+							onClick={() => {}}
+						>
 							Search
 						</button>
 					</form>

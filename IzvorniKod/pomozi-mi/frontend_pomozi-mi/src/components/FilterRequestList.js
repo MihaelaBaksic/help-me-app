@@ -54,7 +54,7 @@ function FilterRequestList(props) {
 		console.log("Body = ");
 		console.log(filterBody);
 		return (
-			<>
+			<div className="card centerContent">
 				<div role="list">
 					<FilterComponent
 						setFilterBody={(body) => setFilterBody(body)}
@@ -63,15 +63,15 @@ function FilterRequestList(props) {
 
 				<Divider hidden fitted />
 				{requestsF ? <RequestList listaZahtjeva={requestsF} /> : null}
-			</>
+			</div>
 		);
 	} else {
 		return (
-			<div>
+			<div className="card centerContent">
 				<FilterComponent
 					setFilterBody={(body) => setFilterBody(body)}
 				/>
-				<h1>Ne postoje takvi zahtjevi!</h1>
+				<h1>Lista zahtjeva je prazna</h1>
 			</div>
 		);
 	}

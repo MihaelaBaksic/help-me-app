@@ -113,12 +113,7 @@ function PotentialUsers(props) {
 						<div key={item.username}>
 							<Icon name="user" />
 							<Label
-								onClick={(e) =>
-									pogledajUsera(
-										item.username,
-										e
-									)
-								}
+								onClick={(e) => pogledajUsera(item.username, e)}
 							>
 								@{item.username} {" | "} {item.firstName}{" "}
 								{item.lastName}{" "}

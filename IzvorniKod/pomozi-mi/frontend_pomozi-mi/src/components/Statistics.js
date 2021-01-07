@@ -41,8 +41,14 @@ function Statistics() {
 
 	if (topUsers) {
 		return (
-			<Grid id="grid" centered columns={3}>
-				<Grid.Column>
+			<Grid
+				id="grid"
+				centered
+				columns={3}
+				className="card centerContent"
+				style={{ "margin-top": 0 + "px" }}
+			>
+				<Grid.Column style={{ margin: "auto" }}>
 					<Card>
 						<Image src={first} wrapped ui={false} />
 						<Card.Content>

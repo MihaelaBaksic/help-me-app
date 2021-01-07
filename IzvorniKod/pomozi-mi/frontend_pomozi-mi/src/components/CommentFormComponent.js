@@ -11,24 +11,30 @@ function CommentFormComponent(props) {
 		e.preventDefault();
 		console.log("aaaaaaa!");
 		console.log(values);
-		values = JSON.stringify(values);
+		/* values = JSON.stringify(values); */
 		var myHeaders = new Headers();
 		myHeaders.append(
 			"Authorization",
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
 		myHeaders.append("Content-Type", "application/json");
+		if (props.requestId) {
+			values.requestId = props.requestId;
+		}
+		if (props.korIme) {
+			values.ratedUsername = props.korIme;
+		}
 		const options = {
 			method: "POST",
 			headers: myHeaders,
-			body: values,
+			body: JSON.stringify(values),
 		};
 		fetch(baseUrl + "/rating", options)
 			.then((response) => response.text())
 			.then((result) => {
 				console.log(JSON.parse(result));
+				reset(JSON.stringify(values));
 				props.reRenderaj();
-				reset(values);
 			})
 			.catch((error) => console.log(error));
 	}

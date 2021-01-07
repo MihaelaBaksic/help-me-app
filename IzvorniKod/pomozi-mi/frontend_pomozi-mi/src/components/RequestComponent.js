@@ -13,6 +13,7 @@ import PotentialUsers from "./PotentialUsers";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { useHistory } from "react-router-dom";
+import CommentFormComponent from "./CommentFormComponent";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
@@ -157,8 +158,8 @@ function RequestComponent(props) {
 		);
 	}
 
-	console.log(JSON.stringify(podaciReq));
-	console.log(JSON.stringify(podaciUser));
+	/* console.log(JSON.stringify(podaciReq));
+	console.log(JSON.stringify(podaciUser)); */
 
 	if (podaciReq.address !== undefined) {
 		let moj = "Ne";
@@ -204,6 +205,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -251,6 +253,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -285,7 +288,9 @@ function RequestComponent(props) {
 								<h2 color="red">
 									{" "}
 									Zahtjev je izvršio{" "}
-									<Label size = "big"
+									<Label
+										role="button"
+										size="big"
 										onClick={(e) =>
 											pogledajUsera(
 												podaciReq.handler.username,
@@ -298,6 +303,20 @@ function RequestComponent(props) {
 								</h2>
 							</div>
 						</Card.Content>
+						{podaciUser.username ===
+							podaciReq.requestAuthor.username ||
+						podaciUser.username === podaciReq.handler.username ? (
+							<CommentFormComponent
+								requestId={podaciReq.id}
+								korIme={
+									podaciUser.username ===
+									podaciReq.requestAuthor.username
+										? podaciReq.handler.username
+										: podaciReq.requestAuthor.username
+								}
+								reRenderaj={() => {}}
+							/>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -314,6 +333,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -388,6 +408,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -470,6 +491,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -548,6 +570,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,
@@ -638,6 +661,7 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<Icon name="user" size="big" />
 							<Label
+								role="button"
 								onClick={(e) =>
 									pogledajUsera(
 										podaciReq.requestAuthor.username,

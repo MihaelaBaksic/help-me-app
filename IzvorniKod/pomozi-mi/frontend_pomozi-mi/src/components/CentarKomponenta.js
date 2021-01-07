@@ -9,6 +9,7 @@ import OtherUserProfile from "./OtherUserProfile";
 import Statistics from "./Statistics";
 import FilterRequestList from "./FilterRequestList";
 import RequestComponent from "./RequestComponent";
+import UserHandlerRequests from "./UserHandlerRequests";
 
 function CentarKomponenta(props) {
 	let history = useHistory();
@@ -17,7 +18,7 @@ function CentarKomponenta(props) {
 		<div
 			id="center"
 			className={
-				history.location.pathname === "/newRequest"
+				/* history.location.pathname === "/newRequest" */ true
 					? "center centerOverflow hiddenScroll"
 					: "center centerOverflow"
 			}
@@ -34,6 +35,10 @@ function CentarKomponenta(props) {
 
 					<Route path="/requests">
 						<FilterRequestList />
+					</Route>
+
+					<Route path="/otherRequests">
+						<UserHandlerRequests />
 					</Route>
 
 					<Route path="/myRequests">

@@ -5,7 +5,8 @@ import { useHistory, withRouter } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
-function RequestList(props) {
+
+function UserHandlerRequests() {
 	let history = useHistory();
 	const [requests, setRequests] = useState("");
 
@@ -29,26 +30,26 @@ function RequestList(props) {
 			headers: myHeaders,
 			redirect: "follow",
 		};
-		if (props.listaZahtjeva) {
-			setRequests(props.listaZahtjeva);
-		} else if (props.username) {
-			fetch(baseUrl + "/user/authoredRequests/" + props.username, options)
-				.then((response) => response.text())
-				.then((result) => {
-					if (JSON.parse(result)._embedded) {
-						setRequests(
-							JSON.parse(result)._embedded.requestDTOList
-						);
-					} else {
-						setRequests("");
-					}
-				})
-				.catch((error) => {
-					console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+
+		fetch(
+			baseUrl +
+				"/user/handlerRequests/" +
+				sessionStorage.getItem("currentUserUsername"),
+			options
+		)
+			.then((response) => response.text())
+			.then((result) => {
+				if (JSON.parse(result)._embedded) {
+					setRequests(JSON.parse(result)._embedded.requestDTOList);
+				} else {
 					setRequests("");
-				});
-		}
-	}, [props.listaZahtjeva]);
+				}
+			})
+			.catch((error) => {
+				console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+				setRequests("");
+			});
+	}, []);
 	if (requests) {
 		return (
 			<List selection celled id="requestList" className="centerContent">
@@ -131,4 +132,4 @@ function RequestList(props) {
 	}
 }
 
-export default withRouter(RequestList);
+export default UserHandlerRequests;

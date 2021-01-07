@@ -82,7 +82,7 @@ function UserSettings(props) {
 	}
 
 	return (
-		<div className="col-lg-8 pb-5">
+		<div className="col-lg-8 pb-5 korisnickePostavke">
 			<form className="row" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-md-6">
 					<div className="form-group">
@@ -254,6 +254,9 @@ function UserSettings(props) {
 						<button
 							className="btn btn-style-1 btn-secondary float-left"
 							type="button"
+							onClick={() => {
+								history.push("/requests");
+							}}
 						>
 							Cancel
 						</button>

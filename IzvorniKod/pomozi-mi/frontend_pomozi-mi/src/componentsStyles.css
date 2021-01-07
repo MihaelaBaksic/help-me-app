@@ -88,6 +88,7 @@ body {
 }
 
 #main {
+	background-color: rgb(235, 235, 235);
 	transition: margin-right 0.5s;
 	padding: 0;
 	height: 100%;
@@ -133,7 +134,7 @@ body {
 	width: 20px;
 }
 .center {
-	background-color: rgb(252, 176, 176);
+	/* background-color: rgb(255, 255, 255); */
 }
 .centerOverflow {
 	overflow: scroll;
@@ -159,10 +160,6 @@ body {
 #grid {
 	margin-top: 20px;
 	padding-top: 20px;
-}
-
-#main {
-	background-color: plum;
 }
 
 #pageBody {
@@ -195,7 +192,7 @@ body {
 	margin-bottom: 15px !important;
 }
 #newNotification {
-	padding-left: 21px;
+	/* padding-left: 21px; */
 }
 
 #oldNotification {
@@ -209,7 +206,7 @@ body {
 @media only screen and (min-width: 1500px) {
 	#desniStupac {
 		width: 250px !important;
-		background-color: #111;
+		background-color: rgb(255, 255, 255);
 		position: absolute;
 		right: 0px;
 		top: 0px;
@@ -235,7 +232,7 @@ body {
 
 	#lijeviStupac {
 		width: 250px !important;
-		background-color: lightseagreen;
+		/* background-color: lightseagreen; */
 		position: absolute;
 		left: 0px;
 		top: 0px;
@@ -251,7 +248,7 @@ body {
 @media only screen and (max-width: 1499px) and (min-width: 1100px) {
 	#desniStupac {
 		width: 0px;
-		background-color: #111;
+		background-color: rgb(255, 255, 255);
 		position: absolute;
 		right: 0px;
 		top: 0px;
@@ -278,7 +275,7 @@ body {
 
 	#lijeviStupac {
 		width: 250px !important;
-		background-color: lightseagreen;
+		/* background-color: lightseagreen; */
 		position: absolute;
 		left: 0px;
 		top: 0px;
@@ -305,7 +302,7 @@ body {
 @media only screen and (max-width: 1099px) /* and (min-width: 800px) */ {
 	#desniStupac {
 		width: 0px;
-		background-color: #111;
+		background-color: rgb(255, 255, 255);
 		position: absolute;
 		right: 0px;
 		top: 0px;
@@ -332,7 +329,7 @@ body {
 
 	#lijeviStupac {
 		width: 0px;
-		background-color: lightseagreen;
+		/* background-color: lightseagreen; */
 		position: absolute;
 		overflow: hidden;
 		left: 0px;
@@ -412,9 +409,9 @@ body {
 	margin: auto;
 }
 #newRequestCard {
-	/* height: 100%; */
-	/* justify-content: center; */
-	/* min-height: 710px; */
+	height: 100%;
+	justify-content: center;
+	min-height: 780px;
 }
 #newRequest {
 }
@@ -933,4 +930,22 @@ a.list-group-item,
 	height: 100%;
 	overflow: scroll;
 	padding: 5px;
+}
+.centerContent {
+	background-color: rgb(255, 255, 255) !important;
+	min-height: 100% !important;
+	min-width: 100% !important;
+}
+.korisnickePostavke {
+	background-color: rgb(255, 255, 255);
+	margin: auto;
+	padding: 20px;
+}
+.filterZahtjeva {
+	margin-left: auto;
+	margin-right: auto;
+	min-width: 740px;
+}
+.filterZahtjeva > form {
+	flex-wrap: wrap;
 }
