@@ -556,7 +556,7 @@ function RequestComponent(props) {
 					</Card>
 				</Container>
 			);
-		} else if (podaciReq.requestAuthor.administrator === true) {
+		} else if (podaciUser.administrator === true) {
 			if (podaciReq.status === "ACCEPTED") {
 				buttonLeft = (
 					<Button disabled color="blue" size="large" floated="right">
