@@ -1,118 +1,117 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.18)  3 JAN 2021 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  7 JAN 2021 21:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija_v6.tex
 (./PROGI_ProjektnaDokumentacija_v6.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+LaTeX2e <2020-10-01>
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(c:/texlive/2020/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
+(c:/texlive/2020/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@chapter=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
+\c@part=\count175
+\c@chapter=\count176
+\c@section=\count177
+\c@subsection=\count178
+\c@subsubsection=\count179
+\c@paragraph=\count180
+\c@subparagraph=\count181
+\c@figure=\count182
+\c@table=\count183
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/02/14 3.40 The Babel package
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/10/03 3.49 The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2020/02/14 3.40 Babel switching mechanism
-)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-croatian/croatian.ldf
-Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/10/03 3.49 Babel common definitions
+\babel@savecnt=\count184
+\U@D=\dimen139
+\l@babelnohyphens=\language86
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count176
-\U@D=\dimen135
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+(c:/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count177
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+\bbl@dirlevel=\count185
+
+(c:/texlive/2020/texmf-dist/tex/generic/babel-croatian/croatian.ldf
+Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
+))
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks14
+\@emptytoks=\toks15
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks15
-\ex@=\dimen136
+\@emptytoks=\toks16
+\ex@=\dimen140
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen137
+\pmbraise@=\dimen141
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(c:/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count178
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count179
-\leftroot@=\count180
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count181
-\DOTSCASE@=\count182
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen138
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count183
-\c@MaxMatrixCols=\count184
+\inf@bad=\count186
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count187
+\leftroot@=\count188
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count189
+\DOTSCASE@=\count190
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count191
+\c@MaxMatrixCols=\count192
 \dotsspace@=\muskip16
-\c@parentequation=\count185
-\dspbrk@lvl=\count186
-\tag@help=\toks16
-\row@=\count187
-\column@=\count188
-\maxfields@=\count189
-\andhelp@=\toks17
-\eqnshift@=\dimen139
-\alignsep@=\dimen140
-\tagshift@=\dimen141
-\tagwidth@=\dimen142
-\totwidth@=\dimen143
-\lineht@=\dimen144
-\@envbody=\toks18
+\c@parentequation=\count193
+\dspbrk@lvl=\count194
+\tag@help=\toks17
+\row@=\count195
+\column@=\count196
+\maxfields@=\count197
+\andhelp@=\toks18
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
+(c:/texlive/2020/texmf-dist/tex/latex/txfonts/txfonts.sty
 Package: txfonts 2008/01/22 v3.2.1
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -198,210 +197,209 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 164.
 LaTeX Info: Redefining \not on input line 1043.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/mathdots/mathdots.sty
+(c:/texlive/2020/texmf-dist/tex/generic/mathdots/mathdots.sty
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
-\MDo@unit=\dimen145
-\MDo@dotsbox=\box47
+\MDo@unit=\dimen149
+\MDo@dotsbox=\box49
 \MDoprekern=\muskip17
 \MDopostkern=\muskip18
 \MDodotkern=\muskip19
 )
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+(c:/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box48
+\ttl@box=\box50
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
-\ttl@plus=\dimen146
-\ttl@minus=\dimen147
-\ttl@toksa=\toks20
-\titlewidth=\dimen148
-\titlewidthlast=\dimen149
-\titlewidthfirst=\dimen150
+\ttl@plus=\dimen150
+\ttl@minus=\dimen151
+\ttl@toksa=\toks21
+\titlewidth=\dimen152
+\titlewidthlast=\dimen153
+\titlewidthfirst=\dimen154
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen151
-\ar@mcellbox=\box49
-\extrarowheight=\dimen152
-\NC@list=\toks21
+(c:/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box51
+\extrarowheight=\dimen156
+\NC@list=\toks22
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box50
+\ar@cellbox=\box52
 )
-(/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
+(c:/texlive/2020/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count190
+(c:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count198
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+(c:/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip56
 \LTright=\skip57
 \LTpre=\skip58
 \LTpost=\skip59
-\LTchunksize=\count191
-\LTcapwidth=\dimen153
-\LT@head=\box51
-\LT@firsthead=\box52
-\LT@foot=\box53
-\LT@lastfoot=\box54
-\LT@cols=\count192
-\LT@rows=\count193
-\c@LT@tables=\count194
-\c@LT@chunks=\count195
-\LT@p@ftn=\toks22
+\LTchunksize=\count199
+\LTcapwidth=\dimen157
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@cols=\count266
+\LT@rows=\count267
+\c@LT@tables=\count268
+\c@LT@chunks=\count269
+\LT@p@ftn=\toks23
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed) + inter
-mediate FMi
+(c:/texlive/2020/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+(c:/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box55
-\sift@deathcycles=\count196
-\@vwid@loff=\dimen154
-\@vwid@roff=\dimen155
+\@vwid@box=\box57
+\sift@deathcycles=\count270
+\@vwid@loff=\dimen158
+\@vwid@roff=\dimen159
 )
-\c@taburow=\count197
-\tabu@nbcols=\count198
-\tabu@cnt=\count199
-\tabu@Xcol=\count266
-\tabu@alloc=\count267
-\tabu@nested=\count268
-\tabu@target=\dimen156
-\tabu@spreadtarget=\dimen157
-\tabu@naturalX=\dimen158
-\tabucolX=\dimen159
-\tabu@Xsum=\dimen160
-\extrarowdepth=\dimen161
-\abovetabulinesep=\dimen162
-\belowtabulinesep=\dimen163
-\tabustrutrule=\dimen164
-\tabu@thebody=\toks23
-\tabu@footnotes=\toks24
-\tabu@box=\box56
-\tabu@arstrutbox=\box57
-\tabu@hleads=\box58
-\tabu@vleads=\box59
+\c@taburow=\count271
+\tabu@nbcols=\count272
+\tabu@cnt=\count273
+\tabu@Xcol=\count274
+\tabu@alloc=\count275
+\tabu@nested=\count276
+\tabu@target=\dimen160
+\tabu@spreadtarget=\dimen161
+\tabu@naturalX=\dimen162
+\tabucolX=\dimen163
+\tabu@Xsum=\dimen164
+\extrarowdepth=\dimen165
+\abovetabulinesep=\dimen166
+\belowtabulinesep=\dimen167
+\tabustrutrule=\dimen168
+\tabu@thebody=\toks24
+\tabu@footnotes=\toks25
+\tabu@box=\box58
+\tabu@arstrutbox=\box59
+\tabu@hleads=\box60
+\tabu@vleads=\box61
 \tabu@cellskip=\skip60
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+(c:/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks25
+\everycr=\toks26
 \minrowclearance=\skip61
 )
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
 
-(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(c:/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
 
-(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count269
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count277
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(c:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen165
-\Gin@req@width=\dimen166
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
 )
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+(c:/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box60
+\collectedbox=\box62
 )
-\tc@llx=\dimen167
-\tc@lly=\dimen168
-\tc@urx=\dimen169
-\tc@ury=\dimen170
+\tc@llx=\dimen171
+\tc@lly=\dimen172
+\tc@urx=\dimen173
+\tc@ury=\dimen174
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+(c:/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen171
-\adjbox@Height=\dimen172
-\adjbox@Depth=\dimen173
-\adjbox@Totalheight=\dimen174
-\adjbox@pwidth=\dimen175
-\adjbox@pheight=\dimen176
-\adjbox@pdepth=\dimen177
-\adjbox@ptotalheight=\dimen178
+\adjbox@Width=\dimen175
+\adjbox@Height=\dimen176
+\adjbox@Depth=\dimen177
+\adjbox@Totalheight=\dimen178
+\adjbox@pwidth=\dimen179
+\adjbox@pheight=\dimen180
+\adjbox@pdepth=\dimen181
+\adjbox@ptotalheight=\dimen182
 
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+(c:/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count270
+\c@checkoddpage=\count278
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+(c:/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count271
-\Gm@cntv=\count272
-\c@Gm@tempcnt=\count273
-\Gm@bindingoffset=\dimen179
-\Gm@wd@mp=\dimen180
-\Gm@odd@mp=\dimen181
-\Gm@even@mp=\dimen182
-\Gm@layoutwidth=\dimen183
-\Gm@layoutheight=\dimen184
-\Gm@layouthoffset=\dimen185
-\Gm@layoutvoffset=\dimen186
-\Gm@dimlist=\toks28
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
+\Gm@dimlist=\toks29
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/kpfonts.sty
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2010/08/20 v3.31
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(c:/texlive/2020/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 LaTeX Font Info:    Changing ? sub-encoding to TS1/0 on input line 75.
 )
-\c@mv@rm=\count274
-\c@mv@boldrm=\count275
-\c@mv@sf=\count276
-\c@mv@boldsf=\count277
+\c@mv@rm=\count282
+\c@mv@boldrm=\count283
+\c@mv@sf=\count284
+\c@mv@boldsf=\count285
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 354.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/txr/m/n --> OT1/jkp/m/n on input line 354.
@@ -730,119 +728,122 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 LaTeX Font Info:    Redeclaring math symbol \n@tch@r on input line 1578.
 LaTeX Info: Redefining \not on input line 1580.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+(c:/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+(c:/texlive/2020/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(c:/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+(c:/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+(c:/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(c:/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+(c:/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+(c:/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+(c:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen187
-\Hy@linkcounter=\count278
-\Hy@pagecounter=\count279
+\@linkdim=\dimen191
+\Hy@linkcounter=\count286
+\Hy@pagecounter=\count287
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+(c:/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+(c:/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count280
-\pdfmajorversion=\count281
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+\Hy@SavedSpaceFactor=\count288
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count282
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count289
 
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+(c:/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen188
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen192
 
-(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(c:/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(c:/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count283
-\Field@Width=\dimen189
-\Fld@charsize=\dimen190
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
+\Fld@menulength=\count290
+\Field@Width=\dimen193
+\Fld@charsize=\dimen194
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
 
-(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+(c:/texlive/2020/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
 )
-\Hy@abspage=\count284
-\c@Item=\count285
-\c@Hfootnote=\count286
+\Hy@abspage=\count291
+\c@Item=\count292
+\c@Hfootnote=\count293
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+(c:/texlive/2020/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
 )
-\Fld@listcount=\count287
-\c@bookmark@seq@number=\count288
+\Fld@listcount=\count294
+\c@bookmark@seq@number=\count295
 
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(c:/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(c:/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -850,7 +851,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip62
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+(c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip63
@@ -863,15 +864,15 @@ s
 \f@nch@O@olf=\skip70
 \f@nch@O@orf=\skip71
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 LaTeX Info: Redefining \color on input line 709.
-\rownum=\count289
+\rownum=\count296
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -882,34 +883,39 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(c:/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen191
-\TX@old@table=\dimen192
-\TX@old@col=\dimen193
-\TX@target=\dimen194
-\TX@delta=\dimen195
-\TX@cols=\count290
-\TX@ftn=\toks29
+\TX@col@width=\dimen195
+\TX@old@table=\dimen196
+\TX@old@col=\dimen197
+\TX@target=\dimen198
+\TX@delta=\dimen199
+\TX@cols=\count297
+\TX@ftn=\toks30
 )
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+(c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count291
-\float@exts=\toks30
-\float@box=\box61
-\@float@everytoks=\toks31
-\@floatcapt=\box62
+\c@float@type=\count298
+\float@exts=\toks31
+\float@box=\box63
+\@float@everytoks=\toks32
+\@floatcapt=\box64
 )
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+(c:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-\@float@every@table=\toks32
+\@float@every@table=\toks33
 Package hyperref Info: Option `colorlinks' set `true' on input line 43.
+LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
+9.
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count292
-\l__pdf_internal_box=\box63
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
+File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
+)
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count299
+\l__pdf_internal_box=\box65
 )
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -920,7 +926,7 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 79.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 7
 9.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -928,7 +934,7 @@ LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 7
 9.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -942,7 +948,7 @@ LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 7
 9.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
@@ -950,41 +956,35 @@ LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 79.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
 79.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
-9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
-File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
-)
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 79.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count293
-\scratchdimen=\dimen196
-\scratchbox=\box64
-\nofMPsegments=\count294
-\nofMParguments=\count295
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count296
-\MPscratchDim=\dimen197
-\MPnumerator=\count297
-\makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks34
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count300
+\scratchdimen=\dimen256
+\scratchbox=\box66
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen257
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks35
+) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -1022,18 +1022,17 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring ON on input line 79.
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+(c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count299
+\c@section@level=\count306
 )
 LaTeX Info: Redefining \ref on input line 79.
 LaTeX Info: Redefining \pageref on input line 79.
@@ -1045,36 +1044,36 @@ LaTeX Info: Redefining \nameref on input line 79.
 
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
 91.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 9
 1.
 
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
+(c:/texlive/2020/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./PROGI_ProjektnaDokument
-acija_v6.toc
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./PROGI_ProjektnaDokumentacija_v6.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
@@ -1085,7 +1084,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...berline {6.2}Budući rad}{46}{section.6.2}
+l.31 ...mberline {6.3}Zaključak}{48}{section.6.3}
                                                   % [1
 
 ])
@@ -1104,43 +1103,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 16.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 28.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 31.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 31.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 09.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 31--31
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
 []\OT1/jkp/m/n/12 11.11.2020.|  
+ []
+
+
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 35--35
+[]\OT1/jkp/m/n/12 31.12.2020.|  
  []
 
 ) [3
@@ -1162,7 +1166,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-<slike/mayo-hero.PNG, id=192, 501.875pt x 626.34pt>
+<slike/mayo-hero.PNG, id=187, 501.875pt x 626.34pt>
 File: slike/mayo-hero.PNG Graphic file (type png)
 <use slike/mayo-hero.PNG>
 Package pdftex.def Info: slike/mayo-hero.PNG  used on input line 11.
@@ -1171,17 +1175,17 @@ Package pdftex.def Info: slike/mayo-hero.PNG  used on input line 11.
 
 
 
+
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.19  D
        a bi korisnik napravio svoj korisnički račun, bit će potrebni: <./sli
 ke/mayo-hero.png>]
 LaTeX Font Info:    Trying to load font information for TS1+jkp on input line 2
 2.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
 File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
 )
 Overfull \hbox (11.24355pt too wide) in paragraph at lines 47--48
@@ -1210,6 +1214,7 @@ Poglavlje 3.
 
 
 
+
 ] [8]
 Overfull \hbox (6.21745pt too wide) in paragraph at lines 142--143
 []\OT1/jkp/m/n/12 Javnom ko-ris-niku is-pi-suje se po-ruka o po-gre[]sci lo-zin
@@ -1229,24 +1234,23 @@ ka-zuju se unato[]c
  []
 
 [14] [15] [16]
-<slike/admin.png, id=391, 421.575pt x 461.3235pt>
+<slike/admin.png, id=386, 421.575pt x 461.3235pt>
 File: slike/admin.png Graphic file (type png)
 <use slike/admin.png>
 Package pdftex.def Info: slike/admin.png  used on input line 653.
 (pdftex.def)             Requested size: 421.57396pt x 461.32237pt.
-<slike/reg-log.png, id=392, 397.485pt x 409.53pt>
+<slike/reg-log.png, id=387, 397.485pt x 409.53pt>
 File: slike/reg-log.png Graphic file (type png)
 <use slike/reg-log.png>
 Package pdftex.def Info: slike/reg-log.png  used on input line 660.
 (pdftex.def)             Requested size: 397.48402pt x 409.52899pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.664 				
            <./slike/admin.png>]
-<slike/korisnik-profil.png, id=402, 495.0495pt x 446.8695pt>
+<slike/korisnik-profil.png, id=397, 495.0495pt x 446.8695pt>
 File: slike/korisnik-profil.png Graphic file (type png)
 <use slike/korisnik-profil.png>
 Package pdftex.def Info: slike/korisnik-profil.png  used on input line 667.
@@ -1258,12 +1262,11 @@ Overfull \hbox (9.92963pt too wide) in paragraph at lines 667--669
 
 [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.671 				
            <./slike/reg-log.png>]
-<slike/upravljanje-zahtjevima.png, id=411, 464.937pt x 434.8245pt>
+<slike/upravljanje-zahtjevima.png, id=406, 464.937pt x 434.8245pt>
 File: slike/upravljanje-zahtjevima.png Graphic file (type png)
 <use slike/upravljanje-zahtjevima.png>
 Package pdftex.def Info: slike/upravljanje-zahtjevima.png  used on input line 6
@@ -1271,19 +1274,17 @@ Package pdftex.def Info: slike/upravljanje-zahtjevima.png  used on input line 6
 (pdftex.def)             Requested size: 418.43942pt x 391.33841pt.
  [19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.678 				\newpage
                    <./slike/korisnik-profil.png>] [20pdfTeX warning (ext4): des
 tination with the same identifier (name{figure.3.4}) has been already used, dup
 licate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.678 				\newpage
                    <./slike/upravljanje-zahtjevima.png>]
-<slike/novi-zahtjev.png, id=426, 915.42pt x 566.115pt>
+<slike/novi-zahtjev.png, id=421, 915.42pt x 566.115pt>
 File: slike/novi-zahtjev.png Graphic file (type png)
 <use slike/novi-zahtjev.png>
 Package pdftex.def Info: slike/novi-zahtjev.png  used on input line 691.
@@ -1295,21 +1296,19 @@ Overfull \hbox (22.09808pt too wide) in paragraph at lines 691--693
 
 [21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.695 				\newpage
                    <./slike/novi-zahtjev.png>]
-<slike/pregled-zahtjeva.png, id=434, 552.26324pt x 476.37975pt>
+<slike/pregled-zahtjeva.png, id=429, 552.26324pt x 476.37975pt>
 File: slike/pregled-zahtjeva.png Graphic file (type png)
 <use slike/pregled-zahtjeva.png>
 Package pdftex.def Info: slike/pregled-zahtjeva.png  used on input line 703.
 (pdftex.def)             Requested size: 386.58163pt x 333.46353pt.
  [22pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.707 				\newpage
                    <./slike/pregled-zahtjeva.png>]
 Overfull \hbox (5.9912pt too wide) in paragraph at lines 709--712
@@ -1317,7 +1316,7 @@ Overfull \hbox (5.9912pt too wide) in paragraph at lines 709--712
 vih ak-tiv-nih zah-tjeva, poslu[]zitelj
  []
 
-<slike/biranje-izvrsitelja.png, id=442, 648.62325pt x 516.12825pt>
+<slike/biranje-izvrsitelja.png, id=437, 648.62325pt x 516.12825pt>
 File: slike/biranje-izvrsitelja.png Graphic file (type png)
 <use slike/biranje-izvrsitelja.png>
 Package pdftex.def Info: slike/biranje-izvrsitelja.png  used on input line 715.
@@ -1325,9 +1324,8 @@ Package pdftex.def Info: slike/biranje-izvrsitelja.png  used on input line 715.
 (pdftex.def)             Requested size: 389.17694pt x 309.67934pt.
 [23pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.719 				\newpage
                    <./slike/biranje-izvrsitelja.png>]
 Overfull \hbox (11.16876pt too wide) in paragraph at lines 721--724
@@ -1335,7 +1333,7 @@ Overfull \hbox (11.16876pt too wide) in paragraph at lines 721--724
 itelju i autoru. Na-kon izvr[]savanja
  []
 
-<slike/izvrsavanje-visa-razina.png, id=450, 566.115pt x 391.4625pt>
+<slike/izvrsavanje-visa-razina.png, id=445, 566.115pt x 391.4625pt>
 File: slike/izvrsavanje-visa-razina.png Graphic file (type png)
 <use slike/izvrsavanje-visa-razina.png>
 Package pdftex.def Info: slike/izvrsavanje-visa-razina.png  used on input line 
@@ -1343,9 +1341,8 @@ Package pdftex.def Info: slike/izvrsavanje-visa-razina.png  used on input line
 (pdftex.def)             Requested size: 367.97038pt x 254.4476pt.
 [24pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.732 				\newpage
                    <./slike/izvrsavanje-visa-razina.png>]
 Overfull \hbox (16.91959pt too wide) in paragraph at lines 738--739
@@ -1373,12 +1370,13 @@ lu[]zitelja. Svi se zah-tjevi proslje[]duju
 
 
 
+
 ]
-<./slike/Arhitektura_sustava.pdf, id=469, 448.5558pt x 189.8292pt>
-File: ./slike/Arhitektura_sustava.pdf Graphic file (type pdf)
-<use ./slike/Arhitektura_sustava.pdf>
-Package pdftex.def Info: ./slike/Arhitektura_sustava.pdf  used on input line 16
-.
+<./slike//Arhitektura_sustava.pdf, id=464, 448.5558pt x 189.8292pt>
+File: ./slike//Arhitektura_sustava.pdf Graphic file (type pdf)
+<use ./slike//Arhitektura_sustava.pdf>
+Package pdftex.def Info: ./slike//Arhitektura_sustava.pdf  used on input line 1
+6.
 (pdftex.def)             Requested size: 448.55469pt x 189.82872pt.
 
 Overfull \hbox (12.9439pt too wide) in paragraph at lines 16--17
@@ -1387,15 +1385,14 @@ Overfull \hbox (12.9439pt too wide) in paragraph at lines 16--17
 
 [27pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.42 			
-         <./slike/Arhitektura_sustava.pdf
+         <./slike//Arhitektura_sustava.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./slike/Arhitektura_sustava.pdf): PDF i
-nclusion: invalid other resource which is no dict (key 'ProcSets', type <array>
-); ignored.
+pdfTeX warning: pdflatex.exe (file ./slike//Arhitektura_sustava.pdf): PDF inclu
+sion: invalid other resource which is no dict (key 'ProcSets', type <array>); i
+gnored.
 >]
 Overfull \hbox (1.97845pt too wide) in paragraph at lines 64--64
 []|\OT1/jkp/m/n/12 VARCHAR| 
@@ -1555,10 +1552,11 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 171--172
  []
 
 [30]
-<./slike/Relacijski_model.png, id=506, 1194.4625pt x 683.55376pt>
-File: ./slike/Relacijski_model.png Graphic file (type png)
-<use ./slike/Relacijski_model.png>
-Package pdftex.def Info: ./slike/Relacijski_model.png  used on input line 180.
+<./slike//Relacijski_model.png, id=501, 1194.4625pt x 683.55376pt>
+File: ./slike//Relacijski_model.png Graphic file (type png)
+<use ./slike//Relacijski_model.png>
+Package pdftex.def Info: ./slike//Relacijski_model.png  used on input line 180.
+
 (pdftex.def)             Requested size: 527.93451pt x 302.11453pt.
 
 Overfull \hbox (92.32372pt too wide) in paragraph at lines 180--181
@@ -1567,11 +1565,10 @@ Overfull \hbox (92.32372pt too wide) in paragraph at lines 180--181
 
 [31pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.184 			\eject
-                <./slike/Relacijski_model.png>]
+                <./slike//Relacijski_model.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
@@ -1587,31 +1584,29 @@ Overfull \hbox (5.94319pt too wide) in paragraph at lines 197--199
 eb-Se-cu-rity\OT1/jkp/m/n/12 , ko-jom su de-fi-ni-ra-nja dopu[]stenja
  []
 
-<slike/cs1.png, id=514, 563.10374pt x 506.89375pt>
+<slike/cs1.png, id=509, 563.10374pt x 506.89375pt>
 File: slike/cs1.png Graphic file (type png)
 <use slike/cs1.png>
 Package pdftex.def Info: slike/cs1.png  used on input line 201.
 (pdftex.def)             Requested size: 337.86485pt x 304.1386pt.
 [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.207 				\newpage
                    <./slike/cs1.png (PNG copy)>]
-<slike/cs4.jpg, id=521, 802.49812pt x 1047.915pt>
+<slike/cs4.jpg, id=516, 802.49812pt x 1047.915pt>
 File: slike/cs4.jpg Graphic file (type jpg)
 <use slike/cs4.jpg>
 Package pdftex.def Info: slike/cs4.jpg  used on input line 214.
 (pdftex.def)             Requested size: 361.12082pt x 471.55739pt.
  [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.220 				\newpage
                    <./slike/cs4.jpg>]
-<slike/cs2.png, id=528, 1199.48125pt x 1510.64375pt>
+<slike/cs2.png, id=523, 1199.48125pt x 1510.64375pt>
 File: slike/cs2.png Graphic file (type png)
 <use slike/cs2.png>
 Package pdftex.def Info: slike/cs2.png  used on input line 232.
@@ -1623,24 +1618,22 @@ Overfull \hbox (20.19682pt too wide) in paragraph at lines 232--234
 
 [34] [35pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.238 				\newpage
                    <./slike/cs2.png (PNG copy)>]
-<slike/cs3.png, id=541, 1064.97874pt x 1294.8375pt>
+<slike/cs3.png, id=536, 1064.97874pt x 1294.8375pt>
 File: slike/cs3.png Graphic file (type png)
 <use slike/cs3.png>
 Package pdftex.def Info: slike/cs3.png  used on input line 246.
 (pdftex.def)             Requested size: 404.69614pt x 492.04337pt.
  [36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.252 				\newpage
                    <./slike/cs3.png (PNG copy)>]
-<slike/cs5.png, id=549, 727.71875pt x 549.05125pt>
+<slike/cs5.png, id=544, 727.71875pt x 549.05125pt>
 File: slike/cs5.png Graphic file (type png)
 <use slike/cs5.png>
 Package pdftex.def Info: slike/cs5.png  used on input line 257.
@@ -1652,15 +1645,14 @@ Overfull \hbox (1.02382pt too wide) in paragraph at lines 257--259
 
 [37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.272 			\eject
                 <./slike/cs5.png (PNG copy)>]
-<./slike/DijagramStanja.png, id=556, 1289.81876pt x 780.9175pt>
-File: ./slike/DijagramStanja.png Graphic file (type png)
-<use ./slike/DijagramStanja.png>
-Package pdftex.def Info: ./slike/DijagramStanja.png  used on input line 281.
+<./slike//DijagramStanja.png, id=551, 1289.81876pt x 780.9175pt>
+File: ./slike//DijagramStanja.png Graphic file (type png)
+<use ./slike//DijagramStanja.png>
+Package pdftex.def Info: ./slike//DijagramStanja.png  used on input line 281.
 (pdftex.def)             Requested size: 521.1732pt x 315.54482pt.
 
 Overfull \hbox (85.56241pt too wide) in paragraph at lines 281--282
@@ -1677,19 +1669,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
 [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8
 }) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
 l.294 			\eject
-                <./slike/DijagramStanja.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
-
+                <./slike//DijagramStanja.png>]
+Overfull \hbox (4.02881pt too wide) in paragraph at lines 313--316
+\OT1/jkp/m/n/12 API-jem i pos-lov-nom lo-gi-kom apli-ka-cije. Pris-tup bazi na 
+bac-kendu nudi se su[]celjem
  []
 
-) [40]
+<./slike//dijagramKomponenti.png, id=564, 705.23476pt x 454.69875pt>
+File: ./slike//dijagramKomponenti.png Graphic file (type png)
+<use ./slike//dijagramKomponenti.png>
+Package pdftex.def Info: ./slike//dijagramKomponenti.png  used on input line 31
+8.
+(pdftex.def)             Requested size: 520.64955pt x 335.6851pt.
+
+Overfull \hbox (85.03876pt too wide) in paragraph at lines 318--319
+[][]
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [40] [41pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.4.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.118 	\include{Arhitektura}
+                             <./slike//dijagramKomponenti.png>]
 \openout2 = `Implementacija.aux'.
 
- (./Implementacija.tex
+
+(./Implementacija.tex
 Poglavlje 5.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -1706,7 +1718,8 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[41
+[42
+
 
 
 
@@ -1717,19 +1730,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
  28.
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
+(c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[42] [43]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+[43]
+<./slike//dijagramRazmjestaja.png, id=592, 511.9125pt x 349.305pt>
+File: ./slike//dijagramRazmjestaja.png Graphic file (type png)
+<use ./slike//dijagramRazmjestaja.png>
+Package pdftex.def Info: ./slike//dijagramRazmjestaja.png  used on input line 5
+4.
+(pdftex.def)             Requested size: 491.9772pt x 335.6851pt.
+
+Overfull \hbox (56.36641pt too wide) in paragraph at lines 54--55
+[][]
+ []
+
+[44pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.58 			\eject
+               <./slike//dijagramRazmjestaja.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[44])
+[45])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1759,7 +1789,8 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 16.
 
-[45
+[46
+
 
 
 
@@ -1779,7 +1810,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 37.
 
-[46] [47])
+[47] [48])
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
@@ -1794,7 +1825,8 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [48
+) [49
+
 
 
 
@@ -1802,7 +1834,8 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [49
+ [50
+
 
 
 ]
@@ -1813,7 +1846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-[50
+[51
 
 
 ]
@@ -1821,59 +1854,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[51] [52]
+[52] [53]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-) [53] 
+) [54] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
 (./Dodatak.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
-
-
-Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija_v6.out' has 
-changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija_v6.out
-':
-(rerunfilecheck)             Before: B63AFF4A374EA329D9728EEDCF5CE18D;2204
-(rerunfilecheck)             After:  3C5A8F89A8320875461218B391B7F3BE;2142.
+Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
+ changed.
+(rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
- 12494 strings out of 481239
- 177201 string characters out of 5920376
- 516170 words of memory out of 5000000
- 27153 multiletter control sequences out of 15000+600000
- 586880 words of font info for 146 fonts, out of 8000000 for 9000
+ 12656 strings out of 479916
+ 180235 string characters out of 5886648
+ 563393 words of memory out of 5000000
+ 28625 multiletter control sequences out of 15000+600000
+ 589630 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,14n,45p,1047b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,14n,88p,1059b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
-pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/kpfonts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfont
-s/jkpmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpttmn
-8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (54 pages, 1323182 bytes)
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-
+dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
+t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (55 pages, 1386802 bytes)
 .
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 659 compressed objects within 7 object streams
- 243 named destinations out of 1000 (max. 500000)
- 342 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 663 compressed objects within 7 object streams
+ 245 named destinations out of 1000 (max. 500000)
+ 344 words of extra memory for PDF output out of 10000 (max. 10000000)
 

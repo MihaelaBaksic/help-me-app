@@ -294,6 +294,28 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			\eject
 		\section{Dijagram komponenti}
 		
-			\textbf{\textit{dio 2. revizije}}\\
-		
-			 \textit{Potrebno je priložiti dijagram komponenti s pripadajućim opisom. Dijagram komponenti treba prikazivati strukturu cijele aplikacije.}
+			Pomoću dijagrama komponenti prikazanog na slici 4.9 prikazan je međuodnos glavnih komponenti sustava.
+			Najgrublja podjela komponenata koje međusobno komuniciraju u \textit{ModelViewController} (MVC) obrascu je na:
+			\begin{itemize}
+				\item Model koji predstavlja skup svih entiteta koji se spremaju u bazi te se nad njima vrše operacije.
+				\item View kojeg predstavlja komponenta Frontend web aplikacija.
+				\item Controller koji služi za primanje HTTP zahtjeva i slanje odgovora.
+			\end{itemize}
+			
+			Frontend web aplikacija komunicira sa ostatkom aplikacije pri posluživanju statičkog sadržaja poput HTML, CSS i JS datoteka te sa backend dijelom aplikacije u formatu JSON.
+			Posluživanje sadržaja frontend dijelu aplikacije ovisi o ulozi korisnika kojemu se poslužuje te
+			shodno ulozi komponenta Router odlučuje o tome koje se datoteke poslužuju. Također, u to su uključene i datoteke JavaScript libraryja React koji se koristi u oblikovanju korisničkog sučelja.
+			
+			Format JSON glavni je format za komunikaciju sa REST API-jem kojeg aplikacija koristi.
+			REST API po primitku JSON objekta mapira ga u pripadajući objekt u Javi. Vrijedi i obrnuto, prilikom slanja Java objekta on se prethodno pretvara u pripadajući JSON i u tom obliku šalje HTTP protokolom.
+			
+			
+			Komponenta kontrolera putem DTO objekata ostvaruje komunikaciju sa REST API-jem i poslovnom logikom aplikacije.
+			Pristup bazi na backendu nudi se sučeljem s komponentom \textit{JPARepositories} 
+			te ona služi kao glavna komunikacija aplikacije i SQL baze podataka u jeziku JPQL.
+			
+			 \begin{figure}[h]
+			 	\includegraphics[height=0.5\textheight]{dijagramKomponenti}
+			 	\caption{Dijagram komponenti}
+			 \end{figure} 
+			
