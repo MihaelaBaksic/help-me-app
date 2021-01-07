@@ -1,6 +1,7 @@
 package hr.fer.progi.rest;
 
 
+import hr.fer.progi.domain.Address;
 import hr.fer.progi.domain.RequestStatus;
 import hr.fer.progi.domain.User;
 import hr.fer.progi.domain.UserStatus;
@@ -217,5 +218,16 @@ public class UserController {
 
         return requestAssembler.toCollectionModel(requestService.findHandlerRequests(user)
                 .stream().map(r -> r.mapToRequestDTO()).collect(Collectors.toList()));
+    }
+
+    @PostMapping("/addressSettings")
+    public EntityModel<UserDTO> updateUserAddress(@RequestBody Address newAddress){
+
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User currentUser = userService.findByUsername(username);
+        currentUser.setAddress(newAddress);
+
+        return assembler.toModel(userService.updateUser(currentUser).mapToUserDTO());
+
     }
 }
