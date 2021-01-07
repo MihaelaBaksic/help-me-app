@@ -12,7 +12,7 @@ function PotentialUsers(props) {
 	let history = useHistory();
 
 	function pogledajUsera(username) {
-		console.log(username);
+		/* console.log(username); */
 		history.push("/user/" + username);
 	}
 
@@ -39,7 +39,7 @@ function PotentialUsers(props) {
 			options
 		).then((response) => {
 			if (response.status === 200) {
-				console.log("Uspješano prihvaćanje");
+				/* console.log("Uspješano prihvaćanje"); */
 				window.location.reload(false);
 				toggle();
 			} else {

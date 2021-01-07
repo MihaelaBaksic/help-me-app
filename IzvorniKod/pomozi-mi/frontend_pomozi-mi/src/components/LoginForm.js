@@ -37,10 +37,10 @@ function LoginForm(props) {
 			if (response.status === 200) {
 				props.setLogInTrue(values.username, values.password);
 				history.push("/requests");
-				console.log("Uspješan login");
+				/* console.log("Uspješan login"); */
 			} else {
 				setErrorMessage("Korisnički podaci nisu ispravni");
-				console.log("Neuspješan login");
+				/* console.log("Neuspješan login"); */
 			}
 		});
 	}

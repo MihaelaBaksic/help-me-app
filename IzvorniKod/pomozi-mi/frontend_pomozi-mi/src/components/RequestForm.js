@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import MapComponent from "./MapComponent";
 import L from "leaflet";
-import { FormGroup } from "@material-ui/core";
 import { useHistory, withRouter } from "react-router-dom";
 
 const baseUrl = "http://localhost:8080";
@@ -20,7 +19,7 @@ function RequestForm() {
 		e.preventDefault();
 
 		e.preventDefault();
-		console.log(geoLocation);
+		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
 			method: "GET",
@@ -37,7 +36,7 @@ function RequestForm() {
 			.then((response) => response.text())
 			.then((result) => {
 				fetchResult = JSON.parse(result);
-				console.log(fetchResult);
+				/* console.log(fetchResult); */
 			})
 			.catch((error) => console.log(error.message))
 			.finally(() => {
@@ -60,7 +59,7 @@ function RequestForm() {
 				}
 
 				values = JSON.parse(JSON.stringify(values));
-				console.log(values);
+				/* console.log(values); */
 				values.address = {};
 				values.address.description = description;
 				if (useLocation === "true") {
@@ -70,7 +69,7 @@ function RequestForm() {
 					values.address = null;
 				}
 
-				console.log(values);
+				/* console.log(values); */
 				values = JSON.stringify(values);
 				var myHeaders = new Headers();
 				myHeaders.append(
@@ -86,7 +85,7 @@ function RequestForm() {
 				fetch(baseUrl + "/requests", options)
 					.then((response) => response.text())
 					.then((result) => {
-						console.log(JSON.parse(result));
+						/* console.log(JSON.parse(result)); */
 						history.push("/myRequests");
 					})
 					.catch((error) => console.log(error));
@@ -161,9 +160,9 @@ function RequestForm() {
 					</div>
 				</div>
 				<div className="virtualOrLocationCheckBox">
-					<div class="form-check">
+					<div className="form-check">
 						<input
-							class="form-check-input"
+							className="form-check-input"
 							type="radio"
 							name="lokacijaRadio"
 							id="koristiLokaciju"
@@ -173,9 +172,9 @@ function RequestForm() {
 						/>
 						Zahtjev s lokacijom
 					</div>
-					<div class="form-check">
+					<div className="form-check">
 						<input
-							class="form-check-input"
+							className="form-check-input"
 							type="radio"
 							name="lokacijaRadio"
 							id="virtualniZahtjev"

@@ -1,15 +1,6 @@
 import React from "react";
-import {
-	Card,
-	Icon,
-	List,
-	Button,
-	Label,
-	Grid,
-	Image,
-} from "semantic-ui-react";
+import { Card, Grid, Image } from "semantic-ui-react";
 import { useEffect, useState } from "react";
-import OtherUserProfile from "./OtherUserProfile";
 import first from "./resources/1st.png";
 import second from "./resources/2st.png";
 import third from "./resources/3rd.png";
@@ -36,7 +27,7 @@ function Statistics() {
 			.then((result) =>
 				setTopUsers(JSON.parse(result)._embedded.userDTOList)
 			);
-		console.log(JSON.stringify(topUsers));
+		/* console.log(JSON.stringify(topUsers)); */
 	}, []);
 
 	if (topUsers) {
@@ -46,7 +37,7 @@ function Statistics() {
 				centered
 				columns={3}
 				className="card centerContent"
-				style={{ "margin-top": 0 + "px" }}
+				style={{ marginTop: 0 + "px" }}
 			>
 				<Grid.Column style={{ margin: "auto" }}>
 					<Card>

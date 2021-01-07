@@ -6,7 +6,6 @@ import {
 	Button,
 	Card,
 	Icon,
-	CardContent,
 	Header,
 } from "semantic-ui-react";
 import PotentialUsers from "./PotentialUsers";
@@ -27,7 +26,7 @@ function RequestComponent(props) {
 	const [map, setMap] = useState(null);
 
 	function pogledajUsera(username) {
-		console.log(username);
+		/* console.log(username); */
 		history.push("/user/" + username);
 	}
 
@@ -95,10 +94,10 @@ function RequestComponent(props) {
 			options
 		).then((response) => {
 			if (response.status === 200) {
-				console.log("Uspješano blokiranje");
+				/* console.log("Uspješano blokiranje"); */
 				window.location.reload(false);
 			} else {
-				console.log("Neuspješano blokiranje");
+				/* console.log("Neuspješano blokiranje"); */
 			}
 		});
 	}
@@ -126,10 +125,10 @@ function RequestComponent(props) {
 		await fetch(baseUrl + `/requests/markDone/${id}`, options).then(
 			(response) => {
 				if (response.status === 200) {
-					console.log("Uspješano obavljanje");
+					/* console.log("Uspješano obavljanje"); */
 					window.location.reload(false);
 				} else {
-					console.log("Neuspješano obavljanje");
+					/* console.log("Neuspješano obavljanje"); */
 				}
 			}
 		);
@@ -150,9 +149,9 @@ function RequestComponent(props) {
 		await fetch(baseUrl + `/requests/respond/${id}`, options).then(
 			(response) => {
 				if (response.status === 200) {
-					console.log("Uspješano javljanje");
+					/* console.log("Uspješano javljanje"); */
 				} else {
-					console.log("Neuspješano javljanje");
+					/* console.log("Neuspješano javljanje"); */
 				}
 			}
 		);

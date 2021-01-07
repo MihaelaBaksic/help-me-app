@@ -17,35 +17,37 @@ function CommentComponent(props) {
 			redirect: "follow",
 		};
 		if (props.listaKomentara) {
-			console.log("bilo");
+			/* console.log("bilo"); */
 			setRatings(props.listaKomentara);
 		} else if (props.username) {
-			console.log("fečam");
+			/* console.log("fečam"); */
 			fetch("http://localhost:8080/rating/of/" + props.username, options)
 				.then((response) => response.text())
 				.then((result) => {
 					setRatings(JSON.parse(result));
 				})
 				.catch((error) => {
-					console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+					/* console.log("error: ", error, "LISTA VJEROJATNO PRAZNA"); */
 					setRatings("");
 				});
 		} else {
-			console.log("OVO SE NIKAD NE SMIJE ISPISATI!");
+			console.log(
+				"OVO SE NIKAD NE SMIJE ISPISATI! (osim ponekad ipak treba)"
+			);
 		}
-	}, [props.listaKomentara]);
+	}, [props.listaKomentara, props.username]);
 
 	if (ratings) {
 		return (
 			<div className="container">
 				<div className="col-md-12">
 					<div className="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
-						{ratings.map((r) => (
-							<div>
+						{ratings.map((r, index) => (
+							<div key={index}>
 								<div className="reviews-members pt-4 pb-4">
 									<div className="media">
 										<img
-											alt="Generic placeholder image"
+											alt="Generic placeholder"
 											src="http://bootdey.com/img/Content/avatar/avatar1.png"
 											className="mr-3 rounded-pill"
 										/>

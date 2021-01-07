@@ -22,11 +22,11 @@ function DesniStupacKomponenta(props) {
 
 		await fetch(logOutUrl, options).then((response) => {
 			if (response.status === 204) {
-				console.log("Uspješan logout");
+				/* console.log("Uspješan logout"); */
 				props.setLogInFalse();
 				history.push("/");
 			} else {
-				console.log("Neuspješan logout");
+				/* console.log("Neuspješan logout"); */
 			}
 		});
 	}

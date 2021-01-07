@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Button, Label, Grid } from "semantic-ui-react";
 import { useEffect, useState } from "react";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
@@ -11,11 +11,11 @@ function UserHandlerRequests() {
 	const [requests, setRequests] = useState("");
 
 	function pogledajUsera(username) {
-		console.log(username);
+		/* console.log(username); */
 		history.push("/user/" + username);
 	}
 	function pregledajZahtjev(valerija) {
-		console.log(valerija);
+		/* console.log(valerija); */
 		history.push("/request/" + valerija);
 	}
 
@@ -46,14 +46,14 @@ function UserHandlerRequests() {
 				}
 			})
 			.catch((error) => {
-				console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+				/* console.log("error: ", error, "LISTA VJEROJATNO PRAZNA"); */
 				setRequests("");
 			});
 	}, []);
 	if (requests) {
 		return (
 			<List selection celled id="requestList" className="centerContent">
-				{console.log(requests)}
+				{/* console.log(requests) */}
 				{requests.map((request) => (
 					<List.Item key={request.id}>
 						<Grid stackable padded style={{ cursor: "initial" }}>

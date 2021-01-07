@@ -1,6 +1,6 @@
 import React from "react";
-import { List, Button, Label, Divider, Grid } from "semantic-ui-react";
-import { useEffect, useState, useCallback } from "react";
+import { Divider } from "semantic-ui-react";
+import { useEffect, useState } from "react";
 import FilterComponent from "./FilterComponent";
 import RequestList from "./RequestList";
 
@@ -45,14 +45,14 @@ function FilterRequestList(props) {
 				}
 			})
 			.catch((error) => {
-				console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+				/* console.log("error: ", error, "LISTA VJEROJATNO PRAZNA"); */
 				setRequestsF("");
 			});
-	}, [filterBody]);
+	}, [filterBody, props.username]);
 
 	if (requestsF) {
-		console.log("Body = ");
-		console.log(filterBody);
+		/* console.log("Body = ");
+		console.log(filterBody); */
 		return (
 			<div className="card centerContent">
 				<div role="list">

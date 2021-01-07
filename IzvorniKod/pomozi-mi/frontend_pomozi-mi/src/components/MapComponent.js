@@ -5,11 +5,9 @@ import React, {
 	useMemo,
 	useCallback,
 } from "react";
-import { useForm } from "react-hook-form";
 import L from "leaflet";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import LogedInUserComponent from "./LogedInUserComponent";
-import { useHistory, withRouter } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const initialCenter = L.latLng(44.43378, 16.370707);
 let currentCenter = L.latLng(44.43378, 16.370707);
@@ -54,7 +52,7 @@ function MapSearch(props) {
 	}
 	function logIT(e) {
 		if (e.key === "Enter") {
-			console.log("heureka");
+			/* console.log("heureka"); */
 			onSubmit(e);
 		}
 	}
@@ -119,7 +117,7 @@ function CenterMarker(props) {
 	function postaviMarker() {
 		setMarkerPos(currentCenter);
 		currentMarkerPosition = currentCenter;
-		console.log("bruhJEDAN " + currentMarkerPosition);
+		/* console.log("bruhJEDAN " + currentMarkerPosition); */
 		props.setGeoLocation(currentMarkerPosition);
 	}
 	const eventHandlers = useMemo(
@@ -129,7 +127,7 @@ function CenterMarker(props) {
 				if (marker != null) {
 					setMarkerPos(marker.getLatLng());
 					currentMarkerPosition = marker.getLatLng();
-					console.log("bruhDVA " + currentMarkerPosition);
+					/* console.log("bruhDVA " + currentMarkerPosition); */
 					props.setGeoLocation(currentMarkerPosition);
 				}
 			},

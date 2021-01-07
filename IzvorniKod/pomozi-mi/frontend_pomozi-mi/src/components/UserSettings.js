@@ -1,4 +1,3 @@
-import { jssPreset } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, withRouter } from "react-router-dom";
@@ -28,7 +27,7 @@ function UserSettings(props) {
 
 		let prepBody = {};
 		prepBody.password = values.password;
-		console.log(values.firstName);
+		/* console.log(values.firstName); */
 		if (values.firstName) {
 			prepBody.firstName = values.firstName;
 		}
@@ -38,7 +37,7 @@ function UserSettings(props) {
 		if (values.phoneNumber) {
 			prepBody.phoneNumber = values.phoneNumber;
 		}
-		console.log(prepBody);
+		/* console.log(prepBody); */
 		const options = {
 			method: "POST",
 			headers: myHeaders,
@@ -51,7 +50,7 @@ function UserSettings(props) {
 				}
 			})
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 
 				sessionStorage.setItem(
 					"currentUserFirstName",
@@ -86,19 +85,19 @@ function UserSettings(props) {
 			<form className="row" onSubmit={handleSubmit(onSubmit)}>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-email">E-mail adresa</label>
+						<label htmlFor="account-email">E-mail adresa</label>
 						<input
 							className="form-control"
 							type="email"
 							id="account-email"
 							value={sessionStorage.getItem("currentUserEmail")}
-							disabled="true"
+							disabled={true}
 						/>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-phone">Korisničko ime</label>
+						<label htmlFor="account-user">Korisničko ime</label>
 						<input
 							className="form-control"
 							type="text"
@@ -106,13 +105,13 @@ function UserSettings(props) {
 							value={sessionStorage.getItem(
 								"currentUserUsername"
 							)}
-							disabled="true"
+							disabled={true}
 						/>
 					</div>
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="firstName">Ime</label>
+						<label htmlFor="firstName">Ime</label>
 						<input
 							id="firstName"
 							name="firstName"
@@ -139,7 +138,7 @@ function UserSettings(props) {
 				<div className="col-md-6">
 					<div className="form-group">
 						<div className="form-group">
-							<label for="lastName">Prezime</label>
+							<label htmlFor="lastName">Prezime</label>
 							<input
 								name="lastName"
 								type="text"
@@ -166,7 +165,7 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="phoneNumber">Kontakt broj</label>
+						<label htmlFor="phoneNumber">Kontakt broj</label>
 						<input
 							name="phoneNumber"
 							className="form-control"
@@ -187,17 +186,13 @@ function UserSettings(props) {
 						</div>
 					</div>
 				</div>
-				<div className="col-md-6">
-					<div className="form-group">
-						<label for="account-phone"></label>
-					</div>
-				</div>
+
 				<div className="col-12">
 					<hr className="mt-2 mb-3" />
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="password">
+						<label htmlFor="password">
 							Potvrda izmjena/Promjena lozinke
 						</label>
 						<input
@@ -224,7 +219,7 @@ function UserSettings(props) {
 				</div>
 				<div className="col-md-6">
 					<div className="form-group">
-						<label for="account-confirm-pass">
+						<label htmlFor="account-confirm-pass">
 							Potvrdi lozinku
 						</label>
 						<input

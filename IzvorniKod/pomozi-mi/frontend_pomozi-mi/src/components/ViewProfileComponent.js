@@ -7,7 +7,7 @@ function ViewProfileComponent(props) {
 	let [rating, setRating] = useState("");
 	let [showing, setShowing] = useState(/* "requests" */ "");
 
-	console.log(history.location.pathname.substr());
+	/* console.log(history.location.pathname.substr()); */
 
 	useEffect(() => {
 		setShowing(history.location.pathname.substr(1));
@@ -28,7 +28,7 @@ function ViewProfileComponent(props) {
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setPodaci(JSON.parse(result));
 				sessionStorage.setItem(
 					"currentUserUsername",
@@ -63,13 +63,13 @@ function ViewProfileComponent(props) {
 			.then((result) => {
 				//console.log("rating");
 				setRating(result);
-				console.log(rating);
+				/* console.log(rating); */
 			});
 	}, []);
 
 	return (
 		<div className="lijeviStupacContentHolder">
-			<div className="author-card">
+			<div className="author-card" style={{ zIndex: 0 }}>
 				<div className="author-card-cover">
 					<a
 						className="btn btn-style-1 btn-white btn-sm"
@@ -102,7 +102,11 @@ function ViewProfileComponent(props) {
 						)}
 					</a>
 				</div>
-				<div className="author-card-profile">
+				<div
+					className="author-card-profile"
+					role="button"
+					onClick={() => history.push("/user/" + podaci.username)}
+				>
 					<div className="author-card-avatar">
 						<img src="https://bootdey.com/img/Content/avatar/avatar1.png" />
 					</div>
@@ -123,7 +127,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/newRequest");
-							console.log("/newRequest");
+							/* console.log("/newRequest"); */
 							setShowing("newRequest");
 						}}
 						className={
@@ -143,7 +147,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/requests");
-							console.log("/requests");
+							/* console.log("/requests"); */
 							setShowing("requests");
 						}}
 						className={
@@ -162,7 +166,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/myRequests");
-							console.log("/myRequests");
+							/* console.log("/myRequests"); */
 							setShowing("myRequests");
 						}}
 						className={
@@ -181,7 +185,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/otherRequests");
-							console.log("/otherRequests");
+							/* console.log("/otherRequests"); */
 							setShowing("otherRequests");
 						}}
 						className={
@@ -200,7 +204,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/settings");
-							console.log("/settings");
+							/* console.log("/settings"); */
 							setShowing("settings");
 						}}
 						className={
@@ -215,7 +219,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/adress");
-							console.log("/adress");
+							/* console.log("/adress"); */
 							setShowing("adress");
 						}}
 						className={
@@ -230,7 +234,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/rating/statistics");
-							console.log("/rating/statistics");
+							/* console.log("/rating/statistics"); */
 							setShowing("rating/statistics");
 						}}
 						className={

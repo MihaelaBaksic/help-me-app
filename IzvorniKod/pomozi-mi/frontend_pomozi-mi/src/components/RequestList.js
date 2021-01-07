@@ -10,11 +10,11 @@ function RequestList(props) {
 	const [requests, setRequests] = useState("");
 
 	function pogledajUsera(username) {
-		console.log(username);
+		/* console.log(username); */
 		history.push("/user/" + username);
 	}
 	function pregledajZahtjev(valerija) {
-		console.log(valerija);
+		/* console.log(valerija); */
 		history.push("/request/" + valerija);
 	}
 
@@ -44,15 +44,15 @@ function RequestList(props) {
 					}
 				})
 				.catch((error) => {
-					console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+					/* console.log("error: ", error, "LISTA VJEROJATNO PRAZNA"); */
 					setRequests("");
 				});
 		}
-	}, [props.listaZahtjeva]);
+	}, [props.listaZahtjeva, props.username]);
 	if (requests) {
 		return (
 			<List selection celled id="requestList" className="centerContent">
-				{console.log(requests)}
+				{/* console.log(requests) */}
 				{requests.map((request) => (
 					<List.Item key={request.id}>
 						<Grid stackable padded style={{ cursor: "initial" }}>
@@ -101,7 +101,6 @@ function RequestList(props) {
 									</List.Header>
 								</Grid.Column>
 								<Grid.Column
-									only="large screen"
 									floated="right"
 									onClick={(e) =>
 										pregledajZahtjev(request.id, e)

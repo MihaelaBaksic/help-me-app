@@ -1,15 +1,6 @@
 import React from "react";
-import {
-	Message,
-	List,
-	Button,
-	Label,
-	Divider,
-	Grid,
-	Segment,
-} from "semantic-ui-react";
-import { useEffect, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { List, Segment } from "semantic-ui-react";
+import { useEffect, useState } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
@@ -54,14 +45,14 @@ function Notifications(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				setNotifications(JSON.parse(result));
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 			})
 			.catch((error) => {
-				console.log(
+				/* console.log(
 					"error: ",
 					error,
 					"LISTA OBAVIJESTI VJEROJATNO PRAZNA"
-				);
+				); */
 				setNotifications("");
 			});
 	}, [refreshNotifList]);
@@ -75,7 +66,7 @@ function Notifications(props) {
 						Obavijesti
 					</button>
 					<List divided relaxed>
-						{console.log(notifications[0])}
+						{/* console.log(notifications[0]) */}
 						{notifications.map((notif, index) =>
 							!notif.isRead || notif.status === "NOTRATED" ? (
 								<List.Item

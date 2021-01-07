@@ -1,8 +1,8 @@
 import React from "react";
 import { CustomInput, Form, FormGroup, Label, Input } from "reactstrap";
-import { Divider, Button, Checkbox } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function FilterComponent(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
@@ -11,14 +11,14 @@ function FilterComponent(props) {
 	const [virtual, setVirtual] = useState(false);
 
 	function onSubmit(values, e) {
-		console.log("Body u FilterComponent: ");
+		/* console.log("Body u FilterComponent: "); */
 
 		let filter = {
 			radius: radius,
 			virtual: virtual,
 			order: sort ? "ATOZ" : "ZTOA",
 		};
-		console.log(JSON.stringify(filter));
+		/* console.log(JSON.stringify(filter)); */
 
 		props.setFilterBody(JSON.stringify(filter));
 	}

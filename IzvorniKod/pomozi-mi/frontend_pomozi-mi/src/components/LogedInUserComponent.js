@@ -16,6 +16,20 @@ class LogedInUserComponent extends Component {
 			showing: s,
 		});
 	} */
+	onDarkClick() {
+		let desniStpc = document.getElementById("desniStupac");
+		let lijeviStpc = document.getElementById("lijeviStupac");
+		let tamniOverlay = document.getElementById("darkOverlay");
+		if (desniStpc.style.width === "250px") {
+			desniStpc.style.width = "0px";
+		}
+		if (lijeviStpc.style.width === "250px") {
+			lijeviStpc.style.width = "0";
+		}
+		tamniOverlay.style.visibility = "hidden";
+		tamniOverlay.style.zIndex = "-1";
+		tamniOverlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+	}
 	toggleRightExtender() {
 		let desniStpc = document.getElementById("desniStupac");
 		let lijeviStpc = document.getElementById("lijeviStupac");
@@ -123,7 +137,7 @@ class LogedInUserComponent extends Component {
 					<DesniStupacKomponenta
 						setLogInFalse={this.props.setLogInFalse}
 					/>
-					<div id="darkOverlay"></div>
+					<div id="darkOverlay" onClick={this.onDarkClick}></div>
 				</div>
 			</div>
 		);

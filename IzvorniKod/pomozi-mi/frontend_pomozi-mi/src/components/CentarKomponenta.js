@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import RequestList from "./RequestList";
 
 import UserSettings from "./UserSettings";
 import RequestForm from "./RequestForm";
 import { HashRouter, Switch, Route } from "react-router-dom";
-import { useHistory, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import OtherUserProfile from "./OtherUserProfile";
 import Statistics from "./Statistics";
 import FilterRequestList from "./FilterRequestList";
 import RequestComponent from "./RequestComponent";
 import UserHandlerRequests from "./UserHandlerRequests";
 
-function CentarKomponenta(props) {
-	let history = useHistory();
-
+function CentarKomponenta() {
 	return (
 		<div
 			id="center"

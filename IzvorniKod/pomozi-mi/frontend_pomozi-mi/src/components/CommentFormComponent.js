@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 const baseUrl = "http://localhost:8080";
@@ -9,8 +9,8 @@ function CommentFormComponent(props) {
 	/* const onSubmit = (data) => console.log(data); */
 	async function onSubmit(values, e) {
 		e.preventDefault();
-		console.log("aaaaaaa!");
-		console.log(values);
+		/* console.log("aaaaaaa!");
+		console.log(values); */
 		/* values = JSON.stringify(values); */
 		var myHeaders = new Headers();
 		myHeaders.append(
@@ -32,7 +32,7 @@ function CommentFormComponent(props) {
 		fetch(baseUrl + "/rating", options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				reset(JSON.stringify(values));
 				props.reRenderaj();
 			})
@@ -73,7 +73,7 @@ function CommentFormComponent(props) {
 											className="stars starrr"
 											data-rating="0"
 										>
-											<div class="rate">
+											<div className="rate">
 												<input
 													type="radio"
 													id="star5"
@@ -81,7 +81,10 @@ function CommentFormComponent(props) {
 													value="5"
 													ref={register}
 												/>
-												<label for="star5" title="text">
+												<label
+													htmlFor="star5"
+													title="text"
+												>
 													5 stars
 												</label>
 												<input
@@ -91,7 +94,10 @@ function CommentFormComponent(props) {
 													value="4"
 													ref={register}
 												/>
-												<label for="star4" title="text">
+												<label
+													htmlFor="star4"
+													title="text"
+												>
 													4 stars
 												</label>
 												<input
@@ -101,7 +107,10 @@ function CommentFormComponent(props) {
 													value="3"
 													ref={register}
 												/>
-												<label for="star3" title="text">
+												<label
+													htmlFor="star3"
+													title="text"
+												>
 													3 stars
 												</label>
 												<input
@@ -111,7 +120,10 @@ function CommentFormComponent(props) {
 													value="2"
 													ref={register}
 												/>
-												<label for="star2" title="text">
+												<label
+													htmlFor="star2"
+													title="text"
+												>
 													2 stars
 												</label>
 												<input
@@ -121,7 +133,10 @@ function CommentFormComponent(props) {
 													value="1"
 													ref={register}
 												/>
-												<label for="star1" title="text">
+												<label
+													htmlFor="star1"
+													title="text"
+												>
 													1 star
 												</label>
 											</div>

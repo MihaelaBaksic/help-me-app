@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory, withRouter } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import RequestList from "./RequestList";
 import CommentComponent from "./CommentComponent";
 import CommentFormComponent from "./CommentFormComponent";
 
 function OtherUserProfile(props) {
-	let history = useHistory();
 	let { username } = useParams();
 	let [userInfo, setUserInfo] = useState("");
 	let [authoredRequests, setAuthoredRequests] = useState("");
@@ -39,7 +38,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/setAdmin/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -64,7 +63,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -89,7 +88,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -111,7 +110,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/unblockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -134,7 +133,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -220,15 +219,15 @@ function OtherUserProfile(props) {
 	}, [username, refreshCenter]);
 
 	useEffect(() => {
-		console.log(ratings);
+		/* console.log(ratings); */
 	}, [ratings]);
 
 	useEffect(() => {
-		console.log(authoredRequests);
+		/* console.log(authoredRequests); */
 	}, [authoredRequests]);
 
 	useEffect(() => {
-		console.log(handlerRequests);
+		/* console.log(handlerRequests); */
 	}, [handlerRequests]);
 
 	if (userInfo) {
@@ -272,7 +271,7 @@ function OtherUserProfile(props) {
 											className="btn btn-success rounded-pill col-xl-6"
 											onClick={addAsAdmin}
 										>
-											<i class="far fa-id-badge"></i>
+											<i className="far fa-id-badge"></i>
 											&nbsp; Dodaj kao admina
 										</div>
 									</div>
@@ -286,8 +285,8 @@ function OtherUserProfile(props) {
 											className="btn btn-warning rounded-pill col-xl-6"
 											onClick={blockUser}
 										>
-											<i class="fas fa-lock"></i>&nbsp;
-											Privremeno blokiraj korisnika
+											<i className="fas fa-lock"></i>
+											&nbsp; Privremeno blokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -300,7 +299,7 @@ function OtherUserProfile(props) {
 											className="btn btn-danger rounded-pill col-xl-6"
 											onClick={permaBlockUser}
 										>
-											<i class="fas fa-ban"></i>&nbsp;
+											<i className="fas fa-ban"></i>&nbsp;
 											Trajno blokiraj korisnika
 										</div>
 									</div>
@@ -313,7 +312,7 @@ function OtherUserProfile(props) {
 											className="btn btn-info rounded-pill col-xl-6"
 											onClick={unBlockUser}
 										>
-											<i class="fas fa-lock-open"></i>
+											<i className="fas fa-lock-open"></i>
 											&nbsp; Odblokiraj korisnika
 										</div>
 									</div>
@@ -414,7 +413,7 @@ function OtherUserProfile(props) {
 										<h3>KORISNIK JE BLOKIRAN!</h3>
 										<hr />
 									</div>
-									<i class="fas fa-lock fa-10x mb-4"></i>
+									<i className="fas fa-lock fa-10x mb-4"></i>
 								</div>
 							</div>
 						</div>
