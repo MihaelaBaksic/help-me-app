@@ -111,7 +111,7 @@
 								
 							\end{packed_enum}
 							
-							\item[4.a] Mogućnost odustajanja od registracije klikom na gumb
+							\item[4.a] Mogućnost odustajanja od registracije
 							
 						\end{packed_item}
 					\end{packed_item}
@@ -161,7 +161,7 @@
 						
 						\item[] \begin{packed_enum}
 							
-							\item Korisnik u prikazu zahtjevu bira opciju za prikaz potencijalnih izvršitelja
+							\item Korisnik u prikazu zahtjeva bira opciju za prikaz potencijalnih izvršitelja
 							\item Prikaz potencijalnih izvršitelja s opcijama za prihvaćanje i odbijanja
 						\end{packed_enum}
 						
@@ -200,12 +200,11 @@
 						
 						\item[] \begin{packed_enum}
 							
-							\item Prikaz liste potencijalnih izvršitelja s njihovim kontaktom
+							\item Prikaz liste potencijalnih izvršitelja
 							\item Korisnik prihvaća pojedino javljanje na zahtjev
 							\item Slanje obavijesti prihvaćenom korisniku
 							\item Automatsko odbijanje ostalih potencijalnih izvršitelja
 							\item Slanje obavijesti odbijenim korisnicima
-							\item Pražnjenje liste potencijalnih izvršitelja
 							\item Automatsko dodavanje prihvaćenog korisnika kao izvršitelja zahtjeva
 						\end{packed_enum}
 						
@@ -242,21 +241,19 @@
 						\end{packed_item}
 					\end{packed_item}
 				
-					\noindent \underbar{\textbf{UC3.3 - Izmjena zahtjeva}}
+					\noindent \underbar{\textbf{UC3.3 - Brisanje/blokiranje zahtjeva}}
 					\begin{packed_item}
 						
 						\item \textbf{Glavni sudionik: }Korisnik autor
-						\item  \textbf{Cilj:} Mogućnost izmjene, blokiranja ili brisanja zahtjeva
+						\item  \textbf{Cilj:} Mogućnost blokiranja ili brisanja zahtjeva
 						\item  \textbf{Sudionici:} Baza podataka
 						\item  \textbf{Preduvjet:} Korisnik pregledava vlastiti zahtjev
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
 							
-							\item Korisnik odabire opciju izmjena zahtjeva
-							\item Korisnik odabire izmjenu, brisanje ili blokiranje zahtjeva
-							\item Ukoliko je odabrana izmjena unose se novi podaci
-							\item Korisnik potvrđuje odabir
+							\item Korisnik odabire zahtjev za pregled
+							\item Korisnik odabire brisanje/blokiranje zahtjeva
 							\item Unos izmjena u bazu podataka
 							
 						\end{packed_enum}
@@ -265,11 +262,11 @@
 						
 						\item[] \begin{packed_item}
 							
-							\item[2.a] Pokušaj brisanja zahtjeva za koje postoje aktivi izvršitelji
+							\item[2.a] Pokušaj brisanja/blokiranja zahtjeva za koje postoje aktivni izvršitelji
 							\item[] \begin{packed_enum}
 								
-								\item Zahtjevi za koje postoje aktivni izvršitelji mogu biti samo blokirani
-								\item Svim potencijalnim izvršiteljima se šalje obavijest o blokiranju zahtjeva
+								\item Zahtjevi za koje postoje aktivni izvršitelji mogu biti samo blokirani 
+								\item Svim potencijalnim ili aktivnim izvršiteljima se šalje obavijest o blokiranju zahtjeva
 								
 							\end{packed_enum}				
 						\end{packed_item}
@@ -320,8 +317,8 @@
 						\item[] \begin{packed_enum}
 							
 							\item Korisnik se odlučuje za postavljanje lokacije
-							\item Odabir ručnog unosa ili unosa na karti
-							\item Otvaranje polja ili karte za unos lokacije
+							\item Odabir korištenja adrese korisnika ili unosa na karti
+							\item Otvaranje karte za unos lokacije
 							\item Potvrda lokacije
 							\item Nastavak zadavanja zahtjeva
 						\end{packed_enum}
@@ -330,13 +327,18 @@
 						
 						\item[] \begin{packed_item}
 							
-							\item[3.a] Unos prazne lokacije
+							
+							\item[1.a] Korisnik se odlučuje ne unositi lokaciju
 							\item[] \begin{packed_enum}
 								
 								\item Zahtjevi bez lokacije vode se kao virtualni i prikazuju se svim korisnicima
 								\item Virtualni zahtjevi polaze od pretpostavke da je lokacija irelevantna za uspješno izvršavanje
-								
-							\end{packed_enum}							
+							
+								\end{packed_enum}	
+							\item[3.a] Unos prazne lokacije
+							\item[] \begin{packed_enum}
+								\item Ukoliko se korisnik odlučio za unos lokacije putem karte, a nije to učinio kao adresa zahtjeva se vodi nulti meridijan i ekvator.
+							\end{packed_enum} 						
 						\end{packed_item}
 					\end{packed_item}
 				
@@ -456,20 +458,14 @@
 						
 						\item[] \begin{packed_enum}
 							
-							\item Korisnik odabire zahtjev koji izvršava
+							\item Korisnik odabire zahtjev za pregled
 							\item Korisnik označuje zahtjev izvršenim
 							\item Korisniku izvršitelju šalje se obavijest o izvršenju
 							\item Inicira se ocjenjivanje korisnika
 							
 						\end{packed_enum}
 					
-						
-						
-						
-						
-						
-						
-						
+			
 						\item  \textbf{Opis mogućih odstupanja:}
 							
 							\item[] \begin{packed_item}
@@ -588,12 +584,34 @@
 						\item[] \begin{packed_enum}
 							
 							\item Na profilu korisnika administrator odabire opciju administriranja korisnika
-							\item Administrator bira opciju privremenog blokiranja ili brisanja korisnika
+							\item Administrator bira opciju privremenog ili trajnog blokiranja korisnika
 							\item Administrator potvrđuje odabir
-							\item Unos blokiranja/brisanja u bazu podataka
+							\item Unos blokiranja u bazu podataka
+							\item Svi aktivni zahtjevi blokiranog korisnika za koje nije još odabran izvršitelj se brišu
 						\end{packed_enum}
+					
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[1.a] Korisnik je već privremeno blokiran
+							\item[] \begin{packed_enum}
+								
+								\item Administrator može odblokirati privremeno blokiranog korisnika
+								
+							\end{packed_enum}
+						  
+							\item[1.b] Korisnik je već trajno blokiran
+							\item[] \begin{packed_enum}
+								
+								\item Administrator ne može odblokirati trajno blokiranog korisnika
+								
+							\end{packed_enum}
+					
+					
 						
 					\end{packed_item}
+				\end{packed_item}
 				
 				
 					\noindent \underbar{\textbf{UC12 - Dodavanje novog administratora}}
