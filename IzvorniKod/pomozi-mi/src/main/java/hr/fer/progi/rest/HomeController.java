@@ -48,9 +48,15 @@ public class HomeController {
         String encodedPass = encoder.encode(regDTO.getPassword());
         regDTO.setPassword(encodedPass);
 
+        User newUser = regDTO.mapToUser();
+
+        //make first registered user an admin
+        if(userService.listAll().size() == 0)
+            newUser.setAdministrator(true);
+
         return ResponseEntity.ok(
                 assembler.toModel(
-                        userService.registerUser(regDTO.mapToUser())
+                        userService.registerUser(newUser)
                                 .mapToUserDTO()
                 )
         );

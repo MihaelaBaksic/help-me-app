@@ -4,13 +4,14 @@ import { useHistory, withRouter } from "react-router-dom";
 function ViewProfileComponent(props) {
 	let history = useHistory();
 	let [podaci, setPodaci] = useState("");
+	let [rating, setRating] = useState("");
 	let [showing, setShowing] = useState(/* "requests" */ "");
 
-	console.log(history.location.pathname.substr(1));
+	/* console.log(history.location.pathname.substr()); */
 
 	useEffect(() => {
 		setShowing(history.location.pathname.substr(1));
-	}, []);
+	}, [history.location.pathname]);
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -27,6 +28,7 @@ function ViewProfileComponent(props) {
 		fetch("http://localhost:8080/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
+				/* console.log(JSON.parse(result)); */
 				setPodaci(JSON.parse(result));
 				sessionStorage.setItem(
 					"currentUserUsername",
@@ -36,36 +38,81 @@ function ViewProfileComponent(props) {
 					"isAdmin",
 					JSON.parse(result).administrator
 				);
+				sessionStorage.setItem(
+					"currentUserFirstName",
+					JSON.parse(result).firstName
+				);
+				sessionStorage.setItem(
+					"currentUserLastName",
+					JSON.parse(result).lastName
+				);
+				sessionStorage.setItem(
+					"currentUserEmail",
+					JSON.parse(result).email
+				);
 			})
 			.then(() => {})
 			.catch((error) => console.log("error", error));
+
+		fetch(
+			"http://localhost:8080/rating/average/" +
+				sessionStorage.getItem("currentUserUsername"),
+			options
+		)
+			.then((response) => response.text())
+			.then((result) => {
+				//console.log("rating");
+				setRating(result);
+				/* console.log(rating); */
+			});
 	}, []);
 
 	return (
 		<div className="lijeviStupacContentHolder">
-			<div className="author-card">
+			<div className="author-card" style={{ zIndex: 0 }}>
 				<div className="author-card-cover">
 					<a
 						className="btn btn-style-1 btn-white btn-sm"
-						href="#/test/profile"
 						data-toggle="tooltip"
 					>
-						<i className="fa fa-award text-md"></i>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star checked"></span>
-						<span className="fa fa-star"></span>
-						<span className="fa fa-star"></span>
+						{rating >= 0.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 1.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 2.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 3.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
+						{rating >= 4.5 ? (
+							<span className="fa fa-star checked"></span>
+						) : (
+							<span className="fa fa-star"></span>
+						)}
 					</a>
 				</div>
-				<div className="author-card-profile">
+				<div
+					className="author-card-profile"
+					role="button"
+					onClick={() => history.push("/user/" + podaci.username)}
+				>
 					<div className="author-card-avatar">
 						<img src="https://bootdey.com/img/Content/avatar/avatar1.png" />
 					</div>
 					<div className="author-card-details">
 						<h5 className="author-card-name text-lg">
-							{podaci.firstName}
-							{podaci.lastName}
+							{podaci.firstName} {podaci.lastName}
 						</h5>
 						<span className="author-card-position">
 							{podaci.administrator
@@ -80,7 +127,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/newRequest");
-							console.log("/newRequest");
+							/* console.log("/newRequest"); */
 							setShowing("newRequest");
 						}}
 						className={
@@ -92,7 +139,7 @@ function ViewProfileComponent(props) {
 					>
 						<div className="d-flex justify-content-between align-items-center">
 							<div className="d-inline-block font-weight-medium text-uppercase">
-								Pomoz Bog!!!!
+								Postavi zahtjev
 							</div>
 						</div>
 					</div>
@@ -100,7 +147,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/requests");
-							console.log("/requests");
+							/* console.log("/requests"); */
 							setShowing("requests");
 						}}
 						className={
@@ -119,7 +166,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/myRequests");
-							console.log("/myRequests");
+							/* console.log("/myRequests"); */
 							setShowing("myRequests");
 						}}
 						className={
@@ -133,13 +180,12 @@ function ViewProfileComponent(props) {
 							<div className="d-inline-block font-weight-medium text-uppercase">
 								Moji zahtjevi
 							</div>
-							<span className="badge badge-secondary">2</span>
 						</div>
 					</div>
 					<div
 						onClick={() => {
 							history.push("/otherRequests");
-							console.log("/otherRequests");
+							/* console.log("/otherRequests"); */
 							setShowing("otherRequests");
 						}}
 						className={
@@ -153,13 +199,12 @@ function ViewProfileComponent(props) {
 							<div className="d-inline-block font-weight-medium text-uppercase">
 								Kontaktirani zahtjevi
 							</div>
-							<span className="badge badge-secondary">6</span>
 						</div>
 					</div>
 					<div
 						onClick={() => {
 							history.push("/settings");
-							console.log("/settings");
+							/* console.log("/settings"); */
 							setShowing("settings");
 						}}
 						className={
@@ -174,7 +219,7 @@ function ViewProfileComponent(props) {
 					<div
 						onClick={() => {
 							history.push("/adress");
-							console.log("/adress");
+							/* console.log("/adress"); */
 							setShowing("adress");
 						}}
 						className={
@@ -185,6 +230,21 @@ function ViewProfileComponent(props) {
 						role="button"
 					>
 						Adresa djelovanja
+					</div>
+					<div
+						onClick={() => {
+							history.push("/rating/statistics");
+							/* console.log("/rating/statistics"); */
+							setShowing("rating/statistics");
+						}}
+						className={
+							showing === "rating/statistics"
+								? "list-group-item active"
+								: "list-group-item"
+						}
+						role="button"
+					>
+						Statistika
 					</div>
 				</nav>
 			</div>

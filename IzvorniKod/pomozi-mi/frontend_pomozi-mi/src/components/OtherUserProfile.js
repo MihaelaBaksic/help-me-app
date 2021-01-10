@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RequestList from "./RequestList";
+import CommentComponent from "./CommentComponent";
+import CommentFormComponent from "./CommentFormComponent";
 
 function OtherUserProfile(props) {
 	let { username } = useParams();
 	let [userInfo, setUserInfo] = useState("");
 	let [authoredRequests, setAuthoredRequests] = useState("");
 	let [handlerRequests, setHandlerRequests] = useState("");
+	let [ratings, setRatings] = useState("");
+
+	/*  */
+	const [refreshCenter, setRefreshCenter] = useState("");
+
+	function reRenderaj() {
+		if (refreshCenter === "") {
+			setRefreshCenter("1");
+		} else {
+			setRefreshCenter("");
+		}
+	}
+	/*  */
 
 	function addAsAdmin() {
 		var myHeaders = new Headers();
@@ -23,7 +38,33 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/setAdmin/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
+				setUserInfo(JSON.parse(result));
+			})
+			.catch((error) => {
+				console.log("error", error);
+			});
+	}
+	function permaBlockUser() {
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "true";
+		const options = {
+			method: "POST",
+			headers: myHeaders,
+			redirect: "follow",
+			body: raw,
+		};
+
+		fetch("http://localhost:8080/user/blockUser/" + username, options)
+			.then((response) => response.text())
+			.then((result) => {
+				/* console.log(JSON.parse(result)); */
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -35,16 +76,20 @@ function OtherUserProfile(props) {
 			"Authorization",
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
+		myHeaders.append("Content-Type", "application/json");
+		var raw = "false";
 		const options = {
 			method: "POST",
 			headers: myHeaders,
 			redirect: "follow",
+			body: raw,
 		};
 
 		fetch("http://localhost:8080/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -65,7 +110,8 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/unblockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
-				console.log(JSON.parse(result));
+				/* console.log(JSON.parse(result)); */
+				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
 				console.log("error", error);
@@ -87,6 +133,7 @@ function OtherUserProfile(props) {
 		fetch("http://localhost:8080/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
+				/* console.log(JSON.parse(result)); */
 				setUserInfo(JSON.parse(result));
 			})
 			.catch((error) => {
@@ -116,7 +163,13 @@ function OtherUserProfile(props) {
 			)
 				.then((response) => response.text())
 				.then((result) => {
-					setAuthoredRequests(JSON.parse(result));
+					if (JSON.parse(result)._embedded) {
+						setAuthoredRequests(
+							JSON.parse(result)._embedded.requestDTOList
+						);
+					} else {
+						setAuthoredRequests("");
+					}
 				})
 				.catch((error) => {
 					console.log("error", error);
@@ -128,7 +181,13 @@ function OtherUserProfile(props) {
 			)
 				.then((response) => response.text())
 				.then((result) => {
-					setHandlerRequests(JSON.parse(result));
+					if (JSON.parse(result)._embedded) {
+						setHandlerRequests(
+							JSON.parse(result)._embedded.requestDTOList
+						);
+					} else {
+						setHandlerRequests("");
+					}
 				})
 				.catch((error) => {
 					console.log("error", error);
@@ -138,11 +197,37 @@ function OtherUserProfile(props) {
 	}, [userInfo.status, username]);
 
 	useEffect(() => {
-		console.log(authoredRequests);
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		myHeaders.append("Content-Type", "application/json");
+
+		const options = {
+			method: "GET",
+			headers: myHeaders,
+			redirect: "follow",
+		};
+
+		fetch("http://localhost:8080/rating/of/" + username, options)
+			.then((response) => response.text())
+			.then((result) => {
+				setRatings(JSON.parse(result));
+				//console.log(result);
+			});
+	}, [username, refreshCenter]);
+
+	useEffect(() => {
+		/* console.log(ratings); */
+	}, [ratings]);
+
+	useEffect(() => {
+		/* console.log(authoredRequests); */
 	}, [authoredRequests]);
 
 	useEffect(() => {
-		console.log(handlerRequests);
+		/* console.log(handlerRequests); */
 	}, [handlerRequests]);
 
 	if (userInfo) {
@@ -178,38 +263,57 @@ function OtherUserProfile(props) {
 								</a> */}
 
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.administrator === "false" ? (
-									<div className="mt-3">
-										<div
-											role="button"
-											className="btn btn-success rounded-pill"
-											onClick={addAsAdmin}
-										>
-											+&nbsp; Dodaj kao admina
-										</div>
-									</div>
-								) : null}
-								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.administrator === false &&
 								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
-											onClick={blockUser}
+											className="btn btn-success rounded-pill col-xl-6"
+											onClick={addAsAdmin}
 										>
-											+&nbsp; Blokiraj korisnika
+											<i className="far fa-id-badge"></i>
+											&nbsp; Dodaj kao admina
 										</div>
 									</div>
 								) : null}
 								{sessionStorage.getItem("isAdmin") === "true" &&
-								userInfo.status === "TEMPBLOCKED" ? (
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
 									<div className="mt-3">
 										<div
 											role="button"
-											className="btn btn-danger rounded-pill"
+											className="btn btn-warning rounded-pill col-xl-6"
+											onClick={blockUser}
+										>
+											<i className="fas fa-lock"></i>
+											&nbsp; Privremeno blokiraj korisnika
+										</div>
+									</div>
+								) : null}
+								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.administrator === false &&
+								userInfo.status === "NOTBLOCKED" ? (
+									<div className="mt-3">
+										<div
+											role="button"
+											className="btn btn-danger rounded-pill col-xl-6"
+											onClick={permaBlockUser}
+										>
+											<i className="fas fa-ban"></i>&nbsp;
+											Trajno blokiraj korisnika
+										</div>
+									</div>
+								) : null}
+								{sessionStorage.getItem("isAdmin") === "true" &&
+								userInfo.status === "TEMPBLOCK" ? (
+									<div className="mt-3">
+										<div
+											role="button"
+											className="btn btn-info rounded-pill col-xl-6"
 											onClick={unBlockUser}
 										>
-											+&nbsp; Odblokiraj korisnika
+											<i className="fas fa-lock-open"></i>
+											&nbsp; Odblokiraj korisnika
 										</div>
 									</div>
 								) : null}
@@ -219,56 +323,101 @@ function OtherUserProfile(props) {
 						<hr className="m-0" />
 					</div>
 
-					<div className="row">
-						<div className="col">
-							<div className="card mb-4">
-								<div className="card-body">
-									<div className="col-xl-12">
-										<div className="page-header">
-											<h3>Postavljeni zahtjevi</h3>
-											<hr />
+					{userInfo.status === "NOTBLOCKED" ? (
+						<div>
+							<div className="row">
+								<div className="col">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="col-xl-12">
+												<div className="page-header">
+													<h3>
+														Postavljeni zahtjevi
+													</h3>
+													<hr />
+												</div>
+												{authoredRequests ? (
+													<RequestList
+														listaZahtjeva={
+															authoredRequests
+														}
+													/>
+												) : null}
+											</div>
 										</div>
-										{authoredRequests._embedded ? (
-											<RequestList
-												listaZahtjeva={authoredRequests}
-											/>
-										) : null}
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 
-					<div className="row">
-						<div className="col">
-							<div className="card mb-4">
-								<div className="card-body">
-									<div className="col-xl-12">
-										<div className="page-header">
-											<h3>Izvršeni zahtjevi</h3>
-											<hr />
+							<div className="row">
+								<div className="col">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="col-xl-12">
+												<div className="page-header">
+													<h3>Izvršeni zahtjevi</h3>
+													<hr />
+												</div>
+												{handlerRequests ? (
+													<RequestList
+														listaZahtjeva={
+															handlerRequests
+														}
+													/>
+												) : null}
+											</div>
 										</div>
-										{handlerRequests._embedded ? (
-											<RequestList
-												listaZahtjeva={handlerRequests}
-											/>
-										) : null}
 									</div>
 								</div>
 							</div>
+							<div className="row">
+								<div className="col-xl-8">
+									<div className="card mb-4">
+										<div className="card-body">
+											<div className="page-header">
+												<h3>Komentari</h3>
+												<hr />
+											</div>
+											<CommentComponent
+												listaKomentara={ratings}
+												korIme={username}
+											/>
+										</div>
+									</div>
+								</div>
+								{sessionStorage.getItem(
+									"currentUserUsername"
+								) !== username ? (
+									<div className="col-xl-4">
+										<div className="card mb-4">
+											<div className="card-body">
+												<div className="page-header">
+													<h3>Ocijeni korisnika</h3>
+													<hr />
+												</div>
+												<CommentFormComponent
+													korIme={username}
+													reRenderaj={reRenderaj}
+												/>
+											</div>
+										</div>
+									</div>
+								) : null}
+							</div>
 						</div>
-						<div className="col-xl-4">
+					) : (
+						<div className="col-xl-8">
 							<div className="card mb-4">
 								<div className="card-body">
 									<div className="page-header">
-										<h3>Komentari</h3>
+										<h3>KORISNIK JE BLOKIRAN!</h3>
 										<hr />
 									</div>
-									OVDJE JE KOMPONENTA KOMENTARA
+									<i className="fas fa-lock fa-10x mb-4"></i>
 								</div>
 							</div>
 						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		);

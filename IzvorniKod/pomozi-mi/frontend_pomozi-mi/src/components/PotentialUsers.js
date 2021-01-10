@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Button, Icon, Divider } from "semantic-ui-react";
+import { Button, Icon, Divider, Label } from "semantic-ui-react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 const baseUrl = "http://localhost:8080";
 
@@ -8,8 +9,14 @@ function PotentialUsers(props) {
 	const [list, setList] = React.useState([]);
 	const [modal, setModal] = useState(false);
 	const toggle = () => setModal(!modal);
+	let history = useHistory();
 
-   //Funkcija za prihvat potencijalnog korisnika
+	function pogledajUsera(username) {
+		/* console.log(username); */
+		history.push("/user/" + username);
+	}
+
+	//Funkcija za prihvat potencijalnog korisnika
 	async function acceptUser(user) {
 		const newList = list.filter((item) => item.username !== user.username);
 		setList(newList);
@@ -32,9 +39,9 @@ function PotentialUsers(props) {
 			options
 		).then((response) => {
 			if (response.status === 200) {
-            console.log("Uspješano prihvaćanje");
-            window.location.reload(false);
-            toggle();
+				/* console.log("Uspješano prihvaćanje"); */
+				window.location.reload(false);
+				toggle();
 			} else {
 				console.log("Neuspješano prihvaćanje");
 			}
@@ -64,7 +71,7 @@ function PotentialUsers(props) {
 			options
 		).then((response) => {
 			if (response.status === 200) {
-            console.log("Uspješano odbijanje");
+				console.log("Uspješano odbijanje");
 			} else {
 				console.log("Neuspješano odbijanje");
 			}
@@ -94,7 +101,7 @@ function PotentialUsers(props) {
 	return (
 		<div>
 			<Button color="blue" size="large" floated="right" onClick={toggle}>
-				Notice me senpai{" "}
+				Pregled javljanja{" "}
 			</Button>{" "}
 			<Modal isOpen={modal} toggle={toggle}>
 				<ModalHeader toggle={toggle}>
@@ -104,20 +111,29 @@ function PotentialUsers(props) {
 					{" "}
 					{list.map((item) => (
 						<div key={item.username}>
-							<Icon name="user" /> @{item.username} {" | "}{" "}
-							{item.firstName} {item.lastName}{" "}
+							<Icon name="user" />
+							<Label
+								onClick={(e) => pogledajUsera(item.username, e)}
+							>
+								@{item.username} {" | "} {item.firstName}{" "}
+								{item.lastName}{" "}
+							</Label>
 							<Button
 								color="red"
 								floated="right"
 								size="medium"
 								onClick={() => handleRemove(item)}
-							>Odbij</Button>{" "}
+							>
+								Odbij
+							</Button>{" "}
 							<Button
 								color="green"
 								floated="right"
-                        size="medium"
-                        onClick={() => acceptUser(item)}
-							>Prihvati</Button>
+								size="medium"
+								onClick={() => acceptUser(item)}
+							>
+								Prihvati
+							</Button>
 							<Divider />
 						</div>
 					))}{" "}

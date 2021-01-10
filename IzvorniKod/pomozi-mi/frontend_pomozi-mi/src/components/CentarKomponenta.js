@@ -1,62 +1,69 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import RequestList from "./RequestList";
 
 import UserSettings from "./UserSettings";
 import RequestForm from "./RequestForm";
 import { HashRouter, Switch, Route } from "react-router-dom";
-import { useHistory, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import OtherUserProfile from "./OtherUserProfile";
 import Statistics from "./Statistics";
+import FilterRequestList from "./FilterRequestList";
+import RequestComponent from "./RequestComponent";
+import UserHandlerRequests from "./UserHandlerRequests";
 
-function CentarKomponenta(props) {
-	let history = useHistory();
-
+function CentarKomponenta() {
 	return (
 		<div
 			id="center"
 			className={
-				history.location.pathname === "/newRequest"
+				/* history.location.pathname === "/newRequest" */ true
 					? "center centerOverflow hiddenScroll"
 					: "center centerOverflow"
 			}
 		>
 			<HashRouter>
 				<Switch>
-					<Route path="/newRequest" component={RequestForm} />
-					<Route path="/settings" component={UserSettings} />
-					<Route path="/requests" component={RequestList} />
-					<Route
-						path="/myRequests"
-						render={() => (
-							<RequestList
-								username={
-									sessionStorage.getItem(
-										"currentUserUsername"
-									)
-										? sessionStorage.getItem(
-												"currentUserUsername"
-										  )
-										: ""
-								}
-							/>
-						)}
-					/>
-					<Route
-						path="/user/:username"
-						render={() => <OtherUserProfile />}
-					/>
-					<Route path="/rating/statistics" component={Statistics} />
+					<Route path="/newRequest">
+						<RequestForm />
+					</Route>
+
+					<Route path="/settings">
+						<UserSettings />
+					</Route>
+
+					<Route path="/requests">
+						<FilterRequestList />
+					</Route>
+
+					<Route path="/otherRequests">
+						<UserHandlerRequests />
+					</Route>
+
+					<Route path="/myRequests">
+						<RequestList
+							username={
+								sessionStorage.getItem("currentUserUsername")
+									? sessionStorage.getItem(
+											"currentUserUsername"
+									  )
+									: ""
+							}
+						/>
+					</Route>
+
+					<Route path="/user/:username">
+						<OtherUserProfile />
+					</Route>
+
+					<Route path="/request/:id">
+						<RequestComponent />
+					</Route>
+
+					<Route path="/rating/statistics">
+						<Statistics />
+					</Route>
 				</Switch>
 			</HashRouter>
-			{/* {props.show === "newRequest" && <RequestForm />}
-			{props.show === "settings" && <UserSettings />}
-			{props.show === "requests" && <RequestList />}
-			{props.show === "myRequests" && (
-				<RequestList
-					username={sessionStorage.getItem("currentUserUsername")}
-				/>
-			)}
-			{props.show === "delete" && <DeleteComponent />} */}
 		</div>
 	);
 }

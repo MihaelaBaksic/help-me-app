@@ -2,18 +2,24 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import MapComponent from "./MapComponent";
 import L from "leaflet";
+import { useHistory, withRouter } from "react-router-dom";
 
 const baseUrl = "http://localhost:8080";
 
 function RequestForm() {
+	let history = useHistory();
 	const { register, handleSubmit, errors } = useForm();
-	const [geoLocation, setGeoLocation] = useState(L.latLng(0, 0));
+	const [useLocation, setUseLocation] = useState("true");
+	const [geoLocation, setGeoLocation] = useState(
+		L.latLng(45.800623, 15.971131)
+	);
+
 	/* const onSubmit = (data) => console.log(data); */
 	async function onSubmit(values, e) {
 		e.preventDefault();
 
 		e.preventDefault();
-		console.log(geoLocation);
+		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
 			method: "GET",
@@ -30,7 +36,7 @@ function RequestForm() {
 			.then((response) => response.text())
 			.then((result) => {
 				fetchResult = JSON.parse(result);
-				console.log(fetchResult);
+				/* console.log(fetchResult); */
 			})
 			.catch((error) => console.log(error.message))
 			.finally(() => {
@@ -53,13 +59,17 @@ function RequestForm() {
 				}
 
 				values = JSON.parse(JSON.stringify(values));
-				console.log(values);
+				/* console.log(values); */
 				values.address = {};
 				values.address.description = description;
-				values.address.x_coord = geoLocation.lat;
-				values.address.y_coord = geoLocation.lng;
+				if (useLocation === "true") {
+					values.address.x_coord = geoLocation.lat;
+					values.address.y_coord = geoLocation.lng;
+				} else {
+					values.address = null;
+				}
 
-				console.log(values);
+				/* console.log(values); */
 				values = JSON.stringify(values);
 				var myHeaders = new Headers();
 				myHeaders.append(
@@ -74,7 +84,10 @@ function RequestForm() {
 				};
 				fetch(baseUrl + "/requests", options)
 					.then((response) => response.text())
-					.then((result) => console.log(JSON.parse(result)))
+					.then((result) => {
+						/* console.log(JSON.parse(result)); */
+						history.push("/myRequests");
+					})
 					.catch((error) => console.log(error));
 			});
 	}
@@ -86,6 +99,9 @@ function RequestForm() {
 				name="newRequest"
 				className="forma"
 				onSubmit={handleSubmit(onSubmit)}
+				onKeyPress={(e) => {
+					e.key === "Enter" && e.preventDefault();
+				}}
 			>
 				<div id="newRequestFormInputs" className="naslov_istek">
 					<div className="form-group">
@@ -143,9 +159,41 @@ function RequestForm() {
 						/>
 					</div>
 				</div>
-				<MapComponent setGeoLocation={setGeoLocation} />
+				<div className="virtualOrLocationCheckBox">
+					<div className="form-check">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="lokacijaRadio"
+							id="koristiLokaciju"
+							value="option1"
+							onClick={() => setUseLocation("true")}
+							checked={useLocation === "true" ? true : false}
+						/>
+						Zahtjev s lokacijom
+					</div>
+					<div className="form-check">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="lokacijaRadio"
+							id="virtualniZahtjev"
+							value="option2"
+							onClick={() => setUseLocation("false")}
+						/>
+						Virtualni zahtjev
+					</div>
+				</div>
+				{useLocation === "true" ? (
+					<MapComponent setGeoLocation={setGeoLocation} />
+				) : null}
+
 				<div className="loginOrRegisterBtns">
-					<button type="cancel" className="btn btn-secondary">
+					<button
+						type="cancel"
+						onClick={() => history.push("/requests")}
+						className="btn btn-secondary"
+					>
 						Cancel
 					</button>
 					<button
@@ -160,4 +208,4 @@ function RequestForm() {
 		</div>
 	);
 }
-export default RequestForm;
+export default withRouter(RequestForm);

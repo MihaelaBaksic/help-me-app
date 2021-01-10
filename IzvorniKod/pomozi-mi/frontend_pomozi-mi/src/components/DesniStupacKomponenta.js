@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, withRouter } from "react-router-dom";
-
+import Notifications from "./Notifications";
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
 const logOutUrl = "http://localhost:8080/logout";
 //const logOutUrl = `${process.env.PUBLIC_URL}/logout`;
@@ -22,11 +22,11 @@ function DesniStupacKomponenta(props) {
 
 		await fetch(logOutUrl, options).then((response) => {
 			if (response.status === 204) {
-				console.log("Uspješan logout");
+				/* console.log("Uspješan logout"); */
 				props.setLogInFalse();
 				history.push("/");
 			} else {
-				console.log("Neuspješan logout");
+				/* console.log("Neuspješan logout"); */
 			}
 		});
 	}
@@ -35,6 +35,7 @@ function DesniStupacKomponenta(props) {
 	return (
 		<div id="desniStupac" className="desniStupac">
 			<div className="desniStupacContentHolder">
+				<Notifications></Notifications>
 				<div
 					type="button"
 					className="btn btn-outline-secondary logOutButton"

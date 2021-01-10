@@ -1,7 +1,8 @@
 import React from "react";
-import { List, Button, Label, Divider, Grid } from "semantic-ui-react";
-import { useEffect, useState, useCallback } from "react";
+import { Divider } from "semantic-ui-react";
+import { useEffect, useState } from "react";
 import FilterComponent from "./FilterComponent";
+import RequestList from "./RequestList";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
@@ -21,7 +22,6 @@ function FilterRequestList(props) {
 			"Basic " + sessionStorage.getItem("basicAuthToken")
 		);
 		myHeaders.append("Content-Type", "application/json");
-		console.log("PA FAMILIJO STA JE BELAJ");
 
 		const options = {
 			method: "POST",
@@ -29,80 +29,49 @@ function FilterRequestList(props) {
 			redirect: "follow",
 			body: filterBody,
 		};
-		if (props.listaZahtjeva) {
-			setRequestsF(props.listaZahtjeva._embedded.requestDTOList);
-		} else {
-			fetch(
-				props.username
-					? baseUrl + "/user/authoredRequests/" + props.username
-					: baseUrl + "/requests/all",
-				options
-			)
-				.then((response) => response.text())
-				.then((result) => {
-					if (JSON.parse(result)._embedded) {
-						setRequestsF(
-							JSON.parse(result)._embedded.requestDTOList
-						);
-					} else {
-						setRequestsF("");
-					}
-				})
-				.catch((error) => {
-					console.log("error: ", error, "LISTA VJEROJATNO PRAZNA");
+
+		fetch(
+			props.username
+				? baseUrl + "/user/authoredRequests/" + props.username
+				: baseUrl + "/requests/all",
+			options
+		)
+			.then((response) => response.text())
+			.then((result) => {
+				if (JSON.parse(result)._embedded) {
+					setRequestsF(JSON.parse(result)._embedded.requestDTOList);
+				} else {
 					setRequestsF("");
-				});
-		}
-	}, [filterBody]);
+				}
+			})
+			.catch((error) => {
+				/* console.log("error: ", error, "LISTA VJEROJATNO PRAZNA"); */
+				setRequestsF("");
+			});
+	}, [filterBody, props.username]);
 
 	if (requestsF) {
-		console.log("Body = ");
-		console.log(filterBody);
+		/* console.log("Body = ");
+		console.log(filterBody); */
 		return (
-			<List selection celled id="requestList">
-				<FilterComponent
-					setFilterBody={(body) => setFilterBody(body)}
-				/>
-				<Divider hidden fitted />
-				{requestsF.map((request) => (
-					<List.Item key={request.id} /*onClick={}*/>
-						<Grid padded>		
-							<Grid.Row columns={2}>
-								<Grid.Column>
-									<List.Header>
-										<Label as="a" image>
-											<img
-												src="https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-												alt=""
-											/>
-											&nbsp;
-											{request.requestAuthor.username}
-											{request.address ? <Label.Detail>{request.address.description}</Label.Detail>
-										: <Label.Detail>Virtualni zahtjev</Label.Detail>}
-										</Label>
-										<br/>
-										<div id="requestTitle" >{request.title}</div>
-									</List.Header>
-								</Grid.Column>	
-								<Grid.Column floated="right">
-									<Button color='blue' floated="right">
-										Pregledaj
-									</Button>
-								</Grid.Column>
-							</Grid.Row>
-						</Grid>		
-					</List.Item>
+			<div className="card centerContent">
+				<div role="list">
+					<FilterComponent
+						setFilterBody={(body) => setFilterBody(body)}
+					/>
+				</div>
 
-				))}
-			</List>
+				<Divider hidden fitted />
+				{requestsF ? <RequestList listaZahtjeva={requestsF} /> : null}
+			</div>
 		);
 	} else {
 		return (
-			<div>
+			<div className="card centerContent">
 				<FilterComponent
 					setFilterBody={(body) => setFilterBody(body)}
 				/>
-				<h1>Ne postoje takvi zahtjevi!</h1>
+				<h1>Lista zahtjeva je prazna</h1>
 			</div>
 		);
 	}

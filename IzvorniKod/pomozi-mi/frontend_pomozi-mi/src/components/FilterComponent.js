@@ -1,8 +1,8 @@
 import React from "react";
 import { CustomInput, Form, FormGroup, Label, Input } from "reactstrap";
-import { Divider, Button, Checkbox } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function FilterComponent(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
@@ -11,14 +11,14 @@ function FilterComponent(props) {
 	const [virtual, setVirtual] = useState(false);
 
 	function onSubmit(values, e) {
-		console.log("Body u FilterComponent: ");
+		/* console.log("Body u FilterComponent: "); */
 
 		let filter = {
 			radius: radius,
 			virtual: virtual,
 			order: sort ? "ATOZ" : "ZTOA",
 		};
-		console.log(JSON.stringify(filter));
+		/* console.log(JSON.stringify(filter)); */
 
 		props.setFilterBody(JSON.stringify(filter));
 	}
@@ -44,7 +44,7 @@ function FilterComponent(props) {
 	}
 
 	return (
-		<div>
+		<div className="filterZahtjeva">
 			<Form inline onSubmit={handleSubmit(onSubmit)}>
 				<FormGroup>
 					<Label for="radius">Radius:</Label>
@@ -56,7 +56,9 @@ function FilterComponent(props) {
 						onChange={handleRadius}
 					/>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<FormGroup>
 					<Label for="radius">Sortiranje:</Label>
 					<CustomInput
@@ -74,7 +76,9 @@ function FilterComponent(props) {
 						onChange={handleSortZA}
 					/>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<FormGroup check>
 					<Input
 						type="checkbox"
@@ -86,9 +90,11 @@ function FilterComponent(props) {
 						Virtualni
 					</Label>
 				</FormGroup>
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>
 				<div>
-					<Button type="submit" size = "small">
+					<Button type="submit" size="small">
 						Filtriraj
 					</Button>
 				</div>

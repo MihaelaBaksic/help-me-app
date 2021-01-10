@@ -61,22 +61,12 @@ public class RequestController {
     @Secured("ROLE_USER")
     public CollectionModel<EntityModel<RequestDTO>> getRequests(@RequestBody FilterDTO filterDTO) {
         System.out.println(filterDTO);
-        List<RequestDTO> requests = requestService.listAll()
+
+        List<RequestDTO> requests = requestService.getFilteredRequests(filterDTO)
                 .stream()
-                .filter(r -> (r.getStatus() == RequestStatus.ACTNOANS || r.getStatus() == RequestStatus.ACTANS))
-                .filter(r -> (r.getExpirationDate().after(new Date()) || r.getExpirationDate().equals(new Date())) )
-                .filter(r -> (!filterDTO.getVirtual() || r.getAddress()==null))
-                .map(Request::mapToRequestDTO)
+                .map(r -> r.mapToRequestDTO())
                 .collect(Collectors.toList());
 
-        switch (filterDTO.getOrder()){
-            case ATOZ:
-                requests.sort(Comparator.comparing(RequestDTO::getTitle));
-                break;
-            case ZTOA:
-                requests.sort(Comparator.comparing(RequestDTO::getTitle).reversed());
-                break;
-        }
         return assembler.toCollectionModel(requests);
     }
 
@@ -239,6 +229,8 @@ public class RequestController {
 
         if( !r.getStatus().equals(RequestStatus.ACCEPTED))
             throw new IllegalArgumentException("A request that isn't marked ACCEPTED cannot be marked DONE");
+
+
 
         return assembler.toModel(requestService.markRequestDone(r).mapToRequestDTO());
     }

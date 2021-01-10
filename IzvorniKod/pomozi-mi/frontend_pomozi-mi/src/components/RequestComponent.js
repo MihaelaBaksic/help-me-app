@@ -6,17 +6,38 @@ import {
 	Button,
 	Card,
 	Icon,
-	CardContent,
+	Header,
 } from "semantic-ui-react";
 import PotentialUsers from "./PotentialUsers";
+import L from "leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { useHistory } from "react-router-dom";
+import CommentFormComponent from "./CommentFormComponent";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
 
 function RequestComponent(props) {
+	let history = useHistory();
 	const { id } = useParams();
 	const [podaciReq, setPodaciReq] = useState([]);
 	const [podaciUser, setPodaciUser] = useState([]);
+
+	const [map, setMap] = useState(null);
+
+	function pogledajUsera(username) {
+		/* console.log(username); */
+		history.push("/user/" + username);
+	}
+
+	useEffect(() => {
+		if (podaciReq.address && map) {
+			map.setView(
+				L.latLng(podaciReq.address.x_coord, podaciReq.address.y_coord),
+				13
+			);
+		}
+	}, [map, podaciReq.address]);
 
 	//Ovo je za fetch requesta
 	useEffect(() => {
@@ -35,7 +56,7 @@ function RequestComponent(props) {
 			.then((response) => response.text())
 			.then((result) => setPodaciReq(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
-	}, []);
+	}, [id]);
 
 	//Ovo je trenutno redudantno ali se hvata trenutni user
 	useEffect(() => {
@@ -54,7 +75,7 @@ function RequestComponent(props) {
 			.then((response) => response.text())
 			.then((result) => setPodaciUser(JSON.parse(result)))
 			.catch((error) => console.log("error", error));
-	}, []);
+	}, [id]);
 
 	async function blockRequest() {
 		var myHeaders = new Headers();
@@ -73,10 +94,10 @@ function RequestComponent(props) {
 			options
 		).then((response) => {
 			if (response.status === 200) {
-				console.log("Uspješano blokiranje");
+				/* console.log("Uspješano blokiranje"); */
 				window.location.reload(false);
 			} else {
-				console.log("Neuspješano blokiranje");
+				/* console.log("Neuspješano blokiranje"); */
 			}
 		});
 	}
@@ -104,10 +125,10 @@ function RequestComponent(props) {
 		await fetch(baseUrl + `/requests/markDone/${id}`, options).then(
 			(response) => {
 				if (response.status === 200) {
-					console.log("Uspješano obavljanje");
+					/* console.log("Uspješano obavljanje"); */
 					window.location.reload(false);
 				} else {
-					console.log("Neuspješano obavljanje");
+					/* console.log("Neuspješano obavljanje"); */
 				}
 			}
 		);
@@ -128,27 +149,28 @@ function RequestComponent(props) {
 		await fetch(baseUrl + `/requests/respond/${id}`, options).then(
 			(response) => {
 				if (response.status === 200) {
-					console.log("Uspješano javljanje");
+					/* console.log("Uspješano javljanje"); */
+					window.location.reload(false);
 				} else {
-					console.log("Neuspješano javljanje");
+					/* console.log("Neuspješano javljanje"); */
 				}
 			}
 		);
 	}
 
-	console.log(JSON.stringify(podaciReq));
-	console.log(JSON.stringify(podaciUser));
+	/* console.log(JSON.stringify(podaciReq));
+	console.log(JSON.stringify(podaciUser)); */
 
 	if (podaciReq.address !== undefined) {
 		let moj = "Ne";
 		let btnL = "Javi se";
 		let btnR = "";
-		if (podaciUser.administrator == true) {
+		if (podaciUser.administrator === true) {
 			moj = "Da";
 			btnL = "Javi se";
 			btnR = "Ukloni zahtjev";
 		}
-		if (podaciReq.requestAuthor.username == podaciUser.username) {
+		if (podaciReq.requestAuthor.username === podaciUser.username) {
 			moj = "Da";
 			btnL = "Pregled javljanja";
 			btnR = "Blokiraj";
@@ -181,17 +203,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -214,17 +251,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -233,9 +285,38 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
-								<h2 color="red"> Zahtjev je gotov! </h2>
+								<h2 color="red">
+									{" "}
+									Zahtjev je izvršio{" "}
+									<Label
+										role="button"
+										size="big"
+										onClick={(e) =>
+											pogledajUsera(
+												podaciReq.handler.username,
+												e
+											)
+										}
+									>
+										{podaciReq.handler.username}
+									</Label>
+								</h2>
 							</div>
 						</Card.Content>
+						{podaciUser.username ===
+							podaciReq.requestAuthor.username ||
+						podaciUser.username === podaciReq.handler.username ? (
+							<CommentFormComponent
+								requestId={podaciReq.id}
+								korIme={
+									podaciUser.username ===
+									podaciReq.requestAuthor.username
+										? podaciReq.handler.username
+										: podaciReq.requestAuthor.username
+								}
+								reRenderaj={() => {}}
+							/>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -250,17 +331,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -273,6 +369,32 @@ function RequestComponent(props) {
 								<PotentialUsers id={id}></PotentialUsers>
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+									whenCreated={setMap}
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -284,17 +406,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -304,37 +441,32 @@ function RequestComponent(props) {
 						<Card.Content extra>
 							<div>{buttonRight}</div>
 						</Card.Content>
-					</Card>
-				</Container>
-			);
-		} else if (
-			podaciReq.requestAuthor.username === podaciUser.username &&
-			podaciReq.status === "ACTNOANS"
-		) {
-			return (
-				<Container textAlign="justified" color="blue">
-					<Card color="red" fluid>
-						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
-							<Label color="orange">
-								Krajnji datum = {podaciReq.expirationDate}
-							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
-							<Label color="orange">Autor Zahtjeva = {moj}</Label>
-						</Card.Content>
-						<Card.Content
-							header={podaciReq.title}
-							description={podaciReq.description}
-						/>
-						<Card.Content extra>
-							<div>{buttonRight}</div>
-						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+									whenCreated={setMap}
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -357,17 +489,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -380,10 +527,36 @@ function RequestComponent(props) {
 								{buttonLeft}
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+									whenCreated={setMap}
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
-		} else if (podaciReq.requestAuthor.administrator === true) {
+		} else if (podaciUser.administrator === true) {
 			if (podaciReq.status === "ACCEPTED") {
 				buttonLeft = (
 					<Button disabled color="blue" size="large" floated="right">
@@ -395,17 +568,32 @@ function RequestComponent(props) {
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -414,10 +602,48 @@ function RequestComponent(props) {
 						/>
 						<Card.Content extra>
 							<div>
+								{podaciReq.handler === null ? (
+									""
+								) : podaciReq.handler.username ===
+								  podaciUser.username ? (
+									<Header size="large" color="green">
+										Autor Vas je izabrao kao izvršitelja!
+									</Header>
+								) : (
+									<Header size="large" color="red">
+										Autor Vas NIJE izabrao kao izvršitelja!
+									</Header>
+								)}
 								{buttonRight}
 								{buttonLeft}
 							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+									whenCreated={setMap}
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);
@@ -429,21 +655,48 @@ function RequestComponent(props) {
 					</Button>
 				);
 			}
+			if(podaciReq.PotentialUsers !== null){
+				for (let i in podaciReq.potentialHandler) {
+					if(podaciReq.potentialHandler[i].username === podaciUser.username){
+						buttonLeft = (
+							<Button disabled color="blue" size="large" floated="right">
+								{btnL}
+							</Button>
+						);
+						break;
+					}
+				}
+			}
 			return (
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
 						<Card.Content extra>
-							<Icon name="user" size="big" />@
-							{podaciReq.requestAuthor.username}
-							{" | "}
-							{podaciReq.requestAuthor.firstName}{" "}
-							{podaciReq.requestAuthor.lastName}{" "}
+							<Icon name="user" size="big" />
+							<Label
+								role="button"
+								onClick={(e) =>
+									pogledajUsera(
+										podaciReq.requestAuthor.username,
+										e
+									)
+								}
+							>
+								{"@"}
+								{podaciReq.requestAuthor.username}
+								{" | "}
+								{podaciReq.requestAuthor.firstName}{" "}
+								{podaciReq.requestAuthor.lastName}{" "}
+							</Label>
 							<Label color="orange">
 								Krajnji datum = {podaciReq.expirationDate}
 							</Label>
-							<Label color="orange">
-								Adresa = {podaciReq.address.description}
-							</Label>
+							{podaciReq.address ? (
+								<Label color="orange">
+									Adresa: {podaciReq.address.description}
+								</Label>
+							) : (
+								<Label color="orange">Virtualni zahtjev</Label>
+							)}
 							<Label color="orange">Autor Zahtjeva = {moj}</Label>
 						</Card.Content>
 						<Card.Content
@@ -451,8 +704,48 @@ function RequestComponent(props) {
 							description={podaciReq.description}
 						/>
 						<Card.Content extra>
-							<div>{buttonLeft}</div>
+							<div>
+								{podaciReq.handler === null ? (
+									""
+								) : podaciReq.handler.username ===
+								  podaciUser.username ? (
+									<Header size="large" color="green">
+										Autor Vas je izabrao kao izvršitelja!
+									</Header>
+								) : (
+									<Header size="large" color="red">
+										Autor Vas NIJE izabrao kao izvršitelja!
+									</Header>
+								)}
+								{buttonLeft}
+							</div>
 						</Card.Content>
+						{podaciReq.address ? (
+							<Card.Content>
+								<MapContainer
+									center={L.latLng(
+										podaciReq.address.x_coord,
+										podaciReq.address.y_coord
+									)}
+									zoom={13}
+									scrollWheelZoom={true}
+									className="form-group"
+									whenCreated={setMap}
+								>
+									<TileLayer
+										attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, <a href="https://github.com/hrvoje459" target="_blank">hrvoje459</a> '
+										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+									/>
+									<Marker
+										draggable={false}
+										position={L.latLng(
+											podaciReq.address.x_coord,
+											podaciReq.address.y_coord
+										)}
+									></Marker>
+								</MapContainer>
+							</Card.Content>
+						) : null}
 					</Card>
 				</Container>
 			);

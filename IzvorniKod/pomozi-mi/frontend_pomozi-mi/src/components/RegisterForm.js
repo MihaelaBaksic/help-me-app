@@ -21,7 +21,7 @@ function RegisterForm(props) {
 
 	function onSubmit(values, e) {
 		e.preventDefault();
-		console.log(geoLocation);
+		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
 			method: "GET",
@@ -38,7 +38,7 @@ function RegisterForm(props) {
 			.then((response) => response.text())
 			.then((result) => {
 				fetchResult = JSON.parse(result);
-				console.log(fetchResult);
+				/* console.log(fetchResult); */
 			})
 			.catch((error) => console.log(error.message))
 			.finally(() => {
@@ -66,7 +66,7 @@ function RegisterForm(props) {
 				values.x_coord = geoLocation.lat;
 				values.y_coord = geoLocation.lng;
 
-				console.log(values);
+				/* console.log(values); */
 				values = JSON.stringify(values);
 				const options = {
 					method: "POST",
@@ -77,7 +77,7 @@ function RegisterForm(props) {
 				};
 				fetch(registerUrl, options).then((response) => {
 					if (response.status === 200) {
-						console.log("Uspješna registracija");
+						/* console.log("Uspješna registracija"); */
 						history.push("/");
 					} else {
 						response.json().then((result) => {

@@ -1,8 +1,7 @@
 package hr.fer.progi.rest;
 
-import hr.fer.progi.domain.Rating;
-import hr.fer.progi.domain.Request;
-import hr.fer.progi.domain.User;
+import hr.fer.progi.dao.NotificationRepository;
+import hr.fer.progi.domain.*;
 import hr.fer.progi.mappers.RatingDTO;
 import hr.fer.progi.mappers.ReturnRatingDTO;
 import hr.fer.progi.mappers.UserDTO;
@@ -42,6 +41,9 @@ public class RatingController {
 
     @Autowired
     private UserModelAssembler userAssembler;
+
+    @Autowired
+    private NotificationService notificationService;
 
     /**
      * Handles a HTTP GET Request when user wants to know rating score of other user.
@@ -97,6 +99,11 @@ public class RatingController {
         Long requestId = ratingDTO.getRequestId();
         Request request = requestId == null ? null :
                 requestService.getRequestById(requestId);
+
+        if(request!= null && request.getStatus()!= RequestStatus.DONE)
+            throw new InvalidRatingException("User can't be rated for a request that isn't marked DONE");
+
+        notificationService.markRatingNotificationAsRated(ratingDTO);
 
         Rating rating = new Rating(ratingDTO.getRating(), ratingDTO.getComment(),
                 loggedUser, ratedUser, request);
