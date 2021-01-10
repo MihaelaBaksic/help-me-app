@@ -1,6 +1,6 @@
 package hr.fer.progi.rest;
 
-import org.apache.catalina.filters.CorsFilter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
@@ -23,12 +23,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
-@Profile("basic-security")
+@Profile("test-security")
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 @CrossOrigin(origins = "*/*")
-public class WebSecurity extends WebSecurityConfigurerAdapter {
+public class TestSecurity extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
@@ -39,42 +38,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.httpBasic();
         http.cors();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers("/").permitAll()
-                .and().formLogin().loginProcessingUrl("/login").usernameParameter("username").passwordParameter("password")
-                .successHandler((req, res, auth) -> res.setStatus(HttpStatus.OK.value()))
-                .and().exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-                .and().logout().logoutSuccessUrl("/logout").invalidateHttpSession(true).and().csrf();
+        http.authorizeRequests().antMatchers("/").permitAll();
         http.headers().frameOptions().sameOrigin(); // fixes h2-console problem
         http.csrf().disable();
     }
 
-    @Bean
-    CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-
-        configuration.setAllowedOrigins(Collections.singletonList("http://localhost:3000"));
-        configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS"));
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-
-        return source;
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.eraseCredentials(false);
-        auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
-    }
-
-
-    @Bean
-    public PasswordEncoder getPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 }
-
-
-

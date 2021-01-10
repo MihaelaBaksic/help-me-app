@@ -29,14 +29,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @RunWith(MockitoJUnitRunner.class)
 class UserServiceJpaTest {
 
-    //    @Autowired
+//        @Autowired
     @InjectMocks
     private UserServiceJpa userServiceJpa; // System Under Test
 
-    //    @MockBean
+//        @MockBean
     @Mock
     private UserRepository userRepository; // Dependencies will be mocked
 
+//    @Before
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
@@ -46,14 +47,14 @@ class UserServiceJpaTest {
     @Test
     void listAll() {
         // PREPARATION / STUB
-        User user1 = new User("Ime1", "Prezime1", "username1", "12345678",
-                "korisnik1@gmail.com", "0951111111",
+        User user1 = new User("Name1", "Surname1", "username1", "12345678",
+                "user1@gmail.com", "0951111111",
                 new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
-        User user2 = new User("Ime2", "Prezime2", "username2", "12345678",
-                "korisnik2@gmail.com", "0952222222",
+        User user2 = new User("Name2", "Surname2", "username2", "12345678",
+                "user2@gmail.com", "0952222222",
                 new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
-        User user3 = new User("Ime3", "Prezime3", "username3", "12345678",
-                "korisnik3@gmail.com", "0953333333",
+        User user3 = new User("Name3", "Surname3", "username3", "12345678",
+                "user3@gmail.com", "0953333333",
                 new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
 
         Mockito.when(userRepository.findAll()).thenReturn(Arrays.asList(
@@ -82,8 +83,8 @@ class UserServiceJpaTest {
     @Test
     void findByUsername() {
         // PREPARATION / STUB
-        User user1 = new User("Ime1", "Prezime1", "username1", "12345678",
-                "korisnik1@gmail.com", "0951111111",
+        User user1 = new User("Name1", "Surname1", "username1", "12345678",
+                "user1@gmail.com", "0951111111",
                 new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
 
         Mockito.when(userRepository.findByUsername("username1")).thenReturn(user1);
