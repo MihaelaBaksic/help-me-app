@@ -20,7 +20,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			
 			\section{Baza podataka}
-			
+
 			Sve je podatke potrebno negdje spremiti kako bi se mogli dinamički dohvaćati. Za ovo nam služi baza podataka, koju također smatramo dijelom MVC obrasca. Naša aplikacija u pozadini koristi, kao relacijsku bazu podataka, PostgreSQL.
 			\\
 			U bazi podataka nalaze se sljedeći entiteti:
@@ -29,6 +29,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				\item Adresa
 				\item Ocjena
 				\item Zahtjev
+				\item Obavijest
 				\item Potencijalni
 			\end{itemize}
 			
@@ -36,15 +37,15 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			
 			\textbf{Korisnik} Ovaj entitet modelira jednog korisnika aplikacije.\\
-			Sadrži atribute: korisnikID, ime, prezime, e-posta, lozinka, korisnickoIme, jeAdmin, telefon, slika, status, vrijemeBlokiranja i
-			adresaID koji predstavlja strani ključ na entitet Adresa. Korisnik je povezan s entitetom Ocjena vezama "prima" i "daje" (\textit{One-to-Many}) preko atributa korisnikID. Korisnik se također veže s entitetom Zahtjev vezama "autorski" i "izvršiteljski" (\textit{One-to-Many}) preko atributa korisnikID i vezom "potencijalni" (\textit{Many-to-Many}) preko atributa korisnikID. Ovaj entitet se još veže uz entitet Adresa vezom \textit{Many-to-One} preko atributa adresaID.
+			Sadrži atribute: korisnikID, ime, prezime, e-posta, lozinka, korisnickoIme, jeAdmin, telefon, slika, status, i
+			adresaID koji predstavlja strani ključ na entitet Adresa. Korisnik je povezan s entitetom Ocjena vezama "prima" i "daje" (\textit{One-to-Many}) preko atributa korisnikID. Korisnik se također veže s entitetom Zahtjev vezama "autorski" i "izvršiteljski" (\textit{One-to-Many}) preko atributa korisnikID i vezom "potencijalni" (\textit{Many-to-Many}) preko atributa korisnikID. Ovaj entitet se još veže uz entitet Adresa vezom \textit{Many-to-One} preko atributa adresaID. Također je u vezi s entitetom Obavijest vezom \textit{One-To-Many} preko atributa korisnikID.
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
 				
 				\hline
 				\multicolumn{3}{|c|}{\textbf{Korisnik}} \\
 				\hline
-
+				
 				
 				\cellcolor{LightGreen}korisnikID & INT	&   jedinstveni identifikator svakog korisnika 	\\ \hline
 				ime	& VARCHAR &   ime korisnika	\\ \hline 
@@ -56,7 +57,6 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				telefon & VARCHAR	&  	broj mobitela korisnika	\\ \hline
 				slika & BOOLEAN	&  	oznaka je li korisnik ima sliku profila	\\ \hline
 				status & VARCHAR	&  	oznaka statusa korisničkog računa	\\ \hline
-				vrijemeBlokiranja & DATETIME	&  vrijeme blokiranja korisnika		\\ \hline
 				\cellcolor{LightBlue}adresaId & VARCHAR	&  	adresa prebivališta korisnika	\\ \hline
 				
 				
@@ -66,21 +66,20 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			\bigskip
 			\bigskip
 			\textbf{Adresa} Ovaj entitet modelira adresu prebivališta pojedinog korisnika aplikacije.
-			Sadrži sljedeće atribute: adresaID, ulica, broj, pbr, imeMjesto. Entitet Adresa je u vezi \textit{One-to-Many} s entitetom Zahtjev preko atributa adresaID i u vezi \textit{One-to-Many} s entitetom Korisnik pomoću atributa adresaID.
+			Sadrži sljedeće atribute: adresaID, opis, xKoordinata, yKoordinata. Entitet Adresa je u vezi \textit{One-to-Many} s entitetom Zahtjev preko atributa adresaID i u vezi \textit{One-to-Many} s entitetom Korisnik pomoću atributa adresaID.
 			\bigskip
 			
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
-
+				
 				\hline
 				\multicolumn{3}{|c|}{\textbf{Adresa}} \\
 				\hline
 				
-				\cellcolor{LightGreen}adresaID & INT	& jedinstveni adrese korisnika	\\ \hline
-				ulica	& VARCHAR &  naziv ulice 	\\ \hline 
-				broj & INT & kućanski broj  \\ \hline 
-				pbr & VARCHAR	&  	poštanski broj mjesta	\\ \hline 
-				imeMjesto & VARCHAR	&  naziv mjesta		\\ \hline
+				\cellcolor{LightGreen}adresaID & INT	& jedinstveni identifikator adrese korisnika	\\ \hline 
+				opis & VARCHAR & Detaljniji opis adrese korisnika  \\ \hline 
+				xKoordinata & NUMERIC	& X koordinata adrese korisnika predočena na karti	\\ \hline 
+				yKoordinata & NUMERIC	& Y koordinata adrese korisnika predočene na karti		\\ \hline
 				
 				
 				
@@ -108,7 +107,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			\bigskip
 			\bigskip
-			\textbf{Zahtjev} Ovaj entitet predstavlja jedan zahtjev kojeg korisnik aplikacije zadaje ili izvršava. Sadrži atribute:zahtjevID, opis, datumVrPocetka, trajanje, status, adresaID, korisnikID, autorskikorisnikID. Kao i entitet ocjena i ovaj entitet sadrži tri strana ključa: adresaID(predstavlja adresu korisnika koji je zadao zahtjev, nije obavezno kako bi se kreirao zahtjev), korisnikID(predstavlja izvršitelja zahtjeva) i autorskikorisnikID(predstavlja samog kreatora zahtjeva). Entitet je u vezi s Ocjenom preko veze \textit{One-to-One} pomoću atributa zahtjevID. Zahtjev se veže uz entitet Korisnik preko tri veze "autorski" (\textit{Many-to-One}), veze "izvršiteljski" (\textit{Many-to-One}) i veze "potencijalni" (\textit{Many-to-Many}) svaka preko atributa korisnikID. Još se veže uz entitet Adresa \textit{One-to-Many} preko atributa adresaID. 
+			\textbf{Zahtjev} Ovaj entitet predstavlja jedan zahtjev kojeg korisnik aplikacije zadaje ili izvršava. Sadrži atribute:zahtjevID, opis, datumVrPocetka, naslov, datumIsteka, status, adresaID, korisnikID, autorskikorisnikID. Kao i entitet ocjena i ovaj entitet sadrži tri strana ključa: adresaID(predstavlja adresu korisnika koji je zadao zahtjev, nije obavezno kako bi se kreirao zahtjev), korisnikID(predstavlja izvršitelja zahtjeva) i autorskikorisnikID(predstavlja samog kreatora zahtjeva). Entitet je u vezi s Ocjenom preko veze \textit{One-to-One} pomoću atributa zahtjevID. Zahtjev se veže uz entitet Korisnik preko tri veze "autorski" (\textit{Many-to-One}), veze "izvršiteljski" (\textit{Many-to-One}) i veze "potencijalni" (\textit{Many-to-Many}) svaka preko atributa korisnikID. Još se veže uz entitet Adresa \textit{One-to-Many} preko atributa adresaID. Također je u vezi s entitetom Obavijest vezom \textit{One-To-Many} preko atributa zahtjveID. 
 			\bigskip
 			
 			\begin{tabularx} {\textwidth} {|p{3.5cm}|p{2cm}|X|}
@@ -118,9 +117,12 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				\hline
 				
 				\cellcolor{LightGreen}zahtjevID & INT	& jedinstveni identifikator svakog zahtjeva	\\ \hline
-				opis	& VARCHAR &  kratki opis zahtjeva 	\\ \hline 
+				opis	& VARCHAR &  opis zahtjeva 	\\ \hline 
 				datumVrPocetka & DATETIME &  trenutak postavljanja zahtjeva na aplikaciju \\ \hline 
-				trajanje & TIME	&  vremenski period u kojem se zahtjev može izvršiti		\\ \hline 
+				datumIsteka & DATE	&  datum kada zahtjev istječe, te se ne može više izvršavati		\\ \hline
+				naslov & VARCHAR	&  naslov zahtjeva
+				\\
+				\hline
 				status & VARCHAR & status zahtjeva  \\ \hline
 				\cellcolor{LightBlue} adresaID	& INT &  adresa autora zahtjeva 	\\ \hline 
 				\cellcolor{LightBlue} korisnikID	& INT &  izvršitelj zahtjeva 	\\ \hline
@@ -144,18 +146,44 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				\hline
 			\end{tabularx}
 			
+			\bigskip
+			\bigskip
+			\textbf{Obavijest} Ovaj entitet predstavlja sve moguće obavijesti koje jedan korisnik može dobiti. Sadrži atribute: obavijestID, korisnikID,
+			poruka, zahtjevID, jeliPročitana. Ovaj entite sadrži dva strana ključa: korisnikID(predstavlja korisnika kojem je obavijest namijenjena), te zahtjevID(predstvavlja zahtjev na kojeg se obavijest odnosi). Entitet je u vezi s entitetom Korisnik vezom \textit{Many-To-One} pomoću atributa korisnikID, te s entitetom Zahtjev vezom \textit{Many-To-One} preko atributa zahtjevID.
+			\bigskip
+			
+			\begin{tabularx}{\textwidth} {|p{2.4cm}|p{2cm}|X|}
+				\hline
+				\multicolumn{3}{|c|}{\textbf{Obavijest}} \\
+				\hline
+				\cellcolor{LightGreen} obavijestID & INT & jedinstveni identifikator obavijesti \\
+				\hline
+				poruka & VARCHAR & predstavlja detaljniji opis obavijesti \\
+				\hline
+				jeliPročitana & BOOLEAN & označuje jeli korisnik pročitao obavijest \\
+				\hline
+				\cellcolor{LightBlue}
+				korisnikID & INT & korisnik kojem je obavijest namijenjena. \\
+				\hline
+				\cellcolor{LightBlue}
+				zahtjevID & INT & zahtjev na kojeg se obavijest odnosi \\
+				\hline
+			\end{tabularx}
+			
 			
 			
 			\newpage
- 			\subsection{Dijagram baze podataka}
+			\subsection{Dijagram baze podataka}
 			Podcrtani elementi su ključevi, elementi koji imaju (O) nisu obavezni za unos u bazu podataka, elementi koji imaju (FK) su strani ključevi i elementi s oznakom (U) moraju biti jedinstveni.
 			
 			\begin{figure}[h]
-				\includegraphics[height=0.53\textheight]{Relacijski_model}
+				\includegraphics[height=0.45\textheight]{Relacijski_model}
 				\caption{Relacijski model baze podataka}
 			\end{figure}
 			
 			\eject
+			
+
 
 			
 			
@@ -242,13 +270,17 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 			
 			\eject
-		
+			
 		\section{Dijagram stanja}
+
+
+			Dijagram stanja je tip dijagrama koji služi za opis ponašanja sustava pomoću stanja u koja se može preći nekim događajem. Na slici 4.8 prikazan je dijagram stanja jednog korisnika(koji nije administrator).Nakon prijave(ili registracije ako korisnik nema korisnički račun), korisnik odlazi na početnu stranicu aplikacije. Na početnoj stranici korisnik može: pregledati vlastiti profil, pregledati vlastite zahtjeve, pregledati profile i zahtjeve drugih korisnika, te pregledati statistiku. Klikom na "Pregled profila" korisniku se otvara vlastiti profil, te ga može izbrisati ili izmijeniti. Klikom na "Moji zahtjevi" korisnik može pregledati vlastite zahtjeve. Uz to može stvoriti novi zahtjev, blokirati postojeći, pregledati potencijalne izvršitelje nekog zahtjeva(i time prihvatiti ili odbiti nekog od potencijalnih izvršitelja) i na kraju postaviti zahtjev kao izvršen(i ocijeniti izvršitelja zahtjeva).
+			Klikom na "Zahtjevi" korisniku se omogućuje pregled zahtjeva drugih korisnika i samim time se omogućava javljanje za zahtjeve. Klikom na "Profil" korisniku se otvara profil korisnika kojeg želi pregledati, te može vidjeti cjelokupnu ocjenu tog korisnika i sam ga može ocijeniti. Na kraju korisnik može pregledati i statistiku klikom na "Statistika" gdje se prikazuju 3 najbolje ocijenjena korisnika. 
 			
-			
-			\textbf{\textit{dio 2. revizije}}\\
-			
-			\textit{Potrebno je priložiti dijagram stanja i opisati ga. Dovoljan je jedan dijagram stanja koji prikazuje \textbf{značajan dio funkcionalnosti} sustava. Na primjer, stanja korisničkog sučelja i tijek korištenja neke ključne funkcionalnosti jesu značajan dio sustava, a registracija i prijava nisu. }
+			\begin{figure}[h]
+				\includegraphics[height=0.47\textheight]{DijagramStanja}
+				\caption{Dijagram stanja}
+			\end{figure}
 			
 			
 			\eject 
@@ -268,6 +300,28 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			\eject
 		\section{Dijagram komponenti}
 		
-			\textbf{\textit{dio 2. revizije}}\\
-		
-			 \textit{Potrebno je priložiti dijagram komponenti s pripadajućim opisom. Dijagram komponenti treba prikazivati strukturu cijele aplikacije.}
+			Pomoću dijagrama komponenti prikazanog na slici 4.9 prikazan je međuodnos glavnih komponenti sustava.
+			Najgrublja podjela komponenata koje međusobno komuniciraju u \textit{ModelViewController} (MVC) obrascu je na:
+			\begin{itemize}
+				\item Model koji predstavlja skup svih entiteta koji se spremaju u bazi te se nad njima vrše operacije.
+				\item View kojeg predstavlja komponenta Frontend web aplikacija.
+				\item Controller koji služi za primanje HTTP zahtjeva i slanje odgovora.
+			\end{itemize}
+			
+			Frontend web aplikacija komunicira sa ostatkom aplikacije pri posluživanju statičkog sadržaja poput HTML, CSS i JS datoteka te sa backend dijelom aplikacije u formatu JSON.
+			Posluživanje sadržaja frontend dijelu aplikacije ovisi o ulozi korisnika kojemu se poslužuje te
+			shodno ulozi komponenta Router odlučuje o tome koje se datoteke poslužuju. Također, u to su uključene i datoteke JavaScript libraryja React koji se koristi u oblikovanju korisničkog sučelja.
+			
+			Format JSON glavni je format za komunikaciju sa REST API-jem kojeg aplikacija koristi.
+			REST API po primitku JSON objekta mapira ga u pripadajući objekt u Javi. Vrijedi i obrnuto, prilikom slanja Java objekta on se prethodno pretvara u pripadajući JSON i u tom obliku šalje HTTP protokolom.
+			
+			
+			Komponenta kontrolera putem DTO objekata ostvaruje komunikaciju sa REST API-jem i poslovnom logikom aplikacije.
+			Pristup bazi na backendu nudi se sučeljem s komponentom \textit{JPARepositories} 
+			te ona služi kao glavna komunikacija aplikacije i SQL baze podataka u jeziku JPQL.
+			
+			 \begin{figure}[h]
+			 	\includegraphics[height=0.5\textheight]{dijagramKomponenti}
+			 	\caption{Dijagram komponenti}
+			 \end{figure} 
+			
