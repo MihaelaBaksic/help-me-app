@@ -15,20 +15,20 @@
 \contentsline {section}{\numberline {4.2}Dijagram razreda}{32}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Dijagram stanja}{38}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Dijagram aktivnosti}{39}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Dijagram komponenti}{40}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Implementacija i korisničko sučelje}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Korištene tehnologije i alati}{42}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{43}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{43}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{43}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{44}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{45}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Izrada projekta i tehnički izazovi}{46}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Tehnički izazovi korištenja radnog okvira Spring}{46}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Izazovi korištenja knjižnice React}{47}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Budući rad}{48}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Zaključak}{49}{section.6.3}%
-\contentsline {chapter}{Popis literature}{50}{chapter*.4}%
-\contentsline {chapter}{Indeks slika i dijagrama}{51}{chapter*.5}%
-\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{52}{chapter*.6}%
+\contentsline {section}{\numberline {4.5}Dijagram komponenti}{41}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Implementacija i korisničko sučelje}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Korištene tehnologije i alati}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Ispitivanje programskog rješenja}{44}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Ispitivanje komponenti}{44}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Ispitivanje sustava}{44}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Dijagram razmještaja}{45}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Upute za puštanje u pogon}{46}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zaključak i budući rad}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Izrada projekta i tehnički izazovi}{47}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Tehnički izazovi korištenja radnog okvira Spring}{47}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Izazovi korištenja knjižnice React}{48}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Budući rad}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Zaključak}{50}{section.6.3}%
+\contentsline {chapter}{Popis literature}{51}{chapter*.4}%
+\contentsline {chapter}{Indeks slika i dijagrama}{52}{chapter*.5}%
+\contentsline {chapter}{Dodatak: Prikaz aktivnosti grupe}{53}{chapter*.6}%

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  9 JAN 2021 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.12.3)  10 JAN 2021 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija_v6.tex
 (./PROGI_ProjektnaDokumentacija_v6.tex
-LaTeX2e <2020-10-01>
-L3 programming layer <2020-10-05> xparse <2020-03-03>
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
 (c:/texlive/2020/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (c:/texlive/2020/texmf-dist/tex/latex/base/size12.clo
@@ -25,10 +25,10 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \bibindent=\dimen138
 )
 (c:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/10/03 3.49 The Babel package
+Package: babel 2020/10/27 3.51 The Babel package
 
 (c:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/10/03 3.49 Babel common definitions
+File: babel.def 2020/10/27 3.51 Babel common definitions
 \babel@savecnt=\count184
 \U@D=\dimen139
 \l@babelnohyphens=\language86
@@ -306,7 +306,7 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
 
 (c:/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
 (c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (c:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
@@ -764,7 +764,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen191
 \Hy@linkcounter=\count286
@@ -1084,7 +1084,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...mberline {6.3}Zaključak}{49}{section.6.3}
+l.31 ...mberline {6.3}Zaključak}{50}{section.6.3}
                                                   % [1
 
 ])
@@ -1669,37 +1669,50 @@ Overfull \hbox (85.56241pt too wide) in paragraph at lines 281--282
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+<slike/dijagram_aktivnosti.png, id=558, 759.43726pt x 415.5525pt>
+File: slike/dijagram_aktivnosti.png Graphic file (type png)
+<use slike/dijagram_aktivnosti.png>
+Package pdftex.def Info: slike/dijagram_aktivnosti.png  used on input line 293.
 
+(pdftex.def)             Requested size: 455.66586pt x 249.33342pt.
+
+Overfull \hbox (20.05507pt too wide) in paragraph at lines 293--295
+ [][] 
  []
 
 [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.294 			\eject
-                <./slike//DijagramStanja.png>]
-Overfull \hbox (4.02881pt too wide) in paragraph at lines 313--316
+l.298 			
+          <./slike//DijagramStanja.png>] [40pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.4.9}) has been already used, duplicate ig
+nored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.299 			\eject
+                <./slike/dijagram_aktivnosti.png>]
+Overfull \hbox (4.02881pt too wide) in paragraph at lines 319--322
 \OT1/jkp/m/n/12 API-jem i pos-lov-nom lo-gi-kom apli-ka-cije. Pris-tup bazi na 
 bac-kendu nudi se su[]celjem
  []
 
-<./slike//dijagramKomponenti.png, id=565, 705.23476pt x 454.69875pt>
+<./slike//dijagramKomponenti.png, id=572, 705.23476pt x 454.69875pt>
 File: ./slike//dijagramKomponenti.png Graphic file (type png)
 <use ./slike//dijagramKomponenti.png>
-Package pdftex.def Info: ./slike//dijagramKomponenti.png  used on input line 31
-8.
+Package pdftex.def Info: ./slike//dijagramKomponenti.png  used on input line 32
+4.
 (pdftex.def)             Requested size: 520.64955pt x 335.6851pt.
 
-Overfull \hbox (85.03876pt too wide) in paragraph at lines 318--319
+Overfull \hbox (85.03876pt too wide) in paragraph at lines 324--325
 [][]
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [40] [41pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.4.9}) has been already used, duplicate ignored
+) [41] [42pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.4.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.118 	\include{Arhitektura}
@@ -1724,7 +1737,7 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[42
+[43
 
 
 
@@ -1743,8 +1756,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[43]
-<./slike//dijagramRazmjestaja.png, id=593, 511.9125pt x 349.305pt>
+[44]
+<./slike//dijagramRazmjestaja.png, id=600, 511.9125pt x 349.305pt>
 File: ./slike//dijagramRazmjestaja.png Graphic file (type png)
 <use ./slike//dijagramRazmjestaja.png>
 Package pdftex.def Info: ./slike//dijagramRazmjestaja.png  used on input line 5
@@ -1755,7 +1768,7 @@ Overfull \hbox (56.36641pt too wide) in paragraph at lines 54--55
 [][]
  []
 
-[44pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[45pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1765,7 +1778,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[45])
+[46])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -1795,12 +1808,12 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 16.
 
-[46
+[47
 
 
 
 
-] [47]
+] [48]
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
@@ -1821,13 +1834,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-[48]
+[49]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 46.
 
-[49])
+[50])
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
@@ -1842,7 +1855,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [50
+) [51
 
 
 
@@ -1851,14 +1864,14 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [51
+ [52
 
 
 
 ]
 \openout2 = `Dodatak.aux'.
 
- (./Dodatak.tex [52
+ (./Dodatak.tex [53
 
 
 ]
@@ -1866,17 +1879,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[53] [54]
+[54] [55]
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
-[55] [56]
+[56] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-) [57] 
+) [58] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1887,13 +1900,13 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
- 12676 strings out of 479916
- 180404 string characters out of 5886648
- 570394 words of memory out of 5000000
- 28631 multiletter control sequences out of 15000+600000
+ 12689 strings out of 479485
+ 180696 string characters out of 5875916
+ 574233 words of memory out of 5000000
+ 29074 multiletter control sequences out of 15000+600000
  589630 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,14n,88p,1059b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 93i,14n,98p,1059b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1903,11 +1916,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 /kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (58 pages, 1391303 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (59 pages, 1446306 bytes)
 .
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 259 named destinations out of 1000 (max. 500000)
- 344 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 805 PDF objects out of 1000 (max. 8388607)
+ 696 compressed objects within 7 object streams
+ 261 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 
