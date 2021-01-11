@@ -10,6 +10,7 @@ import Statistics from "./Statistics";
 import FilterRequestList from "./FilterRequestList";
 import RequestComponent from "./RequestComponent";
 import UserHandlerRequests from "./UserHandlerRequests";
+import AdressChangeCompoment from "./AdressChangeCompoment";
 
 function CentarKomponenta() {
 	return (
@@ -61,6 +62,10 @@ function CentarKomponenta() {
 
 					<Route path="/rating/statistics">
 						<Statistics />
+					</Route>
+
+					<Route path="/adress">
+						<AdressChangeCompoment />
 					</Route>
 				</Switch>
 			</HashRouter>
