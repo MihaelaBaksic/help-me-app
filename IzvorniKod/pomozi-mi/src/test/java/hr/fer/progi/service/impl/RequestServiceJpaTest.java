@@ -122,4 +122,53 @@ class RequestServiceJpaTest {
 
         assertEquals(request, returnedRequest);
     }
+
+
+    /*
+    @Test
+    void deleteRequest_IsDeleted() {
+        String loggedInUsername = "username";
+        Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
+        Mockito.when(authentication.getName()).thenReturn(loggedInUsername);
+        User loggedInUser = new User("Name", "Surname", "username", "12345678", "user@gmail.com", "0951111111",
+                new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
+        Mockito.when(userRepository.findByUsername(loggedInUsername)).thenReturn(loggedInUser);
+
+        Long requestToDeleteId = Long.decode("10");
+        Request requestWithId = new Request();
+        Mockito.when(requestRepository.findById(requestToDeleteId)).thenReturn(java.util.Optional.of(requestWithId));
+
+
+        long beforeDeleting = 5;
+        long afterDeleting = 4;
+        Mockito.when(requestRepository.count()).thenReturn(beforeDeleting, afterDeleting);
+
+        boolean isDeleted = requestServiceJpa.deleteRequest(requestToDeleteId);
+
+        assertTrue(isDeleted);
+    }
+
+    @Test
+    void deleteRequest_NotDeleted() {
+        Long requestToDeleteId = Long.decode("10");
+        Request requestWithId = new Request();
+        Mockito.when(requestRepository.findById(requestToDeleteId).get()).thenReturn(requestWithId);
+
+        String loggedInUsername = "username";
+        Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
+        Mockito.when(authentication.getName()).thenReturn(loggedInUsername);
+        User loggedInUser = new User("Name", "Surname", "username", "12345678", "user@gmail.com", "0951111111",
+                new Address("Zagreb", 15.0, 45.0), false, UserStatus.NOTBLOCKED);
+        Mockito.when(userRepository.findByUsername(loggedInUsername)).thenReturn(loggedInUser);
+
+        long beforeDeleting = 5;
+        long afterDeleting = 5;
+        Mockito.when(requestRepository.count()).thenReturn(beforeDeleting, afterDeleting);
+
+        boolean isDeleted = requestServiceJpa.deleteRequest(requestToDeleteId);
+
+        assertFalse(isDeleted);
+    }
+
+     */
 }
