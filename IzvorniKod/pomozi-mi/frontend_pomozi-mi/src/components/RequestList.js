@@ -91,6 +91,7 @@ function RequestList(props) {
 										</Label>
 
 										<div
+											role="button"
 											id="requestTitle"
 											onClick={(e) =>
 												pregledajZahtjev(request.id, e)
@@ -101,6 +102,7 @@ function RequestList(props) {
 									</List.Header>
 								</Grid.Column>
 								<Grid.Column
+									role="button"
 									floated="right"
 									onClick={(e) =>
 										pregledajZahtjev(request.id, e)
