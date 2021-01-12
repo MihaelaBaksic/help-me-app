@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import MapComponent from "./MapComponent";
 import L from "leaflet";
@@ -9,16 +9,55 @@ const baseUrl = "http://localhost:8080";
 function RequestForm() {
 	let history = useHistory();
 	const { register, handleSubmit, errors } = useForm();
-	const [useLocation, setUseLocation] = useState("true");
+	const [useLocation, setUseLocation] = useState("2");
 	const [geoLocation, setGeoLocation] = useState(
 		L.latLng(45.800623, 15.971131)
 	);
+	const [useDescription, setDescription] = useState("");
+
+	useEffect(() => {
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		const options = {
+			method: "GET",
+			headers: myHeaders,
+			redirect: "follow",
+		};
+
+		fetch("http://localhost:8080/user/getCurrentUserAddress", options)
+			.then((response) => response.text())
+			.then((result) => {
+				/* console.log(JSON.parse(result)); */
+				setDescription(JSON.parse(result).description);
+				//console.log(useDescription);
+			})
+		});
 
 	/* const onSubmit = (data) => console.log(data); */
 	async function onSubmit(values, e) {
 		e.preventDefault();
 
 		e.preventDefault();
+		var myHeaders = new Headers();
+		myHeaders.append(
+			"Authorization",
+			"Basic " + sessionStorage.getItem("basicAuthToken")
+		);
+		const options = {
+			method: "GET",
+			headers: myHeaders,
+			redirect: "follow",
+		};
+		let resultUsingAdress;
+		fetch("http://localhost:8080/user/getCurrentUserAddress", options)
+			.then((response) => response.text())
+			.then((result) => {
+				resultUsingAdress = JSON.parse(result);
+				 console.log(resultUsingAdress);
+			})
 		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
@@ -62,10 +101,16 @@ function RequestForm() {
 				/* console.log(values); */
 				values.address = {};
 				values.address.description = description;
-				if (useLocation === "true") {
+				if (useLocation === "1") {
 					values.address.x_coord = geoLocation.lat;
 					values.address.y_coord = geoLocation.lng;
-				} else {
+				} 
+				else if(useLocation === "0"){
+					values.address.description = resultUsingAdress.description;
+					values.address.x_coord = resultUsingAdress.x_coord;
+					values.address.y_coord = resultUsingAdress.y_coord;
+				}
+				else {
 					values.address = null;
 				}
 
@@ -160,6 +205,29 @@ function RequestForm() {
 					</div>
 				</div>
 				<div className="virtualOrLocationCheckBox">
+				<div className="form-check">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="lokacijaRadio"
+							id="virtualniZahtjev"
+							value="option2"
+							onClick={() => setUseLocation("2")}
+							checked={useLocation ==="2" ? true : false}
+						/>
+						Virtualni zahtjev
+					</div>
+				<div className="form-check">
+						<input
+							className="form-check-input"
+							type="radio"
+							name="lokacijaRadio"
+							id="koristiLokaciju"
+							value="option0"
+							onClick={() => setUseLocation("0")}
+						/>
+						Koristi zadanu lokaciju - <i><b>{useDescription}</b></i>
+					</div>
 					<div className="form-check">
 						<input
 							className="form-check-input"
@@ -167,24 +235,12 @@ function RequestForm() {
 							name="lokacijaRadio"
 							id="koristiLokaciju"
 							value="option1"
-							onClick={() => setUseLocation("true")}
-							checked={useLocation === "true" ? true : false}
+							onClick={() => setUseLocation("1")}
 						/>
 						Zahtjev s lokacijom
 					</div>
-					<div className="form-check">
-						<input
-							className="form-check-input"
-							type="radio"
-							name="lokacijaRadio"
-							id="virtualniZahtjev"
-							value="option2"
-							onClick={() => setUseLocation("false")}
-						/>
-						Virtualni zahtjev
-					</div>
 				</div>
-				{useLocation === "true" ? (
+				{useLocation === "1" ? (
 					<MapComponent setGeoLocation={setGeoLocation} />
 				) : null}
 
