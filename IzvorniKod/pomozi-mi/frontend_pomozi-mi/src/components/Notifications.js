@@ -82,24 +82,25 @@ function Notifications(props) {
 											? notif.request.title
 											: null}
 									</div>
-									<List.Item
-										content={
-											<div
-												className="notificationToRequestLink"
-												role="button"
-												onClick={() => {
-													notif.isRead = "true";
-													history.push(
-														"/request/" +
-															notif.request.id
-													);
-												}}
-											>
-												<List.Icon name="arrow circle right"></List.Icon>
-												Odi na zahtjev!
-											</div>
-										}
-									/>
+									{notif.request ? (
+										<List.Item
+											content={
+												<div
+													className="notificationToRequestLink"
+													role="button"
+													onClick={() =>
+														history.push(
+															"/request/" +
+																notif.request.id
+														)
+													}
+												>
+													<List.Icon name="arrow circle right"></List.Icon>
+													Odi na zahtjev!
+												</div>
+											}
+										/>
+									) : null}{" "}
 								</List.Item>
 							) : (
 								<List.Item
@@ -116,29 +117,25 @@ function Notifications(props) {
 											: null}
 										{notif.isRead}
 									</div>
-									<List.Item
-										content={
-											<div
-												className="notificationToRequestLink"
-												role="button"
-												onClick={() =>
-													notif.request
-														? history.push(
-																"/request/" +
-																	notif
-																		.request
-																		.id
-														  )
-														: console.log(
-																"zahtjev ne postoji više"
-														  )
-												}
-											>
-												<List.Icon name="arrow circle right"></List.Icon>
-												Odi na zahtjev!
-											</div>
-										}
-									/>
+									{notif.request ? (
+										<List.Item
+											content={
+												<div
+													className="notificationToRequestLink"
+													role="button"
+													onClick={() =>
+														history.push(
+															"/request/" +
+																notif.request.id
+														)
+													}
+												>
+													<List.Icon name="arrow circle right"></List.Icon>
+													Odi na zahtjev!
+												</div>
+											}
+										/>
+									) : null}
 								</List.Item>
 							)
 						)}
