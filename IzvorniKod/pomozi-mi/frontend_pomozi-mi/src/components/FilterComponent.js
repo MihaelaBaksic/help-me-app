@@ -47,12 +47,12 @@ function FilterComponent(props) {
 		<div className="filterZahtjeva">
 			<Form inline onSubmit={handleSubmit(onSubmit)}>
 				<FormGroup>
-					<Label for="radius">Radius:</Label>
+					<Label for="radius">Radijus:</Label>
 					<Input
 						type="text"
 						name="address"
 						id="radius"
-						placeholder="5 km"
+						placeholder="npr. 5 km"
 						onChange={handleRadius}
 					/>
 				</FormGroup>
@@ -60,7 +60,7 @@ function FilterComponent(props) {
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</span>
 				<FormGroup>
-					<Label for="radius">Sortiranje:</Label>
+					<Label for="radius">Sortiranje: </Label>
 					<CustomInput
 						type="radio"
 						id="a_z"
