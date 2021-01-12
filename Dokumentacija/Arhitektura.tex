@@ -251,12 +251,23 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 				\newpage
 				
-				Korisnicima je omogućeno međusobno ocjenjivanje te su na slici 4.7 prikazane klase koje služe modeliranju ocjena i ocjenjivanja. Svaka instancla klase \textit{RatingDTO} ima postavljenog korisnika koji je ocijenio te korisnika koji je ocjenjen,ocjenu, komentar te opcionalno zahtjev na koji se odnosi.
+				Korisnicima je omogućeno međusobno ocjenjivanje te su na slici 4.7 prikazane klase koje služe modeliranju ocjena i ocjenjivanja. Svaka instancla klase \textit{RatingDTO} ima postavljenog korisnika koji je ocjenjen,ocjenu, komentar te opcionalno zahtjev na koji se odnosi.
 				\textit{RatingServiceJpa} omogućuje prikaz ocjena koje je pojedini korisnik autorirao te ocjena koje je pojedini korisnik dobio.			
 				\begin{figure}[H]
 					\includegraphics[scale=0.6]{slike/cs5.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Klase koje reguliraju ocjenjivanje korisnika}
+					
+				\end{figure}
+			
+				\newpage
+			
+				Korisnicima za razne aktivnosti sudjelovanja na stranici(stvaranje zahtjeva, javaljanje na zahtjev i mnogi drugi) dolaze obavijesti. Na slici 4.8 prikazane su sve klase koje služe za modeliranje i funkcioniranje obavijesti. Razred \textit{Notification} modelira jednu obavijest. Razred \textit{NotificationDTO} sadrži sve informacije kako bi se obavijest poslala korisniku, tj. sadrži korisnika kojemu je obavijest namijenjena, status obavijesti, poruku koju obavijest nosi, zahtjev za koju je obavijest vezana i na kraju jeli korisnik pročitao obavijest. Kao i razred \textit{Request} sadrži pripadajuće razrede repozitorija, servisa, kontrolera i DTO-a za stvaranje(\textit{CreateNotificationDTO}).
+				.			
+				\begin{figure}[H]
+					\includegraphics[scale=0.35]{slike/cs6.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\centering
+					\caption{Klase koje reguliraju obavijesti}
 					
 				\end{figure}
 				
