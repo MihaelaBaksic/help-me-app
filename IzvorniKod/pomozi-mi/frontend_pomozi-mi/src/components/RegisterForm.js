@@ -75,16 +75,17 @@ function RegisterForm(props) {
 					},
 					body: values,
 				};
-				fetch(registerUrl, options).then((response) => {
-					if (response.status === 200) {
-						/* console.log("Uspješna registracija"); */
-						history.push("/");
-					} else {
-						response.json().then((result) => {
-							setErrorMessage(result.message);
-						});
-					}
-				});
+				fetch(registerUrl, options)
+					.then((response) => {
+						if (response.status === 200) {
+							/* console.log("Uspješna registracija"); */
+							history.push("/");
+						} else {
+							return response.text();
+						}
+					})
+					.then((result) => setErrorMessage(result))
+					.catch((error) => console.log(error));
 			});
 	}
 
@@ -343,16 +344,21 @@ function RegisterForm(props) {
 				</div> */}
 
 				<MapComponent setGeoLocation={setGeoLocation} />
+				<div className="api_error_message">{errorMessage}</div>
 				<div className="loginOrRegisterBtns">
-					<div>
-						<button
-							type="submit"
-							className="btn btn-secondary btn-lg"
-						>
-							Register
-						</button>
-					</div>
-					<div className="api_error_message">{errorMessage}</div>
+					<button
+						className="btn btn-secondary btn-lg"
+						onClick={() => history.push("/")}
+					>
+						Login
+					</button>
+					<button
+						type="button"
+						className="btn btn-primary btn-lg"
+						type="submit"
+					>
+						Register
+					</button>
 				</div>
 			</form>
 		</Card>

@@ -51,38 +51,42 @@ function Statistics() {
 					</Card>
 				</Grid.Column>
 
-				<Grid.Row centered columns={4}>
-					<Grid.Column>
-						<Card>
-							<Image src={second} wrapped ui={false} />
-							<Card.Content>
-								<Card.Header>
-									{topUsers[1].username}
-								</Card.Header>
-								<Card.Meta>
-									<span className="date">
-										Skoro najbolji pomagač!
-									</span>
-								</Card.Meta>
-							</Card.Content>
-						</Card>
-					</Grid.Column>
-					<Grid.Column>
-						<Card>
-							<Image src={third} wrapped ui={false} />
-							<Card.Content>
-								<Card.Header>
-									{topUsers[2].username}
-								</Card.Header>
-								<Card.Meta>
-									<span className="date">
-										Jako koristan pomagač!
-									</span>
-								</Card.Meta>
-							</Card.Content>
-						</Card>
-					</Grid.Column>
-				</Grid.Row>
+				{topUsers[1] ? (
+					<Grid.Row centered columns={4}>
+						<Grid.Column>
+							<Card>
+								<Image src={second} wrapped ui={false} />
+								<Card.Content>
+									<Card.Header>
+										{topUsers[1].username}
+									</Card.Header>
+									<Card.Meta>
+										<span className="date">
+											Skoro najbolji pomagač!
+										</span>
+									</Card.Meta>
+								</Card.Content>
+							</Card>
+						</Grid.Column>
+						{topUsers[2] ? (
+							<Grid.Column>
+								<Card>
+									<Image src={third} wrapped ui={false} />
+									<Card.Content>
+										<Card.Header>
+											{topUsers[2].username}
+										</Card.Header>
+										<Card.Meta>
+											<span className="date">
+												Jako koristan pomagač!
+											</span>
+										</Card.Meta>
+									</Card.Content>
+								</Card>
+							</Grid.Column>
+						) : null}
+					</Grid.Row>
+				) : null}
 			</Grid>
 		);
 	} else {
