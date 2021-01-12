@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomInput, Form, FormGroup, Label, Input } from "reactstrap";
-import { Button } from "semantic-ui-react";
+import { CustomInput, Label } from "reactstrap";
+import { Button, Form, Input } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
@@ -45,22 +45,22 @@ function FilterComponent(props) {
 
 	return (
 		<div className="filterZahtjeva">
-			<Form inline onSubmit={handleSubmit(onSubmit)}>
-				<FormGroup>
+			<Form unstackable onSubmit={handleSubmit(onSubmit)}>
+				<Form.Group inline>
 					<Label for="radius">Radijus:</Label>
+					<span>&nbsp;&nbsp;&nbsp;</span>
 					<Input
+						labelPosition = "left corner"
 						type="text"
 						name="address"
 						id="radius"
 						placeholder="npr. 5 km"
 						onChange={handleRadius}
 					/>
-				</FormGroup>
-				<span>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				<FormGroup>
+				</Form.Group>
+				<Form.Group inline>
 					<Label for="radius">Sortiranje: </Label>
+					<span>&nbsp;&nbsp;&nbsp;</span>
 					<CustomInput
 						type="radio"
 						id="a_z"
@@ -68,6 +68,7 @@ function FilterComponent(props) {
 						label="A - Z"
 						onChange={handleSortAZ}
 					/>
+					<span>&nbsp;&nbsp;&nbsp;</span>
 					<CustomInput
 						type="radio"
 						id="z_a"
@@ -75,12 +76,9 @@ function FilterComponent(props) {
 						label="Z - A"
 						onChange={handleSortZA}
 					/>
-				</FormGroup>
-				<span>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				<FormGroup check>
-					<Input
+				</Form.Group>
+				<Form.Group inline>
+					<Form.Input
 						type="checkbox"
 						name="check"
 						id="exampleCheck"
@@ -89,15 +87,12 @@ function FilterComponent(props) {
 					<Label for="exampleCheck" check>
 						Virtualni
 					</Label>
-				</FormGroup>
-				<span>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</span>
-				<div>
-					<Button type="submit" size="small">
+				</Form.Group>
+				<Form.Group>
+					<Button inline type="submit" size="small">
 						Filtriraj
 					</Button>
-				</div>
+				</Form.Group>
 			</Form>
 		</div>
 	);

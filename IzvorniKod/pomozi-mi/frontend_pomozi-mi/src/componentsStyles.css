@@ -951,7 +951,6 @@ a.list-group-item,
 .filterZahtjeva {
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 740px;
 }
 .filterZahtjeva > form {
 	flex-wrap: wrap;

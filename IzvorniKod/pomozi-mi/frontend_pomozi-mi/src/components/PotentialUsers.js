@@ -112,7 +112,7 @@ function PotentialUsers(props) {
 					{list.map((item) => (
 						<div key={item.username}>
 							<Icon name="user" />
-							<Label
+							<Label role="button"
 								onClick={(e) => pogledajUsera(item.username, e)}
 							>
 								@{item.username} {" | "} {item.firstName}{" "}
