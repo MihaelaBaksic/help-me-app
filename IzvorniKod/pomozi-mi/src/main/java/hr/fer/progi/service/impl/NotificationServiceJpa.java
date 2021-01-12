@@ -82,7 +82,7 @@ public class NotificationServiceJpa implements NotificationService {
 
             List<Notification> notifications = notificationRepository.findAll()
                     .stream().filter(n -> n.getMessage().contains("ocijenite"))
-                    .filter(n -> n.getRequest().getId().equals(ratingDTO.getRequestId()))
+                    .filter(n -> n.getRequest()!= null && n.getRequest().getId().equals(ratingDTO.getRequestId()))
                     .filter(n -> n.getUser().getUsername().equals(SecurityContextHolder.getContext().getAuthentication().getName()))
                     .collect(Collectors.toList());
 
@@ -95,7 +95,7 @@ public class NotificationServiceJpa implements NotificationService {
     @Override
     public void updateToNullByRequestId(Long id) {
         List<Notification> notifications = notificationRepository.findAll()
-                .stream().filter(n -> n.getRequest().getId().equals(id))
+                .stream().filter(n -> n.getRequest()!= null && n.getRequest().getId().equals(id))
                 .map(n -> {n.setRequest(null); return n;})
                 .collect(Collectors.toList());
         notificationRepository.saveAll(notifications);

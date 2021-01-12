@@ -161,12 +161,12 @@ public class RequestServiceJpa implements RequestService {
             if(r.getRequestHandler() == null && !r.getPotentialHandler().isEmpty()) {
             	for(User potentialHandler : r.getPotentialHandler()) {
             		Notification notifyPotentialHandler = new Notification(potentialHandler, "Zahtjev " + r.getTitle() + 
-            				"je izbrisao administrator. Više se ne može izvršiti.", r, Notification.NotificationStatus.STANDARD);
+            				"je izbrisao administrator. Više se ne može izvršiti.", null, Notification.NotificationStatus.STANDARD);
             		notificationRepository.save(notifyPotentialHandler);
             	} 
             } else {
         		Notification notifyRequestHandler = new Notification(r.getRequestAuthor(), "Zahtjev " + r.getTitle() + 
-        				"je izbrisao administrator. Više se ne može izvršiti.", r, Notification.NotificationStatus.STANDARD);
+        				"je izbrisao administrator. Više se ne može izvršiti.", null, Notification.NotificationStatus.STANDARD);
         		notificationRepository.save(notifyRequestHandler);
         	}
     		
