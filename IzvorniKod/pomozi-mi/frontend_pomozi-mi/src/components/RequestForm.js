@@ -128,7 +128,7 @@ function RequestForm() {
 				fetch(baseUrl + "/requests", options)
 					.then((response) => response.text())
 					.then((result) => {
-						console.log(JSON.parse(result));
+						/* console.log(JSON.parse(result)); */
 						history.push("/myRequests");
 					})
 					.catch((error) => console.log(error));

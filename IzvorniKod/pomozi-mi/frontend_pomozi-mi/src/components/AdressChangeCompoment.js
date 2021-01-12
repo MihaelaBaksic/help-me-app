@@ -68,11 +68,11 @@ function AdressChangeCompoment(props) {
 
 				values = JSON.parse(JSON.stringify(values));
 				/* console.log(values); */
-				values.address = {};
-				values.address.description = description;
+				values = {};
+				values.description = description;
 				/* if (useLocation === "1") */ {
-					values.address.x_coord = geoLocation.lat;
-					values.address.y_coord = geoLocation.lng;
+					values.x_coord = geoLocation.lat;
+					values.y_coord = geoLocation.lng;
 				} /*  else {
 					values.address = null;
 				} */
@@ -90,17 +90,22 @@ function AdressChangeCompoment(props) {
 					headers: myHeaders,
 					body: values,
 				};
+				/* console.log(JSON.parse(values)); */
 				fetch(baseUrl + "/user/addressSettings", options)
-					.then((response) => response.text())
-					.then((result) => {
-						/* console.log(JSON.parse(result)); */
-						history.push("/myRequests");
+					.then((response) => {
+						if (response.status === 200) {
+							/* console.log("Uspješna promjena lokacije"); */
+							history.push("/myRequests");
+						} else {
+							return response.text();
+						}
 					})
+					.then((result) => console.log(result))
 					.catch((error) => console.log(error));
 			});
 	}
 	return (
-		<div className="container">
+		<div className="container card">
 			<form
 				id="adress"
 				name="adress"

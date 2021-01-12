@@ -955,3 +955,6 @@ a.list-group-item,
 .filterZahtjeva > form {
 	flex-wrap: wrap;
 }
+.list-group-item {
+	z-index: 0 !important;
+}
