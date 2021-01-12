@@ -25,8 +25,51 @@ Web Services\footnote{https://aws.amazon.com/}.
 	
 			
 			\subsection{Ispitivanje komponenti}
-			\textit{Potrebno je provesti ispitivanje jedinica (engl. unit testing) nad razredima koji implementiraju temeljne funkcionalnosti. Razraditi \textbf{minimalno 6 ispitnih slučajeva} u kojima će se ispitati redovni slučajevi, rubni uvjeti te izazivanje pogreške (engl. exception throwing). Poželjno je stvoriti i ispitni slučaj koji koristi funkcionalnosti koje nisu implementirane. Potrebno je priložiti izvorni kôd svih ispitnih slučajeva te prikaz rezultata izvođenja ispita u razvojnom okruženju (prolaz/pad ispita). }
+
+			\textbf{Unit testovi za Service sloj}
+			\bigskip
+			\newline
+			Da bi napravili unit testove za svaki razred posebno, koristiti ćemo framework Mockito. Koristiti ćemo ga tako da "simuliramo" rad objekata koji testni razred koristi. @RunWith(MockitoJUnitRunner.class) je anotacija koja se stavlja iznad razreda u kojem su unit testovi. @InjectMocks anotacija nam označuje objekt nad kojim će se vršiti unit test (System under test). @Mock anotacija stvara objekt koji je "lažan", on neće izvoditi svoje normalne metode, već ćemo mu mi kako će se ponašati na svaki poziv metode.
+			\bigskip
+			\bigskip
 			
+			\bigskip
+			\textbf{UserServiceJpa unit test}
+			\bigskip
+			
+			\textit{listAll()} - metoda listAll() vraća listu korisnika (List<User>). U unit testu stvaramo 3 nova korisnika i simuliramo metodu listAll() da kao rezultat vrati listu od ta 3 korisnika. Zatim pozovemo metodu listAll() i provjerimo vraća li ta metoda dobre podatke nazad.
+			
+			\textit{registerUser()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisnika kojemu fali neki od obaveznih podataka za registraciju ili kada već postoji korisnik s tim korisničkim imenom, emailom ili brojem telefona. Ispituje se i radi li metoda sve dobro kada mu predamo korisnika koji ima sve podatke, i ne postoje već korisnici s takvim korisničkim imenom, emailom i brojem telefona.
+			
+			\textit{updateUser()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisnika kojemu fali neki od obaveznih podataka za ažuriranje podataka. Ispituje se i radi li metoda očekivano kada se preda korisnik kojemu bi se trebalo bez greške ažurirati podatke.
+			
+			\textit{findByUsername()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisničko ime koje je null, vraća li null kada mu predamo korisničko ime za kojeg ne postoji registrirani korisnik i radi li metoda očekivano kada se preda korisničko ime za kojeg postoji registrirani korisnik.
+			
+			\textit{deleteUser()} - unit testovi za ovu metodu ispituju vraća li ispravno broj obrisanih korisnika. Ukoliko mu predamo korisničko ime za koje ne postoji registrirani korisnik treba vraćati da je broj obrisanih korisnika 0, a ako mu predamo korisničko ime za koje postoji registrirani korisnik treba vraćati da je broj obrisanih korisnika 1.
+			
+			\textit{getStatistics()} - Ukoliko ne postoje registrirani korisnici pri pozivu ove metode, ona bi trebala vratiti praznu listu. Ako postoje registrirani korisnici, ali ne njih više od dva, metoda bi trebala vratiti samo listu od tog jednog ili dva korisnika, tako da je prvi onaj bolje ocjenjeni. Ako postoji tri ili više registriranih korisnika metoda bi trebala vratiti listu od tri najbolje ocjenjena korisnika. Testira se i u kojem poretku je metoda vratila najbolje ocijenjene korisnike, tu se testira je li dobro implementirano sortiranje korisnika.
+			
+			\bigskip
+			\bigskip
+			\textbf{RatingServiceJpa unit test}
+			\bigskip
+			
+			\textit{calculateAverageRatingForUser()} - Ukoliko se preda korisnik čije korisničko ime nema registrirano u bazi podataka baca se NonexistingUserReferencedException. Ako postoji korisnik, ali nema nikakvih ocjena za njega, metoda bi trebala vratiti ocjenu 0.0 . Testira se i računa li metoda ispravno prosječnu ocjenu za korisnika koji postoji i za kojega ima više ocjena spremljenih u bazi.
+			
+			\bigskip
+			\bigskip
+			\textbf{RequestServiceJpa unit test}
+			\bigskip
+			
+			\textit{addRequest()} - Ako se metodi preda zahtjev čiji je autor postavljen na null, metoda bi trebala postaviti ulogiranog korisnika kao autora zahtjeva. Ako adresa zahtjeva ne sadrži opis, x kordinatu ili y kordinatu, metoda bi trebala baciti IllegalArgumentException. Ako je predan zahtjev koji je potpun i točan metoda bi trebala uspješno dodati zahtjev.
+			
+			\bigskip
+			\begin{figure}[H]
+				\includegraphics[scale=0.8]{slike/unit_testovi.png}
+				\centering
+				\caption{Rezultati unit testova}
+				
+			\end{figure}
 			
 			
 			\subsection{Ispitivanje sustava}
