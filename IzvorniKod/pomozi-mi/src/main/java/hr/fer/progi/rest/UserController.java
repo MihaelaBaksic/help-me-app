@@ -230,4 +230,16 @@ public class UserController {
         return ResponseEntity.ok(userService.findByUsername(username).getAddress());
 
     }
+
+    @PostMapping("/addressSettings")
+    @Secured("ROLE_USER")
+    public EntityModel<UserDTO> updateUserAddress(@RequestBody Address newAddress){
+
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User currentUser = userService.findByUsername(username);
+        currentUser.setAddress(newAddress);
+
+        return assembler.toModel(userService.updateUser(currentUser).mapToUserDTO());
+
+    }
 }
