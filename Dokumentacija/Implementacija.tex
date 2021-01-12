@@ -1,3 +1,5 @@
+
+	
 \chapter{Implementacija i korisničko sučelje}
 		
 		
@@ -108,12 +110,60 @@ Web Services\footnote{https://aws.amazon.com/}.
 		
 		\section{Upute za puštanje u pogon}
 		
-			\textbf{\textit{dio 2. revizije}}\\
+			Grupa TODO odlučila se pokoriti našim Amazonskim overlordima i aplikaciju pustiti u pogon koristeći Amazon Web Services (AWS). Za korištenje AWS-a potrebno se registrirati i ostaviti podatke za plaćanje, koristimo besplatne mogućnosti dostupnih usluga te ništa neće biti naplaćeno. 
+			
+			Korisnik nakon registracije, odlazi na adresu \url{https://us-east-2.console.aws.amazon.com/console/home}, gdje dobiva prikaz dostupnih usluga:
+			
+			\begin{figure}[h]
+				\includegraphics[scale=0.5]{slike/deployment_slike/awshome.png}
+				\centering
+				\caption{Dostupne AWS usluge}
+				
+			\end{figure}
 		
-			 \textit{U ovom poglavlju potrebno je dati upute za puštanje u pogon (engl. deployment) ostvarene aplikacije. Na primjer, za web aplikacije, opisati postupak kojim se od izvornog kôda dolazi do potpuno postavljene baze podataka i poslužitelja koji odgovara na upite korisnika. Za mobilnu aplikaciju, postupak kojim se aplikacija izgradi, te postavi na neku od trgovina. Za stolnu (engl. desktop) aplikaciju, postupak kojim se aplikacija instalira na računalo. Ukoliko mobilne i stolne aplikacije komuniciraju s poslužiteljem i/ili bazom podataka, opisati i postupak njihovog postavljanja. Pri izradi uputa preporučuje se \textbf{naglasiti korake instalacije uporabom natuknica} te koristiti što je više moguće \textbf{slike ekrana} (engl. screenshots) kako bi upute bile jasne i jednostavne za slijediti.}
+			Biramo link EC2  koji nas vodi na iduću stranicu,gdje želimo stisnuti na pokretanje nove instance virtualnog stroja (Slika 5.4), potom odabiremo operacijski sustav virtualnog stroja(Slika 5.5). Biramo OS sa slike zato što je dostupan za besplatno korištenje. U idućem koraku ponovo odabiremo besplatan tip instance (Slika 5.6), klikamo Review and Launch i Launch, postavljamo i preuzimamo ključ za pristup instanci (neće biti potreban, al ga je dobro pričuvat). Posljednji put pritišćemo Launch i pokreće se instanciranje virtualnog stroja. Zatim na adresi \url{https://us-east-2.console.aws.amazon.com/ec2/v2/home} možemo pregledati vlastite instance virtualnih strojeva (Slika 5.7). Na "running" instancu desni klik i Connect. Možemo birati više načina spajanja, biramo treću opciju zbog jednostavnosti i pritišćemo gumb Connect (Slika 5.8). Otvara nam se linux terminal u browseru (Slika 5.9) i možemo krenuti s konfiguracijom virtualnog stroja.
 			
 			
-			 \textit{Dovršenu aplikaciju potrebno je pokrenuti na javno dostupnom poslužitelju. Studentima se preporuča korištenje neke od sljedećih besplatnih usluga: \href{https://aws.amazon.com/}{Amazon AWS}, \href{https://azure.microsoft.com/en-us/}{Microsoft Azure} ili \href{https://www.heroku.com/}{Heroku}. Mobilne aplikacije trebaju biti objavljene na F-Droid, Google Play ili Amazon App trgovini.}
+			\noindent Prvo unosimo naredbu:
+			\begin{center}
+				sudo yum update
+			\end{center}
+				kako bi primjenili ažuriranja. Za uspješno puštanje u pogon potrebni su nam Java, Git i Maven.
 			
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/launchingInstance.png}
+				\centering
+				\caption{Pokretanje inicijalizacije}
+			\end{figure}
+		
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/virtualOS.png}
+				\centering
+				\caption{Odabrani OS}
+			\end{figure}
+		
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/instanceType.png}
+				\centering
+				\caption{Tip instance}
+			\end{figure}
+			
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/mojeInstance.png}
+				\centering
+				\caption{Instance}
+			\end{figure}
+			
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/instanceConnect.png}
+				\centering
+				\caption{Spajanje na virtualni stroj}
+			\end{figure}
+		
+			\begin{figure}[h]
+				\includegraphics[width=\textwidth]{slike/deployment_slike/browserTerminal.png}
+				\centering
+				\caption{Browser terminal}
+			\end{figure}
 			
 			\eject 
