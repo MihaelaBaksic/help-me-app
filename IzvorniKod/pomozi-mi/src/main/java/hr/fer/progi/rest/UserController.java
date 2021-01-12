@@ -211,6 +211,7 @@ public class UserController {
      * @return all handler requests
      */
     @GetMapping("/handlerRequests/{username}")
+    @Secured("ROLE_USER")
     public CollectionModel<EntityModel<RequestDTO>> getHandleRequests(@PathVariable("username") String username){
         User user = userService.findByUsername(username);
         if(user==null)
@@ -220,14 +221,13 @@ public class UserController {
                 .stream().map(r -> r.mapToRequestDTO()).collect(Collectors.toList()));
     }
 
-    @PostMapping("/addressSettings")
-    public EntityModel<UserDTO> updateUserAddress(@RequestBody Address newAddress){
+    @GetMapping("/getCurrentUserAddress")
+    @Secured("ROLE_USER")
+    public ResponseEntity<?> getCurrentUserAddress(){
 
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        User currentUser = userService.findByUsername(username);
-        currentUser.setAddress(newAddress);
 
-        return assembler.toModel(userService.updateUser(currentUser).mapToUserDTO());
+        return ResponseEntity.ok(userService.findByUsername(username).getAddress());
 
     }
 }
