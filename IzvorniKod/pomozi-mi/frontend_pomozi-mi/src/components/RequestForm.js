@@ -33,8 +33,8 @@ function RequestForm() {
 				/* console.log(JSON.parse(result)); */
 				setDescription(JSON.parse(result).description);
 				//console.log(useDescription);
-			})
-		});
+			});
+	});
 
 	/* const onSubmit = (data) => console.log(data); */
 	async function onSubmit(values, e) {
@@ -56,8 +56,8 @@ function RequestForm() {
 			.then((response) => response.text())
 			.then((result) => {
 				resultUsingAdress = JSON.parse(result);
-				 console.log(resultUsingAdress);
-			})
+				/* console.log(resultUsingAdress); */
+			});
 		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
@@ -104,13 +104,11 @@ function RequestForm() {
 				if (useLocation === "1") {
 					values.address.x_coord = geoLocation.lat;
 					values.address.y_coord = geoLocation.lng;
-				} 
-				else if(useLocation === "0"){
+				} else if (useLocation === "0") {
 					values.address.description = resultUsingAdress.description;
 					values.address.x_coord = resultUsingAdress.x_coord;
 					values.address.y_coord = resultUsingAdress.y_coord;
-				}
-				else {
+				} else {
 					values.address = null;
 				}
 
@@ -130,7 +128,7 @@ function RequestForm() {
 				fetch(baseUrl + "/requests", options)
 					.then((response) => response.text())
 					.then((result) => {
-						/* console.log(JSON.parse(result)); */
+						console.log(JSON.parse(result));
 						history.push("/myRequests");
 					})
 					.catch((error) => console.log(error));
@@ -205,7 +203,7 @@ function RequestForm() {
 					</div>
 				</div>
 				<div className="virtualOrLocationCheckBox">
-				<div className="form-check">
+					<div className="form-check">
 						<input
 							className="form-check-input"
 							type="radio"
@@ -213,11 +211,11 @@ function RequestForm() {
 							id="virtualniZahtjev"
 							value="option2"
 							onClick={() => setUseLocation("2")}
-							checked={useLocation ==="2" ? true : false}
+							checked={useLocation === "2" ? true : false}
 						/>
 						Virtualni zahtjev
 					</div>
-				<div className="form-check">
+					<div className="form-check">
 						<input
 							className="form-check-input"
 							type="radio"
@@ -226,7 +224,10 @@ function RequestForm() {
 							value="option0"
 							onClick={() => setUseLocation("0")}
 						/>
-						Koristi zadanu lokaciju - <i><b>{useDescription}</b></i>
+						Koristi zadanu lokaciju -{" "}
+						<i>
+							<b>{useDescription}</b>
+						</i>
 					</div>
 					<div className="form-check">
 						<input
@@ -237,7 +238,7 @@ function RequestForm() {
 							value="option1"
 							onClick={() => setUseLocation("1")}
 						/>
-						Zahtjev s lokacijom
+						Odaberi drugu lokaciju
 					</div>
 				</div>
 				{useLocation === "1" ? (

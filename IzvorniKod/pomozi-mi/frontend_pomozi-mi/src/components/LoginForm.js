@@ -18,7 +18,7 @@ function LoginForm(props) {
 	const { handleSubmit, register, errors } = useForm({});
 	const [errorMessage, setErrorMessage] = useState("");
 
-	async function onSubmit(values, e) {
+	function onSubmit(values, e) {
 		e.preventDefault();
 
 		var urlEncoded = new URLSearchParams();
@@ -33,16 +33,21 @@ function LoginForm(props) {
 			},
 			body: urlEncoded,
 		};
-		await fetch(loginUrl, options).then((response) => {
-			if (response.status === 200) {
-				props.setLogInTrue(values.username, values.password);
-				history.push("/requests");
-				/* console.log("Uspješan login"); */
-			} else {
-				setErrorMessage("Korisnički podaci nisu ispravni");
-				/* console.log("Neuspješan login"); */
-			}
-		});
+		fetch(loginUrl, options)
+			.then((response) => {
+				if (response.status === 200) {
+					props.setLogInTrue(values.username, values.password);
+					history.push("/requests");
+				} else {
+					return response.text();
+				}
+			})
+			.then((result) =>
+				setErrorMessage("Korisnički podaci nisu ispravni")
+			)
+			.catch((error) =>
+				setErrorMessage("Korisnički podaci nisu ispravni")
+			);
 	}
 
 	return (
