@@ -564,6 +564,20 @@ function RequestComponent(props) {
 					</Button>
 				);
 			}
+
+			if(podaciReq.PotentialUsers !== null){
+				for (let i in podaciReq.potentialHandler) {
+					if(podaciReq.potentialHandler[i].username === podaciUser.username){
+						buttonLeft = (
+							<Button disabled color="blue" size="large" floated="right">
+								{btnL}
+							</Button>
+						);
+						break;
+					}
+				}
+			}
+			
 			return (
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
