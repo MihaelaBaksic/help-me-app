@@ -60,6 +60,7 @@ function RequestList(props) {
 								<Grid.Column>
 									<List.Header>
 										<Label
+											id="requestLabel"
 											as="a"
 											image
 											onClick={(e) =>
@@ -77,7 +78,7 @@ function RequestList(props) {
 											&nbsp;
 											{request.requestAuthor.username}
 											{request.address ? (
-												<Label.Detail>
+												<Label.Detail id="requestLabelAdress">
 													{
 														request.address
 															.description

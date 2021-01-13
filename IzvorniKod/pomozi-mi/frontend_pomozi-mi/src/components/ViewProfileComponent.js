@@ -159,7 +159,7 @@ function ViewProfileComponent(props) {
 					>
 						<div className="d-flex justify-content-between align-items-center">
 							<div className="d-inline-block font-weight-medium text-uppercase">
-								Pomozi nekome!
+								Pomozi nekome
 							</div>
 						</div>
 					</div>
@@ -197,7 +197,7 @@ function ViewProfileComponent(props) {
 					>
 						<div className="d-flex justify-content-between align-items-center">
 							<div className="d-inline-block font-weight-medium text-uppercase">
-								Kontaktirani zahtjevi
+								Prihvaćeni zahtjevi
 							</div>
 						</div>
 					</div>
