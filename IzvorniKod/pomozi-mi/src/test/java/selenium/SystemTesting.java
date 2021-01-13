@@ -10,7 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 
 public class SystemTesting {
@@ -22,6 +25,9 @@ public class SystemTesting {
 
     private static String adminPassword = "password";
     private static String adminUsername = "admin";
+
+    private static String authoredRequestTitle = "TestRequest";
+    private static String authoredRequestTitleHasHandlers = "TestPotentialHandlers";
 
 
     private WebDriver webDriver;
@@ -135,7 +141,7 @@ public class SystemTesting {
     }
 
     @Test
-    public void adminViewProfile(){
+    public void adminViewsProfile(){
 
         try {
             login(webDriver, adminUsername, adminPassword);
@@ -158,7 +164,7 @@ public class SystemTesting {
     }
 
     @Test
-    public void userViewProfile(){
+    public void userViewsProfile(){
 
         try {
             login(webDriver, userUsername, userPassword);
@@ -216,6 +222,108 @@ public class SystemTesting {
             fail();
             webDriver.close();
         }
+    }
+
+    @Test
+    public void viewAuthoredRequestWithPotentialHandlers() {
+
+        try {
+            // go to all requests
+            login(webDriver, userUsername, userPassword);
+
+            // find request with title TestRequest
+            List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
+            List<WebElement> filteredList = requestList.stream()
+                    .filter(el -> {
+                        System.out.println(el.findElement(By.id("requestTitle")).getText());
+                        return el.findElement(By.id("requestTitle")).getText().equals(authoredRequestTitleHasHandlers);
+                    })
+                    .collect(Collectors.toList());
+
+            filteredList.get(0).findElement(By.tagName("button")).click();
+
+            webDriver.findElement(By.className("blue")).click();
+            sleep(500);
+
+            String modalTitle = webDriver.findElement(By.className("modal-title")).getText();
+
+            Assertions.assertEquals("Potencijalni izvršitelji", modalTitle);
+
+            webDriver.close();
+        }
+        catch (Exception e){
+            fail();
+            webDriver.close();
+        }
+
+
+
+    }
+
+    @Test
+    public void viewAuthoredRequest() {
+
+        try {
+            // go to all requests
+            login(webDriver, userUsername, userPassword);
+
+            // find request with title TestRequest
+            List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
+            List<WebElement> filteredList = requestList.stream()
+                    .filter(el -> {
+                        System.out.println(el.findElement(By.id("requestTitle")).getText());
+                        return el.findElement(By.id("requestTitle")).getText().equals(authoredRequestTitle);
+                    })
+                    .collect(Collectors.toList());
+
+            filteredList.get(0).findElement(By.tagName("button")).click();
+
+            sleep(500);
+
+            webDriver.findElement(By.className("red"));
+            assertTrue(true);
+
+            webDriver.close();
+        }
+        catch (Exception e){
+            fail();
+            webDriver.close();
+        }
+
+    }
+
+    @Test
+    public void viewNonAuthoredRequest() {
+
+        try {
+            // go to all requests
+            login(webDriver, adminUsername, adminPassword);
+
+            // find request with title TestRequest
+            List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
+            List<WebElement> filteredList = requestList.stream()
+                    .filter(el -> {
+                        System.out.println(el.findElement(By.id("requestTitle")).getText());
+                        return el.findElement(By.id("requestTitle")).getText().equals(authoredRequestTitle);
+                    })
+                    .collect(Collectors.toList());
+
+            filteredList.get(0).findElement(By.tagName("button")).click();
+
+            sleep(500);
+
+            String buttonText = webDriver.findElement(By.className("blue")).getText();
+            Assertions.assertEquals("Javi se", buttonText);
+
+            webDriver.close();
+        }
+        catch (Exception e){
+            fail();
+            webDriver.close();
+        }
+
+
+
     }
 
 
