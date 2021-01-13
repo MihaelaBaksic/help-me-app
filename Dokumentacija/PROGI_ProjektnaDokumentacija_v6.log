@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  14 JAN 2021 00:09
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.20)  14 JAN 2021 00:45
+>>>>>>> docH
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija_v6.tex
 (./PROGI_ProjektnaDokumentacija_v6.tex
+<<<<<<< HEAD
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-10-27> xparse <2020-03-03>
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/base/report.cls
+=======
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(c:/texlive/2020/texmf-dist/tex/latex/base/report.cls
+>>>>>>> docH
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
@@ -24,11 +34,19 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
+<<<<<<< HEAD
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/10/27 3.51 The Babel package
 
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/10/27 3.51 Babel common definitions
+=======
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/10/06 3.50 The Babel package
+
+(c:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/10/06 3.50 Babel common definitions
+>>>>>>> docH
 \babel@savecnt=\count184
 \U@D=\dimen139
 \l@babelnohyphens=\language86
@@ -305,7 +323,11 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
 
+<<<<<<< HEAD
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+=======
+(c:/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+>>>>>>> docH
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
@@ -313,7 +335,11 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
 
+<<<<<<< HEAD
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
+=======
+(c:/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
+>>>>>>> docH
 \XKV@depth=\count277
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
@@ -851,7 +877,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip62
+<<<<<<< HEAD
 ) (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+=======
+)
+(c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+>>>>>>> docH
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip63
@@ -912,7 +943,11 @@ LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 7
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
+<<<<<<< HEAD
 (d:/TexToPdf/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+=======
+(c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+>>>>>>> docH
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count299
 \l__pdf_internal_box=\box65
@@ -1086,7 +1121,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
+<<<<<<< HEAD
 l.31 ...mberline {6.3}Zaključak}{58}{section.6.3}
+=======
+l.31 ...mberline {6.3}Zaključak}{61}{section.6.3}
+>>>>>>> docH
                                                   % [1
 
 ])
@@ -1764,15 +1803,15 @@ Poglavlje 5.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 1.
+(hyperref)                removing `\textasciicaron' on input line 3.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 1.
+(hyperref)                removing `\textasciicaron' on input line 3.
 
 
-Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
+Overfull \hbox (10.38434pt too wide) in paragraph at lines 3--3
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
@@ -1782,18 +1821,18 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 1--1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 
-Overfull \hbox (2.87764pt too wide) in paragraph at lines 44--45
+Overfull \hbox (2.87764pt too wide) in paragraph at lines 46--47
 []\OT1/jkp/m/it/12 updateUser() \OT1/jkp/m/n/12 - unit tes-tovi za ovu me-todu 
 is-pi-tuju baca li Il-le-ga-lAr-gu-men-tExcep-
  []
 
 
-Overfull \hbox (17.44887pt too wide) in paragraph at lines 44--45
+Overfull \hbox (17.44887pt too wide) in paragraph at lines 46--47
 \OT1/jkp/m/n/12 tion kada mu pre-damo ko-ris-nika ko-jemu fali neki od oba-vez-
 nih po-da-taka za a[]zuriranje
  []
@@ -1802,9 +1841,10 @@ nih po-da-taka za a[]zuriranje
 <slike/unit_testovi.png, id=647, 540.21825pt x 469.15276pt>
 File: slike/unit_testovi.png Graphic file (type png)
 <use slike/unit_testovi.png>
-Package pdftex.def Info: slike/unit_testovi.png  used on input line 68.
+Package pdftex.def Info: slike/unit_testovi.png  used on input line 70.
 (pdftex.def)             Requested size: 432.17517pt x 375.32271pt.
  [49]
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 77--79
 
  []
@@ -1814,10 +1854,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--85
 
  []
 
+=======
+LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
+ 79.
+ (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
+File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+>>>>>>> docH
 [50pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
+<<<<<<< HEAD
 l.88 			\begin{packed_enum}
                             <./slike/unit_testovi.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 100--104
@@ -1862,9 +1914,140 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--153
  []
 
 [54])
+=======
+l.84 			 	\item \textit
+                       {\textbf{Selenium WebDriver} - podrška za pisanje is...
+ <./slike/unit_testovi.png>] [51]
+<./slike//dijagramRazmjestaja.png, id=669, 511.9125pt x 349.305pt>
+File: ./slike//dijagramRazmjestaja.png Graphic file (type png)
+<use ./slike//dijagramRazmjestaja.png>
+Package pdftex.def Info: ./slike//dijagramRazmjestaja.png  used on input line 1
+05.
+(pdftex.def)             Requested size: 491.9772pt x 335.6851pt.
+
+Overfull \hbox (56.36641pt too wide) in paragraph at lines 105--106
+[][]
+ []
+
+[52pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.109 			\eject
+                <./slike//dijagramRazmjestaja.png>]
+<slike/deployment_slike/awshome.png, id=678, 953.81343pt x 637.63219pt>
+File: slike/deployment_slike/awshome.png Graphic file (type png)
+<use slike/deployment_slike/awshome.png>
+Package pdftex.def Info: slike/deployment_slike/awshome.png  used on input line
+ 118.
+(pdftex.def)             Requested size: 476.90555pt x 318.8153pt.
+
+Overfull \hbox (41.29475pt too wide) in paragraph at lines 118--120
+ [][] 
+ []
+
+[53pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.125 			
+          <./slike/deployment_slike/awshome.png>]
+<slike/deployment_slike/launchingInstance.png, id=688, 1084.05pt x 625.58719pt>
+
+File: slike/deployment_slike/launchingInstance.png Graphic file (type png)
+<use slike/deployment_slike/launchingInstance.png>
+Package pdftex.def Info: slike/deployment_slike/launchingInstance.png  used on 
+input line 169.
+(pdftex.def)             Requested size: 435.6108pt x 251.38547pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/virtualOS.png, id=689, 1120.185pt x 180.675pt>
+File: slike/deployment_slike/virtualOS.png Graphic file (type png)
+<use slike/deployment_slike/virtualOS.png>
+Package pdftex.def Info: slike/deployment_slike/virtualOS.png  used on input li
+ne 175.
+(pdftex.def)             Requested size: 435.6108pt x 70.25894pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/instanceType.png, id=690, 1429.59094pt x 627.84563pt>
+File: slike/deployment_slike/instanceType.png Graphic file (type png)
+<use slike/deployment_slike/instanceType.png>
+Package pdftex.def Info: slike/deployment_slike/instanceType.png  used on input
+ line 181.
+(pdftex.def)             Requested size: 435.6108pt x 191.30582pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/mojeInstance.png, id=691, 962.84718pt x 295.85532pt>
+File: slike/deployment_slike/mojeInstance.png Graphic file (type png)
+<use slike/deployment_slike/mojeInstance.png>
+Package pdftex.def Info: slike/deployment_slike/mojeInstance.png  used on input
+ line 187.
+(pdftex.def)             Requested size: 435.6108pt x 133.84692pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/instanceConnect.png, id=692, 589.4522pt x 320.69812pt>
+File: slike/deployment_slike/instanceConnect.png Graphic file (type png)
+<use slike/deployment_slike/instanceConnect.png>
+Package pdftex.def Info: slike/deployment_slike/instanceConnect.png  used on in
+put line 193.
+(pdftex.def)             Requested size: 435.6108pt x 236.9997pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/browserTerminal.png, id=693, 721.94719pt x 654.19406pt>
+
+File: slike/deployment_slike/browserTerminal.png Graphic file (type png)
+<use slike/deployment_slike/browserTerminal.png>
+Package pdftex.def Info: slike/deployment_slike/browserTerminal.png  used on in
+put line 199.
+(pdftex.def)             Requested size: 435.6108pt x 394.72552pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[54]) [55pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.5.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                                <./slike/deployment_slike/launchingInstance.png
+> <./slike/deployment_slike/virtualOS.png> <./slike/deployment_slike/instanceTy
+pe.png>] [56pdfTeX warning (ext4): destination with the same identifier (name{f
+igure.5.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.5.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                                <./slike/deployment_slike/mojeInstance.png> <./
+slike/deployment_slike/instanceConnect.png>] [57pdfTeX warning (ext4): destinat
+ion with the same identifier (name{figure.5.9}) has been already used, duplicat
+e ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                                <./slike/deployment_slike/browserTerminal.png>]
+>>>>>>> docH
 \openout2 = `Zakljucak.aux'.
 
- (./Zakljucak.tex
+(./Zakljucak.tex
 Poglavlje 6.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -1891,12 +2074,20 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 16.
 
+<<<<<<< HEAD
 [55
+=======
+[58
+>>>>>>> docH
 
 
 
 
+<<<<<<< HEAD
 ] [56]
+=======
+] [59]
+>>>>>>> docH
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
@@ -1917,13 +2108,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
+<<<<<<< HEAD
 [57]
+=======
+[60]
+>>>>>>> docH
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 46.
 
+<<<<<<< HEAD
 [58])
+=======
+[61])
+>>>>>>> docH
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
@@ -1944,7 +2143,11 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
+<<<<<<< HEAD
 ) [59
+=======
+) [62
+>>>>>>> docH
 
 
 
@@ -1953,6 +2156,7 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
+<<<<<<< HEAD
  [60
 
 
@@ -1961,6 +2165,17 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \openout2 = `Dodatak.aux'.
 
  (./Dodatak.tex [61
+=======
+ [63
+
+
+
+] [64]
+\openout2 = `Dodatak.aux'.
+
+ (./Dodatak.tex
+[65
+>>>>>>> docH
 
 
 ]
@@ -1968,17 +2183,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
+<<<<<<< HEAD
 [62] [63]
+=======
+[66] [67]
+>>>>>>> docH
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
+<<<<<<< HEAD
 [64] [65]
+=======
+[68] [69]
+>>>>>>> docH
 Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
+<<<<<<< HEAD
 ) [66] 
+=======
+) [70] 
+>>>>>>> docH
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -1989,6 +2216,7 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  12735 strings out of 479497
  183462 string characters out of 5871915
  574071 words of memory out of 5000000
@@ -1997,6 +2225,16 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  93i,14n,98p,1059b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not ex
+=======
+ 12777 strings out of 479917
+ 182871 string characters out of 5886664
+ 570242 words of memory out of 5000000
+ 28681 multiletter control sequences out of 15000+600000
+ 590401 words of font info for 153 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 93i,14n,98p,1062b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
+>>>>>>> docH
 ist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
@@ -2038,6 +2276,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
+<<<<<<< HEAD
 {d:/TexToPdf/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<d:/TexToPdf/t
 exlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><d:/TexToPdf/tex
 live/2020/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb><d:/TexToPdf/texliv
@@ -2052,4 +2291,20 @@ PDF statistics:
  772 compressed objects within 8 object streams
  290 named destinations out of 1000 (max. 500000)
  364 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texmf-
+dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2020/texmf-dist/fonts/
+type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
+/kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
+t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
+texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (71 pages, 2149696 bytes)
+.
+PDF statistics:
+ 941 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 296 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> docH
 
