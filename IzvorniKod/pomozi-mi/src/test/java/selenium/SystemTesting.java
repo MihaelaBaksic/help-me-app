@@ -98,7 +98,7 @@ public class SystemTesting {
         try{
 
             login( userUsername, userPasswordWrong);
-
+            sleep(200);
             WebElement errorMessage = webDriver.findElement(By.className("api_error_message"));
             assertTrue(errorMessage.getText().equals("Korisnički podaci nisu ispravni"));
 
@@ -111,6 +111,10 @@ public class SystemTesting {
 
     }
 
+    /**
+     * Creates a new request, tests for proper redirection after creation
+     * @throws InterruptedException
+     */
     @Test
     public void createRequestExpectedBehaviour() throws InterruptedException {
 
@@ -124,11 +128,16 @@ public class SystemTesting {
 
     }
 
+    /**
+     * Tryes to create a request with no title
+     * Tests for a corresponding error message
+     * @throws InterruptedException
+     */
     @Test
     public void createRequestNoTitle() throws InterruptedException {
 
 
-        login( "username", "password");
+        login( userUsername, userPassword);
 
         createRequest( "", "12112021", "0345PM", "description", true);
 
@@ -140,6 +149,10 @@ public class SystemTesting {
 
     }
 
+    /**
+     * Admin views user profile
+     * Tests for presence of action buttons
+     */
     @Test
     public void adminViewsProfile(){
 
@@ -164,6 +177,10 @@ public class SystemTesting {
         }
     }
 
+    /**
+     * User views profile
+     * Tests for absence of action buttons
+     */
     @Test
     public void userViewsProfile(){
 
@@ -175,7 +192,6 @@ public class SystemTesting {
 
             sleep(500);
 
-            //Check if proper functionality buttons are rendered
             try{
                 WebElement addAdminBtn = webDriver.findElement(By.className("btn-success"));
                 fail();
@@ -205,6 +221,10 @@ public class SystemTesting {
         }
     }
 
+    /**
+     * Tests behaviour when user tries to access
+     * a nonexistent profile
+     */
     @Test
     public void viewNonexistentProfile(){
 
@@ -227,6 +247,10 @@ public class SystemTesting {
         }
     }
 
+    /**
+     * Tests request component if
+     * potential handlers exist
+     */
     @Test
     public void viewAuthoredRequestWithPotentialHandlers() {
 
@@ -246,7 +270,7 @@ public class SystemTesting {
             filteredList.get(0).findElement(By.tagName("button")).click();
 
             webDriver.findElement(By.className("blue")).click();
-            sleep(500);
+            sleep(1000);
 
             String modalTitle = webDriver.findElement(By.className("modal-title")).getText();
 
@@ -263,6 +287,10 @@ public class SystemTesting {
 
     }
 
+    /**
+     * Tests request component if
+     * potential handlers don't exist
+     */
     @Test
     public void viewAuthoredRequest() {
 
@@ -295,6 +323,10 @@ public class SystemTesting {
 
     }
 
+    /**
+     * Tests request component
+     * when user isn't the author
+     */
     @Test
     public void viewNonAuthoredRequest() {
 
@@ -329,7 +361,15 @@ public class SystemTesting {
 
     }
 
-
+    /**
+     * Creates a new request
+     * @param title Request title to be filled
+     * @param expirationDate Request expiration date
+     * @param expirationTime Request expiration time
+     * @param description Request description
+     * @param virtual Whether request is virtual or not
+     * @throws InterruptedException
+     */
     private void createRequest(String title, String expirationDate, String expirationTime, String description, Boolean virtual) throws InterruptedException {
         String newRequestUrl = "http://18.220.214.27:8080/#/newRequest";
         webDriver.get(newRequestUrl);
@@ -350,10 +390,17 @@ public class SystemTesting {
         WebElement submitButton = buttonGroup.findElement(By.className("btn-primary"));
         submitButton.click();
 
+        sleep(500);
+
     }
 
 
-
+    /**
+     * Performs login for given parameters
+     * @param username Username for login
+     * @param password Password for login
+     * @throws InterruptedException
+     */
     private void login(String username, String password) throws InterruptedException {
 
         String loginUrl = "http://18.220.214.27:8080/";
