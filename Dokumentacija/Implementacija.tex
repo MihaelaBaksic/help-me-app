@@ -74,14 +74,55 @@ Web Services\footnote{https://aws.amazon.com/}.
 			
 			\subsection{Ispitivanje sustava}
 			
-			 \textit{Potrebno je provesti i opisati ispitivanje sustava koristeći radni okvir Selenium\footnote{\url{https://www.seleniumhq.org/}}. Razraditi \textbf{minimalno 4 ispitna slučaja} u kojima će se ispitati redovni slučajevi, rubni uvjeti te poziv funkcionalnosti koja nije implementirana/izaziva pogrešku kako bi se vidjelo na koji način sustav reagira kada nešto nije u potpunosti ostvareno. Ispitni slučaj se treba sastojati od ulaza (npr. korisničko ime i lozinka), očekivanog izlaza ili rezultata, koraka ispitivanja i dobivenog izlaza ili rezultata.\\ }
+			Za ispitivanje sustava korišten je alat za automatizirano testiranje Selenium WebDriver. Ispitni slučajevi pisani
+			su u jeziku Java. \newline
+			
+			Cilj ispitivanja sustava je ispitati ponašanje sustava u cjelini, onako kako ga vidi 
+			korisnik aplikacije te dostupnost svih funkcionalnosti koje korisnik može koristiti.
+			Napisani ispitni slučajevi prije svega su ispitivali pravilan izgled komponenti i funkcionalnosti koje se nude kroz korisničko sučelja
+			u ovisnosti o stanju sustava, stanju pojedinog zahtjeva i ovlastima korisnika koji je prijavljen u sustav.
+			Testiranje je koristilo dva korisnika već registrirana u sustav, jednog s ovlastima običnog korisnika i drugog s ovlastima administratora.\newline 
+			
+			Komponente koje najviše ovise o ovlastima i stanju sustava su komponenta za prikaz pojedinog zahtjeva i komponenta profila korisnika.
+			Za primjer, funkcionalnosti rada sa zahtjevima testiraju metode:
+			\begin{packed_enum}
+				
+				\item \textit{createRequestExpectedBehaviour()} - očekivani unos u formu zahtjeva
+				\item \textit{createRequestNoTitle()} - neispravan unos u formu zahtjeva
+				\item \textit{viewNonAuthoredRequest()} - prisutnost komponenti za javljanje na zahtjev
+				\item \textit{viewAuthoredRequest()} - prisutnost komponenti za blokiranje zahtjeva
+				\item \textit{viewAuthoredRequestWithPotentialHandlers()} - prisutnost komponenti za pregled potencijalnih izvršitelja te sam pregled
+				
+			\end{packed_enum}
+			
+		
+			
+			Testni slučajevi fokusirali su se na različite situacije i rubne slučajeve u prikazu i funkcionalnostima.
+			Rubni slučajevi poput pogrešnog unosa u formu ili nedostatka nekog unosa se u aplikaciji signaliziraju različitim porukama o pogrešci. 
+			Testne metode za takve slučajeve prije svega su se fokusirali na traženje odgovarajuće poruke o pogrešci.
+			Konkretan primjer za to su testni slučajevi unosa pogrešnih korisničkih podataka u formu za prijavu. \newline 
+			
+			Neimplementirana funkcionalnost koja je također testirana je traka za pretraživanje. 
+			Testom je pokazano da akcijama nad njom se ne mjenja stanje sustava i ne remeti se normalan tijek funkcioniranja aplikacije. \newline
+			
+			Glavnu prepreku za automatizaciju ispitivanja sustava predstavljala je priroda testiranog sustava. 
+			Sustav se sastoji od brojnih aktivnosti koje se mogu izvoditi samo jednom, poput javljanja na pojedini zahtjev ili 
+			biranja izvršitelja za zahtjev te aktivnosti koje zahtjevaju slijednu interakciju više korisnika.
+			Takve akcije teško je automatizirano ispitivati zato što to neminovno u sustavu akumulira velik broj zahtjeva samo za testiranje 
+			ili testove nije moguće ponavljati više puta, čime se u potpunosti gubi njihova svrha.
+			Stoga su navedene funkcionalnosti izostavljene iz automatiziranog ispitvanja alatom Selenium i odrađene ručno.
+			
+			
+			
+			
+			\begin{figure}[H]
+				\includegraphics[scale=1.2]{slike/selenium-testing.png}
+				\centering
+				\caption{Rezultati testova sustava}
+				
+			\end{figure}
+			
 			 
-			 \textit{Izradu ispitnih slučajeva pomoću radnog okvira Selenium moguće je provesti pomoću jednog od sljedeća dva alata:}
-			 \begin{itemize}
-			 	\item \textit{dodatak za preglednik \textbf{Selenium IDE} - snimanje korisnikovih akcija radi automatskog ponavljanja ispita	}
-			 	\item \textit{\textbf{Selenium WebDriver} - podrška za pisanje ispita u jezicima Java, C\#, PHP koristeći posebno programsko sučelje.}
-			 \end{itemize}
-		 	\textit{Detalji o korištenju alata Selenium bit će prikazani na posebnom predavanju tijekom semestra.}
 			
 			\eject 
 		
