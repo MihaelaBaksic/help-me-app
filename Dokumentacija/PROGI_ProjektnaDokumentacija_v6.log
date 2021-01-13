@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.20)  13 JAN 2021 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.20)  14 JAN 2021 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1852,88 +1852,94 @@ Overfull \hbox (41.29475pt too wide) in paragraph at lines 118--120
                                                   
 l.125 			
           <./slike/deployment_slike/awshome.png>]
-<slike/deployment_slike/launchingInstance.png, id=687, 1084.05pt x 625.58719pt>
+<slike/deployment_slike/launchingInstance.png, id=688, 1084.05pt x 625.58719pt>
 
 File: slike/deployment_slike/launchingInstance.png Graphic file (type png)
 <use slike/deployment_slike/launchingInstance.png>
 Package pdftex.def Info: slike/deployment_slike/launchingInstance.png  used on 
-input line 134.
+input line 169.
 (pdftex.def)             Requested size: 435.6108pt x 251.38547pt.
-<slike/deployment_slike/virtualOS.png, id=688, 1120.185pt x 180.675pt>
-File: slike/deployment_slike/virtualOS.png Graphic file (type png)
-<use slike/deployment_slike/virtualOS.png>
-Package pdftex.def Info: slike/deployment_slike/virtualOS.png  used on input li
-ne 140.
-(pdftex.def)             Requested size: 435.6108pt x 70.25894pt.
-<slike/deployment_slike/instanceType.png, id=689, 1429.59094pt x 627.84563pt>
-File: slike/deployment_slike/instanceType.png Graphic file (type png)
-<use slike/deployment_slike/instanceType.png>
-Package pdftex.def Info: slike/deployment_slike/instanceType.png  used on input
- line 146.
-(pdftex.def)             Requested size: 435.6108pt x 191.30582pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/mojeInstance.png, id=690, 962.84718pt x 295.85532pt>
+<slike/deployment_slike/virtualOS.png, id=689, 1120.185pt x 180.675pt>
+File: slike/deployment_slike/virtualOS.png Graphic file (type png)
+<use slike/deployment_slike/virtualOS.png>
+Package pdftex.def Info: slike/deployment_slike/virtualOS.png  used on input li
+ne 175.
+(pdftex.def)             Requested size: 435.6108pt x 70.25894pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/instanceType.png, id=690, 1429.59094pt x 627.84563pt>
+File: slike/deployment_slike/instanceType.png Graphic file (type png)
+<use slike/deployment_slike/instanceType.png>
+Package pdftex.def Info: slike/deployment_slike/instanceType.png  used on input
+ line 181.
+(pdftex.def)             Requested size: 435.6108pt x 191.30582pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<slike/deployment_slike/mojeInstance.png, id=691, 962.84718pt x 295.85532pt>
 File: slike/deployment_slike/mojeInstance.png Graphic file (type png)
 <use slike/deployment_slike/mojeInstance.png>
 Package pdftex.def Info: slike/deployment_slike/mojeInstance.png  used on input
- line 152.
+ line 187.
 (pdftex.def)             Requested size: 435.6108pt x 133.84692pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/instanceConnect.png, id=691, 589.4522pt x 320.69812pt>
+<slike/deployment_slike/instanceConnect.png, id=692, 589.4522pt x 320.69812pt>
 File: slike/deployment_slike/instanceConnect.png Graphic file (type png)
 <use slike/deployment_slike/instanceConnect.png>
 Package pdftex.def Info: slike/deployment_slike/instanceConnect.png  used on in
-put line 158.
+put line 193.
 (pdftex.def)             Requested size: 435.6108pt x 236.9997pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/browserTerminal.png, id=692, 721.94719pt x 654.19406pt>
+<slike/deployment_slike/browserTerminal.png, id=693, 721.94719pt x 654.19406pt>
 
 File: slike/deployment_slike/browserTerminal.png Graphic file (type png)
 <use slike/deployment_slike/browserTerminal.png>
 Package pdftex.def Info: slike/deployment_slike/browserTerminal.png  used on in
-put line 164.
+put line 199.
 (pdftex.def)             Requested size: 435.6108pt x 394.72552pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[54pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
-}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.169 			\eject
-               pdfTeX warning (ext4): destination with the same identifier (nam
-e{figure.5.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.169 			\eject
-                <./slike/deployment_slike/launchingInstance.png> <./slike/deplo
-yment_slike/virtualOS.png>]) [55pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.5.6}) has been already used, duplicate ignored
+[54]) [55pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.119 	\include{Implementacija}
                                pdfTeX warning (ext4): destination with the same
- identifier (name{figure.5.7}) has been already used, duplicate ignored
+ identifier (name{figure.5.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.119 	\include{Implementacija}
-                                <./slike/deployment_slike/instanceType.png> <./
-slike/deployment_slike/mojeInstance.png>] [56pdfTeX warning (ext4): destination
- with the same identifier (name{figure.5.8}) has been already used, duplicate i
-gnored
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.5.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.119 	\include{Implementacija}
-                                <./slike/deployment_slike/instanceConnect.png>]
-[57pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9
-}) has been already used, duplicate ignored
+                                <./slike/deployment_slike/launchingInstance.png
+> <./slike/deployment_slike/virtualOS.png> <./slike/deployment_slike/instanceTy
+pe.png>] [56pdfTeX warning (ext4): destination with the same identifier (name{f
+igure.5.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.5.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.119 	\include{Implementacija}
+                                <./slike/deployment_slike/mojeInstance.png> <./
+slike/deployment_slike/instanceConnect.png>] [57pdfTeX warning (ext4): destinat
+ion with the same identifier (name{figure.5.9}) has been already used, duplicat
+e ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.119 	\include{Implementacija}
@@ -2060,10 +2066,10 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
- 12775 strings out of 479917
- 182836 string characters out of 5886664
+ 12777 strings out of 479917
+ 182871 string characters out of 5886664
  570242 words of memory out of 5000000
- 28679 multiletter control sequences out of 15000+600000
+ 28681 multiletter control sequences out of 15000+600000
  590401 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  93i,14n,98p,1062b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2117,12 +2123,13 @@ dist/fonts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2020/texmf-dist/fonts/
 type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 /kpfonts/jkpmi.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmi
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
-texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (71 pages, 2140118 bytes)
+texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
+exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (71 pages, 2149696 bytes)
 .
 PDF statistics:
- 934 PDF objects out of 1000 (max. 8388607)
- 798 compressed objects within 8 object streams
+ 941 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
  296 named destinations out of 1000 (max. 500000)
  394 words of extra memory for PDF output out of 10000 (max. 10000000)
 
