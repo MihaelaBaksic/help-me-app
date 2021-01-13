@@ -52,7 +52,7 @@ public class SystemTesting {
     public void successfulLogin(){
 
         try{
-            login(webDriver, userUsername, userPassword);
+            login( userUsername, userPassword);
 
             assertTrue(webDriver.getCurrentUrl().equals("http://18.220.214.27:8080/#/requests"));
 
@@ -75,7 +75,7 @@ public class SystemTesting {
 
         try{
 
-            login(webDriver, userUsernameWrong, userPassword);
+            login( userUsernameWrong, userPassword);
             WebElement errorMessage = webDriver.findElement(By.className("api_error_message"));
             assertTrue(errorMessage.getText().equals("Korisnički podaci nisu ispravni"));
 
@@ -97,7 +97,7 @@ public class SystemTesting {
 
         try{
 
-            login(webDriver, userUsername, userPasswordWrong);
+            login( userUsername, userPasswordWrong);
 
             WebElement errorMessage = webDriver.findElement(By.className("api_error_message"));
             assertTrue(errorMessage.getText().equals("Korisnički podaci nisu ispravni"));
@@ -114,9 +114,9 @@ public class SystemTesting {
     @Test
     public void createRequestExpectedBehaviour() throws InterruptedException {
 
-        login(webDriver, "username", "password");
+        login( "username", "password");
 
-        createRequest(webDriver, "Halp1", "12112021", "0345PM", "description", true);
+        createRequest( "Halp1", "12112021", "0345PM", "description", true);
 
         assertTrue(webDriver.getCurrentUrl().equals("http://18.220.214.27:8080/#/newRequest"));
 
@@ -128,9 +128,9 @@ public class SystemTesting {
     public void createRequestNoTitle() throws InterruptedException {
 
 
-        login(webDriver, "username", "password");
+        login( "username", "password");
 
-        createRequest(webDriver, "", "12112021", "0345PM", "description", true);
+        createRequest( "", "12112021", "0345PM", "description", true);
 
         WebElement errorMessage = webDriver.findElement(By.className("error-message"));
         System.out.println(errorMessage.getText());
@@ -144,7 +144,7 @@ public class SystemTesting {
     public void adminViewsProfile(){
 
         try {
-            login(webDriver, adminUsername, adminPassword);
+            login( adminUsername, adminPassword);
 
             String userProfileUrl = "http://18.220.214.27:8080/#/user/" + userUsername;
             webDriver.get(userProfileUrl);
@@ -155,6 +155,7 @@ public class SystemTesting {
             WebElement permBlockBtn = webDriver.findElement(By.className("btn-danger"));
 
             assertTrue(true);
+            webDriver.close();
         }
         catch (Exception e){
             fail();
@@ -167,7 +168,7 @@ public class SystemTesting {
     public void userViewsProfile(){
 
         try {
-            login(webDriver, userUsername, userPassword);
+            login( userUsername, userPassword);
 
             String userProfileUrl = "http://18.220.214.27:8080/#/user/hrvoje459";
             webDriver.get(userProfileUrl);
@@ -208,7 +209,7 @@ public class SystemTesting {
     public void viewNonexistentProfile(){
 
         try {
-            login(webDriver, userUsername, userPassword);
+            login( userUsername, userPassword);
 
             String userProfileUrl = "http://18.220.214.27:8080/#/user/nosuchusername";
             webDriver.get(userProfileUrl);
@@ -216,6 +217,8 @@ public class SystemTesting {
 
             String message = webDriver.findElement(By.id("center")).findElement(By.tagName("div")).getText();
             Assertions.assertEquals("Korisnik ne postoji?", message);
+
+            webDriver.close();
 
         }
         catch (Exception e){
@@ -229,7 +232,7 @@ public class SystemTesting {
 
         try {
             // go to all requests
-            login(webDriver, userUsername, userPassword);
+            login( userUsername, userPassword);
 
             // find request with title TestRequest
             List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
@@ -265,7 +268,7 @@ public class SystemTesting {
 
         try {
             // go to all requests
-            login(webDriver, userUsername, userPassword);
+            login( userUsername, userPassword);
 
             // find request with title TestRequest
             List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
@@ -297,7 +300,7 @@ public class SystemTesting {
 
         try {
             // go to all requests
-            login(webDriver, adminUsername, adminPassword);
+            login( adminUsername, adminPassword);
 
             // find request with title TestRequest
             List<WebElement> requestList = webDriver.findElement(By.className("list")).findElements(By.className("item"));
@@ -327,7 +330,7 @@ public class SystemTesting {
     }
 
 
-    private void createRequest(WebDriver webDriver, String title, String expirationDate, String expirationTime, String description, Boolean virtual) throws InterruptedException {
+    private void createRequest(String title, String expirationDate, String expirationTime, String description, Boolean virtual) throws InterruptedException {
         String newRequestUrl = "http://18.220.214.27:8080/#/newRequest";
         webDriver.get(newRequestUrl);
 
@@ -351,7 +354,7 @@ public class SystemTesting {
 
 
 
-    private void login(WebDriver webDriver, String username, String password) throws InterruptedException {
+    private void login(String username, String password) throws InterruptedException {
 
         String loginUrl = "http://18.220.214.27:8080/";
         webDriver.get(loginUrl);
