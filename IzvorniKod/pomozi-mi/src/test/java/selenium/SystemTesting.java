@@ -29,6 +29,8 @@ public class SystemTesting {
     private static String authoredRequestTitle = "TestRequest";
     private static String authoredRequestTitleHasHandlers = "TestPotentialHandlers";
 
+    private static String searchText = "korisnik";
+
 
     private WebDriver webDriver;
 
@@ -98,7 +100,7 @@ public class SystemTesting {
         try{
 
             login( userUsername, userPasswordWrong);
-            sleep(200);
+            sleep(500);
             WebElement errorMessage = webDriver.findElement(By.className("api_error_message"));
             assertTrue(errorMessage.getText().equals("Korisnički podaci nisu ispravni"));
 
@@ -419,6 +421,30 @@ public class SystemTesting {
         sleep(500);
 
         return;
+    }
+
+    /**
+     * Testing of unimplemented functionality - searchbar
+     */
+    @Test
+    public void searchbarTesting(){
+
+        try {
+            login(userUsername, userPassword);
+
+            WebElement searchbar = webDriver.findElement(By.className("topHeader")).findElement(By.className("form-inline"));
+            searchbar.findElement(By.tagName("input")).sendKeys(searchText);
+            searchbar.findElement(By.tagName("button")).click();
+            //test no redirection
+            sleep(500);
+            Assertions.assertEquals("http://18.220.214.27:8080/#/requests", webDriver.getCurrentUrl());
+            webDriver.close();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            fail();
+            webDriver.close();
+        }
     }
 
 }
