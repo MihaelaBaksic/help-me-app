@@ -1,9 +1,52 @@
 \chapter{Zaključak i budući rad}
+
 		
-		\textbf{\textit{dio 2. revizije}}\\
+		 
+		 \section{Izrada projekta i tehnički izazovi}
+		 
+		 Izrada projekta protezala se kroz period od 12 tjedana. Prvi dio izrade fokusirao se na definiranje korisničkih zahtjeva i zahtjeva sustava, dok se drugi dio okrenuo ka implementaciji definiranog sustava.
+		 
+		 Imajući na umu da nitko iz projektne grupe nije bio upoznat sa tehnologijama koje su se koristile (Spring Framework i React), glavni izazov predstavljalo je upoznavanje s novim tehnologijama. \newline
+		 Inicijalno, to je otežavalo vremensko planiranje i nošenje sa klasičnim problemima uporabe Springa i Reacta koji se mogu zaobići korištenjem koncepta \textit{best practice}. \newline 
+		 
+		 \subsection{Tehnički izazovi korištenja radnog okvira Spring}
+		 Najveći izazov prilikom korištenja radnog okvira Spring bili su u uspostavi autentikacije i autorizacije. Radi jednostavnosti izvedbe inicijalne inačice, odlučeno je za konfiguraciju sigurnosti aplikacije koristiti već postojeću Springovu klasu \textit{WebSecurityConfigurerAdapter}. Najduže je trajalo uspostavljanje konfiguracije autentikacije putem \textit{UserDetailsService}-a iz razloga nepotpunosti i manjkavosti informacija o funkcionalnostima navedenog service-a na internetu i čestih neočekivanih ponašanja koja su posljedica različitih konfiguracija sigurnosti u referentnim primjerima u našoj aplikaciji. Autentikacija je uspješno uspostavljena pregledavanjem implementacije korištenih klasa i službene dokumentacije. 
+		 Manjkavost koju uviđamo u našoj izvedbi sigurnosti je nekorištenje tokena, već svaki zahtjev mora sadržavati autentikacijske podatke \textit{username} i \textit{password}.
+			 
+	
 		
-		 \textit{U ovom poglavlju potrebno je napisati osvrt na vrijeme izrade projektnog zadatka, koji su tehnički izazovi prepoznati, jesu li riješeni ili kako bi mogli biti riješeni, koja su znanja stečena pri izradi projekta, koja bi znanja bila posebno potrebna za brže i kvalitetnije ostvarenje projekta i koje bi bile perspektive za nastavak rada u projektnoj grupi.}
+		\subsection{Izazovi korištenja knjižnice React}
+		Glavnina tehničkih izazova korištenja knjižnice React je proizašla iz potrebe za adaptacijom komponenti koje React nudi. Kao kompromis između pisanja vlastitih i relativno teške adaptacije već postojećih komponenti, glavni \textit{layout} web stranice izrađen je samostalno korištenjem CSS-a, dok su se za pojedine komponente unutar stranice koristile komponente \textit{Semantic-UI} i \textit{Bootstrap}. \newline
 		
-		 \textit{Potrebno je točno popisati funkcionalnosti koje nisu implementirane u ostvarenoj aplikaciji.}
+		
+		 \section{Budući rad}
+		 S obzirom na kratko vrijeme za izvedbu aplikacije i ograničeno prethodno iskustvo projektnog tima, aplikacija ostaje otvorena za neka poboljšanja. U ovom odjeljku opisani su prijedlozi za restrukturiranje dijela funkcionalnosti te koje dodatne funkcionalnosti bi poboljšale aplikaciju.\newline 
+		 
+		 Restrukturiranje sigurnosti i izmjene potrebne za uvođenje \textit{JWT tokena} kao sredstva autentikacije prva je i najbitnija potrebna izmjena. Time se osigurava veća sigurnost podataka u odnosu na slanje \textit{passworda} u svakom HTTP zahtjevu. Dodatno, e-mail verifikacijom unesene adrese prilikom registracije potrebno je osigurati da se nitko osim stvarnog posjednika adrese ne može registrirati u sustav. \newline
+		  
+		 
+		 Kako bi se osigurala kvalitetnija komunikacija i interakcija između korisnika aplikacije te bolji \textit{user experience} dodatne implementacija funkcionalnosti pretraživanja korisnika i zahtjeva te \textit{chat} koje nisu izvedene u prvoj inačici je nužna. \newline
+		 
+		 Od zahtjevanih i predviđenih funkcionalnosti aplikacije nisu implementirani:
+		 \begin{packed_enum}
+		 	
+		 	\item Brisanje korisničkog računa
+		 	\item Prikaz lanaca povjerenja
+		 	\item Čuvanje podataka na udaljenoj bazi podataka 
+
+		\end{packed_enum}		
+		Predviđene i neimplementirane funkcionalnosti bit će uključene u iduću inačicu aplikacije. 	
+		 
+		 \eject
+		 
+		 \section{Zaključak}
+		 Izvođenje ovog projekta uvelike je pridonijelo praktičnom iskustvu svih članova projektne grupe. Najbitnije znanje koje je projektna grupa dobila je uvid u cjelokupni proces razvoja određenog programskog proizvoda, počevši sa planiranjem, razradom pa sve do \textit{deployment}-a. To znanje je učinilo dosadašnja znanja članova projektne grupe kompletnijima i primjenjivijima. 
+		 
+		 Dobra komunikacija članova projektnog tima pokazala se kao bitan faktor u uspješnom svladavanju prepreka. 
+		 
+		 Također, projekt je potaknuo grupu na aktivnije korištenje već gotovih knjižnica i komponenata i njihovu adaptaciju za specifične potrebe projekta.
+		 \eject
+		 
+		 
 		
 		\eject 

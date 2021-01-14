@@ -15,9 +15,23 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Arhitektura sustava}}{27}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Relacijski model baze podataka}}{31}{figure.4.2}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Struktura aplikacije i konfiguracija}}{32}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Klase koje reguliraju registraciju i prijavu}}{33}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Klase koje reguliraju rad s korisnicima sustava}}{35}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Klase koje reguliraju rad sa zahtjevima}}{36}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Klase koje reguliraju ocjenjivanje korisnika}}{37}{figure.4.7}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Klase koje reguliraju registraciju i prijavu}}{34}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Klase koje reguliraju rad s korisnicima sustava}}{36}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Klase koje reguliraju rad sa zahtjevima}}{38}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Klase koje reguliraju ocjenjivanje korisnika}}{39}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Klase koje reguliraju obavijesti}}{40}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Dijagram stanja}}{42}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Aktivnost javljanja na zahtjev}}{43}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Dijagram komponenti}}{45}{figure.4.11}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rezultati unit testova}}{48}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rezultati testova sustava}}{50}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Dijagram razmještaja}}{51}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Dostupne AWS usluge}}{52}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Pokretanje inicijalizacije}}{54}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Odabrani OS}}{54}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Tip instance}}{54}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Instance}}{55}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Spajanje na virtualni stroj}}{55}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Browser terminal}}{56}{figure.5.10}%
 \addvspace {10\p@ }
