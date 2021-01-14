@@ -42,23 +42,7 @@ function RequestForm() {
 		e.preventDefault();
 
 		e.preventDefault();
-		var myHeaders = new Headers();
-		myHeaders.append(
-			"Authorization",
-			"Basic " + sessionStorage.getItem("basicAuthToken")
-		);
-		const options = {
-			method: "GET",
-			headers: myHeaders,
-			redirect: "follow",
-		};
-		let resultUsingAdress;
-		fetch(baseUrl + "/user/getCurrentUserAddress", options)
-			.then((response) => response.text())
-			.then((result) => {
-				resultUsingAdress = JSON.parse(result);
-				/* console.log(resultUsingAdress); */
-			});
+
 		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
@@ -106,9 +90,29 @@ function RequestForm() {
 					values.address.x_coord = geoLocation.lat;
 					values.address.y_coord = geoLocation.lng;
 				} else if (useLocation === "0") {
-					values.address.description = resultUsingAdress.description;
-					values.address.x_coord = resultUsingAdress.x_coord;
-					values.address.y_coord = resultUsingAdress.y_coord;
+					var myHeaders = new Headers();
+					myHeaders.append(
+						"Authorization",
+						"Basic " + sessionStorage.getItem("basicAuthToken")
+					);
+					const options = {
+						method: "GET",
+						headers: myHeaders,
+						redirect: "follow",
+					};
+					let resultUsingAdress;
+					fetch(baseUrl + "/user/getCurrentUserAddress", options)
+						.then((response) => response.text())
+						.then((result) => {
+							console.log(result);
+							resultUsingAdress = JSON.parse(result);
+							console.log(resultUsingAdress);
+							console.log(values);
+							values.address.description =
+								resultUsingAdress.description;
+							values.address.x_coord = resultUsingAdress.x_coord;
+							values.address.y_coord = resultUsingAdress.y_coord;
+						});
 				} else {
 					values.address = null;
 				}
