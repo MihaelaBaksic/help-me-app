@@ -198,7 +198,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				Klasom RestExceptionHandler regulirano je ponašanje sustava pri pojavi iznimke. Pojava iznimki rezultira \textit{responseom} u kojem je sadržana poruka iznimke.
 				
 				\begin{figure}[H]
-					\includegraphics[scale=0.6]{slike/cs1.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.5]{slike/cs1.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Struktura aplikacije i konfiguracija}
 					
@@ -211,7 +211,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				
 				
 				\begin{figure}[H]
-					\includegraphics[scale=0.45]{slike/cs4.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.4]{slike/cs4.jpg} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Klase koje reguliraju registraciju i prijavu}
 					
@@ -243,7 +243,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				
 			
 				\begin{figure}[H]
-					\includegraphics[scale=0.38]{slike/cs3.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.33]{slike/cs3.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Klase koje reguliraju rad sa zahtjevima}
 					
@@ -265,7 +265,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				Korisnicima za razne aktivnosti sudjelovanja na stranici(stvaranje zahtjeva, javaljanje na zahtjev i mnogi drugi) dolaze obavijesti. Na slici 4.8 prikazane su sve klase koje služe za modeliranje i funkcioniranje obavijesti. Razred \textit{Notification} modelira jednu obavijest. Razred \textit{NotificationDTO} sadrži sve informacije kako bi se obavijest poslala korisniku, tj. sadrži korisnika kojemu je obavijest namijenjena, status obavijesti, poruku koju obavijest nosi, zahtjev za koju je obavijest vezana i na kraju jeli korisnik pročitao obavijest. Kao i razred \textit{Request} sadrži pripadajuće razrede repozitorija, servisa, kontrolera i DTO-a za stvaranje(\textit{CreateNotificationDTO}).
 				.			
 				\begin{figure}[H]
-					\includegraphics[scale=0.35]{slike/cs6.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
+					\includegraphics[scale=0.3]{slike/cs6.png} %veličina slike u odnosu na originalnu datoteku i pozicija slike
 					\centering
 					\caption{Klase koje reguliraju obavijesti}
 					
@@ -276,28 +276,29 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 				
 			
 			
-				
-		
-			
-			
 			\eject
 			
 		\section{Dijagram stanja}
 
 
-			Dijagram stanja je tip dijagrama koji služi za opis ponašanja sustava pomoću stanja u koja se može preći nekim događajem. Na slici 4.8 prikazan je dijagram stanja jednog korisnika(koji nije administrator).Nakon prijave(ili registracije ako korisnik nema korisnički račun), korisnik odlazi na početnu stranicu aplikacije. Na početnoj stranici korisnik može: pregledati vlastiti profil, pregledati vlastite zahtjeve, pregledati profile i zahtjeve drugih korisnika, te pregledati statistiku. Klikom na "Pregled profila" korisniku se otvara vlastiti profil, te ga može izbrisati ili izmijeniti. Klikom na "Moji zahtjevi" korisnik može pregledati vlastite zahtjeve. Uz to može stvoriti novi zahtjev, blokirati postojeći, pregledati potencijalne izvršitelje nekog zahtjeva(i time prihvatiti ili odbiti nekog od potencijalnih izvršitelja) i na kraju postaviti zahtjev kao izvršen(i ocijeniti izvršitelja zahtjeva).
+			Dijagram stanja je tip dijagrama koji služi za opis ponašanja sustava pomoću stanja u koja se može preći nekim događajem. Na slici 4.9 prikazan je dijagram stanja jednog korisnika(koji nije administrator). 
+			
+			Nakon prijave(ili registracije ako korisnik nema korisnički račun), korisnik odlazi na početnu stranicu aplikacije. Na početnoj stranici korisnik može: pregledati vlastiti profil, pregledati vlastite zahtjeve, pregledati profile i zahtjeve drugih korisnika, te pregledati statistiku. Klikom na "Pregled profila" korisniku se otvara vlastiti profil, te ga može izbrisati ili izmijeniti. Klikom na "Moji zahtjevi" korisnik može pregledati vlastite zahtjeve. 
+			Uz to može stvoriti novi zahtjev, blokirati postojeći, pregledati potencijalne izvršitelje nekog zahtjeva(i time prihvatiti ili odbiti nekog od potencijalnih izvršitelja) i na kraju postaviti zahtjev kao izvršen(i ocijeniti izvršitelja zahtjeva).
+			
 			Klikom na "Zahtjevi" korisniku se omogućuje pregled zahtjeva drugih korisnika i samim time se omogućava javljanje za zahtjeve. Klikom na "Profil" korisniku se otvara profil korisnika kojeg želi pregledati, te može vidjeti cjelokupnu ocjenu tog korisnika i sam ga može ocijeniti. Na kraju korisnik može pregledati i statistiku klikom na "Statistika" gdje se prikazuju 3 najbolje ocijenjena korisnika. 
 			
 			\begin{figure}[h]
-				\includegraphics[height=0.47\textheight]{DijagramStanja}
+				\includegraphics[height=0.4\textheight]{DijagramStanja}
 				\caption{Dijagram stanja}
 			\end{figure}
 			
-			\eject 
-		
+		\eject
+		\clearpage
 		\section{Dijagram aktivnosti}
+			
 		
-			Slika 4.8 prikazuje aktivnost korisnika izvršitelja (ubuduće korisnik) pri javljanju na jedan aktivni zahtjev. Na početku aktivnosti korisnik pregledava aktivne zahtjeve i nije autor tih zahtjeva. Nakon toga zadaje radijus koji će se koristiti za prikaz samo onih zahtjeva koji su unutar tog radijusa u odnosu na korisnikovu lokaciju. Ukoliko nema takvih zahtjeva, korisniku se prikaže poruka da nema aktivnih zahtjeva i aktivnost se završava. Ukoliko ima takvih zahtjeva oni se prikazuju korisniku, te se čeka njegov odabir. Ukoliko korisnik ne želi odabrati zahtjev, akcija se tu završava. Ukoliko korisnik odabere neki od tih zahtjeva, korisnik će biti evidentiran kao potencijalni izvršitelj.
+			Slika 4.10 prikazuje aktivnost korisnika izvršitelja (ubuduće korisnik) pri javljanju na jedan aktivni zahtjev. Na početku aktivnosti korisnik pregledava aktivne zahtjeve i nije autor tih zahtjeva. Nakon toga zadaje radijus koji će se koristiti za prikaz samo onih zahtjeva koji su unutar tog radijusa u odnosu na korisnikovu lokaciju. Ukoliko nema takvih zahtjeva, korisniku se prikaže poruka da nema aktivnih zahtjeva i aktivnost se završava. Ukoliko ima takvih zahtjeva oni se prikazuju korisniku, te se čeka njegov odabir. Ukoliko korisnik ne želi odabrati zahtjev, akcija se tu završava. Ukoliko korisnik odabere neki od tih zahtjeva, korisnik će biti evidentiran kao potencijalni izvršitelj.
 		
 			
 			\begin{figure}[H]
@@ -311,7 +312,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			
 		\section{Dijagram komponenti}
 		
-			Pomoću dijagrama komponenti prikazanog na slici 4.9 prikazan je međuodnos glavnih komponenti sustava.
+			Pomoću dijagrama komponenti prikazanog na slici 4.11 prikazan je međuodnos glavnih komponenti sustava.
 			Najgrublja podjela komponenata koje međusobno komuniciraju u \textit{ModelViewController} (MVC) obrascu je na:
 			\begin{itemize}
 				\item Model koji predstavlja skup svih entiteta koji se spremaju u bazi te se nad njima vrše operacije.
@@ -332,7 +333,7 @@ Logika backenda izgrađena je na temelju REST konvencije, stoga je razrađena u 
 			te ona služi kao glavna komunikacija aplikacije i SQL baze podataka u jeziku JPQL.
 			
 			 \begin{figure}[H]
-			 	\includegraphics[height=0.5\textheight]{dijagramKomponenti}
+			 	\includegraphics[height=0.44\textheight]{dijagramKomponenti}
 			 	\caption{Dijagram komponenti}
 			 \end{figure} 
 			

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.20)  14 JAN 2021 01:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  14 JAN 2021 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija_v6.tex
 (./PROGI_ProjektnaDokumentacija_v6.tex
-LaTeX2e <2020-10-01> patch level 1
+LaTeX2e <2020-10-01>
 L3 programming layer <2020-10-05> xparse <2020-03-03>
 (c:/texlive/2020/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
@@ -25,10 +25,10 @@ File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \bibindent=\dimen138
 )
 (c:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/10/06 3.50 The Babel package
+Package: babel 2020/10/03 3.49 The Babel package
 
 (c:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/10/06 3.50 Babel common definitions
+File: babel.def 2020/10/03 3.49 Babel common definitions
 \babel@savecnt=\count184
 \U@D=\dimen139
 \l@babelnohyphens=\language86
@@ -764,7 +764,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
 \@linkdim=\dimen191
 \Hy@linkcounter=\count286
@@ -1084,7 +1084,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...mberline {6.3}Zaključak}{62}{section.6.3}
+l.31 ...mberline {6.3}Zaključak}{59}{section.6.3}
                                                   % [1
 
 ])
@@ -1103,47 +1103,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 16.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 28.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 31.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 31.10.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 09.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 11.11.2020.|  
  []
 
 
-Overfull \hbox (6.59265pt too wide) in paragraph at lines 42--42
+Overfull \hbox (6.59265pt too wide) in paragraph at lines 47--47
 []\OT1/jkp/m/n/12 31.12.2020.|  
  []
 
@@ -1599,34 +1599,30 @@ eb-Se-cu-rity\OT1/jkp/m/n/12 , ko-jom su de-fi-ni-ra-nja dopu[]stenja
 File: slike/cs1.png Graphic file (type png)
 <use slike/cs1.png>
 Package pdftex.def Info: slike/cs1.png  used on input line 201.
-(pdftex.def)             Requested size: 387.24974pt x 483.00824pt.
-[32] [33pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.4.3}) has been already used, duplicate ignored
+(pdftex.def)             Requested size: 322.70483pt x 402.50278pt.
+[32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.207 				\newpage
                    <./slike/cs1.png (PNG copy)>]
-<slike/cs4.jpg, id=522, 1199.48125pt x 1512.65125pt>
+<slike/cs4.jpg, id=517, 1199.48125pt x 1512.65125pt>
 File: slike/cs4.jpg Graphic file (type jpg)
 <use slike/cs4.jpg>
 Package pdftex.def Info: slike/cs4.jpg  used on input line 214.
-(pdftex.def)             Requested size: 539.76158pt x 680.68678pt.
+(pdftex.def)             Requested size: 479.78401pt x 605.04979pt.
 
-Overfull \hbox (104.15079pt too wide) in paragraph at lines 214--216
+Overfull \hbox (44.17322pt too wide) in paragraph at lines 214--216
  [][] 
  []
 
-[34]
-Overfull \vbox (51.46057pt too high) has occurred while \output is active []
-
-
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
-}) has been already used, duplicate ignored
+[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.4.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.219 			
-          <./slike/cs4.jpg>]
-<slike/cs2.png, id=535, 1261.71375pt x 1591.9475pt>
+l.220 				\newpage
+                   <./slike/cs4.jpg>]
+<slike/cs2.png, id=530, 1261.71375pt x 1591.9475pt>
 File: slike/cs2.png Graphic file (type png)
 <use slike/cs2.png>
 Package pdftex.def Info: slike/cs2.png  used on input line 232.
@@ -1636,118 +1632,115 @@ Overfull \hbox (43.84541pt too wide) in paragraph at lines 232--234
  [][] 
  []
 
-[36] [37pdfTeX warning (ext4): destination with the same identifier (name{figur
+[35] [36pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.238 				\newpage
                    <./slike/cs2.png (PNG copy)>]
-<slike/cs3.png, id=548, 1426.32875pt x 1693.32625pt>
+<slike/cs3.png, id=543, 1426.32875pt x 1693.32625pt>
 File: slike/cs3.png Graphic file (type png)
 <use slike/cs3.png>
 Package pdftex.def Info: slike/cs3.png  used on input line 246.
-(pdftex.def)             Requested size: 542.01056pt x 643.47067pt.
+(pdftex.def)             Requested size: 470.68994pt x 558.7994pt.
 
-Overfull \hbox (106.39977pt too wide) in paragraph at lines 246--248
+Overfull \hbox (35.07915pt too wide) in paragraph at lines 246--248
  [][] 
  []
 
-[38]
-Overfull \vbox (14.24446pt too high) has occurred while \output is active []
-
-
-[39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6
-}) has been already used, duplicate ignored
+[37] [38pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.4.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.251 			
-          <./slike/cs3.png (PNG copy)>]
-<slike/cs5.png, id=560, 809.0225pt x 762.85pt>
+l.252 				\newpage
+                   <./slike/cs3.png (PNG copy)>]
+<slike/cs5.png, id=555, 863.225pt x 798.985pt>
 File: slike/cs5.png Graphic file (type png)
 <use slike/cs5.png>
 Package pdftex.def Info: slike/cs5.png  used on input line 257.
-(pdftex.def)             Requested size: 485.41725pt x 457.71353pt.
+(pdftex.def)             Requested size: 517.939pt x 479.3947pt.
 
-Overfull \hbox (49.80646pt too wide) in paragraph at lines 257--259
+Overfull \hbox (82.3282pt too wide) in paragraph at lines 257--259
  [][] 
  []
 
-[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
+[39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.263 				\newpage
                    <./slike/cs5.png (PNG copy)>]
-<slike/cs6.png, id=567, 1487.5575pt x 1106.1325pt>
+<slike/cs6.png, id=562, 1487.5575pt x 1106.1325pt>
 File: slike/cs6.png Graphic file (type png)
 <use slike/cs6.png>
 Package pdftex.def Info: slike/cs6.png  used on input line 268.
-(pdftex.def)             Requested size: 520.65292pt x 387.15218pt.
+(pdftex.def)             Requested size: 446.27069pt x 331.84232pt.
 
-Overfull \hbox (85.04213pt too wide) in paragraph at lines 268--270
+Overfull \hbox (10.6599pt too wide) in paragraph at lines 268--270
  [][] 
  []
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.283 			\eject
+l.279 			\eject
                 <./slike/cs6.png (PNG copy)>]
-<./slike//DijagramStanja.png, id=574, 1289.81876pt x 780.9175pt>
+<./slike//DijagramStanja.png, id=569, 1289.81876pt x 780.9175pt>
 File: ./slike//DijagramStanja.png Graphic file (type png)
 <use ./slike//DijagramStanja.png>
 Package pdftex.def Info: ./slike//DijagramStanja.png  used on input line 292.
-(pdftex.def)             Requested size: 521.1732pt x 315.54482pt.
+(pdftex.def)             Requested size: 443.55124pt x 268.54398pt.
 
-Overfull \hbox (85.56241pt too wide) in paragraph at lines 292--293
+Overfull \hbox (7.94044pt too wide) in paragraph at lines 292--293
 [][]
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42]
-<slike/dijagram_aktivnosti.png, id=581, 759.43726pt x 415.5525pt>
+[41] [42pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.4.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.297 		\clearpage
+                   <./slike//DijagramStanja.png>]
+<slike/dijagram_aktivnosti.png, id=583, 759.43726pt x 415.5525pt>
 File: slike/dijagram_aktivnosti.png Graphic file (type png)
 <use slike/dijagram_aktivnosti.png>
-Package pdftex.def Info: slike/dijagram_aktivnosti.png  used on input line 304.
+Package pdftex.def Info: slike/dijagram_aktivnosti.png  used on input line 305.
 
 (pdftex.def)             Requested size: 455.66586pt x 249.33342pt.
 
-Overfull \hbox (20.05507pt too wide) in paragraph at lines 304--306
+Overfull \hbox (20.05507pt too wide) in paragraph at lines 305--307
  [][] 
  []
 
-[43pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9
-}) has been already used, duplicate ignored
+[43
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.10})
+ has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.309 			
-          <./slike//DijagramStanja.png>] [44pdfTeX warning (ext4): destination 
-with the same identifier (name{figure.4.10}) has been already used, duplicate i
-gnored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.310 			\eject
+l.311 			\eject
                 <./slike/dijagram_aktivnosti.png>]
-Overfull \hbox (4.02881pt too wide) in paragraph at lines 330--333
+Overfull \hbox (4.02881pt too wide) in paragraph at lines 331--334
 \OT1/jkp/m/n/12 API-jem i pos-lov-nom lo-gi-kom apli-ka-cije. Pris-tup bazi na 
 bac-kendu nudi se su[]celjem
  []
 
-<./slike//dijagramKomponenti.png, id=595, 705.23476pt x 454.69875pt>
+<./slike//dijagramKomponenti.png, id=590, 705.23476pt x 454.69875pt>
 File: ./slike//dijagramKomponenti.png Graphic file (type png)
 <use ./slike//dijagramKomponenti.png>
 Package pdftex.def Info: ./slike//dijagramKomponenti.png  used on input line 33
-5.
-(pdftex.def)             Requested size: 520.64955pt x 335.6851pt.
+6.
+(pdftex.def)             Requested size: 458.17117pt x 295.40453pt.
 
-Overfull \hbox (85.03876pt too wide) in paragraph at lines 335--336
+Overfull \hbox (22.56038pt too wide) in paragraph at lines 336--337
 [][]
  []
 
-[45]) [46pdfTeX warning (ext4): destination with the same identifier (name{figu
+[44]) [45pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.4.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1773,168 +1766,146 @@ Overfull \hbox (10.38434pt too wide) in paragraph at lines 3--3
 |[]\OT1/jkp/b/n/24.88 Implementacija i ko-risni[]cko su[]celje| 
  []
 
-[47
+[46
 
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-
-Overfull \hbox (2.87764pt too wide) in paragraph at lines 46--47
-[]\OT1/jkp/m/it/12 updateUser() \OT1/jkp/m/n/12 - unit tes-tovi za ovu me-todu 
-is-pi-tuju baca li Il-le-ga-lAr-gu-men-tExcep-
- []
-
-
-Overfull \hbox (17.44887pt too wide) in paragraph at lines 46--47
-\OT1/jkp/m/n/12 tion kada mu pre-damo ko-ris-nika ko-jemu fali neki od oba-vez-
-nih po-da-taka za a[]zuriranje
- []
-
-[48]
-<slike/unit_testovi.png, id=647, 540.21825pt x 469.15276pt>
+] [47]
+<slike/unit_testovi.png, id=641, 540.21825pt x 469.15276pt>
 File: slike/unit_testovi.png Graphic file (type png)
 <use slike/unit_testovi.png>
-Package pdftex.def Info: slike/unit_testovi.png  used on input line 70.
+Package pdftex.def Info: slike/unit_testovi.png  used on input line 66.
 (pdftex.def)             Requested size: 432.17517pt x 375.32271pt.
- [49]
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--87
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
  []
 
-[50pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[48pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.90 			\begin{packed_enum}
-                            <./slike/unit_testovi.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 102--106
+l.82 			
+         <./slike/unit_testovi.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
-<slike/selenium-testing.png, id=659, 227.04825pt x 175.857pt>
+<slike/selenium-testing.png, id=649, 227.04825pt x 175.857pt>
 File: slike/selenium-testing.png Graphic file (type png)
 <use slike/selenium-testing.png>
-Package pdftex.def Info: slike/selenium-testing.png  used on input line 121.
+Package pdftex.def Info: slike/selenium-testing.png  used on input line 115.
 (pdftex.def)             Requested size: 272.45651pt x 211.02734pt.
-[51] [52pdfTeX warning (ext4): destination with the same identifier (name{figur
+[49] [50pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.129 			\eject
+l.123 			\eject
                 <./slike/selenium-testing.png>]
-<./slike//dijagramRazmjestaja.png, id=678, 511.9125pt x 349.305pt>
+<./slike//dijagramRazmjestaja.png, id=668, 511.9125pt x 349.305pt>
 File: ./slike//dijagramRazmjestaja.png Graphic file (type png)
 <use ./slike//dijagramRazmjestaja.png>
 Package pdftex.def Info: ./slike//dijagramRazmjestaja.png  used on input line 1
-46.
-(pdftex.def)             Requested size: 491.9772pt x 335.6851pt.
-
-Overfull \hbox (56.36641pt too wide) in paragraph at lines 146--147
-[][]
- []
-
-[53pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3
-}) has been already used, duplicate ignored
+40.
+(pdftex.def)             Requested size: 432.94838pt x 295.40453pt.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.150 			\eject
+l.144 			\eject
                 <./slike//dijagramRazmjestaja.png>]
 LaTeX Font Info:    Trying to load font information for OT1+jkptt on input line
- 156.
+ 150.
 
 (c:/texlive/2020/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
-<slike/deployment_slike/awshome.png, id=687, 953.81343pt x 637.63219pt>
+<slike/deployment_slike/awshome.png, id=677, 953.81343pt x 637.63219pt>
 File: slike/deployment_slike/awshome.png Graphic file (type png)
 <use slike/deployment_slike/awshome.png>
 Package pdftex.def Info: slike/deployment_slike/awshome.png  used on input line
- 159.
+ 153.
 (pdftex.def)             Requested size: 476.90555pt x 318.8153pt.
 
-Overfull \hbox (41.29475pt too wide) in paragraph at lines 159--161
+Overfull \hbox (41.29475pt too wide) in paragraph at lines 153--155
  [][] 
  []
 
-[54pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
+[52pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.166 			
+l.160 			
           <./slike/deployment_slike/awshome.png>]
-<slike/deployment_slike/launchingInstance.png, id=699, 1084.05pt x 625.58719pt>
+<slike/deployment_slike/launchingInstance.png, id=688, 1084.05pt x 625.58719pt>
 
 File: slike/deployment_slike/launchingInstance.png Graphic file (type png)
 <use slike/deployment_slike/launchingInstance.png>
 Package pdftex.def Info: slike/deployment_slike/launchingInstance.png  used on 
-input line 210.
+input line 204.
 (pdftex.def)             Requested size: 435.6108pt x 251.38547pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/virtualOS.png, id=700, 1120.185pt x 180.675pt>
+<slike/deployment_slike/virtualOS.png, id=689, 1120.185pt x 180.675pt>
 File: slike/deployment_slike/virtualOS.png Graphic file (type png)
 <use slike/deployment_slike/virtualOS.png>
 Package pdftex.def Info: slike/deployment_slike/virtualOS.png  used on input li
-ne 216.
+ne 210.
 (pdftex.def)             Requested size: 435.6108pt x 70.25894pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/instanceType.png, id=701, 1429.59094pt x 627.84563pt>
+<slike/deployment_slike/instanceType.png, id=690, 1429.59094pt x 627.84563pt>
 File: slike/deployment_slike/instanceType.png Graphic file (type png)
 <use slike/deployment_slike/instanceType.png>
 Package pdftex.def Info: slike/deployment_slike/instanceType.png  used on input
- line 222.
+ line 216.
 (pdftex.def)             Requested size: 435.6108pt x 191.30582pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/mojeInstance.png, id=702, 962.84718pt x 295.85532pt>
+<slike/deployment_slike/mojeInstance.png, id=691, 962.84718pt x 295.85532pt>
 File: slike/deployment_slike/mojeInstance.png Graphic file (type png)
 <use slike/deployment_slike/mojeInstance.png>
 Package pdftex.def Info: slike/deployment_slike/mojeInstance.png  used on input
- line 228.
+ line 222.
 (pdftex.def)             Requested size: 435.6108pt x 133.84692pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/instanceConnect.png, id=703, 589.4522pt x 320.69812pt>
+<slike/deployment_slike/instanceConnect.png, id=692, 589.4522pt x 320.69812pt>
 File: slike/deployment_slike/instanceConnect.png Graphic file (type png)
 <use slike/deployment_slike/instanceConnect.png>
 Package pdftex.def Info: slike/deployment_slike/instanceConnect.png  used on in
-put line 234.
+put line 228.
 (pdftex.def)             Requested size: 435.6108pt x 236.9997pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<slike/deployment_slike/browserTerminal.png, id=704, 721.94719pt x 654.19406pt>
+<slike/deployment_slike/browserTerminal.png, id=693, 721.94719pt x 654.19406pt>
 
 File: slike/deployment_slike/browserTerminal.png Graphic file (type png)
 <use slike/deployment_slike/browserTerminal.png>
 Package pdftex.def Info: slike/deployment_slike/browserTerminal.png  used on in
-put line 240.
+put line 234.
 (pdftex.def)             Requested size: 435.6108pt x 394.72552pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[55]) [56pdfTeX warning (ext4): destination with the same identifier (name{figu
+[53]) [54pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.5.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1951,7 +1922,7 @@ l.119 	\include{Implementacija}
 l.119 	\include{Implementacija}
                                 <./slike/deployment_slike/launchingInstance.png
 > <./slike/deployment_slike/virtualOS.png> <./slike/deployment_slike/instanceTy
-pe.png>] [57pdfTeX warning (ext4): destination with the same identifier (name{f
+pe.png>] [55pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.5.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
@@ -1962,7 +1933,7 @@ l.119 	\include{Implementacija}
                                                   
 l.119 	\include{Implementacija}
                                 <./slike/deployment_slike/mojeInstance.png> <./
-slike/deployment_slike/instanceConnect.png>] [58pdfTeX warning (ext4): destinat
+slike/deployment_slike/instanceConnect.png>] [56pdfTeX warning (ext4): destinat
 ion with the same identifier (name{figure.5.10}) has been already used, duplica
 te ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1979,58 +1950,64 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                removing `\textasciicaron' on input line 1.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 5.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 9.
+(hyperref)                removing `\textasciicaron' on input line 12.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+[57
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
 
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 16.
-
-[59
-
-
-
-
-] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-
-Overfull \hbox (20.84473pt too wide) in paragraph at lines 33--34
+Overfull \hbox (20.84473pt too wide) in paragraph at lines 28--29
 \OT1/jkp/m/n/12 apli-ka-cije te bo-lji \OT1/jkp/m/it/12 user expe-ri-ence \OT1/
 jkp/m/n/12 do-datne im-ple-men-ta-cija funk-ci-onal-nosti pre-tra[]zivanja
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[61]
+[58]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 46.
+(hyperref)                removing `\textasciicaron' on input line 42.
 
-[62])
+
+Overfull \hbox (0.26405pt too wide) in paragraph at lines 47--48
+[]\OT1/jkp/m/n/12 Tako[]der, pro-jekt je po-tak-nuo grupu na ak-tiv-nije kori[]
+stenje ve[]c go-to-vih knji[]znica
+ []
+
+[59])
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
@@ -2045,12 +2022,12 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 12 http : / / www . ece . rutgers . edu / []marsic /
  []
 
-) [63
+) [60
 
 
 
 
-] (./PROGI_ProjektnaDokumentacija_v6.lof [64
+] (./PROGI_ProjektnaDokumentacija_v6.lof [61
 
 
 
@@ -2058,11 +2035,11 @@ Overfull \hbox (7.06pt too wide) in paragraph at lines 18--19
 \tf@lof=\write5
 \openout5 = `PROGI_ProjektnaDokumentacija_v6.lof'.
 
- [65]
+ [62]
 \openout2 = `Dodatak.aux'.
 
  (./Dodatak.tex
-[66
+[63
 
 
 ]
@@ -2070,17 +2047,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[67] [68]
+[64] [65]
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
-[69] [70]
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+[66] [67]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-) [71] 
+) [68] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -2091,13 +2068,13 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
- 12786 strings out of 479917
- 183053 string characters out of 5886664
- 570243 words of memory out of 5000000
- 28685 multiletter control sequences out of 15000+600000
+ 12780 strings out of 479916
+ 183000 string characters out of 5886648
+ 566401 words of memory out of 5000000
+ 28682 multiletter control sequences out of 15000+600000
  589603 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,14n,98p,1062b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,14n,88p,1062b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -2147,11 +2124,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (72 pages, 2157518 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (69 pages, 2165745 bytes)
 .
 PDF statistics:
- 953 PDF objects out of 1000 (max. 8388607)
- 812 compressed objects within 9 object streams
- 302 named destinations out of 1000 (max. 500000)
+ 937 PDF objects out of 1000 (max. 8388607)
+ 800 compressed objects within 8 object streams
+ 300 named destinations out of 1000 (max. 500000)
  399 words of extra memory for PDF output out of 10000 (max. 10000000)
 

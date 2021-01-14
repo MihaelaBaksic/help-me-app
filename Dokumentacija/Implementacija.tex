@@ -5,7 +5,7 @@
 		
 		\section{Korištene tehnologije i alati}
 
-		Komunikacija našem u timu je realizirana korištenjem aplikacija Discord\footnote{https://discord.com/} i Whatsapp\footnote{https://www.whatsapp.com/}.\\ Za izradu UML dijagrama korišten je alat Astah Professional\footnote{http://astah.net/editions/professional}, a kao sustav za upravljanje
+		Komunikacija našem u timu je realizirana korištenjem aplikacija Discord\footnote{https://discord.com/} i WhatsApp\footnote{https://www.whatsapp.com/}.\\ Za izradu UML dijagrama korišten je alat Astah Professional\footnote{http://astah.net/editions/professional}, a kao sustav za upravljanje
 izvornim kodom Git\footnote{https://git-scm.com/}. Udaljeni repozitorij projekta je dostupan na web platformi GitLab\footnote{https://gitlab.com/}, a kao razvojno okruženje korišten je IntelliJ IDEA\footnote{https://www.jetbrains.com/idea/} - tvrtke JetBrains\footnote{https://www.jetbrains.com/} te Microsoftov Visual Studio Code\footnote{https://visualstudio.microsoft.com/
 }. 
 	\\
@@ -20,10 +20,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 		
 	
 		\section{Ispitivanje programskog rješenja}
-			
-			\textbf{\textit{dio 2. revizije}}\\
-			
-			 \textit{U ovom poglavlju je potrebno opisati provedbu ispitivanja implementiranih funkcionalnosti na razini komponenti i na razini cijelog sustava s prikazom odabranih ispitnih slučajeva. Studenti trebaju ispitati temeljnu funkcionalnost i rubne uvjete.}
+
 	
 			
 			\subsection{Ispitivanje komponenti}
@@ -31,7 +28,8 @@ Web Services\footnote{https://aws.amazon.com/}.
 			\textbf{Unit testovi za Service sloj}
 			\bigskip
 			\newline
-			Da bi napravili unit testove za svaki razred posebno, koristiti ćemo framework Mockito. Koristiti ćemo ga tako da "simuliramo" rad objekata koji testni razred koristi. @RunWith(MockitoJUnitRunner.class) je anotacija koja se stavlja iznad razreda u kojem su unit testovi. @InjectMocks anotacija nam označuje objekt nad kojim će se vršiti unit test (System under test). @Mock anotacija stvara objekt koji je "lažan", on neće izvoditi svoje normalne metode, već ćemo mu mi kako će se ponašati na svaki poziv metode.
+			Za izradu unit testova korišten je framework Mockito, koji simulira rad objekata koje testni razred koristi.  
+			 @Mock anotacija stvara objekt koji se koristi u testiranju, on ne izvodi svoje normalne metode, već samo simulira njihov rad.
 			\bigskip
 			\bigskip
 			
@@ -39,31 +37,29 @@ Web Services\footnote{https://aws.amazon.com/}.
 			\textbf{UserServiceJpa unit test}
 			\bigskip
 			
-			\textit{listAll()} - metoda listAll() vraća listu korisnika (List<User>). U unit testu stvaramo 3 nova korisnika i simuliramo metodu listAll() da kao rezultat vrati listu od ta 3 korisnika. Zatim pozovemo metodu listAll() i provjerimo vraća li ta metoda dobre podatke nazad.
+			\textit{listAll()} - U unit testu stvaramo 3 nova korisnika i simuliramo metodu listAll(). Očekivani rezultat je lista tri korisnika. Zatim pozovemo metodu listAll() i provjerimo vraća li ta metoda ispravni izlaz.
 			
-			\textit{registerUser()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisnika kojemu fali neki od obaveznih podataka za registraciju ili kada već postoji korisnik s tim korisničkim imenom, emailom ili brojem telefona. Ispituje se i radi li metoda sve dobro kada mu predamo korisnika koji ima sve podatke, i ne postoje već korisnici s takvim korisničkim imenom, emailom i brojem telefona.
+			\textit{registerUser()} - Unit testovi za ovu metodu ispituju ponašanje sustava za neuspješnu i uspješnu registraciju.
 			
-			\textit{updateUser()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisnika kojemu fali neki od obaveznih podataka za ažuriranje podataka. Ispituje se i radi li metoda očekivano kada se preda korisnik kojemu bi se trebalo bez greške ažurirati podatke.
+			\textit{updateUser()} - Testovi ispituju ponašanje sustava prilikom pokušaja ažuriranja korisničkih podataka. Pokriveni su slučajevi potpunih i nepotpunih podataka za ažuriranje.
 			
-			\textit{findByUsername()} - unit testovi za ovu metodu ispituju baca li IllegalArgumentException kada mu predamo korisničko ime koje je null, vraća li null kada mu predamo korisničko ime za kojeg ne postoji registrirani korisnik i radi li metoda očekivano kada se preda korisničko ime za kojeg postoji registrirani korisnik.
+			\textit{findByUsername()} - Testovi ispituju ponašanje sustava pri pretraživanju korisnika za postojeće i nepostojeće korisničko ime.
 			
-			\textit{deleteUser()} - unit testovi za ovu metodu ispituju vraća li ispravno broj obrisanih korisnika. Ukoliko mu predamo korisničko ime za koje ne postoji registrirani korisnik treba vraćati da je broj obrisanih korisnika 0, a ako mu predamo korisničko ime za koje postoji registrirani korisnik treba vraćati da je broj obrisanih korisnika 1.
-			
-			\textit{getStatistics()} - Ukoliko ne postoje registrirani korisnici pri pozivu ove metode, ona bi trebala vratiti praznu listu. Ako postoje registrirani korisnici, ali ne njih više od dva, metoda bi trebala vratiti samo listu od tog jednog ili dva korisnika, tako da je prvi onaj bolje ocjenjeni. Ako postoji tri ili više registriranih korisnika metoda bi trebala vratiti listu od tri najbolje ocjenjena korisnika. Testira se i u kojem poretku je metoda vratila najbolje ocijenjene korisnike, tu se testira je li dobro implementirano sortiranje korisnika.
+			\textit{getStatistics()} - Ukoliko ne postoje registrirani korisnici pri pozivu ove metode, ona bi trebala vratiti praznu listu. Ako postoje registrirani korisnici, ali ne njih više od dva, metoda bi trebala vratiti samo listu od tog jednog ili dva korisnika, tako da je prvi onaj bolje ocjenjeni. Ako postoji tri ili više registriranih korisnika metoda bi trebala vratiti listu od tri najbolje ocjenjena korisnika. Testira se i u kojem poretku je metoda vratila najbolje ocijenjene korisnike.
 			
 			\bigskip
 			\bigskip
 			\textbf{RatingServiceJpa unit test}
 			\bigskip
 			
-			\textit{calculateAverageRatingForUser()} - Ukoliko se preda korisnik čije korisničko ime nema registrirano u bazi podataka baca se NonexistingUserReferencedException. Ako postoji korisnik, ali nema nikakvih ocjena za njega, metoda bi trebala vratiti ocjenu 0.0 . Testira se i računa li metoda ispravno prosječnu ocjenu za korisnika koji postoji i za kojega ima više ocjena spremljenih u bazi.
+			\textit{calculateAverageRatingForUser()} - Metoda ispituje  izračun prosječne ocjene za korisnika. Ulaz je korisničko ime, a izlaz ovisi o postojanju korisnika s danim korisničkim imenom i postojanju ocjena.
 			
 			\bigskip
 			\bigskip
 			\textbf{RequestServiceJpa unit test}
 			\bigskip
 			
-			\textit{addRequest()} - Ako se metodi preda zahtjev čiji je autor postavljen na null, metoda bi trebala postaviti ulogiranog korisnika kao autora zahtjeva. Ako adresa zahtjeva ne sadrži opis, x kordinatu ili y kordinatu, metoda bi trebala baciti IllegalArgumentException. Ako je predan zahtjev koji je potpun i točan metoda bi trebala uspješno dodati zahtjev.
+			\textit{addRequest()} - Metoda testira potpunost podataka prilikom stvaranja zahtjeva. Ako je predan zahtjev koji je potpun i točan metoda bi trebala uspješno dodati zahtjev. U suprotnom metoda testira odgovarajuće iznimke.
 			
 			\bigskip
 			\begin{figure}[H]
@@ -81,8 +77,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 			
 			Cilj ispitivanja sustava je ispitati ponašanje sustava u cjelini, onako kako ga vidi 
 			korisnik aplikacije te dostupnost svih funkcionalnosti koje korisnik može koristiti.
-			Napisani ispitni slučajevi prije svega su ispitivali pravilan izgled komponenti i funkcionalnosti koje se nude kroz korisničko sučelja
-			u ovisnosti o stanju sustava, stanju pojedinog zahtjeva i ovlastima korisnika koji je prijavljen u sustav.
+			Napisani ispitni slučajevi prije svega su ispitivali pravilan izgled komponenti i funkcionalnosti koje se nude kroz korisničko sučelje u ovisnosti o stanju sustava, stanju pojedinog zahtjeva i ovlastima korisnika.
 			Testiranje je koristilo dva korisnika već registrirana u sustav, jednog s ovlastima običnog korisnika i drugog s ovlastima administratora.\newline 
 			
 			Komponente koje najviše ovise o ovlastima i stanju sustava su komponenta za prikaz pojedinog zahtjeva i komponenta profila korisnika.
@@ -93,8 +88,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 				\item \textit{createRequestNoTitle()} - neispravan unos u formu zahtjeva
 				\item \textit{viewNonAuthoredRequest()} - prisutnost komponenti za javljanje na zahtjev
 				\item \textit{viewAuthoredRequest()} - prisutnost komponenti za blokiranje zahtjeva
-				\item \textit{viewAuthoredRequestWithPotentialHandlers()} - prisutnost komponenti za pregled potencijalnih izvršitelja te sam pregled
-				
+				\item \textit{viewAuthoredRequestWithPotentialHandlers()} - prisutnost komponenti za pregled potencijalnih izvršitelja 
 			\end{packed_enum}
 			
 		
@@ -109,7 +103,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 			
 			Glavnu prepreku za automatizaciju ispitivanja sustava predstavljala je priroda testiranog sustava. 
 			Sustav se sastoji od brojnih aktivnosti koje se mogu izvoditi samo jednom, poput javljanja na pojedini zahtjev ili 
-			biranja izvršitelja za zahtjev te aktivnosti koje zahtjevaju slijednu interakciju više korisnika.
+			biranja izvršitelja za zahtjev te aktivnosti koje zahtijevaju slijednu interakciju više korisnika.
 			Takve akcije teško je automatizirano ispitivati zato što to neminovno u sustavu akumulira velik broj zahtjeva samo za testiranje 
 			ili testove nije moguće ponavljati više puta, čime se u potpunosti gubi njihova svrha.
 			Stoga su navedene funkcionalnosti izostavljene iz automatiziranog ispitvanja alatom Selenium i odrađene ručno.
@@ -131,7 +125,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 		
 		\section{Dijagram razmještaja}
 			
-			Na slici 5.1 nalazi se dijagram razmještaja koji prikazuje raspored programske podrške aplikaciji unutar sklopovlja.
+			Na slici 5.3 nalazi se dijagram razmještaja koji prikazuje raspored programske podrške aplikaciji unutar sklopovlja.
 			
 			Sa strane korisnika aplikacije, sklopovlje predstavlja njegovo računalo, mobilni telefon ili bilo koji drugi uređaj s pristupom internetu i instaliranim browserom.
 			Internetski browser zadužen je za uspostavu konekcije sa poslužiteljem koja će omogućiti slanje i posluživanje zahtjeva.
@@ -143,7 +137,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 			S druge strane server može posluživati više zahtjeva iz više različitih izvora te stoga može imati i više aktivnih HTTP veza.
 			
 			\begin{figure}[h]
-				\includegraphics[height=0.5\textheight]{dijagramRazmjestaja}
+				\includegraphics[height=0.44\textheight]{dijagramRazmjestaja}
 				\caption{Dijagram razmještaja}
 			\end{figure} 
 			
@@ -151,7 +145,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 		
 		\section{Upute za puštanje u pogon}
 		
-			Grupa TODO odlučila se pokoriti našim Amazonskim overlordima i aplikaciju pustiti u pogon koristeći Amazon Web Services (AWS). Za korištenje AWS-a potrebno se registrirati i ostaviti podatke za plaćanje, koristimo besplatne mogućnosti dostupnih usluga te ništa neće biti naplaćeno. 
+			Grupa TODO odlučila je aplikaciju pustiti u pogon koristeći Amazon Web Services (AWS). Za korištenje AWS-a potrebno se registrirati i ostaviti podatke za plaćanje, ali koriste se besplatne mogućnosti dostupnih usluga te ništa neće biti naplaćeno. 
 			
 			Korisnik nakon registracije, odlazi na adresu \url{https://us-east-2.console.aws.amazon.com/console/home}, gdje dobiva prikaz dostupnih usluga:
 			
@@ -197,7 +191,7 @@ Web Services\footnote{https://aws.amazon.com/}.
 			\begin{center}
 				\$ mvn clean install
 			\end{center}
-			Nakon instalacije, u direktoriju /targer nalazi se .jar datoteka koja predstavlja našu izgrađenu aplikaciju. Aplikaciju pokrećemo izvođenjem sljedeće naredbe:
+			Nakon instalacije, u direktoriju /target nalazi se .jar datoteka koja predstavlja našu izgrađenu aplikaciju. Aplikaciju pokrećemo izvođenjem sljedeće naredbe:
 			\begin{center}
 				\$ nohup java -jar \{ime aplikacije\}.jar
 			\end{center}
