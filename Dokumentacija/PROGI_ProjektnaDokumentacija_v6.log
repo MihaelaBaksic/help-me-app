@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  14 JAN 2021 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.6)  14 JAN 2021 20:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2053,11 +2053,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--132
  []
 
 [66] [67]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+<slike/graf1.png, id=857, 755.82375pt x 175.25475pt>
+File: slike/graf1.png Graphic file (type png)
+<use slike/graf1.png>
+Package pdftex.def Info: slike/graf1.png  used on input line 196.
+(pdftex.def)             Requested size: 453.49774pt x 105.15364pt.
 
+Overfull \hbox (17.88695pt too wide) in paragraph at lines 196--198
+ [][] 
  []
 
-) [68] 
+<slike/rom.png, id=858, 383.031pt x 192.72pt>
+File: slike/rom.png Graphic file (type png)
+<use slike/rom.png>
+Package pdftex.def Info: slike/rom.png  used on input line 203.
+(pdftex.def)             Requested size: 306.42522pt x 154.1762pt.
+<slike/ilinovic.png, id=859, 381.22424pt x 199.947pt>
+File: slike/ilinovic.png Graphic file (type png)
+<use slike/ilinovic.png>
+Package pdftex.def Info: slike/ilinovic.png  used on input line 209.
+(pdftex.def)             Requested size: 304.97981pt x 159.95781pt.
+<slike/milde.png, id=860, 373.395pt x 190.91325pt>
+File: slike/milde.png Graphic file (type png)
+<use slike/milde.png>
+Package pdftex.def Info: slike/milde.png  used on input line 216.
+(pdftex.def)             Requested size: 298.7164pt x 152.7308pt.
+[68pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.221 	
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.6.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.221 	
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.6.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.221 	
+        <./slike/graf1.png> <./slike/rom.png> <./slike/ilinovic.png>]
+<slike/racki.png, id=869, 377.0085pt x 193.32225pt>
+File: slike/racki.png Graphic file (type png)
+<use slike/racki.png>
+Package pdftex.def Info: slike/racki.png  used on input line 223.
+(pdftex.def)             Requested size: 301.6072pt x 154.658pt.
+<slike/orec.png, id=870, 375.20175pt x 193.9245pt>
+File: slike/orec.png Graphic file (type png)
+<use slike/orec.png>
+Package pdftex.def Info: slike/orec.png  used on input line 230.
+(pdftex.def)             Requested size: 300.16179pt x 155.13979pt.
+<slike/stanic.png, id=871, 370.986pt x 189.70876pt>
+File: slike/stanic.png Graphic file (type png)
+<use slike/stanic.png>
+Package pdftex.def Info: slike/stanic.png  used on input line 237.
+(pdftex.def)             Requested size: 296.78918pt x 151.7672pt.
+ [69pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.242 	
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.6.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.242 	
+       pdfTeX warning (ext4): destination with the same identifier (name{figure
+.6.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.242 	
+        <./slike/milde.png> <./slike/racki.png> <./slike/orec.png>]
+<slike/baksic.png, id=880, 371.58826pt x 192.72pt>
+File: slike/baksic.png Graphic file (type png)
+<use slike/baksic.png>
+Package pdftex.def Info: slike/baksic.png  used on input line 244.
+(pdftex.def)             Requested size: 297.271pt x 154.1762pt.
+) [70pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.138 	\include{Dodatak}
+                        pdfTeX warning (ext4): destination with the same identi
+fier (name{figure.6.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.138 	\include{Dodatak}
+                         <./slike/stanic.png> <./slike/baksic.png>]
+
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija_v6.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -2068,10 +2152,10 @@ Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija_v6.out' has not
 (rerunfilecheck)             Checksum: 3C5A8F89A8320875461218B391B7F3BE;2142.
  ) 
 Here is how much of TeX's memory you used:
- 12780 strings out of 479916
- 183000 string characters out of 5886648
+ 12838 strings out of 479916
+ 183930 string characters out of 5886648
  566401 words of memory out of 5000000
- 28682 multiletter control sequences out of 15000+600000
+ 28722 multiletter control sequences out of 15000+600000
  589603 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,14n,88p,1062b,607s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2124,11 +2208,11 @@ type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public
 t8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/
 texlive/2020/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb><c:/texlive/2020/t
 exmf-dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija_v6.pdf (69 pages, 2165745 bytes)
+Output written on PROGI_ProjektnaDokumentacija_v6.pdf (71 pages, 2265436 bytes)
 .
 PDF statistics:
- 937 PDF objects out of 1000 (max. 8388607)
- 800 compressed objects within 8 object streams
- 300 named destinations out of 1000 (max. 500000)
- 399 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 982 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
+ 310 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 
