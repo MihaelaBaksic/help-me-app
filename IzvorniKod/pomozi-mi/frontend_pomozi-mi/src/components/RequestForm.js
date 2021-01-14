@@ -107,7 +107,8 @@ function RequestForm() {
 							console.log(result);
 							resultUsingAdress = JSON.parse(result);
 							console.log(resultUsingAdress);
-							console.log(values);
+							console.log(JSON.parse(values));
+							values = JSON.parse(values);
 							values.address.description =
 								resultUsingAdress.description;
 							values.address.x_coord = resultUsingAdress.x_coord;
