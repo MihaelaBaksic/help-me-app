@@ -15,6 +15,8 @@ function RequestForm() {
 		L.latLng(45.800623, 15.971131)
 	);
 	const [useDescription, setDescription] = useState("");
+	const [xeCoord, setXeCoord] = useState("");
+	const [yeCoord, setYeCoord] = useState("");
 
 	useEffect(() => {
 		var myHeaders = new Headers();
@@ -33,6 +35,8 @@ function RequestForm() {
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
 				setDescription(JSON.parse(result).description);
+				setXeCoord(JSON.parse(result).x_coord);
+				setYeCoord(JSON.parse(result).y_coord);
 				//console.log(useDescription);
 			});
 	});
@@ -42,23 +46,7 @@ function RequestForm() {
 		e.preventDefault();
 
 		e.preventDefault();
-		var myHeaders = new Headers();
-		myHeaders.append(
-			"Authorization",
-			"Basic " + sessionStorage.getItem("basicAuthToken")
-		);
-		const options = {
-			method: "GET",
-			headers: myHeaders,
-			redirect: "follow",
-		};
-		let resultUsingAdress;
-		fetch(baseUrl + "/user/getCurrentUserAddress", options)
-			.then((response) => response.text())
-			.then((result) => {
-				resultUsingAdress = JSON.parse(result);
-				/* console.log(resultUsingAdress); */
-			});
+
 		/* console.log(geoLocation); */
 		let description = "";
 		let options222 = {
@@ -106,9 +94,32 @@ function RequestForm() {
 					values.address.x_coord = geoLocation.lat;
 					values.address.y_coord = geoLocation.lng;
 				} else if (useLocation === "0") {
-					values.address.description = resultUsingAdress.description;
-					values.address.x_coord = resultUsingAdress.x_coord;
-					values.address.y_coord = resultUsingAdress.y_coord;
+					/* var myHeaders = new Headers();
+					myHeaders.append(
+						"Authorization",
+						"Basic " + sessionStorage.getItem("basicAuthToken")
+					);
+					const options = {
+						method: "GET",
+						headers: myHeaders,
+						redirect: "follow",
+					};
+					let resultUsingAdress;
+					fetch(baseUrl + "/user/getCurrentUserAddress", options)
+						.then((response) => response.text())
+						.then((result) => {
+							console.log(result);
+							resultUsingAdress = JSON.parse(result);
+							console.log(resultUsingAdress);
+							console.log(JSON.parse(values));
+							values = JSON.parse(values);
+							console.log(values);
+							
+							console.log(values);
+						}); */
+					values.address.description = useDescription;
+					values.address.x_coord = xeCoord;
+					values.address.y_coord = yeCoord;
 				} else {
 					values.address = null;
 				}
