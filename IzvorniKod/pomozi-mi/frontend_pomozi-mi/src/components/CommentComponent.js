@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function CommentComponent(props) {
 	let history = useHistory();
 	const [ratings, setRatings] = useState("");
@@ -21,7 +24,7 @@ function CommentComponent(props) {
 			setRatings(props.listaKomentara);
 		} else if (props.username) {
 			/* console.log("fečam"); */
-			fetch("http://localhost:8080/rating/of/" + props.username, options)
+			fetch(baseUrl + "/rating/of/" + props.username, options)
 				.then((response) => response.text())
 				.then((result) => {
 					setRatings(JSON.parse(result));

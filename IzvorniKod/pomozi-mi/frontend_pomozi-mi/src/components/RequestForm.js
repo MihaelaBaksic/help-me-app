@@ -4,7 +4,8 @@ import MapComponent from "./MapComponent";
 import L from "leaflet";
 import { useHistory, withRouter } from "react-router-dom";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
 
 function RequestForm() {
 	let history = useHistory();
@@ -27,7 +28,7 @@ function RequestForm() {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/user/getCurrentUserAddress", options)
+		fetch(baseUrl + "/user/getCurrentUserAddress", options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -52,7 +53,7 @@ function RequestForm() {
 			redirect: "follow",
 		};
 		let resultUsingAdress;
-		fetch("http://localhost:8080/user/getCurrentUserAddress", options)
+		fetch(baseUrl + "/user/getCurrentUserAddress", options)
 			.then((response) => response.text())
 			.then((result) => {
 				resultUsingAdress = JSON.parse(result);

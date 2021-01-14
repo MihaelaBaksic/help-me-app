@@ -3,7 +3,8 @@ import { Button, Icon, Divider, Label } from "semantic-ui-react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { useHistory } from "react-router-dom";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
 
 function PotentialUsers(props) {
 	const [list, setList] = React.useState([]);
@@ -112,7 +113,8 @@ function PotentialUsers(props) {
 					{list.map((item) => (
 						<div key={item.username}>
 							<Icon name="user" />
-							<Label role="button"
+							<Label
+								role="button"
 								onClick={(e) => pogledajUsera(item.username, e)}
 							>
 								@{item.username} {" | "} {item.firstName}{" "}

@@ -3,8 +3,9 @@ import { List, Button, Label, Grid } from "semantic-ui-react";
 import { useEffect, useState } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 
-//const baseUrl = `${process.env.PUBLIC_URL}`;
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function RequestList(props) {
 	let history = useHistory();
 	const [requests, setRequests] = useState("");

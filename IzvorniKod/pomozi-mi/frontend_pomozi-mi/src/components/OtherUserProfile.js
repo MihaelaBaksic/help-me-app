@@ -4,6 +4,9 @@ import RequestList from "./RequestList";
 import CommentComponent from "./CommentComponent";
 import CommentFormComponent from "./CommentFormComponent";
 
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function OtherUserProfile(props) {
 	let { username } = useParams();
 	let [userInfo, setUserInfo] = useState("");
@@ -35,7 +38,7 @@ function OtherUserProfile(props) {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/user/setAdmin/" + username, options)
+		fetch(baseUrl + "/user/setAdmin/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -60,7 +63,7 @@ function OtherUserProfile(props) {
 			body: raw,
 		};
 
-		fetch("http://localhost:8080/user/blockUser/" + username, options)
+		fetch(baseUrl + "/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -85,7 +88,7 @@ function OtherUserProfile(props) {
 			body: raw,
 		};
 
-		fetch("http://localhost:8080/user/blockUser/" + username, options)
+		fetch(baseUrl + "/user/blockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -107,7 +110,7 @@ function OtherUserProfile(props) {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/user/unblockUser/" + username, options)
+		fetch(baseUrl + "/user/unblockUser/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -130,7 +133,7 @@ function OtherUserProfile(props) {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/user/" + username, options)
+		fetch(baseUrl + "/user/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -157,10 +160,7 @@ function OtherUserProfile(props) {
 				headers: myHeaders,
 				redirect: "follow",
 			};
-			fetch(
-				"http://localhost:8080/user/authoredRequests/" + username,
-				options
-			)
+			fetch(baseUrl + "/user/authoredRequests/" + username, options)
 				.then((response) => response.text())
 				.then((result) => {
 					if (JSON.parse(result)._embedded) {
@@ -175,10 +175,7 @@ function OtherUserProfile(props) {
 					console.log("error", error);
 					setAuthoredRequests("");
 				});
-			fetch(
-				"http://localhost:8080/user/handlerRequests/" + username,
-				options
-			)
+			fetch(baseUrl + "/user/handlerRequests/" + username, options)
 				.then((response) => response.text())
 				.then((result) => {
 					if (JSON.parse(result)._embedded) {
@@ -210,7 +207,7 @@ function OtherUserProfile(props) {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/rating/of/" + username, options)
+		fetch(baseUrl + "/rating/of/" + username, options)
 			.then((response) => response.text())
 			.then((result) => {
 				setRatings(JSON.parse(result));

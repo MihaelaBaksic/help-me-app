@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, withRouter } from "react-router-dom";
 
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function UserSettings(props) {
 	let history = useHistory();
 	const { handleSubmit, register, errors, watch } = useForm({});
@@ -43,7 +46,7 @@ function UserSettings(props) {
 			headers: myHeaders,
 			body: JSON.stringify(prepBody),
 		};
-		fetch("http://localhost:8080/user/settings", options)
+		fetch(baseUrl + "/user/settings", options)
 			.then((response) => {
 				if (response.status === 201) {
 					return response.text();

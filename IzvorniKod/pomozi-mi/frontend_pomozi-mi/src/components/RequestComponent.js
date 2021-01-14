@@ -14,8 +14,8 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { useHistory } from "react-router-dom";
 import CommentFormComponent from "./CommentFormComponent";
 
-//const baseUrl = `${process.env.PUBLIC_URL}`;
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
 
 function RequestComponent(props) {
 	let history = useHistory();
@@ -565,11 +565,19 @@ function RequestComponent(props) {
 				);
 			}
 
-			if(podaciReq.PotentialUsers !== null){
+			if (podaciReq.PotentialUsers !== null) {
 				for (let i in podaciReq.potentialHandler) {
-					if(podaciReq.potentialHandler[i].username === podaciUser.username){
+					if (
+						podaciReq.potentialHandler[i].username ===
+						podaciUser.username
+					) {
 						buttonLeft = (
-							<Button disabled color="blue" size="large" floated="right">
+							<Button
+								disabled
+								color="blue"
+								size="large"
+								floated="right"
+							>
 								{btnL}
 							</Button>
 						);
@@ -577,7 +585,7 @@ function RequestComponent(props) {
 					}
 				}
 			}
-			
+
 			return (
 				<Container textAlign="justified" color="blue">
 					<Card color="red" fluid>
@@ -669,11 +677,19 @@ function RequestComponent(props) {
 					</Button>
 				);
 			}
-			if(podaciReq.PotentialUsers !== null){
+			if (podaciReq.PotentialUsers !== null) {
 				for (let i in podaciReq.potentialHandler) {
-					if(podaciReq.potentialHandler[i].username === podaciUser.username){
+					if (
+						podaciReq.potentialHandler[i].username ===
+						podaciUser.username
+					) {
 						buttonLeft = (
-							<Button disabled color="blue" size="large" floated="right">
+							<Button
+								disabled
+								color="blue"
+								size="large"
+								floated="right"
+							>
 								{btnL}
 							</Button>
 						);

@@ -4,7 +4,8 @@ import MapComponent from "./MapComponent";
 import L from "leaflet";
 import { useForm } from "react-hook-form";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
 
 function AdressChangeCompoment(props) {
 	let history = useHistory();

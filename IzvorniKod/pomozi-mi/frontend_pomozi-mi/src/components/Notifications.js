@@ -5,6 +5,7 @@ import { useHistory, withRouter } from "react-router-dom";
 
 //const baseUrl = `${process.env.PUBLIC_URL}`;
 const baseUrl = "http://localhost:8080";
+
 function Notifications(props) {
 	let history = useHistory();
 	const [notifications, setNotifications] = useState("");

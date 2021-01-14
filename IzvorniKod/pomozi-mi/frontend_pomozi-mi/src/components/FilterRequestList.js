@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import FilterComponent from "./FilterComponent";
 import RequestList from "./RequestList";
 
-//const baseUrl = `${process.env.PUBLIC_URL}`;
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function FilterRequestList(props) {
 	let filter = {
 		radius: 5,

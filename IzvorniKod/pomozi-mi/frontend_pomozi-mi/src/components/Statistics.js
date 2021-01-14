@@ -5,7 +5,8 @@ import first from "./resources/1st.png";
 import second from "./resources/2st.png";
 import third from "./resources/3rd.png";
 
-const baseUrl = "http://localhost:8080";
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
 
 function Statistics() {
 	const [topUsers, setTopUsers] = useState("");

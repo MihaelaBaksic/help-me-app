@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, withRouter } from "react-router-dom";
 
+const baseUrl = `${process.env.PUBLIC_URL}`;
+//const baseUrl = "http://localhost:8080";
+
 function ViewProfileComponent(props) {
 	let history = useHistory();
 	let [podaci, setPodaci] = useState("");
@@ -25,7 +28,7 @@ function ViewProfileComponent(props) {
 			redirect: "follow",
 		};
 
-		fetch("http://localhost:8080/user/getCurrentUser", options)
+		fetch(baseUrl + "/user/getCurrentUser", options)
 			.then((response) => response.text())
 			.then((result) => {
 				/* console.log(JSON.parse(result)); */
@@ -55,7 +58,8 @@ function ViewProfileComponent(props) {
 			.catch((error) => console.log("error", error));
 
 		fetch(
-			"http://localhost:8080/rating/average/" +
+			baseUrl +
+				"/rating/average/" +
 				sessionStorage.getItem("currentUserUsername"),
 			options
 		)

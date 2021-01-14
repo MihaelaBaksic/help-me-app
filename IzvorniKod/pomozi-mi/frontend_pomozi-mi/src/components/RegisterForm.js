@@ -8,8 +8,8 @@ import { Card } from "semantic-ui-react";
 import MapComponent from "./MapComponent";
 
 //za Dev 8080, production 8080 tj. `${process.env.PUBLIC_URL}`
-const registerUrl = "http://localhost:8080/register";
-//const registerUrl = `${process.env.PUBLIC_URL}/register`;
+//const registerUrl = "http://localhost:8080/register";
+const registerUrl = `${process.env.PUBLIC_URL}/register`;
 
 function RegisterForm(props) {
 	const { handleSubmit, register, errors, watch } = useForm({});
